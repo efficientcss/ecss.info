@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ecss.xsl"?>
+<root>
+	<header>
+		<h1>ECSS</h1>
+		<p>CSS is a design language. Not a programming one. <em>(Sorry)</em></p>
+	</header>
+	<nav></nav>
+	<main>
+		<section>
+			<h2>Principles</h2>
+			<ul>
+				<li>CSS is a <strong>designing language</strong>, not a programming one.</li>
+			<li> Empowering designers to refine their work right in the browser is efficient. So CSS should be intelligible design-wise.</li>
+			<li> not all properties are equal. display, position and the box-model properties are potentially way more damaging than type properties.</li>
+			<li> components and patterns need structure and should prescribe it. in context documentation is key.</li>
+			<li> selectors should reflect intentions and be devoid of unnecessary particles. looking at you Mr Wathan.</li>
+			<li> selector types should depend on function. no absolute rule should be edicted.</li>
+			<li> specificity and selection should be harnessed, not rejected.</li>
+			<li> specificity should be kept as low as possible. but not lower.</li>
+			<li> design has a layered approach to graphical communication. CSS should too.</li>
+			<li> global scope in CSS is not a sin. it represents design layered approach. not programming best practices.</li>
+			<li> far-reaching global rules must be light and largely anonymous with a few rules per rulesets only.</li>
+			<li> one should wait until a concept is clear before naming it. HTML elements should be used until naming is necessary.</li>
+			<li> when more than 4 properties are repeated through multiple rulesets, a concept must be emerging. one should centralize rules by naming this concept.</li>
+			<li> one should not use named concepts inside other named concepts. if it is necessary, the child concept must be scoped to the parent concept.</li>
+			<li> tinkering with named concepts through files is absolutely prohibited. all rules for a named concept must reside in the same, unique CSS file.</li>
+			<li> namespaced state/structural classes should be used for necessary child concepts inside parent concepts.</li>
+			<li> one should only serve used CSS rules. other than the theme layer, minifying &amp; bundling is discouraged. components and functionnality should include their CSS rules at render.</li>
+			<li> future-proofing is economically profitable. one should capitalize on emerging technologies and freely available tools.</li>
+			<li> one should make full use of development tools by going with the grain of the platform. by using just-in-time rules, the cascade and rational selection, the debugging workflow is empowered.</li>
+			<li> minimizing use of technological abstractions and high-level frameworks incites lighter, simpler code. by writing css, one uses css better. by writing HTML, one writes HTML better.</li>
+			<li> using as much of the web platform as possible is a sane, future-proof and efficient way of developing web platforms.</li>
+			<li> one cannot always come up with the best way to select or the right intention at first. a code quarantine should then be temporarily used.</li>
+			<li> Any published code should be exempt from quarantine.</li>
+			<li> Any HTML element should endorse one role only. Semantic tags are for content semantics, divs are for graphical structure.</li>
+			<li> Compositional and presentional grids should be implemented with divs.</li>
+			<li> Structural or state styling should be implemented in conjunction with specificity reducing pseudo-classes (ie. :where()</li>
+			<li> Whole stylesheets should be global. Media queries scopes should be used in the HTML for reuse and optimization concerns.</li>
+			<li> Each layer should be autonomous, independent and removable.</li>
+			<li> Reduce served unused CSS by shipping it only live components.</li>
+			<li> Selectors and Units can convey information and one should make full use of their expressiveness (ie: ch units for text widths, px units for images, rem for vertical rhythm, etc.).</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Key ideas</h2>
+			<article>
+				<h3>Intentional</h3>
+			</article>
+		</section>
+		<section>
+			<h2>Layers</h2>
+			<p>layers represent design dimensions. they provide a robust way of managing specificity through these.
+		</p>
+		<div>
+			<article>
+				<h3>General</h3>
+				<p>Behavioral baseline that should be included in every new project.</p>
+				<ul>
+					<li>Elements only</li>
+					<li>Low level rules</li>
+					<li>Max 3 props per ruleset</li>
+				</ul>
+			</article>
+			<article>
+				<h3>General</h3>
+				<p>Behavioral baseline that should be included in every new project.</p>
+				<ul>
+					<li>Elements only</li>
+					<li>Low level rules</li>
+					<li>Max 3 props per ruleset</li>
+				</ul>
+			</article>
+			<article>
+				<h3>General</h3>
+				<p>Behavioral baseline that should be included in every new project.</p>
+				<ul>
+					<li>Elements only</li>
+					<li>Low level rules</li>
+					<li>Max 3 props per ruleset</li>
+				</ul>
+			</article>
+			<article>
+				<h3>General</h3>
+				<p>Behavioral baseline that should be included in every new project.</p>
+				<ul>
+					<li>Elements only</li>
+					<li>Low level rules</li>
+					<li>Max 3 props per ruleset</li>
+				</ul>
+			</article>
+			<article>
+				<h3>General</h3>
+				<p>Behavioral baseline that should be included in every new project.</p>
+				<ul>
+					<li>Elements only</li>
+					<li>Low level rules</li>
+					<li>Max 3 props per ruleset</li>
+				</ul>
+			</article>
+		</div>
+	</section>
+	</main>
+	<aside></aside>
+	<footer></footer>
+</root>

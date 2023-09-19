@@ -1,0 +1,106 @@
+# ECSS
+
+Avoiding common styling problems is simple. And you only need Efficient CSS. Nothing more.
+
+ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable, vanilla CSS.
+
+Want help enforcing rules? Download the Stylelint config to nudge you and your team into ECSS.
+Want a jumpstart? Download the ECSS scaffolding library to quickly build anything.
+Want to know what this is all about? Dive into ECSS principles and documentation.
+Curious about it all? Well, keep scrolling!
+
+## Why ECSS?
+
+Because vanilla CSS is misunderstood and undeservedly maligned. Because simple rules and low impact tools can go a long way in making sure the CSS codebase is light, simple and scalable. ECSS is a global approach to producing efficient design systems with CSS.
+
+## ECSS values
+
+### Intentionality
+
+Every parcel of CSS has an objective. This objective should be clear to anyone reading the code. Be it HTML or CSS. Selectors are the perfect vehicle for intentionality. ECSS incentivizes the use of rational selectors.
+
+Clear objectives, rational decisions.
+
+### Consistency
+
+Flexible naming guidelines give the codebase a consistency encouraging standardization and reuse. Prefixes and usage guidelines enforced through linting insures everyone on your team will follow ECSS rules.
+
+Repeating patterns save time & energy.
+
+### Simplicity
+
+Class soup & divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
+
+Simple is writing less code & and not depending on third-party technologies.
+
+### Expressivity
+
+"thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. Expressive best practices work.
+
+Code that speaks for itself is actually achievable.
+
+### Predictability
+
+It feels good to dive into unknown code... while already knowing what it looks like. Consistency, repeating patterns, simplicity (yeah, again) all coalesce into predictable code. And predictable code means less stress, less friction and happier teams!
+
+Using simple but consistent authoring rules leads to predictability.
+
+### Sustainability
+
+Vanilla CSS is future ready. In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more "sm-this md-that". Only clean and modern code.
+
+## Guiding principles
+
+1. CSS is a *designing* language, not a programming one. And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
+2. Empowering designers (code-savvy or not!) to refine their work autonomously, in the browser is efficient. The needed parts of CSS being intelligible to designers cuts stress, time and promotes good allocation of human resources.
+3.Not all CSS properties are equal. `display`, `position` & the box-model properties are potentially way more damaging than, say, color or type ones. These are the ones designers should be able to use and modify in context.
+4. Components and patterns *need* structure. Trying to abstract it away is vain. Instead, documentation and respect are key. HTML is semantically rich, choose the right tags and refrain from changing them for superficial reasons.
+5. CSS Selectors are vehicles for intention. Every selector particle must have a purpose and if not, must be discarded with. This extraneous « div » in « .card div h2 » is what makes CSS brittle. These are *not* "best practices". The same goes for units. Some suggest type, others, images or rhythm.
+6. Selector types depend on function. Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like this.
+7. Selection specificity should be harnessed, not rejected. Nevertheless, "always" (ahem) keep it as low as possible. Yeah, I know, in 2015 it may have not been easy. But we're in 2023 and lots of new and widely supported functionalities have been released. Use them.
+8. Global scope in CSS is not sin. Remember, CSS is a designing language and the global fits perfectly in design's layered, dimensional approach. Programming best practices are not designing best practices. Embrace design practices.
+7. Far-reaching global design rules must be largely anonymous & unqualified with a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`.
+8. One should wait until a concept is clearly seen and understood before naming it. IF and until then use HTML elements. Premature abstraction or "solving problems we have not encountered yet" are bigger problems than the use of "header" in CSS. Yes, these are programming best practices. But who told you anything was pure?
+9. When more than 3 rules are repeated more than 3 times, a concept *is* emerging. Rules should then be concetrated by naming and using said concept instead of the bare rules.
+10. Named concepts should be autonomous and self-sufficient. As such, named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is not to be reused anywhere else.
+11. Tinkering with named concepts throughout multiple files is strictly prohibited. All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single source of truth https://en.wikipedia.org/wiki/Single_source_of_truth for any concept.
+12. State, variant or structural concepts must be namespaced and prefixed. These concepts may be represented as child or combined classes. Never to be used alone, always with a master or parent concept.Yes, here are "never" *and* "always" in the same sentence. "Double jeopardy, we are fine".
+13. Namespaced and prefixed classes should, until otherwise needed, be implemented with modern and widely supported specificity reducing selectors. One should strive to keep specificity at 21 or below. With a preference for around 10 to 12.
+14. One may not come up with the efficient way to select interface elements. One's intention may not be clear at first. Instead of fruitlessly trying and trying, a code "quarantine" file should be temporarily used until the right selection manifests itself. Still, no quarantine file should ever be published.
+15. HTML should be as simple and expressive as can be. Refrain from over-containing, don't use "div" where you could use "aside". Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is accessible... and simple. https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element. Keep it simple... stupid.
+16. Any HTML element should endorse one role only, as per the famous programming best practice (again, programming in designing). Semantic tags are for... semantics whilst div or span tags are for graphical or logical division. Any type of grid should be implemented with "div" tags.
+17. Any media query adaptation must be included in concepts, not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
+18. Whole stylesheets are better used when global. Media query scopes should be used in HTML `link` tags to promote reuse and optimization concerns. Each design layer should be autonomous, independent and removable.
+19. Component stylesheets should only be served with live components, not in the `head` tag of the document. This way, the problem of loading of unused CSS is practically solved, without any technological debt.
+20. One should make full use of freely available development tools by going with the grain of the Web platform. By using "just-in-time" rulesets, the cascade and intentional selection, the debugging workflow is simpler, lighter and clearer.
+21. Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code. By writing native CSS, one uses CSS better; by writing HTML, one writes HTML better.
+
+
+
+## Authoring rules
+
+[TODO] : link all rules to related principles.
+
+- All component selectors must start with its filename.
+- All paddings must first be uniform and then be modified if necessary.
+- Repeating default rules is discouraged. Any instance should be justified.
+- All class entities besides components must be prefixed.
+- The use of dimension, positioning and display rules should minimized.
+- Components' focus is inward and in no case can they exert outside influence.
+- Rhythm must be applied in one direction only, preferably top.
+- The use of problematic units is discouraged.
+- Tag selectors should be leveraged inside components.
+- One entity per file with a soft cap of about a hundred lines.
+- Selectors must strictly include only necessary selection parts.
+- Duplication of a set of more than 4 rules is discouraged.
+- The use of the global scope is encouraged for all design dimensions.
+- HTML structure should be as flat as possible and bereft of single tag nesting.
+- Rulesets should be auto-sufficient and avoid implicit but necessary rules.
+- Specificity must be kept as low as possible.
+
+## Related tools
+
+Devtools (debugging, experimenting and navigating)
+Code library (use it... or not!)
+Stylelint (lint and inform)
+CSSCSS (find rules duplication in your codebase)

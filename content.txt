@@ -86,440 +86,429 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 
 #### Example
 
-```
-/* given card.css */
+    /* Do */
+    /* card.css */
+    .card {}
 
-/* Do */
-.card {}
-
-/* Don't */
-.small-card {}
-```
+    /* Don't */
+    /* card.css */
+    .small-card {}
 
 ### All paddings must first be uniform and then be modified if necessary. (see #4)
 
-Do
-.card {
-    padding: 20px;
-    padding-top: 30px;
-}
+    /* Do */
+    .card {
+        padding: 20px;
+        padding-top: 30px;
+    }
 
-Don't
-.card {
-    padding: 30px 20px 20px 20px;
-}
+    /* Don't */
+    .card {
+        padding: 30px 20px 20px 20px;
+    }
 
 ### Paddings are to be applied on containing and interactive elements only.
 
 #### Example
 
-Do
-.card header {
-    padding: 10px;
-}
+    /* Do */
+    .card header {
+        padding: 10px;
+    }
 
-Don't
-.card h2 {
-    padding: 10px;
-}
+    /* Don't */
+    .card h2 {
+        padding: 10px;
+    }
 
-! ### Only vertical margins should be applied to content elements. (see #4, #17)
+<del>### Only vertical margins should be applied to content elements. (see #4, #17)</del>
 
 #### Example
 
-Do
-.card p {
-    margin-top: 20px;
-    max-width: 20ch;
-}
+    /* Do */
+    .card p {
+        margin-top: 20px;
+        max-width: 20ch;
+    }
 
-Don't
-.card p {
-    margin-left: 40px;
-    margin-right: 40px;
-}
+    /* Don't */
+    .card p {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 
 ### Typographic elements should use heritage when possible. (see #4, #9)
 
 #### Example
 
-Do
-html {
-    line-height: 1.2;
-}
+    /* Do */
+    html {
+        line-height: 1.2;
+    }
 
-p {
-    line-height: inherit;
-}
+    p {
+        line-height: inherit;
+    }
 
-Don't
-p {
-    line-height: 1.2;
-} 
+    /* Don't */
+    p {
+        line-height: 1.2;
+    }
 
 ### Design tokens should be used for most numerical values.
 
 #### Example
 
-Do
-.card {
-    padding: var(--small-spacing);
-}
+    /* Do */
+    .card {
+        padding: var(--small-spacing);
+    }
 
-Don't
-.card {
-    padding: 20px;
-}
+    /* Don't */
+    .card {
+        padding: 20px;
+    }
 
-### Repeating default rules is discouraged. ~~Any instance should be justified.~~
+### Repeating default rules is discouraged. <del>Any instance should be justified.</del>
 
 #### Example
 
-Do
-.dropdown:not(:hover) {
-    display: none;
-}
+    /* Do */
+    .dropdown:not(:hover) {
+        display: none;
+    }
 
-Don't
-.dropdown {
-    display: none;
-}
+    /* Don't */
+    .dropdown {
+        display: none;
+    }
 
-.dropdown:hover {
-    display: block;
-}
+    .dropdown:hover {
+        display: block;
+    }
 
 ### All class entities besides components must be prefixed. (see #13)
 
 #### Example
 
-Do
-.card.as-circle {
-    width: 20px;
-}
+    /* Do */
+    .card.as-circle {
+        width: 20px;
+    }
 
-Don't
-.card.circle {
-    width: 20px;
-}
+    /* Don't */
+    .card.circle {
+        width: 20px;
+    }
 
 ### Nesting is restricted to one level only.
 
-Do
-.card {
-    & header p {
-        color: grey;
-    }
-}
-
-Don't
-.card {
-    & header {
-        & p {
+    /* Do */
+    .card {
+        & header p {
             color: grey;
         }
     }
-}
+
+    /* Don't */
+    .card {
+        & header {
+            & p {
+                color: grey;
+            }
+        }
+    }
 
 ### The use of specific dimensions should be avoided.
 
 #### Example
 
-Do
-.card {
-    max-width: 30ch;
-}
+    /* Do */
+    .card {
+        max-width: 30ch;
+    }
 
-Don't
-.card {
-    width: 30ch;
-}
+    /* Don't */
+    .card {
+        width: 30ch;
+    }
 
 ### Use attribute selectors to convey unicity.
 
 #### Example
 
-Do
-[id="main"] {
-    max-width: 80ch;
-}
+    /* Do */
+    [id="main"] {
+        max-width: 80ch;
+    }
 
-Don't
-#main {
-    max-width: 80ch;
-}
+    /* Don't */
+    #main {
+        max-width: 80ch;
+    }
 
 ### The use of positioning and display rules should minimized. (see #3)
 
 #### Example
 
-Do
-.card>div {
-    display: flex;
-}
+    /* Do */
+    .card>div {
+        display: flex;
+    }
 
-Don't
-.card div {
-    display: flex;
-}
+    /* Don't */
+    .card div {
+        display: flex;
+    }
 
 ### Overqualified selectors are discouraged.
 
 #### Example
 
-Do
-.card {
-    color: red;
-}
+    /* Do */
+    .card {
+        color: red;
+    }
 
-Don't
-article.card {
-    color: red;
-}
+    /* Don't */
+    article.card {
+        color: red;
+    }
 
 ### Components cannot exert outside influence. (see #11)
 
 #### Example
 
-```
-Do
-.as-pile>*+* {
-    margin-top: 20px;
-}
 
-Don't
-.card {
-    margin-top: 20px;
-}
-```
+    /* Do */
+    .as-pile>*+* {
+        margin-top: 20px;
+    }
+
+    /* Don't */
+    .card {
+        margin-top: 20px;
+    }
+
 
 ### Overflow should not be hidden.
 
 #### Example
 
-Do
-.container {
-    max-height: 50dvh;
-    overflow: auto;
-}
+    /* Do */
+    .container {
+        max-height: 50dvh;
+        overflow: auto;
+    }
 
-Don't
-.container {
-    max-height: 50dvh;
-    overflow: hidden;
-}
+    /* Don't */
+    .container {
+        max-height: 50dvh;
+        overflow: hidden;
+    }
 
 
 ### Numbers in class names are to be avoided.
 
 #### Example
 
-Do
-.card {
-    color: grey;
-    font-size: 18px;
-}
+    /* Do */
+    .card {
+        color: grey;
+        font-size: 18px;
+    }
 
-.card.as-featured {
-    color: red;
-    font-size: 20px;
-}
+    .card.as-featured {
+        color: red;
+        font-size: 20px;
+    }
 
-Don't
-.card {
-    color: grey;
-    font-size: 18px;
-}
+    /* Don't */
+    .card {
+        color: grey;
+        font-size: 18px;
+    }
 
-.card-1 {
-    color: red;
-    font-size: 20px;
-}
+    .card-1 {
+        color: red;
+        font-size: 20px;
+    }
 
 
 ### Magic numbers must be avoided or explained in a line comment.
 
 #### Example
 
-Do
-.card {
-    line-height: var(--line-tight);
-}
+    /* Do */
+    .card {
+        line-height: var(--line-tight);
+    }
 
-Don't
-.card {
-    line-height: 17px;
-}
+    /* Don't */
+    .card {
+        line-height: 17px;
+    }
 
 
 ! ### Entities can't be included in the not() selector.
-
-#### Example
-
-Do
-.
-
 
 ### Rhythm must be applied in one direction only, preferably top. (see #4)
 
 #### Example
 
-```
-Do
-.as-pile>*+* {
-    margin-top: 20px;
-}
 
-Don't 
-.as-pile>* {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-```
+    /* Do */
+    .as-pile>*+* {
+        margin-top: 20px;
+    }
+
+    /* Don't */
+    .as-pile>* {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
 
 ### The use of problematic units is discouraged. (see #6)
 
 #### Example
 
-Do
-nav {
-    max-height: 100dvh;
-}
+    /* Do */
+    nav {
+        max-height: 100dvh;
+    }
 
-Don't
-nav {
-    max-height: vh;
-}
+    /* Don't */
+    nav {
+        max-height: vh;
+    }
 
 ### Tag selectors should be leveraged inside components. (see #5)
 
 #### Example
 
-```
-Do
-.card header {
-    padding: 20px;
-}
+    /* Do */
+    .card header {
+        padding: 20px;
+    }
 
-Don't
-.card .card__header {
-    padding: 20px;
-}
-```
+    /* Don't */
+    .card .card__header {
+        padding: 20px;
+    }
 
 ### One entity per file with a soft cap of about a hundred lines. (see #11, #20)
 
 #### Example
 
-```
-Do
-/* card.css */
-.card {
-    padding: 20px;
-}
+    /* Do */
+    /* card.css */
+    .card {
+        padding: 20px;
+    }
 
-/* .metainfo.css */
-.metainfo {
-    color: grey;
-}
+    /* .metainfo.css */
+    .metainfo {
+        color: grey;
+    }
 
-Don't
-/* card.css */
-.card {
-    padding: 20px;
-}
+    /* Don't */
+    /* card.css */
+    .card {
+        padding: 20px;
+    }
 
-.metainfo {
-    color: grey;
-}
-```
+    .metainfo {
+        color: grey;
+    }
+
 
 ### Selectors must strictly include only necessary selection parts. (see #6, #8)
 
 #### Example
 
-Do
-.card p {
-    font-size: 14px;
-}
+    /* Do */
+    .card p {
+        font-size: 14px;
+    }
 
-Don't
-.card div p {
-    font-size: 14px;
-}
+    /* Don't */
+    .card div p {
+        font-size: 14px;
+    }
 
 ### Duplication of a set of more than 3 rules is discouraged. (see #10)
 
 #### Example
 
-```
-Do
-/* button.css */
-.button {
-    padding: 10px;
-    color: white;
-    background-color: grey;
-    border: 1px solid black;
-}
 
-Don't
-/* card.css */
-.card a {
-    padding: 10px;
-    color: white;
-    background-color: grey;
-    border: 1px solid black;
-}
+    /* Do */
+    /* button.css */
+    .button {
+        padding: 10px;
+        color: white;
+        background-color: grey;
+        border: 1px solid black;
+    }
 
-/* post.css */
-.post button {
-    padding: 10px;
-    color: white;
-    background-color: grey;
-    border: 1px solid black;
-}
-```
+    /* Don't */
+    /* card.css */
+    .card a {
+        padding: 10px;
+        color: white;
+        background-color: grey;
+        border: 1px solid black;
+    }
+
+    /* post.css */
+    .post button {
+        padding: 10px;
+        color: white;
+        background-color: grey;
+        border: 1px solid black;
+    }
+
 
 ### The use of the global scope is encouraged for all fundamental design layers. (see #1, #2, #9)
 
 #### Example
 
-```
-Do
-/* rhythm.css */
-p+p {
-    margin-top: 20px;
-}
 
-Don't
-/* post.css */
-.post p+p {
-    margin-top: 20px;
-}
+    /* Do */
+    /* rhythm.css */
+    p+p {
+        margin-top: 20px;
+    }
 
-/* prose.css */
-.prose p+p {
-    margin-top: 20px;
-}
-```
+    /* Don't */
+    /* post.css */
+    .post p+p {
+        margin-top: 20px;
+    }
+
+    /* prose.css */
+    .prose p+p {
+        margin-top: 20px;
+    }
+
 
 ### HTML structure should be as flat as possible and bereft of single tag nesting. (see #4, #8, #16, #17)
 
 #### Example
 
-Do
-<article>
-    <header></header>
-    <footer></footer>
-</article>
-
-Don't
-<article>
-    <div>
+    <!-- Do -->
+    <article>
         <header></header>
         <footer></footer>
-    </div>
-</article>
+    </article>
+
+    <!-- Don't -->
+    <article>
+        <div>
+            <header></header>
+            <footer></footer>
+        </div>
+    </article>
 
 ! ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12)
 
@@ -528,15 +517,15 @@ Don't
 
 #### Example
 
-Do
-.card :where(h1, h2, h3, h4, h5, h6) {
-    font-size: 24px;
-}
+    /* Do */
+    .card :where(h1, h2, h3, h4, h5, h6) {
+        font-size: 24px;
+    }
 
-Don't
-.card :is(h1, h2, h3, h4, h5, h6) {
-    font-size: 24px;
-}
+    /* Don't */
+    .card :is(h1, h2, h3, h4, h5, h6) {
+        font-size: 24px;
+    }
 
 
 #### Caveat

@@ -5,7 +5,7 @@ Avoiding common styling problems is simple. And you only need Efficient CSS. Not
 ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
 
 Want help enforcing rules? Download the Stylelint config to nudge you and your team into ECSS.
-Eager to build something? Download the ECSS scaffolding library for quick & efficient starting point.
+Eager to build something? Download the ECSS scaffolding library for quick &amp; efficient starting point.
 Want to know the beast? Dive into ECSS principles and documentation.
 Curious about it all? Well, keep scrolling!
 
@@ -23,15 +23,15 @@ Every parcel of CSS has an objective. This objective should be clear to anyone r
 
 ### Consistency
 
-Repeating patterns save time & energy.
+Repeating patterns save time &amp; energy.
 
 Flexible naming guidelines give the codebase a consistency encouraging standardization and reuse. Prefixes and usage guidelines enforced through linting insures everyone on your team will follow ECSS rules.
 
 ### Simplicity
 
-"Simple" is writing less code & and limiting dependencies.
+"Simple" is writing less code &amp; and limiting dependencies.
 
-Class soup & divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
+Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
 
 ### Expressivity
 
@@ -53,14 +53,14 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 
 1. **CSS is a *designing* language, not a programming one.** And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
 2. **Empowering designers (code-savvy or not!) to refine their work autonomously, in the browser, is efficient.** Making the needed parts of CSS being intelligible to designers cuts stress, time and promotes good allocation of human resources, making for a great vector of economic profitability.
-3. **Not all CSS properties are equal.** `display`, `position` & the box-model properties are extremely sensitive and potentially way more damaging than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use and modify in context.
-4. **Properties & units have specific roles and usage.** Limiting their use to these roles enhances clarity and promotes consistency as well as predictability. The same goes for units. Some suggest type, others, images or rhythm. Use them intentionally & rationally to communicate meaning.
+3. **Not all CSS properties are equal.** `display`, `position` &amp; the box-model properties are extremely sensitive and potentially way more damaging than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use and modify in context.
+4. **Properties &amp; units have specific roles and usage.** Limiting their use to these roles enhances clarity and promotes consistency as well as predictability. The same goes for units. Some suggest type, others, images or rhythm. Use them intentionally &amp; rationally to communicate meaning.
 6. **Components and patterns *need* structure.** Trying to abstract it away is vain. Instead, documentation and respect are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"` without understanding its purpose first, then one should not change or remove `<header>` on a whim either.
 6. **CSS Selectors are vehicles for intention.** Every selector particle must have a purpose and if not, must be discarded with. This extraneous « div » in « .card div h2 » is what makes CSS brittle. These are *not* "best practices".
 7. **Selector types all have a function.** Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like this.
 8. **Selection specificity should be harnessed, not rejected.** Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and lots of new and widely supported features have been released. Use them.
 9. **Global scope in CSS is not a sin.** Remember, CSS is a designing language and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
-8. **Global design rules must be largely anonymous & unqualified.** Only a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat & complexity.
+8. **Global design rules must be largely anonymous &amp; unqualified.** Only a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
 9. **One should wait until a concept is clearly understood before naming it.** Until then use HTML elements. Premature abstraction or "solving problems not yet encountered" are bigger problems than the use of "header" in CSS. Yes, these are programming best practices. But who told you development was pure?
 10. **When more than 3 rules are repeated more than 3 times, a concept *is* emerging.** Rules should then be concentrated by naming and using said concept instead of the bare rules. Reusability, expressivity and simplicity are then greatly improved.
 11. **Named concepts should be autonomous and self-sufficient.** As such, named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
@@ -80,7 +80,7 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 
 [TODO] : link all rules to related principles. Vérifier les liens numérotés.
 [TODO] : add consistency principle [x] and others needed for rules
-[TODO] : why, when (do & dont ou exemple détaillé, exceptions)
+[TODO] : why, when (do &amp; dont ou exemple détaillé, exceptions)
 
 ### All component selectors must start with its filename. (see #11, #12)
 
@@ -205,15 +205,15 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 
     /* Do */
     .card {
-        & header p {
+        &amp; header p {
             color: grey;
         }
     }
 
     /* Don't */
     .card {
-        & header {
-            & p {
+        &amp; header {
+            &amp; p {
                 color: grey;
             }
         }
@@ -536,7 +536,7 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 ## Related tools
 
 Browser Inspector (debugging, experimenting and navigating)
-Scaffolding & code library (use it... or not!)
+Scaffolding &amp; code library (use it... or not!)
 Stylelint (lint and inform)
 CSSCSS (find rule duplication in your codebase)
 PurifyCSS, PurgeCSS or Chrome Coverage devtool

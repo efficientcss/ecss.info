@@ -1,0 +1,56 @@
+/* Basic styles for form fields and their labels */
+
+
+label {
+	position: relative;
+	display: inline-flex;
+	align-items: baseline;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex-grow: 0;
+	flex-basis: auto;
+}
+
+input[type=checkbox] {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+input[type=radio] {
+	all: initial;
+	appearance: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+label input[type=checkbox] {
+	display: inline-block;
+	width: 2ch;
+	height: 2ch;
+}
+
+span+input[type="checkbox"] {
+	align-self: center;
+	margin-left: var(--Row);
+}
+
+
+/* Focus styles */
+
+input[type="checkbox"]:focus,
+details>summary:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+input[type="checkbox"]:focus::before,
+details>summary:focus>*::after {
+	box-shadow: 0px 0px 2px 1px var(--ColorSupport);
+}
+
+

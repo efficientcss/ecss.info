@@ -1,0 +1,25 @@
+:root {
+	--Color: var(--ltr-purple);
+	--ColorDk: var(--lt-purple);
+	--ColorLt: var(--tr-purple);
+
+	--ColorBg: var(--dk-primary);
+	--ColorLtBg: var(--primary);
+	--ColorBgAlt: var(--tr-yellow);
+	
+	--ColorLines: var(--tr-purple);
+	
+	--ColorLtSupport: var(--dk-primary);
+	--ColorAccent: var(--dk-yellow);
+	--ColorSupport: var(--lt-purple);
+	--ColorForeign: var(--lt-red);
+	--ColorLocal: var(--lt-blue);
+	--ColorBgControls: var(--dk-purple);
+	--ColorControls: var(--ltr-purple);
+	--ColorBgComplete: var(--dk-green);
+	--ColorBgIncomplete: var(--dk-red);
+	--ColorBgActive: var(--dk-yellow);
+	--ColorComplete: var(--lt-green);
+	--ColorIncomplete: var(--lt-red);
+	--ColorActive: var(--lt-yellow);
+}

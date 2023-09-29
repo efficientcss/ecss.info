@@ -1,0 +1,16 @@
+body {
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--Row);
+}
+
+ol li>strong:first-child {
+	float: left;
+	width: 40ch;
+	overflow: hidden;
+	display: block;
+}
+
+ol li {
+	clear: both;
+}

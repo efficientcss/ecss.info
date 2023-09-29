@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* SuperDIV - Multi-use container ----------------------- */
+	/* API */
+	@layer config {
+		div {
+			--DivDisplay: flex;
+			--DivItemBasis: 0px;
+			--DivItemGrow: 1;
+			--DivItemShrink: 1;
+			--DivItemGutter: var(--Row);
+			--DivItemMaxWidth: initial;
+		}
+	}
+
+	/* Container models ------------ */
+	/* Fluid Grid / Albatross ---------- */
+	/* Holy Albatross. See Heydon Pickering:
+		(https://heydonworks.com/article/the-flexbox-holy-albatross/) */
+		.grille {
+			--DivItemBasis: calc((54ch - 100%) * 999);
+			--DivItemGrow: 1;
+			/* --DivItemShrink: 0; */
+			--DivItemGutter: var(--Row);
+			--DivItemMaxWidth: 100%;
+		}
+
+	/* Prose container ------------- */
+		.prose {
+			--DivDisplay: block;
+			max-width: 70ch;
+			column-width: 30ch;
+			column-count: 2;
+			column-gap: var(--Row);
+		}
+
+		.prose>* {
+			--DivItemGutter: 0;
+			--DivItemMaxWidth: 22ch;
+		}
+
+		.prose>*+* {
+			margin-top: calc(var(--Row) / 2);
+		}
+
+		.prose>*:only-child {
+			column-span: all;
+			max-width: 45ch;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* Scaffolding: properties and default values --------- */
+/* 1. Display & space occupation ---- */
+		div {
+			/* Flex context with
+			row break for fluidity */
+			display: var(--DivDisplay, flex);
+			flex-wrap: wrap;
+			/* Allow inheritance of alignment rules.
+			Facilitates extension by parents */
+			justify-content: inherit;
+			align-items: inherit;
+			gap: var(--DivItemGutter, 0px);
+		}
+
+		div>* {
+			/* Initial dimensions
+			(can be adjusted!) */
+			flex-basis: var(--DivItemBasis, auto);
+			max-width: var(--DivItemMaxWidth, initial);
+			/* Distribute vacant space
+			equally among children */
+			flex-grow: var(--DivItemGrow, 0);
+			flex-shrink: var(--DivItemShrink, 1);
+		}
+
+		/* Break the inheritance chain
+		to allow successive inclusion */
+		div *:not(div)>* {
+			--DivItemBasis: initial;
+			--DivItemGrow: initial;
+			--DivItemShrink: initial;
+			--DivItemGutter: initial;
+			--DivItemMaxWidth: initial;
+		}

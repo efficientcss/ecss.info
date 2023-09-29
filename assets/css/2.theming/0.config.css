@@ -1,0 +1,49 @@
+@layer theming {
+	/* Master configuration ----------------------- */
+	:root {
+		--dk-primary: #101226;
+		--primary: #2D3044;
+		--lt-primary: #7c7c6e;
+		--ltr-primary: #D5D5D2;
+		--ltst-primary: #eaeae6;
+		--brown: #59551D;
+		--lt-brown: #686100;
+		--ltr-brown: #A4A391;
+		--dk-brown: #373409;
+		--blue: #2B46BD;
+		--lt-blue: #A0DAFF;
+		--tr-blue: #80F3FF4F;
+		--red: #FF0003;
+		--lt-red: #ffbdcc;
+		--dk-red: #721E42;
+		--yellow: #FCF0AA;
+		--tr-yellow: #FCFf001F;
+		--lt-yellow: #fbfaf4;
+		--dk-yellow: #684806;
+		--purple: #7a0098;
+		--tr-purple: #ED6BFF1F;
+		--lt-purple: #fceaff;
+		--ltr-purple: #C8CBF6;
+		--dk-purple: #543758;
+		--beige: #fffff7;
+		--dk-beige: #fdfff0;
+		--green: #c8ef8e;
+		--lt-green: #dfff5e;
+		--dk-green: #729764;
+
+		--MinFontSize: 13px;
+		--BaseFontSize: 1.1vw;
+		--MaxFontSize: 18px;
+
+		--Color: var(--ColorText);
+		--BodyWidth: auto;
+		--MaxBodyWidth: 140ch;
+
+		--RowFactor: 1.56125;
+	}
+
+	/* Additional configurable properties */
+	/* to be inserted into the :root set above */
+
+
+}

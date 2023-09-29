@@ -17,9 +17,9 @@
 		<html lang="fr">
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" href="e.css" />
+			<link rel="stylesheet" href="assets/css/e.css" />
 			<!-- <link rel="stylesheet" href="x.dev/debug.css" /> -->
-			<link rel="stylesheet" href="x.dev/quarantine.css" />
+			<link rel="stylesheet" href="assets/css/x.dev/quarantine.css" />
 			<meta charset="UTF-8" />
 			<title>ECSS</title>
 		</head>

@@ -5,7 +5,9 @@
 	</xsl:template>
 	<xsl:template match="root" mode="body" name="body">
 		<body>
-			<xsl:apply-templates mode="main-content" />
+			<main>
+				<xsl:apply-templates mode="main-content" />
+			</main>
 		</body>
 	</xsl:template>
 </xsl:stylesheet>

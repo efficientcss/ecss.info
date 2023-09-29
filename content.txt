@@ -1,3 +1,4 @@
+<header>
 # ECSS
 
 Avoiding common styling problems is simple. And you only need Efficient CSS. Nothing more.
@@ -8,47 +9,74 @@ Want help enforcing rules? Download the Stylelint config to nudge you and your t
 Eager to build something? Download the ECSS scaffolding library for quick &amp; efficient starting point.
 Want to know the beast? Dive into ECSS principles and documentation.
 Curious about it all? Well, keep scrolling!
+</header>
 
+<section>
 ## Why ECSS?
 
 Because CSS as a language is misunderstood and undeservedly maligned. Because simple rules and low impact tools can go a long way in making sure the CSS codebase is light, simple and scalable. ECSS is a global approach to producing efficient design systems with CSS.
-
+</section>
+<section>
 ## ECSS values
 
+<div style="--DivItemBasis: 40ch;">
+<article>
 ### Intentionality
 
-Clear objectives, rational decisions.
+**Clear objectives, rational decisions.**
 
 Every parcel of CSS has an objective. This objective should be clear to anyone reading the code. Be it HTML or CSS. Selectors are the perfect vehicle for intentionality. ECSS incentivizes the use of rational selectors.
 
+</article>
+
+<article>
 ### Consistency
 
 Repeating patterns save time &amp; energy.
 
 Flexible naming guidelines give the codebase a consistency encouraging standardization and reuse. Prefixes and usage guidelines enforced through linting insures everyone on your team will follow ECSS rules.
 
+</article>
+
+<article>
 ### Simplicity
 
 "Simple" is writing less code &amp; and limiting dependencies.
 
 Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
 
+</article>
+
+<article>
 ### Expressivity
 
 Code that speaks for itself is actually achievable.
 
 "thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 br-1 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. Expressive best practices work.
 
+</article>
+
+<article>
 ### Predictability
 
 Using simple but consistent authoring rules leads to predictability.
 
 It feels good to dive into unknown code... while already knowing what it looks like. Consistency, repeating patterns, simplicity (yes, again) all coalesce into predictable code. And predictable code means less stress, less friction and happier teams!
 
+</article>
+
+<article>
 ### Sustainability
 
-Vanilla CSS is future ready. In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more "sm-this md-that". Only clean and modern code.
+Vanilla CSS is future ready.
 
+In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`. Only clean and modern code.
+
+</article>
+</div>
+</section>
+
+<section>
 ## Guiding principles
 
 1. **CSS is a *designing* language, not a programming one.** And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
@@ -75,7 +103,9 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 20. **Component styling should only be served with live components.** Not as a big minified file in the `head` tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. (gives CSS file path in component file)
 21. **One should make full use of freely available development tools by going with the grain of the Web platform.** By using "just-in-time" rulesets, the cascade and intentional selection, the debugging workflow is simpler, lighter and clearer.
 22. **Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code.** By writing native CSS, one uses CSS better; by writing HTML, one writes HTML better.
+</section>
 
+<section>
 ## Authoring rules
 
 [TODO] : link all rules to related principles. Vérifier les liens numérotés.
@@ -88,11 +118,15 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 
     /* Do */
     /* card.css */
-    .card {}
+    .card {
+        ...
+    }
 
     /* Don't */
     /* card.css */
-    .small-card {}
+    .small-card {
+        ...
+    }
 
 ### All paddings must first be uniform and then be modified if necessary. (see #4)
 
@@ -121,14 +155,13 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
         padding: 10px;
     }
 
-<del>### Only vertical margins should be applied to content elements. (see #4, #17)</del>
+### Horizontal margins should not be applied to content elements. (see #4, #17)
 
 #### Example
 
     /* Do */
-    .card p {
-        margin-top: 20px;
-        max-width: 20ch;
+    .card {
+        padding: 20px;
     }
 
     /* Don't */
@@ -136,6 +169,10 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
         margin-left: 40px;
         margin-right: 40px;
     }
+
+#### Exception
+
+Indented items like lists or blockquotes may use `margin-left`
 
 ### Typographic elements should use heritage when possible. (see #4, #9)
 
@@ -531,7 +568,7 @@ Vanilla CSS is future ready. In practice it means being at the forefront of prog
 #### Caveat
 
 Sometimes it makes sense to add specificity. But don't do it until proven necessary.
-
+</section>
 
 ## Related tools
 

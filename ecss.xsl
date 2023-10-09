@@ -28,6 +28,6 @@
 			<title>ECSS</title>
 		</head>
 		<xsl:call-template name="body" />
-		</html>
-	</xsl:template>
+	</html>
+</xsl:template>
 </xsl:stylesheet>

@@ -8,11 +8,11 @@
 			<header>
 				<h1>ecss</h1>
 				<nav>
-					<a href="">Intro</a>
-					<a href="">Values</a>
-					<a href="">Principles</a>
-					<a href="">Rules</a>
-					<a href="">Tools</a>
+					<a href="#intro">Intro</a>
+					<a href="#values">Values</a>
+					<a href="#principles">Principles</a>
+					<a href="#rules">Rules</a>
+					<a href="#tools">Tools</a>
 				</nav>
 			</header>
 			<main>

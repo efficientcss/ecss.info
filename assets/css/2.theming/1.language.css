@@ -11,7 +11,7 @@
 		--PerfectFourth: 1.333;
 		--AugmentedFourth: 1.414;
 
-		--Shortest: calc(var(--Short) / var(--Scale, 1));
+		--Shorter: calc(var(--Short) / var(--Scale, 1));
 		--Short: calc(var(--Base, 1) / var(--Scale, 1));
 		--Base: 1;
 		--Tall: calc(var(--Base, 1) * var(--Scale, 1));
@@ -19,6 +19,7 @@
 		--Tallest: calc(var(--Taller) * var(--Scale, 1));
 		--Huge: calc(var(--Tallest) * var(--Scale, 1));
 		--Huger: calc(var(--Huge) * var(--Scale, 1));
+		--Hugest: calc(var(--Huger) * var(--Scale, 1));
 
 		--ease-out-quad:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		--ease-out-back:     cubic-bezier(0.175, 0.885, 0.32, 1.275);

@@ -1,6 +1,6 @@
 @layer theming {
 	/* Master configuration ----------------------- */
-	:root {
+	html {
 		--dk-primary: #101226;
 		--primary: #2D3044;
 		--lt-primary: #7c7c6e;

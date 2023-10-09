@@ -1,174 +1,370 @@
 <header>
-# ECSS
 
 Avoiding common styling problems is simple. And you only need Efficient CSS. Nothing more.
 
-ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
+**ECSS sets simple rules for simple styling.** No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
 
-Want help enforcing rules? Download the Stylelint config to nudge you and your team into ECSS.
-Eager to build something? Download the ECSS scaffolding library for quick &amp; efficient starting point.
-Want to know the beast? Dive into ECSS principles and documentation.
-Curious about it all? Well, keep scrolling!
 </header>
+<section>
+<div style="--DivItemBasis: 12rem;">
+<section>
+<h3 class="h4">Want help enforcing rules?</h3>
 
+Download the Stylelint config to nudge you and your team into ECSS.
+
+</section>
+
+<section>
+<h3 class="h4">Eager to build something?</h3>
+
+Download the ECSS scaffolding library for quick &amp; efficient starting point.
+
+</section>
+
+<section>
+<h3 class="h4">Want to know the beast?</h3>
+
+Dive into ECSS principles and documentation.
+
+</section>
+
+<section>
+<h3 class="h4">Curious about it all?</h3>
+
+Well, keep scrolling!
+
+</section>
+</div>
+
+</section>
 <section>
 ## Why ECSS?
 
 Because CSS as a language is misunderstood and undeservedly maligned. Because simple rules and low impact tools can go a long way in making sure the CSS codebase is light, simple and scalable. ECSS is a global approach to producing efficient design systems with CSS.
+
 </section>
 <section>
 ## ECSS values
 
-<div style="--DivItemBasis: 40ch;">
-<article>
+<div style="--DivItemBasis: 20rem;">
+<section>
 ### Intentionality
 
 **Clear objectives, rational decisions.**
 
 Every parcel of CSS has an objective. This objective should be clear to anyone reading the code. Be it HTML or CSS. Selectors are the perfect vehicle for intentionality. ECSS incentivizes the use of rational selectors.
 
-</article>
-
-<article>
-### Consistency
-
-Repeating patterns save time &amp; energy.
-
-Flexible naming guidelines give the codebase a consistency encouraging standardization and reuse. Prefixes and usage guidelines enforced through linting insures everyone on your team will follow ECSS rules.
-
-</article>
-
-<article>
-### Simplicity
-
-"Simple" is writing less code &amp; and limiting dependencies.
-
-Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
-
-</article>
-
-<article>
-### Expressivity
-
-Code that speaks for itself is actually achievable.
-
-"thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 br-1 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. Expressive best practices work.
-
-</article>
-
-<article>
-### Predictability
-
-Using simple but consistent authoring rules leads to predictability.
-
-It feels good to dive into unknown code... while already knowing what it looks like. Consistency, repeating patterns, simplicity (yes, again) all coalesce into predictable code. And predictable code means less stress, less friction and happier teams!
-
-</article>
-
-<article>
-### Sustainability
-
-Vanilla CSS is future ready.
-
-In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`. Only clean and modern code.
-
-</article>
-</div>
 </section>
 
 <section>
+### Consistency
+
+**Repeating patterns save time &amp; energy.**
+
+Flexible naming guidelines give the codebase a consistency encouraging standardization and reuse. Prefixes and usage guidelines enforced through linting insures everyone on your team will follow ECSS rules.
+
+</section>
+
+<section>
+### Simplicity
+
+**"Simple" is writing less code &amp; and limiting dependencies.**
+
+Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
+
+</section>
+
+<section>
+### Expressivity
+
+**Code that speaks for itself is actually achievable.**
+
+"thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 br-1 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. Expressive best practices work.
+
+</section>
+
+<section>
+### Predictability
+
+**Using simple but consistent authoring rules leads to predictability.**
+
+It feels good to dive into unknown code... while already knowing what it looks like. Consistency, repeating patterns, simplicity (yes, again) all coalesce into predictable code. And predictable code means less stress, less friction and happier teams!
+
+</section>
+
+<section>
+### Sustainability
+
+**Vanilla CSS is future ready.**
+
+In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`. Only clean and modern code.
+
+</section>
+</div>
+</section>
+<section>
+
 ## Guiding principles
 
-1. **CSS is a *designing* language, not a programming one.** And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
-2. **Empowering designers (code-savvy or not!) to refine their work autonomously, in the browser, is efficient.** Making the needed parts of CSS being intelligible to designers cuts stress, time and promotes good allocation of human resources, making for a great vector of economic profitability.
-3. **Not all CSS properties are equal.** `display`, `position` &amp; the box-model properties are extremely sensitive and potentially way more damaging than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use and modify in context.
-4. **Properties &amp; units have specific roles and usage.** Limiting their use to these roles enhances clarity and promotes consistency as well as predictability. The same goes for units. Some suggest type, others, images or rhythm. Use them intentionally &amp; rationally to communicate meaning.
-6. **Components and patterns *need* structure.** Trying to abstract it away is vain. Instead, documentation and respect are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"` without understanding its purpose first, then one should not change or remove `<header></header>` on a whim either.
-6. **CSS Selectors are vehicles for intention.** Every selector particle must have a purpose and if not, must be discarded with. This extraneous « div » in « .card div h2 » is what makes CSS brittle. These are *not* "best practices".
-7. **Selector types all have a function.** Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like this.
-8. **Selection specificity should be harnessed, not rejected.** Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and lots of new and widely supported features have been released. Use them.
-9. **Global scope in CSS is not a sin.** Remember, CSS is a designing language and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
-8. **Global design rules must be largely anonymous &amp; unqualified.** Only a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
-9. **One should wait until a concept is clearly understood before naming it.** Until then use HTML elements. Premature abstraction or "solving problems not yet encountered" are bigger problems than the use of "header" in CSS. Yes, these are programming best practices. But who told you development was pure?
-10. **When more than 3 rules are repeated more than 3 times, a concept *is* emerging.** Rules should then be concentrated by naming and using said concept instead of the bare rules. Reusability, expressivity and simplicity are then greatly improved.
-11. **Named concepts should be autonomous and self-sufficient.** As such, named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
-12. **Manipulating named concepts throughout multiple files is strictly prohibited.** All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single source of truth https://en.wikipedia.org/wiki/Single_source_of_truth for any concept.
-13. **State, variant or structural concepts must be namespaced and prefixed.** These concepts may be represented as child or combined classes. Never to be used alone, always with a master or parent concept. Yes, here are both "never" *and* "always" in the same sentence. "Double jeopardy, we are fine".
-14. **Namespaced classes should generally be implemented with specificity reducing selectors.** Unless otherwise needed, one should strive to keep specificity at 21 or below. With a preference for around 10 to 12. Modern and widely supported pseudo-selectors must here be used.
-15. **One may not come up at first with the efficient way to select interface elements.** One's intention may not be clear at the beginning of a styling job. Instead of fruitlessly trying and trying, a code "quarantine" file should be temporarily used until the right selection manifests itself. Still, no quarantine file should ever be published publicly.
-16. **HTML should be as simple and expressive as can be.** Refrain from over-containing, don't use "div" where you could use "aside". Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is [accessible](https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element). Keep it simple... Suzy.
-17. **Any HTML element should endorse one role only.** As per the famous programming [best practice](https://en.wikipedia.org/wiki/Single-responsibility_principle) (again, programming in designing), semantic tags are for... semantics whilst `div` or `span` tags are for graphical or logical division. Any type of grid should be implemented with `div` tags.
-18. **Any media query adaptation must be included in its related concept's definition.** Not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
-19. **Whole stylesheets are better used when global.** Media query scopes should be used in HTML `link` tags to promote reuse, performance and optimization concerns. Each fundamental design layer should be autonomous, independent and removable.
-20. **Component styling should only be served with live components.** Not as a big minified file in the `head` tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. (gives CSS file path in component file)
-21. **One should make full use of freely available development tools by going with the grain of the Web platform.** By using "just-in-time" rulesets, the cascade and intentional selection, the debugging workflow is simpler, lighter and clearer.
-22. **Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code.** By writing native CSS, one uses CSS better; by writing HTML, one writes HTML better.
+<article>
+### CSS is a *designing* language, not a programming one.
+
+And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
+
+</article>
+
+<article>
+### Empowering designers (code-savvy or not!) to refine their work autonomously, in the browser, is efficient.
+
+Making the needed parts of CSS being intelligible to designers cuts stress, time and promotes good allocation of human resources, making for a great vector of economic profitability.
+
+</article>
+
+<article>
+### Not all CSS properties are equal.
+
+`display`, `position` &amp; the box-model properties are extremely sensitive and potentially way more damaging than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use and modify in context.
+
+</article>
+
+<article>
+### Properties &amp; units have specific roles and usage.
+
+Limiting their use to these roles enhances clarity and promotes consistency as well as predictability. The same goes for units. Some suggest type, others, images or rhythm. Use them intentionally &amp; rationally to communicate meaning.
+
+</article>
+
+<article>
+### Components and patterns *need* structure. 
+
+Trying to abstract it away is vain. Instead, documentation and respect are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"` without understanding its purpose first, then one should not change or remove `<header></header>` on a whim either.
+
+</article>
+
+<article>
+### CSS Selectors are vehicles for intention. 
+
+Every selector particle must have a purpose and if not, must be discarded with. This extraneous « div » in « .card div h2 » is what makes CSS brittle. These are *not* "best practices".
+
+</article>
+
+<article>
+### Selector types all have a function. 
+
+Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like this.
+
+</article>
+
+<article>
+### Selection specificity should be harnessed, not rejected. 
+
+Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and lots of new and widely supported features have been released. Use them.
+
+</article>
+
+<article>
+### Global scope in CSS is not a sin. 
+
+Remember, CSS is a designing language and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
+
+</article>
+
+<article>
+### Global design rules must be largely anonymous &amp; unqualified. 
+
+Only a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
+
+</article>
+
+<article>
+### One should wait until a concept is clearly understood before naming it. 
+
+Until then use HTML elements. Premature abstraction or "solving problems not yet encountered" are bigger problems than the use of "header" in CSS. Yes, these are programming best practices. But who told you development was pure?
+
+</article>
+
+<article>
+### When more than 3 rules are repeated more than 3 times, a concept *is* emerging. 
+
+Rules should then be concentrated by naming and using said concept instead of the bare rules. Reusability, expressivity and simplicity are then greatly improved.
+
+</article>
+
+<article>
+### Named concepts should be autonomous and self-sufficient. 
+
+As such, named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
+
+</article>
+
+<article>
+### Manipulating named concepts throughout multiple files is strictly prohibited. 
+
+All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single source of truth https://en.wikipedia.org/wiki/Single_source_of_truth for any concept.
+
+</article>
+
+<article>
+### State, variant or structural concepts must be namespaced and prefixed. 
+
+These concepts may be represented as child or combined classes. Never to be used alone, always with a master or parent concept. Yes, here are both "never" *and* "always" in the same sentence. "Double jeopardy, we are fine".
+
+</article>
+
+<article>
+### Namespaced classes should generally be implemented with specificity reducing selectors. 
+
+Unless otherwise needed, one should strive to keep specificity at 21 or below. With a preference for around 10 to 12. Modern and widely supported pseudo-selectors must here be used.
+
+</article>
+
+<article>
+### One may not come up at first with the efficient way to select interface elements. 
+
+One's intention may not be clear at the beginning of a styling job. Instead of fruitlessly trying and trying, a code "quarantine" file should be temporarily used until the right selection manifests itself. Still, no quarantine file should ever be published publicly.
+
+</article>
+
+<article>
+### HTML should be as simple and expressive as can be. 
+
+Refrain from over-containing, don't use "div" where you could use "aside". Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is [accessible](https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element). Keep it simple... Suzy.
+
+</article>
+
+<article>
+### Any HTML element should endorse one role only. 
+
+As per the famous programming [best practice](https://en.wikipedia.org/wiki/Single-responsibility_principle) (again, programming in designing), semantic tags are for... semantics whilst `div` or `span` tags are for graphical or logical division. Any type of grid should be implemented with `div` tags.
+
+</article>
+
+<article>
+### Any media query adaptation must be included in its related concept's definition. 
+
+Not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
+
+</article>
+
+<article>
+### Whole stylesheets are better used when global. 
+
+Media query scopes should be used in HTML `link` tags to promote reuse, performance and optimization concerns. Each fundamental design layer should be autonomous, independent and removable.
+
+</article>
+
+<article>
+### Component styling should only be served with live components. 
+
+Not as a big minified file in the `head` tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. (gives CSS file path in component file)
+
+</article>
+
+<article>
+### One should make full use of freely available development tools by going with the grain of the Web platform. 
+
+By using "just-in-time" rulesets, the cascade and intentional selection, the debugging workflow is simpler, lighter and clearer.
+
+</article>
+
+<article>
+### Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code. 
+
+By writing native CSS, one uses CSS better; by writing HTML, one writes HTML better.
+
+</article>
+
 </section>
 
 <section>
 ## Authoring rules
 
-[TODO] : link all rules to related principles. Vérifier les liens numérotés.
-[TODO] : add consistency principle [x] and others needed for rules
-[TODO] : why, when (do &amp; dont ou exemple détaillé, exceptions)
+- [TODO] : link all rules to related principles. Vérifier les liens numérotés.
+- [TODO] : add consistency principle [x] and others needed for rules
+- [TODO] : why, when (do &amp; dont ou exemple détaillé, exceptions)
+- [TODO] : use of style attributes with custom properties.
 
-### All component selectors must start with its filename. (see #11, #12)
+### All component selectors must start with its filename. <small>(see #11, #12)</small>
 
 #### Example
 
-    /* Do */
-    /* card.css */
-    .card {
-        ...
-    }
+<div>
+```css
+/* Do */
+/* card.css */
+.card {
+    ...
+}
+```
 
-    /* Don't */
-    /* card.css */
-    .small-card {
-        ...
-    }
+```css
+/* Don't */
+/* card.css */
+.small-card {
+    ...
+}
+```
+</div>
 
 ### All paddings must first be uniform and then be modified if necessary. (see #4)
 
-    /* Do */
-    .card {
-        padding: 20px;
-        padding-top: 30px;
-    }
+<div>
+```css
+/* Do */
+.card {
+    padding: 20px;
+    padding-top: 30px;
+}
+```
 
-    /* Don't */
-    .card {
-        padding: 30px 20px 20px 20px;
-    }
+```css
+/* Don't */
+.card {
+    padding: 30px 20px 20px 20px;
+}
+```
+</div>
 
 ### Paddings are to be applied on containing and interactive elements only.
 
 #### Example
 
-    /* Do */
-    .card header {
-        padding: 10px;
-    }
+<div>
+```css
+/* Do */
+.card header {
+    padding: 10px;
+}
+```
 
-    /* Don't */
-    .card h2 {
-        padding: 10px;
-    }
+```css
+/* Don't */
+.card h2 {
+    padding: 10px;
+}
+```
+</div>
 
 ### Horizontal margins should not be applied to content elements. (see #4, #17)
 
 #### Example
 
-    /* Do */
-    .card {
-        padding: 20px;
-    }
+<div>
+```css
+/* Do */
+.card {
+    padding: 20px;
+}
+```
 
-    /* Don't */
-    .card p {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
+```css
+/* Don't */
+.card p {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+```
+</div>
 
 #### Exception
 
@@ -178,332 +374,445 @@ Indented items like lists or blockquotes may use `margin-left`
 
 #### Example
 
-    /* Do */
-    html {
-        line-height: 1.2;
-    }
+<div>
+```css
+/* Do */
+html {
+    line-height: 1.2;
+}
 
-    p {
-        line-height: inherit;
-    }
+p {
+    line-height: inherit;
+}
+```
 
-    /* Don't */
-    p {
-        line-height: 1.2;
-    }
+```css
+/* Don't */
+p {
+    line-height: 1.2;
+}
+```
+</div>
 
 ### Design tokens should be used for most numerical values.
 
 #### Example
 
-    /* Do */
-    .card {
-        padding: var(--small-spacing);
-    }
+<div>
+```css
+/* Do */
+.card {
+    padding: var(--small-spacing);
+}
+```
 
-    /* Don't */
-    .card {
-        padding: 20px;
-    }
+```css
+/* Don't */
+.card {
+    padding: 20px;
+}
+```
+</div>
 
 ### Repeating default rules is discouraged. <del>Any instance should be justified.</del>
 
 #### Example
 
-    /* Do */
-    .dropdown:not(:hover) {
-        display: none;
-    }
+<div>
+```css
+/* Do */
+.dropdown:not(:hover) {
+    display: none;
+}
+```
 
-    /* Don't */
-    .dropdown {
-        display: none;
-    }
+```css
+/* Don't */
+.dropdown {
+    display: none;
+}
 
-    .dropdown:hover {
-        display: block;
-    }
+.dropdown:hover {
+    display: block;
+}
+```
+</div>
 
 ### All class entities besides components must be prefixed. (see #13)
 
 #### Example
+<div>
+```css
+/* Do */
+.card.as-circle {
+    width: 20px;
+}
+```
 
-    /* Do */
-    .card.as-circle {
-        width: 20px;
-    }
-
-    /* Don't */
-    .card.circle {
-        width: 20px;
-    }
+```css
+/* Don't */
+.card.circle {
+    width: 20px;
+}
+```
+</div>
 
 ### Nesting is restricted to one level only.
 
-    /* Do */
-    .card {
-        &amp; header p {
+<div>
+```css
+/* Do */
+.card {
+    &amp; header p {
+        color: grey;
+    }
+}
+```
+
+```css
+/* Don't */
+.card {
+    &amp; header {
+        &amp; p {
             color: grey;
         }
     }
-
-    /* Don't */
-    .card {
-        &amp; header {
-            &amp; p {
-                color: grey;
-            }
-        }
-    }
+}
+```
+</div>
 
 ### The use of specific dimensions should be avoided.
 
 #### Example
 
-    /* Do */
-    .card {
-        max-width: 30ch;
-    }
+<div>
+```css
+/* Do */
+.card {
+    max-width: 30ch;
+}
+```
 
-    /* Don't */
-    .card {
-        width: 30ch;
-    }
+```css
+/* Don't */
+.card {
+    width: 30ch;
+}
+```
+</div>
 
 ### Use attribute selectors to convey unicity.
 
 #### Example
 
-    /* Do */
-    [id="main"] {
-        max-width: 80ch;
-    }
+<div>
+```css
+/* Do */
+[id="main"] {
+    max-width: 80ch;
+}
+```
 
-    /* Don't */
-    #main {
-        max-width: 80ch;
-    }
+```css
+/* Don't */
+#main {
+    max-width: 80ch;
+}
+```
+</div>
 
 ### The use of positioning and display rules should minimized. (see #3)
 
 #### Example
 
-    /* Do */
-    .card>div {
-        display: flex;
-    }
+<div>
+```css
+/* Do */
+.card>div {
+    display: flex;
+}
+```
 
-    /* Don't */
-    .card div {
-        display: flex;
-    }
+```css
+/* Don't */
+.card div {
+    display: flex;
+}
+```
+</div>
 
 ### Overqualified selectors are discouraged.
 
 #### Example
 
-    /* Do */
-    .card {
-        color: red;
-    }
+<div>
+```css
+/* Do */
+.card {
+    color: red;
+}
+```
 
-    /* Don't */
-    article.card {
-        color: red;
-    }
+```css
+/* Don't */
+article.card {
+    color: red;
+}
+```
+</div>
 
 ### Components cannot exert outside influence. (see #11)
 
 #### Example
 
 
-    /* Do */
-    .as-pile>*+* {
-        margin-top: 20px;
-    }
+<div>
+```css
+/* Do */
+.as-pile>*+* {
+    margin-top: 20px;
+}
+```
 
-    /* Don't */
-    .card {
-        margin-top: 20px;
-    }
+```css
+/* Don't */
+.card {
+    margin-top: 20px;
+}
+```
+</div>
 
 
 ### Overflow should not be hidden.
 
 #### Example
 
-    /* Do */
-    .container {
-        max-height: 50dvh;
-        overflow: auto;
-    }
+<div>
+```css
+/* Do */
+.container {
+    max-height: 50dvh;
+    overflow: auto;
+}
+```
 
-    /* Don't */
-    .container {
-        max-height: 50dvh;
-        overflow: hidden;
-    }
+```css
+/* Don't */
+.container {
+    max-height: 50dvh;
+    overflow: hidden;
+}
+```
+</div>
 
 
 ### Numbers in class names are to be avoided.
 
 #### Example
 
-    /* Do */
-    .card {
-        color: grey;
-        font-size: 18px;
-    }
+<div>
+```css
+/* Do */
+.card {
+    color: grey;
+    font-size: 18px;
+}
 
-    .card.as-featured {
-        color: red;
-        font-size: 20px;
-    }
+.card.as-featured {
+    color: red;
+    font-size: 20px;
+}
+```
 
-    /* Don't */
-    .card {
-        color: grey;
-        font-size: 18px;
-    }
+```css
+/* Don't */
+.card {
+    color: grey;
+    font-size: 18px;
+}
 
-    .card-1 {
-        color: red;
-        font-size: 20px;
-    }
+.card-1 {
+    color: red;
+    font-size: 20px;
+}
+```
+</div>
 
 
 ### Magic numbers must be avoided or explained in a line comment.
 
 #### Example
 
-    /* Do */
-    .card {
-        line-height: var(--line-tight);
-    }
+<div>
+```css
+/* Do */
+.card {
+    line-height: var(--line-tight);
+}
+```
 
-    /* Don't */
-    .card {
-        line-height: 17px;
-    }
+```css
+/* Don't */
+.card {
+    line-height: 17px;
+}
+```
+</div>
 
 
-! ### Entities can't be included in the not() selector.
+### Entities cannot be included in the not() selector.
 
 ### Rhythm must be applied in one direction only, preferably top. (see #4)
 
 #### Example
 
 
-    /* Do */
-    .as-pile>*+* {
-        margin-top: 20px;
-    }
+<div>
+```css
+/* Do */
+.as-pile>*+* {
+    margin-top: 20px;
+}
+```
 
-    /* Don't */
-    .as-pile>* {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+```css
+/* Don't */
+.as-pile>* {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+```
+</div>
 
 
 ### The use of problematic units is discouraged. (see #6)
 
 #### Example
 
-    /* Do */
-    nav {
-        max-height: 100dvh;
-    }
+<div>
+```css
+/* Do */
+nav {
+    max-height: 100dvh;
+}
+```
 
-    /* Don't */
-    nav {
-        max-height: vh;
-    }
+```css
+/* Don't */
+nav {
+    max-height: 100vh;
+}
+```
+</div>
 
 ### Tag selectors should be leveraged inside components. (see #5)
 
 #### Example
 
-    /* Do */
-    .card header {
-        padding: 20px;
-    }
+<div>
+```css
+/* Do */
+.card header {
+    padding: 20px;
+}
+```
 
-    /* Don't */
-    .card .card__header {
-        padding: 20px;
-    }
+```css
+/* Don't */
+.card .card__header {
+    padding: 20px;
+}
+```
+</div>
 
 ### One entity per file with a soft cap of about a hundred lines. (see #11, #20)
 
 #### Example
 
-    /* Do */
-    /* card.css */
-    .card {
-        padding: 20px;
-    }
+<div>
+```css
+/* Do */
+/* card.css */
+.card {
+    padding: 20px;
+}
 
-    /* .metainfo.css */
-    .metainfo {
-        color: grey;
-    }
+/* .metainfo.css */
+.metainfo {
+    color: grey;
+}
+```
 
-    /* Don't */
-    /* card.css */
-    .card {
-        padding: 20px;
-    }
+```css
+/* Don't */
+/* card.css */
+.card {
+    padding: 20px;
+}
 
-    .metainfo {
-        color: grey;
-    }
+.metainfo {
+    color: grey;
+}
+```
+</div>
 
 
 ### Selectors must strictly include only necessary selection parts. (see #6, #8)
 
 #### Example
 
-    /* Do */
-    .card p {
-        font-size: 14px;
-    }
+<div>
+```css
+/* Do */
+.card p {
+    font-size: 14px;
+}
+```
 
-    /* Don't */
-    .card div p {
-        font-size: 14px;
-    }
+```css
+/* Don't */
+.card div p {
+    font-size: 14px;
+}
+```
+</div>
 
 ### Duplication of a set of more than 3 rules is discouraged. (see #10)
 
 #### Example
 
 
-    /* Do */
-    /* button.css */
-    .button {
-        padding: 10px;
-        color: white;
-        background-color: grey;
-        border: 1px solid black;
-    }
+<div>
+```css
+/* Do */
+/* button.css */
+.button {
+    padding: 10px;
+    color: white;
+    background-color: grey;
+    border: 1px solid black;
+}
+```
 
-    /* Don't */
-    /* card.css */
-    .card a {
-        padding: 10px;
-        color: white;
-        background-color: grey;
-        border: 1px solid black;
-    }
+```css
+/* Don't */
+/* card.css */
+.card a {
+    padding: 10px;
+    color: white;
+    background-color: grey;
+    border: 1px solid black;
+}
 
-    /* post.css */
-    .post button {
-        padding: 10px;
-        color: white;
-        background-color: grey;
-        border: 1px solid black;
-    }
+/* post.css */
+.post button {
+    padding: 10px;
+    color: white;
+    background-color: grey;
+    border: 1px solid black;
+}
+```
+</div>
 
 
 ### The use of the global scope is encouraged for all fundamental design layers. (see #1, #2, #9)
@@ -511,41 +820,61 @@ Indented items like lists or blockquotes may use `margin-left`
 #### Example
 
 
-    /* Do */
-    /* rhythm.css */
-    p+p {
-        margin-top: 20px;
-    }
+<div>
+```css
+/* Do */
+/* rhythm.css */
+p+p {
+    margin-top: 20px;
+}
+```
 
-    /* Don't */
-    /* post.css */
-    .post p+p {
-        margin-top: 20px;
-    }
+```css
+/* Don't */
+/* post.css */
+.post p+p {
+    margin-top: 20px;
+}
 
-    /* prose.css */
-    .prose p+p {
-        margin-top: 20px;
-    }
+/* prose.css */
+.prose p+p {
+    margin-top: 20px;
+}
+```
+</div>
 
 
 ### HTML structure should be as flat as possible and bereft of single tag nesting. (see #4, #8, #16, #17)
 
 #### Example
 
-    <!-- Do -->
-    <article>
+<div>
+```html
+<!-- Do -->
+<article>
+    <header></header>
+    <footer></footer>
+</article>
+```
+
+```html
+<!-- Don't -->
+<article>
+    <div>
         <header></header>
         <footer></footer>
-    </article>
+    </div>
+</article>
+```
 
-    <!-- Don't -->
-    <article>
-        <div>
-            <header></header>
-            <footer></footer>
-        </div>
-    </article>
+<aside>
+
+#### Caveat
+
+Sometimes it could make sense to add a div even if it's the only child. The case of a grid comes to mind.
+
+</aside>
+</div>
 
 ! ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12)
 
@@ -554,20 +883,27 @@ Indented items like lists or blockquotes may use `margin-left`
 
 #### Example
 
-    /* Do */
-    .card :where(h1, h2, h3, h4, h5, h6) {
-        font-size: 24px;
-    }
+<div>
+```css
+/* Do */
+.card :where(h1, h2, h3, h4, h5, h6) {
+    font-size: 24px;
+}
+```
 
-    /* Don't */
-    .card :is(h1, h2, h3, h4, h5, h6) {
-        font-size: 24px;
-    }
+```css
+/* Don't */
+.card :is(h1, h2, h3, h4, h5, h6) {
+    font-size: 24px;
+}
+```
+</div>
 
 
 #### Caveat
 
 Sometimes it makes sense to add specificity. But don't do it until proven necessary.
+
 </section>
 
 ## Related tools

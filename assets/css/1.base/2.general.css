@@ -14,6 +14,8 @@
  * when integrated into content. */
 	link, script { display: none; }
 
+/* Anchor decoration is unwanted in nav. */
+	nav a { text-decoration: none; }
 
 /* Restrict images to dimensions
  * of their parent. Avoid space

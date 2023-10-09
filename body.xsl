@@ -5,6 +5,16 @@
 	</xsl:template>
 	<xsl:template match="root" mode="body" name="body">
 		<body>
+			<header>
+				<h1>ecss</h1>
+				<nav>
+					<a href="">Intro</a>
+					<a href="">Values</a>
+					<a href="">Principles</a>
+					<a href="">Rules</a>
+					<a href="">Tools</a>
+				</nav>
+			</header>
 			<main>
 				<xsl:apply-templates mode="main-content" />
 			</main>

@@ -1,7 +1,7 @@
 @layer theming {
 	/* Adaptation of the typography ----------------------- */
-	@media (max-width: 60em) { :root { --Scale: var(--MinorSecond); } }
-	@media (min-width: 60em) { :root { --Scale: var(--MajorSecond); } }
+	@media (max-width: 60em) { :root { --Scale: var(--MajorSecond); } }
+	@media (min-width: 60em) { :root { --Scale: var(--MinorThird); } }
 
 
 	/* Typography based on system fonts ----------------------- */
@@ -9,12 +9,17 @@
 
 
 	/* Typographic scale ----------------------- */
-	h1, .h1 { --ScaleLevel: var(--Huger); --FontWeight: 800; }
+	h1, .h1 { --ScaleLevel: var(--Huger);}
 	h2, .h2 { --ScaleLevel: var(--Huge); }
-	h3, .h3 { --ScaleLevel: var(--Taller); --FontWeight: 600; }
-	h4, .h4 { --ScaleLevel: var(--Base); --FontWeight: 500; --LineHeightFactor: .75; }
+	h3, .h3 { --ScaleLevel: var(--Tall); }
+	h4, .h4 { --ScaleLevel: var(--Tall); }
 	h5, .h5 { --ScaleLevel: var(--Base); --LineHeightFactor: .75; }
 	h6, .h6 { --ScaleLevel: var(--Short); --LineHeightFactor: .75; }
+
+	h1, h2, h3, h4, h5, h6, 
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		--FontWeight: 800; 
+	}
 
 	strong {
 		--FontWeight: 600;

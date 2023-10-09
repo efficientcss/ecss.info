@@ -11,7 +11,7 @@
 	* { font-family: inherit; }
 
 /* Ensure that they are not displayed
- * when integrated into content */
+ * when integrated into content. */
 	link, script { display: none; }
 
 

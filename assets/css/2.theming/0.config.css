@@ -31,9 +31,9 @@
 		--lt-green: #dfff5e;
 		--dk-green: #729764;
 
-		--MinFontSize: 13px;
-		--BaseFontSize: 1.1vw;
-		--MaxFontSize: 18px;
+		--MinFontSize: 14px;
+		--TargetFontSize: 1.2vw;
+		--MaxFontSize: 19px;
 
 		--Color: var(--ColorText);
 		--BodyWidth: auto;

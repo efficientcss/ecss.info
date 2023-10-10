@@ -1,7 +1,7 @@
 html {
 	background-color: #F6E5C5;
-	color: #191919;
-	/* background-image: linear-gradient(25deg, #ffd8a3, transparent); */
+	color: #292a50;
+	background-image: linear-gradient(25deg, #ffd6e7, transparent);
 	background-attachment: fixed;
 }
 
@@ -48,7 +48,7 @@ body>header>nav a {
 main {
 	flex-grow: 1;
 	padding-top: calc(var(--Row) * 1.5);
-	border-top: 6px solid #191919;
+	border-top: 6px solid currentColor;
 	margin-top: calc(var(--Row) * 1.25);
 }
 

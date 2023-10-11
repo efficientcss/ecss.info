@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ecss.xsl" ?>
 <root>
-<header id="intro">
+<div id="intro">
+<header>
 <p>Avoiding common styling problems is simple. And you only need
 efficient CSS. Nothing more.</p>
 <p><strong>ECSS sets simple rules for simple styling.</strong> No more
@@ -45,6 +46,7 @@ Because simple rules and low impact tools can go a long way in making
 sure the CSS codebase is light, simple and scalable. ECSS is a global
 approach to producing efficient design systems with CSS.</p>
 </section>
+</div>
 <section>
 <h2 id="values">Values</h2>
 <div style="--DivItemBasis: 20rem;">
@@ -819,9 +821,11 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#
 <p>Sometimes it makes sense to add specificity. But don’t do it until
 proven necessary.</p>
 </section>
+<section>
 <h2 id="tools">Related tools</h2>
-<p>Browser Inspector (debugging, experimenting and navigating)
-Scaffolding &amp; code library (use it… or not!) Stylelint (lint and
-inform) CSSCSS (find rule duplication in your codebase) PurifyCSS,
-PurgeCSS or Chrome Coverage devtool</p>
+Browser Inspector (debugging, experimenting and navigating) Scaffolding
+&amp; code library (use it… or not!) Stylelint (lint and inform) CSSCSS
+(find rule duplication in your codebase) PurifyCSS, PurgeCSS or Chrome
+Coverage devtool
+</section>
 </root>

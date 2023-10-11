@@ -908,6 +908,7 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 
 </section>
 
+<section>
 ## Related tools{#tools}
 
 Browser Inspector (debugging, experimenting and navigating)
@@ -915,3 +916,4 @@ Scaffolding &amp; code library (use it... or not!)
 Stylelint (lint and inform)
 CSSCSS (find rule duplication in your codebase)
 PurifyCSS, PurgeCSS or Chrome Coverage devtool
+</section>

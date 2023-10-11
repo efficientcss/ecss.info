@@ -1,4 +1,5 @@
-<header id="intro">
+<div id="intro">
+<header>
 
 Avoiding common styling problems is simple. And you only need efficient CSS. Nothing more.
 
@@ -45,6 +46,7 @@ Well, keep scrolling!
 Because CSS as a language is misunderstood and undeservedly maligned. Because simple rules and low impact tools can go a long way in making sure the CSS codebase is light, simple and scalable. ECSS is a global approach to producing efficient design systems with CSS.
 
 </section>
+</div>
 <section>
 ## Values{#values}
 

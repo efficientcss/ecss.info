@@ -110,27 +110,30 @@ code.</p>
 <article>
 <h3 id="css-is-a-designing-language-not-a-programming-one.">CSS is a
 <em>designing</em> language, not a programming one.</h3>
-<p>And as such, its authoring should reflect <em>design</em> patterns,
-concepts and perspectives. With scales, tokens, global rules (sorry) you
-limit repetition and facilitate future styling extension.</p>
+<p>CSS authoring should reflect <em>design</em> patterns, concepts and
+perspectives. With global (sorry) scales, tokens, rules, etc. you limit
+repetition and facilitate future styling extension.</p>
 </article>
 <article>
 <h3
-id="empowering-designers-code-savvy-or-not-to-refine-their-work-autonomously-in-the-browser-is-efficient.">Empowering
-designers (code-savvy or not!) to refine their work autonomously, in the
-browser, is efficient.</h3>
-<p>Making the needed parts of CSS being intelligible to designers cuts
-stress, time and promotes good allocation of human resources, making for
-a great vector of economic profitability.</p>
+id="empowering-designers-to-refine-their-work-autonomously-is-efficient.">Empowering
+designers to refine their work autonomously is efficient.</h3>
+<p>Making the needed parts of CSS being intelligible (code-savvy or
+not!) to designers cuts stress, time and promotes good allocation of
+human resources, refining design in the browser is a great vector of
+economic profitability.</p>
 </article>
 <article>
-<h3 id="not-all-css-properties-are-equal.">Not all CSS properties are
-equal.</h3>
-<p><code>display</code>, <code>position</code> &amp; the box-model
-properties are extremely sensitive and potentially way more damaging
-than, say, color or type ones. The former are the stuff of professional
-CSS authors and the latter are the ones designers should be able to use
-and modify in context.</p>
+<h3 id="not-all-css-properties-are-born-equal.">Not all CSS properties
+are born equal.</h3>
+<p>The box-model properties (<code
+class="sourceCode css">display</code>, <code
+class="sourceCode css">position</code>, <code
+class="sourceCode css">width</code>, etc.) are extremely sensitive and
+potentially way more disruptive than, say, color or type ones. The
+former are the stuff of professional CSS authors and the latter are the
+ones designers should be able to use, modify and experiment with in
+context.</p>
 </article>
 <article>
 <h3 id="properties-units-have-specific-roles-and-usage.">Properties
@@ -144,18 +147,25 @@ rationally to communicate meaning.</p>
 <h3 id="components-and-patterns-need-structure.">Components and patterns
 <em>need</em> structure.</h3>
 <p>Trying to abstract it away is vain. Instead, documentation and
-respect are key. HTML is semantically rich, so choose the right tags and
-refrain from changing them for superficial reasons. One would not remove
-or change <code>class="header"</code> without understanding its purpose
-first, then one should not change or remove
-<code>&lt;header&gt;&lt;/header&gt;</code> on a whim either.</p>
+dilligence are key. HTML is semantically rich, so choose the right tags
+and refrain from changing them for superficial reasons. One would not
+remove or change <code
+class="sourceCode html">class=&quot;header&quot;</code> without
+understanding its purpose first, then one should not change or remove
+<code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></code>
+on a whim either.</p>
 </article>
 <article>
 <h3 id="css-selectors-are-vehicles-for-intention.">CSS Selectors are
 vehicles for intention.</h3>
 <p>Every selector particle must have a purpose and if not, must be
-discarded with. This extraneous « div » in « .card div h2 » is what
-makes CSS brittle. These are <em>not</em> “best practices”.</p>
+discarded with. This extraneous <code class="sourceCode css">div</code>
+in <code
+class="sourceCode css"><span class="fu">.card</span> div h2</code> is
+what makes CSS brittle. These are <em>not</em> <a
+href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">“best
+practices”</a>.</p>
 </article>
 <article>
 <h3 id="selector-types-all-have-a-function.">Selector types all have a
@@ -163,21 +173,24 @@ function.</h3>
 <p>Each one of them may be of use in a certain context. No absolute
 usage rule should be edicted. It’s not “always” or “never” but “it
 depends” and “why”. Absolute rules absolutely corrupt. Or something like
-this.</p>
+that.</p>
 </article>
 <article>
 <h3
 id="selection-specificity-should-be-harnessed-not-rejected.">Selection
 specificity should be harnessed, not rejected.</h3>
 <p>Nevertheless, “always” (ahem) keep it as low as possible. Yes, in
-2015 it may have not been easy. But it’s 2023 and lots of new and widely
-supported features have been released. Use them.</p>
+2015 it may have not been easy. But it’s 2023 and <a
+href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers">new</a>
+<a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where">features</a>
+are now widely supported. Use them.</p>
 </article>
 <article>
 <h3 id="global-scope-in-css-is-not-a-sin.">Global scope in CSS is not a
 sin.</h3>
-<p>Remember, CSS is a designing language and the global scope fits
-perfectly in design’s fundamentally layered, dimensional approach.
+<p>Remember, <em>CSS is a designing language</em> and the global scope
+fits perfectly in design’s fundamentally layered, dimensional approach.
 Programming best practices are not necessarily designing best practices.
 Embrace design best practices.</p>
 </article>
@@ -185,18 +198,20 @@ Embrace design best practices.</p>
 <h3
 id="global-design-rules-must-be-largely-anonymous-unqualified.">Global
 design rules must be largely anonymous &amp; unqualified.</h3>
-<p>Only a few rules per ruleset only. We are talking rhythm, typography,
-color; not <code>display</code> or <code>position</code>. <em>This</em>
-is the way of limiting repetition, bloat &amp; complexity.</p>
+<p>Only a few declarations per ruleset only. We are talking rhythm,
+typography, color; not <code>display</code> or <code>position</code>.
+<em>This</em> is the way of limiting repetition, bloat &amp;
+complexity.</p>
 </article>
 <article>
 <h3
 id="one-should-wait-until-a-concept-is-clearly-understood-before-naming-it.">One
 should wait until a concept is clearly understood before naming it.</h3>
-<p>Until then use HTML elements. Premature abstraction or “solving
-problems not yet encountered” are bigger problems than the use of
-“header” in CSS. Yes, these are programming best practices. But who told
-you development was pure?</p>
+<p>Until then use HTML elements. Premature abstraction or <a
+href="https://en.wikipedia.org/wiki/Overengineering">“solving problems
+not yet encountered”</a> are bigger problems than the use of <code
+class="sourceCode css">header</code> in CSS. Yes, these are programming
+best practices. But who told you CSS development was pure?</p>
 </article>
 <article>
 <h3
@@ -208,11 +223,11 @@ instead of the bare rules. Reusability, expressivity and simplicity are
 then greatly improved.</p>
 </article>
 <article>
-<h3 id="named-concepts-should-be-autonomous-and-self-sufficient.">Named
-concepts should be autonomous and self-sufficient.</h3>
-<p>As such, named concepts should not be defined inside another named
-concept. If it ever is necessary, the child concept must be scoped to
-the parent concept and is <em>not</em> to be reused anywhere else.</p>
+<h3 id="named-concepts-must-be-autonomous-and-self-sufficient.">Named
+concepts must be autonomous and self-sufficient.</h3>
+<p>Named concepts should not be defined inside another named concept. If
+it ever is necessary, the child concept must be scoped to the parent
+concept and is <em>not</em> to be reused anywhere else.</p>
 </article>
 <article>
 <h3
@@ -220,18 +235,20 @@ id="manipulating-named-concepts-throughout-multiple-files-is-strictly-prohibited
 named concepts throughout multiple files is strictly prohibited.</h3>
 <p>All rules for a named concept must reside in the same, unique CSS
 file. For authors and maintainers to have confidence in the system,
-there must a single source of truth
-https://en.wikipedia.org/wiki/Single_source_of_truth for any
-concept.</p>
+there must a single <a
+href="https://en.wikipedia.org/wiki/Single_source_of_truth">source of
+truth</a> for any concept.</p>
 </article>
 <article>
 <h3
-id="state-variant-or-structural-concepts-must-be-namespaced-and-prefixed.">State,
-variant or structural concepts must be namespaced and prefixed.</h3>
+id="state-variant-or-structural-are-child-concepts-and-must-be-namespaced-prefixed.">State,
+variant or structural are child concepts and must be namespaced &amp;
+prefixed.</h3>
 <p>These concepts may be represented as child or combined classes. Never
-to be used alone, always with a master or parent concept. Yes, here are
-both “never” <em>and</em> “always” in the same sentence. “Double
-jeopardy, we are fine”.</p>
+to be used alone, always alongside the parent concept. Yes, here are
+both “never” <em>and</em> “always” in the same sentence. <a
+href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double jeopardy, we
+are fine”</a>.</p>
 </article>
 <article>
 <h3
@@ -255,9 +272,12 @@ Still, no quarantine file should ever be published publicly.</p>
 <article>
 <h3 id="html-should-be-as-simple-and-expressive-as-can-be.">HTML should
 be as simple and expressive as can be.</h3>
-<p>Refrain from over-containing, don’t use “div” where you could use
-“aside”. Dont wrap your single-level navigation in unordered lists. And
-yes, simple navigation is <a
+<p>Refrain from over-containing, don’t use <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+where you could use <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">aside</span><span class="dt">&gt;</span></code>.
+Dont wrap your single-level navigation in unordered lists. And yes,
+simple navigation is <a
 href="https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element">accessible</a>.
 Keep it simple… Suzy.</p>
 </article>
@@ -267,15 +287,20 @@ should endorse one role only.</h3>
 <p>As per the famous programming <a
 href="https://en.wikipedia.org/wiki/Single-responsibility_principle">best
 practice</a> (again, programming in designing), semantic tags are for…
-semantics whilst <code>div</code> or <code>span</code> tags are for
-graphical or logical division. Any type of grid should be implemented
-with <code>div</code> tags.</p>
+semantics whilst <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+or <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></code>
+tags are for graphical or logical division. Any type of grid should be
+implemented with <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+tags.</p>
 </article>
 <article>
 <h3
-id="any-media-query-adaptation-must-be-included-in-its-related-concepts-definition.">Any
+id="any-media-query-adaptation-must-be-included-in-its-related-concepts-file.">Any
 media query adaptation must be included in its related concept’s
-definition.</h3>
+file.</h3>
 <p>Not as as a separate file, not as suffixed classes. If one uses
 utility classes, the provided rules should not be query dependent but
 rather be universally needed, in every media configuration.</p>
@@ -283,19 +308,22 @@ rather be universally needed, in every media configuration.</p>
 <article>
 <h3 id="whole-stylesheets-are-better-used-when-global.">Whole
 stylesheets are better used when global.</h3>
-<p>Media query scopes should be used in HTML <code>link</code> tags to
-promote reuse, performance and optimization concerns. Each fundamental
-design layer should be autonomous, independent and removable.</p>
+<p>Media query scopes should be used in HTML <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">link</span><span class="dt">&gt;</span></code>
+tags to promote reuse, performance and optimization concerns. Each
+fundamental design layer should be autonomous, independent and
+removable.</p>
 </article>
 <article>
 <h3
 id="component-styling-should-only-be-served-with-live-components.">Component
 styling should only be served with live components.</h3>
-<p>Not as a big minified file in the <code>head</code> tag of the
-document. This way, the infamous problem of loading unused CSS is
-practically solved, without any technological debt. First render is also
-faster since only what is used is processed by the browser. (gives CSS
-file path in component file)</p>
+<p>Not as a big minified file in the <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></code>
+tag of the document. This way, the infamous problem of loading unused
+CSS is practically solved, without any technological debt. First render
+is also faster since only what is used is processed by the browser. As a
+bonus, you get the CSS file path in component file.</p>
 </article>
 <article>
 <h3
@@ -303,15 +331,16 @@ id="one-should-make-full-use-of-freely-available-development-tools-by-going-with
 should make full use of freely available development tools by going with
 the grain of the Web platform.</h3>
 <p>By using “just-in-time” rulesets, the cascade and intentional
-selection, the debugging workflow is simpler, lighter and clearer.</p>
+selection, the debugging &amp; refining workflow is simpler, lighter and
+clearer.</p>
 </article>
 <article>
 <h3
 id="eschewing-technological-abstractions-like-high-level-frameworks-spurs-lighter-simpler-native-code.">Eschewing
 technological abstractions like high-level frameworks spurs lighter,
 simpler native code.</h3>
-<p>By writing native CSS, one uses CSS better; by writing HTML, one
-writes HTML better.</p>
+<p>By writing native CSS, one uses CSS better; by writing native HTML,
+one writes HTML better.</p>
 </article>
 </section>
 <section>

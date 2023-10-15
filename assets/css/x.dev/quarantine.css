@@ -40,14 +40,14 @@ body>header>nav {
 
 body>header>nav {
 	--ScaleLevel: var(--Tall);
-	--LineHeightFactor: 1.25;
+	/* --LineHeightFactor: 1.25; */
 }
 
 
 main {
 	flex-grow: 1;
 	padding-top: calc(var(--Row) * 1.5);
-	border-top: 6px solid currentColor;
+	border-top: 0.28125em solid currentColor;
 	margin-top: calc(var(--Row) * 1.25);
 }
 
@@ -70,19 +70,9 @@ main>div>header p:first-child {
 main>div {
 	display: block;
 }
+
 main>div>*+* {
 	margin-top: calc(var(--Row) * 2);
-}
-
-ol li>strong:first-child {
-	float: left;
-	width: 40ch;
-	overflow: hidden;
-	display: block;
-}
-
-ol li {
-	clear: both;
 }
 
 article {
@@ -99,11 +89,11 @@ main>section {
 	counter-reset: principles;
 }
 
-main>section>p:only-of-type {
-	column-width: 40ch;
-	max-width: initial;
-	--ScaleLevel: var(--Tall);
-	--LineHeightFactor: 1.25;
+main h2+p:only-of-type {
+	/* column-width: 40ch; */
+	/* max-width: initial; */
+	--ScaleLevel: var(--Taller);
+	/* --LineHeightFactor: 1.25; */
 }
 
 /* div>section { */
@@ -112,7 +102,7 @@ main>section>p:only-of-type {
 
 article h3+p {
 	flex-grow: 2;
-	flex-basis: 15rem;
+	flex-basis: calc(30rem + var(--Row));
 	width: 100%;
 	max-width: initial;
 	--ScaleLevel: var(--Tall);
@@ -155,7 +145,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	body>header>nav {
-		background-color: white;
 		order: 1;
 		position: sticky;
 		bottom: 0;
@@ -176,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: var(--Row);
 		flex-shrink: 0;
 		order: 1;
-		background-image: linear-gradient(to left, #ffffff 60%, #ffffff00 100%);
+		background-image: linear-gradient(to left, #ffd6e7 60%, #ffd6e700 100%);
 	}
 
 	body>header>nav:after {
@@ -191,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 		position: relative;
 		flex-shrink: 0;
 		padding-right: calc(var(--Row) / 4);
-		background-color: white;
+		background-color: #ffd6e7;
 	}
 
 	body>header>nav>a {

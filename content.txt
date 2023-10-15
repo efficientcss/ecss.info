@@ -113,21 +113,21 @@ In practice it means being at the forefront of progress and evolution. No need t
 <article>
 ### CSS is a *designing* language, not a programming one.
 
-And as such, its authoring should reflect *design* patterns, concepts and perspectives. With scales, tokens, global rules (sorry) you limit repetition and facilitate future styling extension.
+CSS authoring should reflect *design* patterns, concepts and perspectives. With global (sorry) scales, tokens, rules, etc. you limit repetition and facilitate future styling extension.
 
 </article>
 
 <article>
-### Empowering designers (code-savvy or not!) to refine their work autonomously, in the browser, is efficient.
+### Empowering designers to refine their work autonomously is efficient.
 
-Making the needed parts of CSS being intelligible to designers cuts stress, time and promotes good allocation of human resources, making for a great vector of economic profitability.
+Making the needed parts of CSS being intelligible (code-savvy or not!) to designers cuts stress, time and promotes good allocation of human resources, refining design in the browser is a great vector of economic profitability.
 
 </article>
 
 <article>
-### Not all CSS properties are equal.
+### Not all CSS properties are born equal.
 
-`display`, `position` &amp; the box-model properties are extremely sensitive and potentially way more damaging than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use and modify in context.
+The box-model properties (`display`{.css}, `position`{.css}, `width`{.css}, etc.) are extremely sensitive and potentially way more disruptive than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use, modify and experiment with in context.
 
 </article>
 
@@ -139,142 +139,142 @@ Limiting their use to these roles enhances clarity and promotes consistency as w
 </article>
 
 <article>
-### Components and patterns *need* structure. 
+### Components and patterns *need* structure.
 
-Trying to abstract it away is vain. Instead, documentation and respect are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"` without understanding its purpose first, then one should not change or remove `<header></header>` on a whim either.
-
-</article>
-
-<article>
-### CSS Selectors are vehicles for intention. 
-
-Every selector particle must have a purpose and if not, must be discarded with. This extraneous « div » in « .card div h2 » is what makes CSS brittle. These are *not* "best practices".
+Trying to abstract it away is vain. Instead, documentation and dilligence are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"`{.html} without understanding its purpose first, then one should not change or remove `<header></header>`{.html} on a whim either.
 
 </article>
 
 <article>
-### Selector types all have a function. 
+### CSS Selectors are vehicles for intention.
 
-Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like this.
-
-</article>
-
-<article>
-### Selection specificity should be harnessed, not rejected. 
-
-Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and lots of new and widely supported features have been released. Use them.
+Every selector particle must have a purpose and if not, must be discarded with. This extraneous `div`{.css} in `.card div h2`{.css} is what makes CSS brittle. These are *not* ["best practices"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
 
 </article>
 
 <article>
-### Global scope in CSS is not a sin. 
+### Selector types all have a function.
 
-Remember, CSS is a designing language and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
-
-</article>
-
-<article>
-### Global design rules must be largely anonymous &amp; unqualified. 
-
-Only a few rules per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
+Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like that.
 
 </article>
 
 <article>
-### One should wait until a concept is clearly understood before naming it. 
+### Selection specificity should be harnessed, not rejected.
 
-Until then use HTML elements. Premature abstraction or "solving problems not yet encountered" are bigger problems than the use of "header" in CSS. Yes, these are programming best practices. But who told you development was pure?
+Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and [new](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) [features](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) are now widely supported. Use them.
 
 </article>
 
 <article>
-### When more than 3 rules are repeated more than 3 times, a concept *is* emerging. 
+### Global scope in CSS is not a sin.
+
+Remember, *CSS is a designing language* and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
+
+</article>
+
+<article>
+### Global design rules must be largely anonymous &amp; unqualified.
+
+Only a few declarations per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
+
+</article>
+
+<article>
+### One should wait until a concept is clearly understood before naming it.
+
+Until then use HTML elements. Premature abstraction or ["solving problems not yet encountered"](https://en.wikipedia.org/wiki/Overengineering) are bigger problems than the use of `header`{.css} in CSS. Yes, these are programming best practices. But who told you CSS development was pure?
+
+</article>
+
+<article>
+### When more than 3 rules are repeated more than 3 times, a concept *is* emerging.
 
 Rules should then be concentrated by naming and using said concept instead of the bare rules. Reusability, expressivity and simplicity are then greatly improved.
 
 </article>
 
 <article>
-### Named concepts should be autonomous and self-sufficient. 
+### Named concepts must be autonomous and self-sufficient.
 
-As such, named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
-
-</article>
-
-<article>
-### Manipulating named concepts throughout multiple files is strictly prohibited. 
-
-All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single source of truth https://en.wikipedia.org/wiki/Single_source_of_truth for any concept.
+Named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
 
 </article>
 
 <article>
-### State, variant or structural concepts must be namespaced and prefixed. 
+### Manipulating named concepts throughout multiple files is strictly prohibited.
 
-These concepts may be represented as child or combined classes. Never to be used alone, always with a master or parent concept. Yes, here are both "never" *and* "always" in the same sentence. "Double jeopardy, we are fine".
+All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single [source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for any concept.
 
 </article>
 
 <article>
-### Namespaced classes should generally be implemented with specificity reducing selectors. 
+### State, variant or structural are child concepts and must be namespaced &amp; prefixed.
+
+These concepts may be represented as child or combined classes. Never to be used alone, always alongside the parent concept. Yes, here are both "never" *and* "always" in the same sentence. ["Double jeopardy, we are fine"](https://www.youtube.com/watch?v=Z58eTP2gcw0).
+
+</article>
+
+<article>
+### Namespaced classes should generally be implemented with specificity reducing selectors.
 
 Unless otherwise needed, one should strive to keep specificity at 21 or below. With a preference for around 10 to 12. Modern and widely supported pseudo-selectors must here be used.
 
 </article>
 
 <article>
-### One may not come up at first with the efficient way to select interface elements. 
+### One may not come up at first with the efficient way to select interface elements.
 
 One's intention may not be clear at the beginning of a styling job. Instead of fruitlessly trying and trying, a code "quarantine" file should be temporarily used until the right selection manifests itself. Still, no quarantine file should ever be published publicly.
 
 </article>
 
 <article>
-### HTML should be as simple and expressive as can be. 
+### HTML should be as simple and expressive as can be.
 
-Refrain from over-containing, don't use "div" where you could use "aside". Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is [accessible](https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element). Keep it simple... Suzy.
-
-</article>
-
-<article>
-### Any HTML element should endorse one role only. 
-
-As per the famous programming [best practice](https://en.wikipedia.org/wiki/Single-responsibility_principle) (again, programming in designing), semantic tags are for... semantics whilst `div` or `span` tags are for graphical or logical division. Any type of grid should be implemented with `div` tags.
+Refrain from over-containing, don't use `<div>`{.html} where you could use `<aside>`{.html}. Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is [accessible](https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element). Keep it simple... Suzy.
 
 </article>
 
 <article>
-### Any media query adaptation must be included in its related concept's definition. 
+### Any HTML element should endorse one role only.
+
+As per the famous programming [best practice](https://en.wikipedia.org/wiki/Single-responsibility_principle) (again, programming in designing), semantic tags are for... semantics whilst `<div>`{.html} or `<span>`{.html} tags are for graphical or logical division. Any type of grid should be implemented with `<div>`{.html} tags.
+
+</article>
+
+<article>
+### Any media query adaptation must be included in its related concept's file.
 
 Not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
 
 </article>
 
 <article>
-### Whole stylesheets are better used when global. 
+### Whole stylesheets are better used when global.
 
-Media query scopes should be used in HTML `link` tags to promote reuse, performance and optimization concerns. Each fundamental design layer should be autonomous, independent and removable.
-
-</article>
-
-<article>
-### Component styling should only be served with live components. 
-
-Not as a big minified file in the `head` tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. (gives CSS file path in component file)
+Media query scopes should be used in HTML `<link>`{.html} tags to promote reuse, performance and optimization concerns. Each fundamental design layer should be autonomous, independent and removable.
 
 </article>
 
 <article>
-### One should make full use of freely available development tools by going with the grain of the Web platform. 
+### Component styling should only be served with live components.
 
-By using "just-in-time" rulesets, the cascade and intentional selection, the debugging workflow is simpler, lighter and clearer.
+Not as a big minified file in the `<head>`{.html} tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. As a bonus, you get the CSS file path in component file.
 
 </article>
 
 <article>
-### Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code. 
+### One should make full use of freely available development tools by going with the grain of the Web platform.
 
-By writing native CSS, one uses CSS better; by writing HTML, one writes HTML better.
+By using "just-in-time" rulesets, the cascade and intentional selection, the debugging & refining workflow is simpler, lighter and clearer.
+
+</article>
+
+<article>
+### Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code.
+
+By writing native CSS, one uses CSS better; by writing native HTML, one writes HTML better.
 
 </article>
 

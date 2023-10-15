@@ -12,6 +12,10 @@
 		margin-top: calc(var(--Row) / 4);
 	}
 
+	p+p {
+		margin-top: calc(var(--Row) / 2);
+	}
+
 	*+li {
 		margin-top: calc(var(--Row) / 4);
 	}

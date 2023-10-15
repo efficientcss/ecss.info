@@ -7,7 +7,7 @@
 		<body>
 			<header>
 				<h1>ecss</h1>
-				<nav>
+				<nav id="nav">
 					<a href="#intro">Intro</a>
 					<a href="#values">Values</a>
 					<a href="#principles">Principles</a>

@@ -1,0 +1,9 @@
+h3 small {
+	margin-left: .75em;
+}
+
+[id] {
+	scroll-margin: calc(var(--Row) * 1);
+}
+
+

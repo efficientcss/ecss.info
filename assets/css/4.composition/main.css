@@ -1,0 +1,22 @@
+main {
+	flex-grow: 1;
+	padding-top: calc(var(--Row) * 1.5);
+	border-top: 0.28125em solid currentColor;
+	margin-top: calc(var(--Row) * 1.25);
+}
+
+main>* {
+	max-width: 120ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+main>div {
+	display: block;
+}
+
+main>div>*+* {
+	margin-top: calc(var(--Row) * 2);
+}
+
+

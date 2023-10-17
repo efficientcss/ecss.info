@@ -1,3 +1,15 @@
+body {
+	display: flex;
+	padding: var(--Row);
+	flex-basis: 100%;
+}
+
+body>header {
+	align-self: start;
+	position: sticky;
+	top: var(--Row);
+}
+
 /* composition adaptation */
 
 @media (orientation: portrait) {
@@ -17,7 +29,7 @@
 		order: 1;
 
 		margin: 0;
-		padding-left: calc(var(--Row) / 2);
+		padding-left: calc(var(--Row) / 2); /* stylelint-disable-line property-disallowed-list */
 
 		border-top: 3px solid currentColor;
 	}

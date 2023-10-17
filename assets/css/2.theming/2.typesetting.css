@@ -25,3 +25,23 @@
 		--FontWeight: 600;
 	}
 }
+
+h1 {
+	line-height: 1.125;
+}
+
+small {
+	font-size: .75em;
+}
+
+main>div>header p {
+	--ScaleLevel: var(--Taller);
+	max-width: 50rem;
+}
+
+main>div>header p:first-child {
+	font-weight: 800;
+	--ScaleLevel: var(--Huge);
+}
+
+

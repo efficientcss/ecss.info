@@ -5,6 +5,7 @@
 	html { 
 		line-height: var(--RowFactor, 1.67125);
 		font-size: var(--FontSize, clamp(var(--MinFontSize, 15px), var(--TargetFontSize, 1.2vw), var(--MaxFontSize, 18px)));
+		font-weight: var(--FontWeight, inherit); 
 		color: var(--Color, initial); 
 	}
 

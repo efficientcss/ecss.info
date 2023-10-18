@@ -1,13 +1,19 @@
 body {
 	display: flex;
+
 	padding: var(--Row);
-	flex-basis: 100%;
+
+	color: #0a0c5b;
+
+	background-color: #F6E5C5;
+	background-image: linear-gradient(25deg, #ffd6e7, transparent);
+	background-attachment: fixed;
 }
 
 body>header {
-	align-self: start;
 	position: sticky;
 	top: var(--Row);
+	align-self: start;
 }
 
 /* composition adaptation */
@@ -19,6 +25,10 @@ body>header {
 
 	body>header {
 		display: contents;
+	}
+
+	body>header>h1 {
+		margin: calc(var(--Row) / 2);
 	}
 
 	body>header>nav {

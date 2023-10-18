@@ -1,20 +1,32 @@
 @layer theming {
+	/* Typography based on system fonts ----------------------- */
+	html { font-family: var(--BaseFontStack, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"); }
+
 	/* Adaptation of the typography ----------------------- */
 	@media (max-width: 60em) { :root { --Scale: var(--MajorSecond); } }
 	@media (min-width: 60em) { :root { --Scale: var(--MinorThird); } }
 
 
-	/* Typography based on system fonts ----------------------- */
-	:root { font-family: var(--BaseFontStack, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"); }
+	html {
+		font-family: 'Hanken Grotesk';
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Helvetica, Arial, sans-serif;
+	}
 
 
 	/* Typographic scale ----------------------- */
-	h1, .h1 { --ScaleLevel: var(--Huger);}
+	h1, .h1 { --ScaleLevel: var(--Huger); --LineHeightFactor: .75;}
 	h2, .h2 { --ScaleLevel: var(--Huge); }
 	h3, .h3 { --ScaleLevel: var(--Tall); }
 	h4, .h4 { --ScaleLevel: var(--Tall); }
 	h5, .h5 { --ScaleLevel: var(--Base); --LineHeightFactor: .75; }
 	h6, .h6 { --ScaleLevel: var(--Short); --LineHeightFactor: .75; }
+
+	html {
+		--FontWeight: 420;
+	}
 
 	h1, h2, h3, h4, h5, h6, 
 	.h1, .h2, .h3, .h4, .h5, .h6 {
@@ -24,24 +36,19 @@
 	strong {
 		--FontWeight: 600;
 	}
+
+	small {
+		font-size: .75em;
+	}
+
+	main>div>header p,
+	main h2+p:only-of-type {
+		--ScaleLevel: var(--Taller);
+		max-width: 50rem;
+	}
+
+	main>div>header p:first-child {
+		font-weight: 800;
+		--ScaleLevel: var(--Huge);
+	}
 }
-
-h1 {
-	line-height: 1.125;
-}
-
-small {
-	font-size: .75em;
-}
-
-main>div>header p {
-	--ScaleLevel: var(--Taller);
-	max-width: 50rem;
-}
-
-main>div>header p:first-child {
-	font-weight: 800;
-	--ScaleLevel: var(--Huge);
-}
-
-

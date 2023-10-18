@@ -105,7 +105,8 @@ code.</p>
 </section>
 </div>
 </section>
-<section>
+<link rel="stylesheet" href="assets/css/5.components/of-side-by-side-h-p.css" />
+<section class="of-side-by-side-h-p as-numbered-list">
 <h2 id="principles">Guiding principles</h2>
 <article>
 <h3 id="css-is-a-designing-language-not-a-programming-one.">CSS is a

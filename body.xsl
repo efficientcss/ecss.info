@@ -17,6 +17,7 @@
 					<a href="#tools">Tools</a>
 				</nav>
 			</header>
+			<link rel="stylesheet" href="assets/css/4.composition/main.css"/>
 			<main>
 				<xsl:apply-templates mode="main-content" />
 			</main>

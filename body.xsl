@@ -4,11 +4,11 @@
 		<xsl:apply-templates/>
 	</xsl:template>
 	<xsl:template match="root" mode="body" name="body">
-		<link rel="stylesheet" href="assets/css/4.composition/body.css"/>
+		<link rel="stylesheet" href="assets/css/4.regions/body.css"/>
 		<body>
 			<header>
 				<h1>ecss</h1>
-				<link rel="stylesheet" href="assets/css/4.composition/nav.css"/>
+				<link rel="stylesheet" href="assets/css/4.regions/nav.css"/>
 				<nav id="nav">
 					<a href="#intro">Intro</a>
 					<a href="#values">Values</a>
@@ -17,7 +17,7 @@
 					<a href="#tools">Tools</a>
 				</nav>
 			</header>
-			<link rel="stylesheet" href="assets/css/4.composition/main.css"/>
+			<link rel="stylesheet" href="assets/css/4.regions/main.css"/>
 			<main>
 				<xsl:apply-templates mode="main-content" />
 			</main>

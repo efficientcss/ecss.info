@@ -1,4 +1,4 @@
-@charset "utf-8";
+@layer features {
 
 /* SuperDIV - Multi-use container ----------------------- */
 	/* API */
@@ -84,3 +84,4 @@
 			--DivItemGutter: initial;
 			--DivItemMaxWidth: initial;
 		}
+}

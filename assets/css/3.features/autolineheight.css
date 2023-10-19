@@ -1,3 +1,4 @@
+@layer features {
 /* Automated Line Height System — WARNING! Radioactive */
 /* Processing is expensive. In this sense, it must be optimized as much as possible,
    by manually choosing the elements that will be affected by the different calculations. */
@@ -30,3 +31,4 @@
 		--is-3-rows: var(--magic-3);
 		--is-2_5-rows: calc(var(--magic-2_5) - (var(--switch-2_5)));
 	}
+}

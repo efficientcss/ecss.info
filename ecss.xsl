@@ -17,8 +17,8 @@
 		<html lang="fr">
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" href="assets/css/4.composition/html.css" />
 			<link rel="stylesheet" href="assets/css/e.css" />
+			<link rel="stylesheet" href="assets/css/4.regions/html.css" />
 			<!-- <link rel="stylesheet" href="x.dev/debug.css" /> -->
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />

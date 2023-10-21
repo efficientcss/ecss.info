@@ -1,13 +1,10 @@
-.visually-hidden {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
+.as-visually-hidden {
+	all: initial;
+	position: absolute;
+
+	contain: content;
+	max-width: 1px;
+	max-height: 1px;
+	white-space: nowrap;
+	clip-path: path('');
 }

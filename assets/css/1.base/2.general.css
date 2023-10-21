@@ -4,7 +4,7 @@
    Must not change from project to project. Versioned. */
 
 /* Remove all margins */
-	* { padding: 0; margin: 0; }
+	* { margin: 0; padding: 0; }
 
 /* Force all elements, including controls
  * to apply the default fonts. */
@@ -21,8 +21,8 @@
  * of their parent. Avoid space
  * line height (inline vs. block) */
 	img {
-		max-width: 100%;
 		display: block;
+		max-width: 100%;
 		object-fit: cover; }
 
 /* Keep dot inside
@@ -42,8 +42,8 @@
 
 /* Better graphic style than the browser's */
 	hr {
+		max-height: 0;
 		line-height: 0;
-		height: 0;
 		border: none; border-top: 1px solid currentColor;
 	}
 
@@ -52,9 +52,9 @@
 
 /* Icons integrated into the text */
 	i>svg {
-		height: 1.1ch;
-		margin-left: .5em; margin-right: .5em;
 		display: inline-block;
+		height: 1.1ch; margin-right: .5em;
+		margin-left: .5em;
 	}
 
 /* Emphasis styles */
@@ -62,7 +62,7 @@
 
 /* Generic maximum & minimum 
  * widths for any paragraph */
-	p { max-width: 75ch; min-width: 22ch; }
+	p { min-width: 22ch; max-width: 75ch; }
 
 /* Disable delay on iOS
  * when tapping on an element */

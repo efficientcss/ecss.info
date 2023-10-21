@@ -3,10 +3,10 @@
 
 	/* Apply basic typographic styles */
 	html {
-		font-size: var(--FontSize, clamp(var(--MinFontSize, 15px), var(--TargetFontSize, 1.2vw), var(--MaxFontSize, 18px)));
-		font-weight: var(--FontWeight, inherit); 
-		line-height: var(--RowFactor, 1.67125);
-		color: var(--Color, initial); 
+		color: var(--Color, initial);
+		font-weight: var(--FontWeight, inherit);
+		font-size: var(--FontSize, clamp(var(--MinFontSize, 15px), var(--TargetFontSize, 1.2vw), var(--MaxFontSize, 18px))); 
+		line-height: var(--RowFactor, 1.67125); 
 	}
 
 	/* Page canvas */
@@ -25,11 +25,11 @@
 	select, input, textarea, button, legend, figcaption,
 	p, ul, ol, a, q, cite, span, small, th, td,
 	h1, h2, h3, h4, h5, h6 {
-		font-size: var(--FontSize, inherit);
+		color: var(--Color, inherit);
 		font-weight: var(--FontWeight, inherit);
+		font-size: var(--FontSize, inherit);
 		font-style: var(--FontStyle, inherit);
-		line-height: var(--LineHeight, inherit);
-		color: var(--Color, inherit); 
+		line-height: var(--LineHeight, inherit); 
 	}
 
 	strong, b {

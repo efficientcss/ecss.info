@@ -1,15 +1,8 @@
 @layer regions {
 	main {
-		flex-grow: 1;
-		padding-top: calc(var(--Row) * 1.5);
-		border-top: 0.28125em solid currentColor;
-		margin-top: calc(var(--Row) * 1.25);
-	}
+		--type-relative-border-width: 0.28125em;
 
-	main>* {
-		max-width: 120ch;
-		margin-left: auto;
-		margin-right: auto;
+		flex-grow: 1;
 	}
 
 	main>div {

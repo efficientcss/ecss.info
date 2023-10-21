@@ -1,20 +1,17 @@
 .as-numbered-list {
 	--number-width: 3ch;
-
 	counter-reset: principles;
 }
 
 .as-numbered-list :is(article, section) :is(h1, h2, h3, h4, h5, h6) {
-	padding-left: 3ch;
 	box-sizing: border-box;
+	padding-left: var(--number-width);
 }
 
 .as-numbered-list :is(article, section) :is(h1, h2, h3, h4, h5, h6):before {
-	content: counter(principles)". ";
-	counter-increment: principles;
-
 	display: inline-block;
-
 	width: var(--number-width);
 	margin-left: calc(-1 * var(--number-width));
+	content: counter(principles)". ";
+	counter-increment: principles;
 }

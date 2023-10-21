@@ -27,11 +27,17 @@
 
 	/* Prose container ------------- */
 		.prose {
+			--DivMaxWidth: 70ch;
+			--DivColumnWidth: 30ch;
+			--DivItemMaxWidthOnly: 45ch;
+		}
+
+		.prose {
 			--DivDisplay: block;
-			max-width: 70ch;
-			column-width: 30ch;
+			max-width: var(--DivMaxWidth);
 			column-count: 2;
 			column-gap: var(--Row);
+			column-width: var(--DivColumnWidth);
 		}
 
 		.prose>* {
@@ -44,10 +50,10 @@
 		}
 
 		.prose>*:only-child {
-			column-span: all;
-			max-width: 45ch;
-			margin-left: auto;
+			max-width: var(--DivItemMaxWidthOnly);
 			margin-right: auto;
+			margin-left: auto;
+			column-span: all;
 		}
 
 /* Scaffolding: properties and default values --------- */
@@ -57,22 +63,22 @@
 			row break for fluidity */
 			display: var(--DivDisplay, flex);
 			flex-wrap: wrap;
+			gap: var(--DivItemGutter, 0px);
+			align-items: inherit;
 			/* Allow inheritance of alignment rules.
 			Facilitates extension by parents */
 			justify-content: inherit;
-			align-items: inherit;
-			gap: var(--DivItemGutter, 0px);
 		}
 
 		div>* {
 			/* Initial dimensions
 			(can be adjusted!) */
 			flex-basis: var(--DivItemBasis, auto);
-			max-width: var(--DivItemMaxWidth, initial);
 			/* Distribute vacant space
 			equally among children */
 			flex-grow: var(--DivItemGrow, 0);
 			flex-shrink: var(--DivItemShrink, 1);
+			max-width: var(--DivItemMaxWidth, initial);
 		}
 
 		/* Break the inheritance chain

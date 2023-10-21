@@ -1,0 +1,29 @@
+@layer compositions {
+	.side-nav-main-pile {
+		--max-content-width: 120ch;
+
+		gap: calc(var(--Row) * 2);
+	}
+
+	.side-nav-main-pile>header {
+		position: sticky;
+		top: var(--Row);
+		align-self: start;
+	}
+
+	.side-nav-main-pile>header>nav {
+		flex-direction: column;
+	}
+
+	.side-nav-main-pile>main {
+		margin-top: calc(var(--Row) * 1.25);
+		padding-top: calc(var(--Row) * 1.5);
+		border-top: var(--type-relative-border-width) solid currentColor;
+	}
+
+	.side-nav-main-pile>main>* {
+		max-width: var(--max-content-width);
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

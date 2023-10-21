@@ -1,0 +1,9 @@
+@layer regions {
+	html {
+		display: flex;
+		min-height: 100%;
+	}
+	html>* {
+		flex-grow: 1;
+	}
+}

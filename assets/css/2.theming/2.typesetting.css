@@ -17,12 +17,12 @@
 
 
 	/* Typographic scale ----------------------- */
-	h1, .h1 { --ScaleLevel: var(--Huger); --LineHeightFactor: .75;}
+	h1, .h1 { --ScaleLevel: var(--Huger); --LineHeightFactor: .8125;}
 	h2, .h2 { --ScaleLevel: var(--Huge); }
 	h3, .h3 { --ScaleLevel: var(--Tall); }
-	h4, .h4 { --ScaleLevel: var(--Tall); }
-	h5, .h5 { --ScaleLevel: var(--Base); --LineHeightFactor: .75; }
-	h6, .h6 { --ScaleLevel: var(--Short); --LineHeightFactor: .75; }
+	h4, .h4 { --ScaleLevel: var(--Short); }
+	h5, .h5 { --ScaleLevel: var(--Short); --LineHeightFactor: .75; }
+	h6, .h6 { --ScaleLevel: var(--Shorter); --LineHeightFactor: .75; }
 
 	html {
 		--FontWeight: 420;
@@ -43,6 +43,7 @@
 
 	main>div>header p,
 	main h2+p:only-of-type {
+
 		--ScaleLevel: var(--Taller);
 		max-width: 50rem;
 	}
@@ -50,5 +51,10 @@
 	main>div>header p:first-child {
 		font-weight: 800;
 		--ScaleLevel: var(--Huge);
+	}
+
+	h4+:is(p, ul, ol), article section {
+		--ScaleLevel: var(--Short);
+		--LineHeightFactor: .75;
 	}
 }

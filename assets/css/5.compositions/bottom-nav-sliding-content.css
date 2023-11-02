@@ -2,6 +2,7 @@
 	.bottom-nav-sliding-content {
 		flex-direction: column;
 		padding: initial;
+		overflow-x: hidden;
 	}
 
 	.bottom-nav-sliding-content>main {
@@ -27,10 +28,6 @@
 		flex-direction: column;
 	}
 
-	.bottom-nav-sliding-content {
-		flex-direction: column;
-	}
-
 	.bottom-nav-sliding-content>header {
 		display: contents;
 	}
@@ -45,7 +42,7 @@
 		order: 1;
 
 		margin: 0;
-		padding-left: calc(var(--Row) / 2); /* stylelint-disable-line property-disallowed-list */
+		padding-left: calc(var(--Row) / 2);
 
 		overflow-x: auto;
 		border-top: 3px solid currentColor;

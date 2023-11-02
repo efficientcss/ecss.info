@@ -101,7 +101,7 @@ It feels good to dive into unknown code... while already knowing what it looks l
 
 **Vanilla CSS is future ready.**
 
-In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`. Only clean and modern code.
+In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`{.html}. Only clean and modern code.
 
 </section>
 </div>
@@ -112,185 +112,211 @@ In practice it means being at the forefront of progress and evolution. No need t
 ## Guiding principles{#principles}
 
 <article>
-### CSS is a *designing* language, not a programming one.
+### CSS is a *designing* language, not a programming one.{#designing-language}
 
 CSS authoring should reflect *design* patterns, concepts and perspectives. With global (sorry) scales, tokens, rules, etc. you limit repetition and facilitate future styling extension.
 
 </article>
 
 <article>
-### Empowering designers to refine their work autonomously is efficient.
+### Empowering designers to refine their work autonomously is efficient.{#design-empowerment}
 
 Making the needed parts of CSS being intelligible (code-savvy or not!) to designers cuts stress, time and promotes good allocation of human resources, refining design in the browser is a great vector of economic profitability.
 
 </article>
 
 <article>
-### Not all CSS properties are born equal.
+### Not all CSS properties are born equal.{#properties-not-equal}
 
 The box-model properties (`display`{.css}, `position`{.css}, `width`{.css}, etc.) are extremely sensitive and potentially way more disruptive than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use, modify and experiment with in context.
 
 </article>
 
 <article>
-### Properties &amp; units have specific roles and usage.
+### Properties &amp; units have specific roles and usage.{#specific-role}
 
 Limiting their use to these roles enhances clarity and promotes consistency as well as predictability. The same goes for units. Some suggest type, others, images or rhythm. Use them intentionally &amp; rationally to communicate meaning.
 
 </article>
 
 <article>
-### Components and patterns *need* structure.
+### Components and patterns *need* structure.{#component-structure}
 
 Trying to abstract it away is vain. Instead, documentation and dilligence are key. HTML is semantically rich, so choose the right tags and refrain from changing them for superficial reasons. One would not remove or change `class="header"`{.html} without understanding its purpose first, then one should not change or remove `<header></header>`{.html} on a whim either.
 
 </article>
 
 <article>
-### CSS Selectors are vehicles for intention.
+### CSS Selectors are vehicles for intention.{#selector-intention}
 
 Every selector particle must have a purpose and if not, must be discarded with. This extraneous `div`{.css} in `.card div h2`{.css} is what makes CSS brittle. These are *not* ["best practices"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
 
 </article>
 
 <article>
-### Selector types all have a function.
+### Selector types all have a function.{#selector-function}
 
 Each one of them may be of use in a certain context. No absolute usage rule should be edicted. It's not "always" or "never" but "it depends" and "why". Absolute rules absolutely corrupt. Or something like that.
 
 </article>
 
 <article>
-### Selection specificity should be harnessed, not rejected.
+### Selection specificity should be harnessed, not rejected.{#harness-specificity}
 
 Nevertheless, "always" (ahem) keep it as low as possible. Yes, in 2015 it may have not been easy. But it's 2023 and [new](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) [features](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) are now widely supported. Use them.
 
 </article>
 
 <article>
-### Global scope in CSS is not a sin.
+### Global scope in CSS is not a sin.{#global-scope}
 
 Remember, *CSS is a designing language* and the global scope fits perfectly in design's fundamentally layered, dimensional approach. Programming best practices are not necessarily designing best practices. Embrace design best practices.
 
 </article>
 
 <article>
-### Global design rules must be largely anonymous &amp; unqualified.
+### Global design rules must be largely anonymous &amp; unqualified.{#global-rules}
 
-Only a few declarations per ruleset only. We are talking rhythm, typography, color; not `display` or `position`. *This* is the way of limiting repetition, bloat &amp; complexity.
+Only a few declarations per ruleset only. We are talking rhythm, typography, color; not `display`{.css} or `position`{.css}. *This* is the way of limiting repetition, bloat &amp; complexity.
 
 </article>
 
 <article>
-### One should wait until a concept is clearly understood before naming it.
+### One should wait until a concept is clearly understood before naming it.{#understood-concept}
 
 Until then use HTML elements. Premature abstraction or ["solving problems not yet encountered"](https://en.wikipedia.org/wiki/Overengineering) are bigger problems than the use of `header`{.css} in CSS. Yes, these are programming best practices. But who told you CSS development was pure?
 
 </article>
 
 <article>
-### When more than 3 rules are repeated more than 3 times, a concept *is* emerging.
+### When more than 3 rules are repeated more than 3 times, a concept *is* emerging.{#rule-repetition}
 
 Rules should then be concentrated by naming and using said concept instead of the bare rules. Reusability, expressivity and simplicity are then greatly improved.
 
 </article>
 
 <article>
-### Named concepts must be autonomous and self-sufficient.
+### Named concepts must be autonomous and self-sufficient.{#autonomous-concept}
 
 Named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
 
 </article>
 
 <article>
-### Manipulating named concepts throughout multiple files is strictly prohibited.
+### Manipulating named concepts throughout multiple files is strictly prohibited.{#concept-manipulation}
 
 All rules for a named concept must reside in the same, unique CSS file. For authors and maintainers to have confidence in the system, there must a single [source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for any concept.
 
 </article>
 
 <article>
-### State, variant or structural are child concepts and must be namespaced &amp; prefixed.
+### State, variant or structural are child concepts and must be namespaced &amp; prefixed.{#child-concepts}
 
 These concepts may be represented as child or combined classes. Never to be used alone, always alongside the parent concept. Yes, here are both "never" *and* "always" in the same sentence. ["Double jeopardy, we are fine"](https://www.youtube.com/watch?v=Z58eTP2gcw0).
 
 </article>
 
 <article>
-### Namespaced classes should generally be implemented with specificity reducing selectors.
+### Namespaced classes should generally be implemented with specificity reducing selectors.{#child-specificity}
 
 Unless otherwise needed, one should strive to keep specificity at 21 or below. With a preference for around 10 to 12. Modern and widely supported pseudo-selectors must here be used.
 
 </article>
 
 <article>
-### One may not come up at first with the efficient way to select interface elements.
+### One may not come up at first with the efficient way to select interface elements.{#selector-efficiency}
 
 One's intention may not be clear at the beginning of a styling job. Instead of fruitlessly trying and trying, a code "quarantine" file should be temporarily used until the right selection manifests itself. Still, no quarantine file should ever be published publicly.
 
 </article>
 
 <article>
-### HTML should be as simple and expressive as can be.
+### HTML should be as simple and expressive as can be.{#expressive-html}
 
 Refrain from over-containing, don't use `<div>`{.html} where you could use `<aside>`{.html}. Dont wrap your single-level navigation in unordered lists. And yes, simple navigation is [accessible](https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element). Keep it simple... Suzy.
 
 </article>
 
 <article>
-### Any HTML element should endorse one role only.
+### Any HTML element should endorse one role only.{#one-role}
 
 As per the famous programming [best practice](https://en.wikipedia.org/wiki/Single-responsibility_principle) (again, programming in designing), semantic tags are for... semantics whilst `<div>`{.html} or `<span>`{.html} tags are for graphical or logical division. Any type of grid should be implemented with `<div>`{.html} tags.
 
 </article>
 
 <article>
-### Any media query adaptation must be included in its related concept's file.
+### Any media query adaptation must be included in its related concept's file.{#adaptation-included}
 
 Not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
 
 </article>
 
 <article>
-### Whole stylesheets are better used when global.
+### Whole stylesheets are better used when global.{#global-stylesheet}
 
 Media query scopes should be used in HTML `<link>`{.html} tags to promote reuse, performance and optimization concerns. Each fundamental design layer should be autonomous, independent and removable.
 
 </article>
 
 <article>
-### Component styling should only be served with live components.
+### Component styling should only be served with live components.{#component-styling}
 
 Not as a big minified file in the `<head>`{.html} tag of the document. This way, the infamous problem of loading unused CSS is practically solved, without any technological debt. First render is also faster since only what is used is processed by the browser. As a bonus, you get the CSS file path in component file.
 
 </article>
 
 <article>
-### One should make full use of freely available development tools by going with the grain of the Web platform.
+### Let the browser do as much of the rendering work as it can.{#browser-rendering}
 
-By using "just-in-time" rulesets, the cascade and intentional selection, the debugging & refining workflow is simpler, lighter and clearer.
+By embracing fluidity, adaptativity is mostly done by the browser. Less rules are needed to insure correct rendering in the infinite number of usage contexts.
 
 </article>
 
 <article>
-### Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code.
+### Make full use of freely available development tools by going with the grain of the Web platform.{#devtools}
 
-By writing native CSS, one uses CSS better; by writing native HTML, one writes HTML better.
+By using "just-in-time" rulesets, design tokens, the cascade and intentional selection, the debugging & refining workflow is simpler, lighter and clearer.
+
+</article>
+
+<article>
+### Eschewing technological abstractions like high-level frameworks spurs lighter, simpler native code.{#native-code}
+
+By writing native CSS, one uses CSS better; by writing native HTML, one writes HTML better. With better CSS and better HTML comes a better user experience.
 
 </article>
 
 </section>
 
-<section>
+<section class="of-side-by-side-text-code">
 ## Authoring rules{#rules}
 
-- [TODO] : link all rules to related principles. Vérifier les liens numérotés.
-- [TODO] : add consistency principle [x] and others needed for rules
-- [TODO] : why, when (do &amp; dont ou exemple détaillé, exceptions)
-- [TODO] : use of style attributes with custom properties.
+<!-- - [TODO] : use of style attributes with custom properties. -->
 
-### All component selectors must start with its filename. <small>(see #11, #12)</small>
+<article>
+<div>
+<div>
+<header>
+### All component selectors *must* start with its filename.{#selector-filename}
+</header>
 
+<section>
+
+#### Principles
+
+- [Autonomous concepts](#autonomous-concept)
+- [Concept manipulation](#concept-manipulation)
+
+</section>
+<section>
+
+#### Notes
+
+To exclude a file from this rule in the Stylelint config, prefix the filename with a digit or "x-" as in "x-quarantine.css"
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -310,8 +336,36 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### All paddings must first be uniform and then be modified if necessary. (see #4)
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### All paddings should first be uniform and then be adjusted if necessary.
+</header>
+
+<section>
+#### Principles
+
+- [Specific role](#specific-role)
+</section>
+
+<section>
+#### Notes
+
+Non-uniform paddings may be used in particular instances for overflow reasons or for added pseudo-content.
+
+</section>
+
+</div>
+<aside>
+#### Example
 
 <div>
 ```css
@@ -329,9 +383,34 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+<div>
+<div>
+<header>
 ### Paddings are to be applied on containing and interactive elements only.
+</header>
+<section>
+#### Principles
 
+- [One role only](#one-role)
+</section>
+
+<section>
+#### Notes
+
+Text elements should only host text styles while container elements can host theming styles. In some instances, container elements could host text styles to be inherited by children.
+
+</section>
+
+</div>
+
+<aside>
 #### Example
 
 <div>
@@ -349,9 +428,34 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### Horizontal margins should not be applied to content elements. (see #4, #17)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### Horizontal margins should not be applied to text elements.
+</header>
+<section>
+#### Principles
+
+- [Specific roles and usage](#specific-role)
+- [One role only](#one-role)
+</section>
+
+<section>
+#### Notes
+
+Horizontal margins can be applied to text elements in the case of _inline elements_ such as icons or tags &amp; on indented elements like `blockquote`{.html}.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -370,24 +474,35 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-#### Exception
+---
 
-Indented items like lists or blockquotes may use `margin-left`
+<article>
 
-### Typographic elements should use heritage when possible. (see #4, #9)
+<div>
+<div>
+<header>
+### Typographic elements should use heritage when possible.
+</header>
+<section>
+#### Principles
 
+- [Specific roles and usage](#specific-role)
+- [Global scope](#global-scope)
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
+
 ```css
 /* Do */
 html {
     line-height: 1.2;
-}
-
-p {
-    line-height: inherit;
 }
 ```
 
@@ -398,9 +513,35 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### Design tokens should be used for most numerical values.
+</header>
+<section>
+#### Principles
 
+- [Designing language](#designing-language)
+- [Designer empowerment](#design-empowerment)
+- [Development tools](#devtools)
+</section>
+
+<section>
+#### Notes
+
+Numerical values should only be used for exceptional alignments. These should be commented to communicate the intent. Even then, why not create a bespoke property meaningfully named?
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -418,9 +559,34 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### Repeating default rules is discouraged. <del>Any instance should be justified.</del>
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### Repeating default rules is discouraged.
+</header>
+<section>
+#### Principles
+
+- [Selector intention](#selector-intention)
+- [Selector function](#selector-function)
+</section>
+
+<section>
+#### Notes
+
+Any instance of repeating default *must* be justified in a comment.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -442,9 +608,33 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### All class entities besides components must be prefixed. (see #13)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### All class entities besides components *must* be prefixed.
+</header>
+<section>
+#### Principles
+
+- [Child concepts](#child-concepts)
+- [Selector intention](#selector-intention)
+- [Selector function](#selector-function)
+- [Autonomous concepts](#autonomous-concept)
+</section>
+
+<section>
+#### Notes
+</section>
+</div>
+<aside>
 #### Example
 <div>
 ```css
@@ -461,8 +651,29 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### Nesting is restricted to one level only.
+</header>
+<section>
+#### Principles
+
+- [Child concepts](#child-concepts)
+- [Selector intention](#selector-intention)
+</section>
+
+</div>
+<aside>
+#### Example
 
 <div>
 ```css
@@ -485,9 +696,29 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### The use of specific dimensions should be avoided.
+</header>
+<section>
+#### Principles
 
+- [Properties are not equal](#properties-not-equal)
+- [Specific role](#specific-role)
+- [Browser rendering](#browser-rendering)
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -505,9 +736,29 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### Use attribute selectors to convey unicity.
+</header>
+<section>
+#### Principles
 
+- [Selector intention](#selector-intention)
+- [Specific role](#specific-role)
+- [Harness specificity](#harness-specificity)
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -525,29 +776,73 @@ p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### The use of positioning and display rules should minimized. (see #3)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### The use of positioning and display rules should minimized.
+</header>
+<section>
+#### Principles
+
+- [Properties are not equal](#properties-not-equal)
+- [Browser rendering](#browser-rendering)
+</section>
+
+<section>
+#### Notes
+
+Use these properties only on elements needing them. Use the narrowest selectors that makes sense in the context.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
 ```css
 /* Do */
-.card>div {
+.card header {
     display: flex;
 }
 ```
 
 ```css
 /* Don't */
-.card div {
+header {
     display: flex;
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### Overqualified selectors are discouraged.
+</header>
+<section>
+#### Principles
 
+- [Harness specificity](#harness-specificity)
+- [Selector intention](#selector-intention)
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -565,9 +860,29 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### Components cannot exert outside influence. (see #11)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### Components cannot exert outside influence.
+</header>
+<section>
+#### Principles
+
+- [Autonomous concepts](#autonomous-concept)
+- [Properties are not equal](#properties-not-equal)
+- [Specific roles and usage](#specific-role)
+</section>
+
+</div>
+<aside>
 #### Example
 
 
@@ -586,10 +901,34 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
+<article>
+
+<div>
+<div>
+<header>
 ### Overflow should not be hidden.
+</header>
+<section>
+#### Principles
 
+- [Browser rendering](#browser-rendering)
+- [Properties are not equal](#properties-not-equal)
+</section>
+
+<section>
+#### Notes
+
+By hiding the way browsers treat overflowing items, we may hide content without knowing. By using `auto`{.css} instead of `hidden`{.css}, the oveflowing content will be accessible *and* the scrollbar will signal the design problem instead of hiding it. Hiding scrollbars may be necessary in some particular composition (see this very site's portrait adaptation for an example!).
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -609,10 +948,33 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
+<article>
+
+<div>
+<div>
+<header>
 ### Numbers in class names are to be avoided.
+</header>
+<section>
+#### Principles
 
+- [Selector intention](#selector-intention)
+</section>
+
+<section>
+#### Notes
+
+Numbers may convey intention in grid system cases as in, for example, `grid-10`{.html} or `col-3`{.html}. Still, the utility of these systems is low in modern CSS times. Leaving them aside is suggested.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -642,10 +1004,35 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### Magic numbers must be avoided or explained in a line comment.
+<article>
 
+<div>
+<div>
+<header>
+### Magic numbers *must* be avoided or explained in a line comment.
+</header>
+<section>
+#### Principles
+
+- [Designing language](#designing-language)
+- [Designer empowerment](#design-empowerment)
+- [Specific roles and usage](#specific-role)
+</section>
+
+<section>
+#### Notes
+
+Value and unit choices should be dictated by the graphic language and its design tokens. Absolute values in numerical form should be reserved to special cases like bespoke icon alignment or bullet list padding. The intention *must* be clear in itself or commented if not.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -663,12 +1050,34 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### Entities cannot be included in the not() selector.
+<article>
 
-### Rhythm must be applied in one direction only, preferably top. (see #4)
+<div>
+<div>
+<header>
+### Rhythm *must* be applied in one direction only, preferably top.
+</header>
+<section>
+#### Principles
 
+- [Designing language](#designing-language)
+- [Specific roles and usage](#specific-role)
+</section>
+
+<section>
+#### Notes
+
+Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphical elements and should be applied as such in CSS. The [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} selector (*+*) is tailor made for this task. When using a flex container, the `gap`{.css} property does it all for you!
+
+</section>
+</div>
+<aside>
 #### Example
 
 
@@ -688,10 +1097,34 @@ article.card {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### The use of problematic units is discouraged. (see #6)
+<article>
 
+<div>
+<div>
+<header>
+### The use of problematic units is discouraged.
+</header>
+<section>
+#### Principles
+
+- [Specific roles and usage](#specific-role)
+</section>
+
+<section>
+#### Notes
+
+Static viewport units (vh, vw, vmin, vmax) are famously problematic, particularly when used as `100vh`{.css} or `100vw`{.css}. [Dynamic viewport units](https://caniuse.com/viewport-unit-variants){target="\_blank"} are better suited for this task.
+
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -709,9 +1142,27 @@ nav {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### Tag selectors should be leveraged inside components. (see #5)
+<article>
 
+<div>
+<div>
+<header>
+### Tag selectors should be leveraged inside components.
+</header>
+<section>
+#### Principles
+
+- [Component structure](#component-structure)
+- [Expressive HTML](#expressive-html)
+</section>
+
+</div>
+
+<aside>
 #### Example
 
 <div>
@@ -729,9 +1180,35 @@ nav {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### One entity per file with a soft cap of about a hundred lines. (see #11, #20)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### One entity per file with a soft cap of about a hundred lines.
+</header>
+<section>
+#### Principles
+
+- [Autonomous concepts](#autonomous-concept)
+- [Concept manipulation](#concept-manipulation)
+</section>
+
+<section>
+#### Notes
+
+This is one of the most important rules for achieving sustainable CSS. One autonomous concept per file prevents the multiplication of overrides and redefinition across the codebase. 
+
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -760,10 +1237,35 @@ nav {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### Selectors must strictly include only necessary selection parts. (see #6, #8)
+<article>
 
+<div>
+<div>
+<header>
+### Selectors *must* strictly include only necessary selection parts.
+</header>
+<section>
+#### Principles
+
+- [Component structure](#component-structure)
+- [Selector intention](#selector-intention)
+- [Harness specificity](#harness-specificity)
+</section>
+
+<section>
+#### Notes
+
+This mistake, being passed as "best practices", is the source of many self-induced CSS headaches. Fortunately, the solution is simple: *do not use selection parts that you could remove without changing the original intention*.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -781,9 +1283,28 @@ nav {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
-### Duplication of a set of more than 3 rules is discouraged. (see #10)
+---
 
+<article>
+
+<div>
+<div>
+<header>
+### Duplication of a set of more than 3 rules is discouraged.
+</header>
+<section>
+#### Principles
+
+- [Rule repetition](#rule-repetition)
+- [Autonomous concepts](#autonomous-concept)
+</section>
+
+</div>
+<aside>
 #### Example
 
 
@@ -818,10 +1339,31 @@ nav {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### The use of the global scope is encouraged for all fundamental design layers. (see #1, #2, #9)
+<article>
 
+<div>
+<div>
+<header>
+### The use of the global scope is encouraged for all fundamental design layers.
+</header>
+<section>
+#### Principles
+
+- [Designing language](#designing-language)
+- [Designer empowerment](#design-empowerment)
+- [Global scope](#global-scope)
+- [Global rules](#global-rules)
+- [Harness specificity](#harness-specificity)
+</section>
+
+</div>
+<aside>
 #### Example
 
 
@@ -847,10 +1389,36 @@ p+p {
 }
 ```
 </div>
+</aside>
+</div>
+</article>
 
+---
 
-### HTML structure should be as flat as possible and bereft of single tag nesting. (see #4, #8, #16, #17)
+<article>
 
+<div>
+<div>
+<header>
+### HTML structure should be as flat as possible and bereft of single tag nesting.
+</header>
+
+<section>
+#### Principles
+
+- [Component structure](#component-structure)
+- [Expressive HTML](#expressive-html)
+</section>
+
+<section>
+#### Notes
+
+Sometimes it could make sense to add a div even if it's the only child. The case of a content grid comes to mind. See this page's source for an example.
+
+</section>
+
+</div>
+<aside>
 #### Example
 
 <div>
@@ -871,21 +1439,37 @@ p+p {
     </div>
 </article>
 ```
-
-<aside>
-
-#### Caveat
-
-Sometimes it could make sense to add a div even if it's the only child. The case of a grid comes to mind.
-
+</div>
 </aside>
 </div>
+</article>
 
-! ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12)
+---
 
+<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
 
-### Specificity must be kept as low as possible. (see #8)
+<article>
 
+<div>
+<div>
+<header>
+### Specificity *must* be kept as low as possible.
+</header>
+<section>
+#### Principles
+
+- [Harness specificity](#harness-specificity)
+- [Child specificity](#child-specificity)
+</section>
+
+<section>
+#### Notes
+
+Sometimes it makes sense to add specificity. But don't do it until proven necessary.
+
+</section>
+</div>
+<aside>
 #### Example
 
 <div>
@@ -903,20 +1487,20 @@ Sometimes it could make sense to add a div even if it's the only child. The case
 }
 ```
 </div>
+</aside>
 
+</div>
+</article>
 
-#### Caveat
-
-Sometimes it makes sense to add specificity. But don't do it until proven necessary.
 
 </section>
 
 <section>
 ## Related tools{#tools}
 
-Browser Inspector (debugging, experimenting and navigating)
-Scaffolding &amp; code library (use it... or not!)
-Stylelint (lint and inform)
-CSSCSS (find rule duplication in your codebase)
-PurifyCSS, PurgeCSS or Chrome Coverage devtool
+- Browser Inspector (debugging, experimenting and navigating)
+- Scaffolding &amp; code library (use it... or not!)
+- Stylelint (lint and inform)
+- CSSCSS (find rule duplication in your codebase)
+- PurifyCSS, PurgeCSS or Chrome Coverage devtool
 </section>

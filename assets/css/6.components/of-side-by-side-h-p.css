@@ -21,3 +21,7 @@
 	flex-basis: calc(var(--p-basis) + var(--Row));
 	flex-grow: 2;
 }
+
+.of-side-by-side-h-p :is(article, section)>*+* {
+	margin: 0;
+}

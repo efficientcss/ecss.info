@@ -11,8 +11,14 @@
 		align-self: start;
 	}
 
+	.side-nav-main-pile h1 {
+		position: relative;
+		top: -0.1em;
+	}
+
 	.side-nav-main-pile>header>nav {
 		flex-direction: column;
+		margin-top: calc(var(--Row) * 2);
 	}
 
 	.side-nav-main-pile>main {

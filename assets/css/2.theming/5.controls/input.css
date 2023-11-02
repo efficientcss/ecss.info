@@ -4,11 +4,11 @@
 label {
 	position: relative;
 	display: inline-flex;
+	flex-basis: auto;
+	flex-grow: 0;
+	flex-shrink: 0;
 	align-items: baseline;
 	box-sizing: border-box;
-	flex-shrink: 0;
-	flex-grow: 0;
-	flex-basis: auto;
 }
 
 input[type=checkbox] {
@@ -17,15 +17,15 @@ input[type=checkbox] {
 }
 
 input[type=radio] {
-	all: initial;
-	appearance: none;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	width: 100%;
 	z-index: -1;
+	width: 100%;
+	appearance: none;
+	all: initial;
 }
 
 label input[type=checkbox] {

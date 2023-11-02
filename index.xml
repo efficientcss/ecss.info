@@ -100,8 +100,8 @@ stress, less friction and happier teams!</p>
 <p>In practice it means being at the forefront of progress and
 evolution. No need to wait for third parties to implement new features.
 You can use clamp() as of now and say goodbye to 80% of your media
-queries. No more <code>sm-this md-that</code>. Only clean and modern
-code.</p>
+queries. No more <code class="sourceCode html">sm-this md-that</code>.
+Only clean and modern code.</p>
 </section>
 </div>
 </section>
@@ -109,24 +109,23 @@ code.</p>
 <section class="of-side-by-side-h-p as-numbered-list">
 <h2 id="principles">Guiding principles</h2>
 <article>
-<h3 id="css-is-a-designing-language-not-a-programming-one.">CSS is a
-<em>designing</em> language, not a programming one.</h3>
+<h3 id="designing-language">CSS is a <em>designing</em> language, not a
+programming one.</h3>
 <p>CSS authoring should reflect <em>design</em> patterns, concepts and
 perspectives. With global (sorry) scales, tokens, rules, etc. you limit
 repetition and facilitate future styling extension.</p>
 </article>
 <article>
-<h3
-id="empowering-designers-to-refine-their-work-autonomously-is-efficient.">Empowering
-designers to refine their work autonomously is efficient.</h3>
+<h3 id="design-empowerment">Empowering designers to refine their work
+autonomously is efficient.</h3>
 <p>Making the needed parts of CSS being intelligible (code-savvy or
 not!) to designers cuts stress, time and promotes good allocation of
 human resources, refining design in the browser is a great vector of
 economic profitability.</p>
 </article>
 <article>
-<h3 id="not-all-css-properties-are-born-equal.">Not all CSS properties
-are born equal.</h3>
+<h3 id="properties-not-equal">Not all CSS properties are born
+equal.</h3>
 <p>The box-model properties (<code
 class="sourceCode css">display</code>, <code
 class="sourceCode css">position</code>, <code
@@ -137,16 +136,16 @@ ones designers should be able to use, modify and experiment with in
 context.</p>
 </article>
 <article>
-<h3 id="properties-units-have-specific-roles-and-usage.">Properties
-&amp; units have specific roles and usage.</h3>
+<h3 id="specific-role">Properties &amp; units have specific roles and
+usage.</h3>
 <p>Limiting their use to these roles enhances clarity and promotes
 consistency as well as predictability. The same goes for units. Some
 suggest type, others, images or rhythm. Use them intentionally &amp;
 rationally to communicate meaning.</p>
 </article>
 <article>
-<h3 id="components-and-patterns-need-structure.">Components and patterns
-<em>need</em> structure.</h3>
+<h3 id="component-structure">Components and patterns <em>need</em>
+structure.</h3>
 <p>Trying to abstract it away is vain. Instead, documentation and
 dilligence are key. HTML is semantically rich, so choose the right tags
 and refrain from changing them for superficial reasons. One would not
@@ -158,8 +157,8 @@ class="sourceCode html"><span class="dt">&lt;</span><span class="kw">header</spa
 on a whim either.</p>
 </article>
 <article>
-<h3 id="css-selectors-are-vehicles-for-intention.">CSS Selectors are
-vehicles for intention.</h3>
+<h3 id="selector-intention">CSS Selectors are vehicles for
+intention.</h3>
 <p>Every selector particle must have a purpose and if not, must be
 discarded with. This extraneous <code class="sourceCode css">div</code>
 in <code
@@ -169,17 +168,15 @@ href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">“
 practices”</a>.</p>
 </article>
 <article>
-<h3 id="selector-types-all-have-a-function.">Selector types all have a
-function.</h3>
+<h3 id="selector-function">Selector types all have a function.</h3>
 <p>Each one of them may be of use in a certain context. No absolute
 usage rule should be edicted. It’s not “always” or “never” but “it
 depends” and “why”. Absolute rules absolutely corrupt. Or something like
 that.</p>
 </article>
 <article>
-<h3
-id="selection-specificity-should-be-harnessed-not-rejected.">Selection
-specificity should be harnessed, not rejected.</h3>
+<h3 id="harness-specificity">Selection specificity should be harnessed,
+not rejected.</h3>
 <p>Nevertheless, “always” (ahem) keep it as low as possible. Yes, in
 2015 it may have not been easy. But it’s 2023 and <a
 href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers">new</a>
@@ -188,26 +185,23 @@ href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where">features</a>
 are now widely supported. Use them.</p>
 </article>
 <article>
-<h3 id="global-scope-in-css-is-not-a-sin.">Global scope in CSS is not a
-sin.</h3>
+<h3 id="global-scope">Global scope in CSS is not a sin.</h3>
 <p>Remember, <em>CSS is a designing language</em> and the global scope
 fits perfectly in design’s fundamentally layered, dimensional approach.
 Programming best practices are not necessarily designing best practices.
 Embrace design best practices.</p>
 </article>
 <article>
-<h3
-id="global-design-rules-must-be-largely-anonymous-unqualified.">Global
-design rules must be largely anonymous &amp; unqualified.</h3>
+<h3 id="global-rules">Global design rules must be largely anonymous
+&amp; unqualified.</h3>
 <p>Only a few declarations per ruleset only. We are talking rhythm,
-typography, color; not <code>display</code> or <code>position</code>.
-<em>This</em> is the way of limiting repetition, bloat &amp;
-complexity.</p>
+typography, color; not <code class="sourceCode css">display</code> or
+<code class="sourceCode css">position</code>. <em>This</em> is the way
+of limiting repetition, bloat &amp; complexity.</p>
 </article>
 <article>
-<h3
-id="one-should-wait-until-a-concept-is-clearly-understood-before-naming-it.">One
-should wait until a concept is clearly understood before naming it.</h3>
+<h3 id="understood-concept">One should wait until a concept is clearly
+understood before naming it.</h3>
 <p>Until then use HTML elements. Premature abstraction or <a
 href="https://en.wikipedia.org/wiki/Overengineering">“solving problems
 not yet encountered”</a> are bigger problems than the use of <code
@@ -215,25 +209,22 @@ class="sourceCode css">header</code> in CSS. Yes, these are programming
 best practices. But who told you CSS development was pure?</p>
 </article>
 <article>
-<h3
-id="when-more-than-3-rules-are-repeated-more-than-3-times-a-concept-is-emerging.">When
-more than 3 rules are repeated more than 3 times, a concept <em>is</em>
-emerging.</h3>
+<h3 id="rule-repetition">When more than 3 rules are repeated more than 3
+times, a concept <em>is</em> emerging.</h3>
 <p>Rules should then be concentrated by naming and using said concept
 instead of the bare rules. Reusability, expressivity and simplicity are
 then greatly improved.</p>
 </article>
 <article>
-<h3 id="named-concepts-must-be-autonomous-and-self-sufficient.">Named
-concepts must be autonomous and self-sufficient.</h3>
+<h3 id="autonomous-concept">Named concepts must be autonomous and
+self-sufficient.</h3>
 <p>Named concepts should not be defined inside another named concept. If
 it ever is necessary, the child concept must be scoped to the parent
 concept and is <em>not</em> to be reused anywhere else.</p>
 </article>
 <article>
-<h3
-id="manipulating-named-concepts-throughout-multiple-files-is-strictly-prohibited.">Manipulating
-named concepts throughout multiple files is strictly prohibited.</h3>
+<h3 id="concept-manipulation">Manipulating named concepts throughout
+multiple files is strictly prohibited.</h3>
 <p>All rules for a named concept must reside in the same, unique CSS
 file. For authors and maintainers to have confidence in the system,
 there must a single <a
@@ -241,10 +232,8 @@ href="https://en.wikipedia.org/wiki/Single_source_of_truth">source of
 truth</a> for any concept.</p>
 </article>
 <article>
-<h3
-id="state-variant-or-structural-are-child-concepts-and-must-be-namespaced-prefixed.">State,
-variant or structural are child concepts and must be namespaced &amp;
-prefixed.</h3>
+<h3 id="child-concepts">State, variant or structural are child concepts
+and must be namespaced &amp; prefixed.</h3>
 <p>These concepts may be represented as child or combined classes. Never
 to be used alone, always alongside the parent concept. Yes, here are
 both “never” <em>and</em> “always” in the same sentence. <a
@@ -252,27 +241,23 @@ href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double jeopardy, we
 are fine”</a>.</p>
 </article>
 <article>
-<h3
-id="namespaced-classes-should-generally-be-implemented-with-specificity-reducing-selectors.">Namespaced
-classes should generally be implemented with specificity reducing
-selectors.</h3>
+<h3 id="child-specificity">Namespaced classes should generally be
+implemented with specificity reducing selectors.</h3>
 <p>Unless otherwise needed, one should strive to keep specificity at 21
 or below. With a preference for around 10 to 12. Modern and widely
 supported pseudo-selectors must here be used.</p>
 </article>
 <article>
-<h3
-id="one-may-not-come-up-at-first-with-the-efficient-way-to-select-interface-elements.">One
-may not come up at first with the efficient way to select interface
-elements.</h3>
+<h3 id="selector-efficiency">One may not come up at first with the
+efficient way to select interface elements.</h3>
 <p>One’s intention may not be clear at the beginning of a styling job.
 Instead of fruitlessly trying and trying, a code “quarantine” file
 should be temporarily used until the right selection manifests itself.
 Still, no quarantine file should ever be published publicly.</p>
 </article>
 <article>
-<h3 id="html-should-be-as-simple-and-expressive-as-can-be.">HTML should
-be as simple and expressive as can be.</h3>
+<h3 id="expressive-html">HTML should be as simple and expressive as can
+be.</h3>
 <p>Refrain from over-containing, don’t use <code
 class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
 where you could use <code
@@ -283,8 +268,7 @@ href="https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element">acc
 Keep it simple… Suzy.</p>
 </article>
 <article>
-<h3 id="any-html-element-should-endorse-one-role-only.">Any HTML element
-should endorse one role only.</h3>
+<h3 id="one-role">Any HTML element should endorse one role only.</h3>
 <p>As per the famous programming <a
 href="https://en.wikipedia.org/wiki/Single-responsibility_principle">best
 practice</a> (again, programming in designing), semantic tags are for…
@@ -298,17 +282,15 @@ class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><
 tags.</p>
 </article>
 <article>
-<h3
-id="any-media-query-adaptation-must-be-included-in-its-related-concepts-file.">Any
-media query adaptation must be included in its related concept’s
-file.</h3>
+<h3 id="adaptation-included">Any media query adaptation must be included
+in its related concept’s file.</h3>
 <p>Not as as a separate file, not as suffixed classes. If one uses
 utility classes, the provided rules should not be query dependent but
 rather be universally needed, in every media configuration.</p>
 </article>
 <article>
-<h3 id="whole-stylesheets-are-better-used-when-global.">Whole
-stylesheets are better used when global.</h3>
+<h3 id="global-stylesheet">Whole stylesheets are better used when
+global.</h3>
 <p>Media query scopes should be used in HTML <code
 class="sourceCode html"><span class="dt">&lt;</span><span class="kw">link</span><span class="dt">&gt;</span></code>
 tags to promote reuse, performance and optimization concerns. Each
@@ -316,9 +298,8 @@ fundamental design layer should be autonomous, independent and
 removable.</p>
 </article>
 <article>
-<h3
-id="component-styling-should-only-be-served-with-live-components.">Component
-styling should only be served with live components.</h3>
+<h3 id="component-styling">Component styling should only be served with
+live components.</h3>
 <p>Not as a big minified file in the <code
 class="sourceCode html"><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></code>
 tag of the document. This way, the infamous problem of loading unused
@@ -327,38 +308,51 @@ is also faster since only what is used is processed by the browser. As a
 bonus, you get the CSS file path in component file.</p>
 </article>
 <article>
-<h3
-id="one-should-make-full-use-of-freely-available-development-tools-by-going-with-the-grain-of-the-web-platform.">One
-should make full use of freely available development tools by going with
-the grain of the Web platform.</h3>
-<p>By using “just-in-time” rulesets, the cascade and intentional
-selection, the debugging &amp; refining workflow is simpler, lighter and
-clearer.</p>
+<h3 id="browser-rendering">Let the browser do as much of the rendering
+work as it can.</h3>
+<p>By embracing fluidity, adaptativity is mostly done by the browser.
+Less rules are needed to insure correct rendering in the infinite number
+of usage contexts.</p>
 </article>
 <article>
-<h3
-id="eschewing-technological-abstractions-like-high-level-frameworks-spurs-lighter-simpler-native-code.">Eschewing
-technological abstractions like high-level frameworks spurs lighter,
-simpler native code.</h3>
+<h3 id="devtools">Make full use of freely available development tools by
+going with the grain of the Web platform.</h3>
+<p>By using “just-in-time” rulesets, design tokens, the cascade and
+intentional selection, the debugging &amp; refining workflow is simpler,
+lighter and clearer.</p>
+</article>
+<article>
+<h3 id="native-code">Eschewing technological abstractions like
+high-level frameworks spurs lighter, simpler native code.</h3>
 <p>By writing native CSS, one uses CSS better; by writing native HTML,
-one writes HTML better.</p>
+one writes HTML better. With better CSS and better HTML comes a better
+user experience.</p>
 </article>
 </section>
-<section>
+<section class="of-side-by-side-text-code">
 <h2 id="rules">Authoring rules</h2>
+<!-- - [TODO] : use of style attributes with custom properties. -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="selector-filename">All component selectors <em>must</em> start
+with its filename.</h3>
+</header>
+<section>
+<h4 id="principles-1">Principles</h4>
 <ul>
-<li>[TODO] : link all rules to related principles. Vérifier les liens
-numérotés.</li>
-<li>[TODO] : add consistency principle [x] and others needed for
-rules</li>
-<li>[TODO] : why, when (do &amp; dont ou exemple détaillé,
-exceptions)</li>
-<li>[TODO] : use of style attributes with custom properties.</li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#concept-manipulation">Concept manipulation</a></li>
 </ul>
-<h3
-id="all-component-selectors-must-start-with-its-filename.-see-11-12">All
-component selectors must start with its filename. <small>(see #11,
-#12)</small></h3>
+</section>
+<section>
+<h4 id="notes">Notes</h4>
+<p>To exclude a file from this rule in the Stylelint config, prefix the
+filename with a digit or “x-” as in “x-quarantine.css”</p>
+</section>
+</div>
+<aside>
 <h4 id="example">Example</h4>
 <div>
 <div class="sourceCode" id="cb1"><pre
@@ -374,10 +368,32 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#c
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">...</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="all-paddings-must-first-be-uniform-and-then-be-modified-if-necessary.-see-4">All
-paddings must first be uniform and then be modified if necessary. (see
-#4)</h3>
+id="all-paddings-should-first-be-uniform-and-then-be-adjusted-if-necessary.">All
+paddings should first be uniform and then be adjusted if necessary.</h3>
+</header>
+<section>
+<h4 id="principles-2">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific role</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-1">Notes</h4>
+<p>Non-uniform paddings may be used in particular instances for overflow
+reasons or for added pseudo-content.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-1">Example</h4>
 <div>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -391,10 +407,33 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#c
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">30</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
 id="paddings-are-to-be-applied-on-containing-and-interactive-elements-only.">Paddings
 are to be applied on containing and interactive elements only.</h3>
-<h4 id="example-1">Example</h4>
+</header>
+<section>
+<h4 id="principles-3">Principles</h4>
+<ul>
+<li><a href="#one-role">One role only</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-2">Notes</h4>
+<p>Text elements should only host text styles while container elements
+can host theming styles. In some instances, container elements could
+host text styles to be inherited by children.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-2">Example</h4>
 <div>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -407,10 +446,34 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#c
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="horizontal-margins-should-not-be-applied-to-content-elements.-see-4-17">Horizontal
-margins should not be applied to content elements. (see #4, #17)</h3>
-<h4 id="example-2">Example</h4>
+id="horizontal-margins-should-not-be-applied-to-text-elements.">Horizontal
+margins should not be applied to text elements.</h3>
+</header>
+<section>
+<h4 id="principles-4">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#one-role">One role only</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-3">Notes</h4>
+<p>Horizontal margins can be applied to text elements in the case of
+<em>inline elements</em> such as icons or tags &amp; on indented
+elements like <code class="sourceCode html">blockquote</code>.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-3">Example</h4>
 <div>
 <div class="sourceCode" id="cb7"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -424,32 +487,68 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#c
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h4 id="exception">Exception</h4>
-<p>Indented items like lists or blockquotes may use
-<code>margin-left</code></p>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="typographic-elements-should-use-heritage-when-possible.-see-4-9">Typographic
-elements should use heritage when possible. (see #4, #9)</h3>
-<h4 id="example-3">Example</h4>
+id="typographic-elements-should-use-heritage-when-possible.">Typographic
+elements should use heritage when possible.</h3>
+</header>
+<section>
+<h4 id="principles-5">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#global-scope">Global scope</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-4">Example</h4>
 <div>
 <div class="sourceCode" id="cb9"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="bu">inherit</span><span class="op">;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don&#39;t */</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p {</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="design-tokens-should-be-used-for-most-numerical-values.">Design
 tokens should be used for most numerical values.</h3>
-<h4 id="example-4">Example</h4>
+</header>
+<section>
+<h4 id="principles-6">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#devtools">Development tools</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-4">Notes</h4>
+<p>Numerical values should only be used for exceptional alignments.
+These should be commented to communicate the intent. Even then, why not
+create a bespoke property meaningfully named?</p>
+</section>
+</div>
+<aside>
+<h4 id="example-5">Example</h4>
 <div>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -462,11 +561,32 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb12-1"><a href="#
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3
-id="repeating-default-rules-is-discouraged.-any-instance-should-be-justified.">Repeating
-default rules is discouraged. <del>Any instance should be
-justified.</del></h3>
-<h4 id="example-5">Example</h4>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="repeating-default-rules-is-discouraged.">Repeating default rules
+is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-7">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-5">Notes</h4>
+<p>Any instance of repeating default <em>must</em> be justified in a
+comment.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-6">Example</h4>
 <div>
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -483,10 +603,32 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb14-1"><a href="#
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3
-id="all-class-entities-besides-components-must-be-prefixed.-see-13">All
-class entities besides components must be prefixed. (see #13)</h3>
-<h4 id="example-6">Example</h4>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="all-class-entities-besides-components-must-be-prefixed.">All
+class entities besides components <em>must</em> be prefixed.</h3>
+</header>
+<section>
+<h4 id="principles-8">Principles</h4>
+<ul>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-6">Notes</h4>
+</section>
+</div>
+<aside>
+<h4 id="example-7">Example</h4>
 <div>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -499,8 +641,27 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb16-1"><a href="#
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="nesting-is-restricted-to-one-level-only.">Nesting is restricted
 to one level only.</h3>
+</header>
+<section>
+<h4 id="principles-9">Principles</h4>
+<ul>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-8">Example</h4>
 <div>
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -519,9 +680,28 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb18-1"><a href="#
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="the-use-of-specific-dimensions-should-be-avoided.">The use of
 specific dimensions should be avoided.</h3>
-<h4 id="example-7">Example</h4>
+</header>
+<section>
+<h4 id="principles-10">Principles</h4>
+<ul>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-9">Example</h4>
 <div>
 <div class="sourceCode" id="cb19"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -534,9 +714,28 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb20-1"><a href="#
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="use-attribute-selectors-to-convey-unicity.">Use attribute
 selectors to convey unicity.</h3>
-<h4 id="example-8">Example</h4>
+</header>
+<section>
+<h4 id="principles-11">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-10">Example</h4>
 <div>
 <div class="sourceCode" id="cb21"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -549,25 +748,65 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb22-1"><a href="#
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3
-id="the-use-of-positioning-and-display-rules-should-minimized.-see-3">The
-use of positioning and display rules should minimized. (see #3)</h3>
-<h4 id="example-9">Example</h4>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-positioning-and-display-rules-should-minimized.">The
+use of positioning and display rules should minimized.</h3>
+</header>
+<section>
+<h4 id="principles-12">Principles</h4>
+<ul>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-7">Notes</h4>
+<p>Use these properties only on elements needing them. Use the narrowest
+selectors that makes sense in the context.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-11">Example</h4>
 <div>
 <div class="sourceCode" id="cb23"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span><span class="op">&gt;</span>div {</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don&#39;t */</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> div {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>header {</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="overqualified-selectors-are-discouraged.">Overqualified
 selectors are discouraged.</h3>
-<h4 id="example-10">Example</h4>
+</header>
+<section>
+<h4 id="principles-13">Principles</h4>
+<ul>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-12">Example</h4>
 <div>
 <div class="sourceCode" id="cb25"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -580,9 +819,28 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb26-1"><a href="#
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3 id="components-cannot-exert-outside-influence.-see-11">Components
-cannot exert outside influence. (see #11)</h3>
-<h4 id="example-11">Example</h4>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="components-cannot-exert-outside-influence.">Components cannot
+exert outside influence.</h3>
+</header>
+<section>
+<h4 id="principles-14">Principles</h4>
+<ul>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-13">Example</h4>
 <div>
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -595,9 +853,38 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb28-1"><a href="#
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="overflow-should-not-be-hidden.">Overflow should not be
 hidden.</h3>
-<h4 id="example-12">Example</h4>
+</header>
+<section>
+<h4 id="principles-15">Principles</h4>
+<ul>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-8">Notes</h4>
+<p>By hiding the way browsers treat overflowing items, we may hide
+content without knowing. By using <code
+class="sourceCode css">auto</code> instead of <code
+class="sourceCode css">hidden</code>, the oveflowing content will be
+accessible <em>and</em> the scrollbar will signal the design problem
+instead of hiding it. Hiding scrollbars may be necessary in some
+particular composition (see this very site’s portrait adaptation for an
+example!).</p>
+</section>
+</div>
+<aside>
+<h4 id="example-14">Example</h4>
 <div>
 <div class="sourceCode" id="cb29"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -612,9 +899,33 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb30-1"><a href="#
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span>: <span class="dv">hidden</span><span class="op">;</span></span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3 id="numbers-in-class-names-are-to-be-avoided.">Numbers in class
 names are to be avoided.</h3>
-<h4 id="example-13">Example</h4>
+</header>
+<section>
+<h4 id="principles-16">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-9">Notes</h4>
+<p>Numbers may convey intention in grid system cases as in, for example,
+<code class="sourceCode html">grid-10</code> or <code
+class="sourceCode html">col-3</code>. Still, the utility of these
+systems is low in modern CSS times. Leaving them aside is suggested.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-15">Example</h4>
 <div>
 <div class="sourceCode" id="cb31"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -639,10 +950,36 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb32-1"><a href="#
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
 id="magic-numbers-must-be-avoided-or-explained-in-a-line-comment.">Magic
-numbers must be avoided or explained in a line comment.</h3>
-<h4 id="example-14">Example</h4>
+numbers <em>must</em> be avoided or explained in a line comment.</h3>
+</header>
+<section>
+<h4 id="principles-17">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-10">Notes</h4>
+<p>Value and unit choices should be dictated by the graphic language and
+its design tokens. Absolute values in numerical form should be reserved
+to special cases like bespoke icon alignment or bullet list padding. The
+intention <em>must</em> be clear in itself or commented if not.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-16">Example</h4>
 <div>
 <div class="sourceCode" id="cb33"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -655,12 +992,38 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb34-1"><a href="#
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3 id="entities-cannot-be-included-in-the-not-selector.">Entities
-cannot be included in the not() selector.</h3>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="rhythm-must-be-applied-in-one-direction-only-preferably-top.-see-4">Rhythm
-must be applied in one direction only, preferably top. (see #4)</h3>
-<h4 id="example-15">Example</h4>
+id="rhythm-must-be-applied-in-one-direction-only-preferably-top.">Rhythm
+<em>must</em> be applied in one direction only, preferably top.</h3>
+</header>
+<section>
+<h4 id="principles-18">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-11">Notes</h4>
+<p>Spacing is rhythm, a fundamental design concept. Rhythm occurs
+<em>between</em> graphical elements and should be applied as such in
+CSS. The <a
+href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/"
+target="_blank">lobotomized owl</a> selector (<em>+</em>) is tailor made
+for this task. When using a flex container, the <code
+class="sourceCode css">gap</code> property does it all for you!</p>
+</section>
+</div>
+<aside>
+<h4 id="example-17">Example</h4>
 <div>
 <div class="sourceCode" id="cb35"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -674,9 +1037,35 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb36-1"><a href="#
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3 id="the-use-of-problematic-units-is-discouraged.-see-6">The use of
-problematic units is discouraged. (see #6)</h3>
-<h4 id="example-16">Example</h4>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-problematic-units-is-discouraged.">The use of
+problematic units is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-19">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-12">Notes</h4>
+<p>Static viewport units (vh, vw, vmin, vmax) are famously problematic,
+particularly when used as <code class="sourceCode css">100vh</code> or
+<code class="sourceCode css">100vw</code>. <a
+href="https://caniuse.com/viewport-unit-variants"
+target="_blank">Dynamic viewport units</a> are better suited for this
+task.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-18">Example</h4>
 <div>
 <div class="sourceCode" id="cb37"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -689,9 +1078,26 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h3 id="tag-selectors-should-be-leveraged-inside-components.-see-5">Tag
-selectors should be leveraged inside components. (see #5)</h3>
-<h4 id="example-17">Example</h4>
+</aside>
+</div>
+</article>
+<article>
+<div>
+<div>
+<header>
+<h3 id="tag-selectors-should-be-leveraged-inside-components.">Tag
+selectors should be leveraged inside components.</h3>
+</header>
+<section>
+<h4 id="principles-20">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-19">Example</h4>
 <div>
 <div class="sourceCode" id="cb39"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -704,11 +1110,34 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb40-1"><a href="#
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="one-entity-per-file-with-a-soft-cap-of-about-a-hundred-lines.-see-11-20">One
-entity per file with a soft cap of about a hundred lines. (see #11,
-#20)</h3>
-<h4 id="example-18">Example</h4>
+id="one-entity-per-file-with-a-soft-cap-of-about-a-hundred-lines.">One
+entity per file with a soft cap of about a hundred lines.</h3>
+</header>
+<section>
+<h4 id="principles-21">Principles</h4>
+<ul>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#concept-manipulation">Concept manipulation</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-13">Notes</h4>
+<p>This is one of the most important rules for achieving sustainable
+CSS. One autonomous concept per file prevents the multiplication of
+overrides and redefinition across the codebase.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-20">Example</h4>
 <div>
 <div class="sourceCode" id="cb41"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -732,10 +1161,36 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb42-1"><a href="#
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="selectors-must-strictly-include-only-necessary-selection-parts.-see-6-8">Selectors
-must strictly include only necessary selection parts. (see #6, #8)</h3>
-<h4 id="example-19">Example</h4>
+id="selectors-must-strictly-include-only-necessary-selection-parts.">Selectors
+<em>must</em> strictly include only necessary selection parts.</h3>
+</header>
+<section>
+<h4 id="principles-22">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-14">Notes</h4>
+<p>This mistake, being passed as “best practices”, is the source of many
+self-induced CSS headaches. Fortunately, the solution is simple: <em>do
+not use selection parts that you could remove without changing the
+original intention</em>.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-21">Example</h4>
 <div>
 <div class="sourceCode" id="cb43"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -748,10 +1203,28 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb44-1"><a href="#
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="duplication-of-a-set-of-more-than-3-rules-is-discouraged.-see-10">Duplication
-of a set of more than 3 rules is discouraged. (see #10)</h3>
-<h4 id="example-20">Example</h4>
+id="duplication-of-a-set-of-more-than-3-rules-is-discouraged.">Duplication
+of a set of more than 3 rules is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-23">Principles</h4>
+<ul>
+<li><a href="#rule-repetition">Rule repetition</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-22">Example</h4>
 <div>
 <div class="sourceCode" id="cb45"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -780,11 +1253,32 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb46-1"><a href="#
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="the-use-of-the-global-scope-is-encouraged-for-all-fundamental-design-layers.-see-1-2-9">The
-use of the global scope is encouraged for all fundamental design layers.
-(see #1, #2, #9)</h3>
-<h4 id="example-21">Example</h4>
+id="the-use-of-the-global-scope-is-encouraged-for-all-fundamental-design-layers.">The
+use of the global scope is encouraged for all fundamental design
+layers.</h3>
+</header>
+<section>
+<h4 id="principles-24">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#global-scope">Global scope</a></li>
+<li><a href="#global-rules">Global rules</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="example-23">Example</h4>
 <div>
 <div class="sourceCode" id="cb47"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -804,11 +1298,35 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb48-1"><a href="#
 <span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
 <h3
-id="html-structure-should-be-as-flat-as-possible-and-bereft-of-single-tag-nesting.-see-4-8-16-17">HTML
+id="html-structure-should-be-as-flat-as-possible-and-bereft-of-single-tag-nesting.">HTML
 structure should be as flat as possible and bereft of single tag
-nesting. (see #4, #8, #16, #17)</h3>
-<h4 id="example-22">Example</h4>
+nesting.</h3>
+</header>
+<section>
+<h4 id="principles-25">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-15">Notes</h4>
+<p>Sometimes it could make sense to add a div even if it’s the only
+child. The case of a content grid comes to mind. See this page’s source
+for an example.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-24">Example</h4>
 <div>
 <div class="sourceCode" id="cb49"><pre
 class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do --&gt;</span></span>
@@ -824,17 +1342,34 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href=
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
 <span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">article</span><span class="dt">&gt;</span></span></code></pre></div>
-<aside>
-<h4 id="caveat">Caveat</h4>
-<p>Sometimes it could make sense to add a div even if it’s the only
-child. The case of a grid comes to mind.</p>
+</div>
 </aside>
 </div>
-<p>! ### Rulesets should be auto-sufficient and avoid implicit but
-necessary rules. (see #11, #12)</p>
-<h3 id="specificity-must-be-kept-as-low-as-possible.-see-8">Specificity
-must be kept as low as possible. (see #8)</h3>
-<h4 id="example-23">Example</h4>
+</article>
+<hr />
+<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="specificity-must-be-kept-as-low-as-possible.">Specificity
+<em>must</em> be kept as low as possible.</h3>
+</header>
+<section>
+<h4 id="principles-26">Principles</h4>
+<ul>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#child-specificity">Child specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-16">Notes</h4>
+<p>Sometimes it makes sense to add specificity. But don’t do it until
+proven necessary.</p>
+</section>
+</div>
+<aside>
+<h4 id="example-25">Example</h4>
 <div>
 <div class="sourceCode" id="cb51"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
@@ -847,15 +1382,18 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<h4 id="caveat-1">Caveat</h4>
-<p>Sometimes it makes sense to add specificity. But don’t do it until
-proven necessary.</p>
+</aside>
+</div>
+</article>
 </section>
 <section>
 <h2 id="tools">Related tools</h2>
-Browser Inspector (debugging, experimenting and navigating) Scaffolding
-&amp; code library (use it… or not!) Stylelint (lint and inform) CSSCSS
-(find rule duplication in your codebase) PurifyCSS, PurgeCSS or Chrome
-Coverage devtool
+<ul>
+<li>Browser Inspector (debugging, experimenting and navigating)</li>
+<li>Scaffolding &amp; code library (use it… or not!)</li>
+<li>Stylelint (lint and inform)</li>
+<li>CSSCSS (find rule duplication in your codebase)</li>
+<li>PurifyCSS, PurgeCSS or Chrome Coverage devtool</li>
+</ul>
 </section>
 </root>

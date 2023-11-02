@@ -1,6 +1,6 @@
 @layer theming {
 	/* Content rhythm ----------------------- */
-	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link))+* {
+	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link))~* {
 		margin-top: var(--Row);
 	}
 
@@ -8,7 +8,7 @@
 		margin-top: calc(var(--Row) / 2);
 	}
 
-	h3+p {
+	:is(h4, h5, h6)+:is(p, ul, ol) {
 		margin-top: calc(var(--Row) / 4);
 	}
 
@@ -24,12 +24,19 @@
 		margin-left: calc(var(--Row) / 4);
 	}
 
+	:is(h3, h4)+* {
+		margin-top: calc(var(--Row) / 2);
+	}
 	/* *+:is(a, button) */
 
 	/* *+is(input, select, textarea) */
 
 	/* Basic container rhythm */
 	main>*+* {
-		margin-top: calc(var(--Row) * 3);
+		margin-top: calc(var(--Row) * 4);
+	}
+
+	main>section>*+* {
+		margin-top: calc(var(--Row) * 2);
 	}
 }

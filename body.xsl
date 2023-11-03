@@ -9,12 +9,19 @@
 			<header>
 				<h1>ecss</h1>
 				<link rel="stylesheet" href="assets/css/4.regions/nav.css"/>
-				<nav id="nav">
+				<nav id="nav-en" lang="en">
 					<a href="#intro">Intro</a>
 					<a href="#values">Values</a>
 					<a href="#principles">Principles</a>
 					<a href="#rules">Rules</a>
 					<a href="#tools">Tools</a>
+				</nav>
+				<nav id="nav-fr" lang="fr">
+					<a href="#introduction">Intro</a>
+					<a href="#valeurs">Valeurs</a>
+					<a href="#principes">Principes</a>
+					<a href="#regles">Règles</a>
+					<a href="#outils">Outils</a>
 				</nav>
 			</header>
 			<link rel="stylesheet" href="assets/css/4.regions/main.css"/>

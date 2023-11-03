@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ecss.xsl" ?>
-<root>
+<root lang="en">
 <div id="intro">
 <header>
 <p>Avoiding common styling problems is simple. And you only need
@@ -15,7 +15,8 @@ consistent, simple, expressive, predictable, sustainable CSS.</p>
 Want help enforcing rules?
 </h3>
 <p>👮 Gently nudge you and your team into ECSS.</p>
-<p><a href="https://www.npmjs.com/package/ecss-stylelint-config">Install
+<p><a
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">Install
 the Stylelint config</a></p>
 </section>
 <section>

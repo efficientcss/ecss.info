@@ -1,4 +1,4 @@
-<div id="intro">
+<div id="introduction">
 <header>
 
 Éviter les problèmes de style courants est simple. Et vous n’avez besoin que de CSS efficace. Rien de plus.
@@ -12,7 +12,7 @@
 
 👮 Poussez doucement vous et votre équipe vers l'ECSS.
 
-[Installez la configuration Stylelint](https://www.npmjs.com/package/ecss-stylelint-config)
+[Installez la configuration Stylelint](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
 
 </section>
 
@@ -288,7 +288,7 @@ En écrivant du CSS natif, on utilise mieux le CSS ; en écrivant du HTML natif,
 </section>
 
 <section class="of-side-by-side-text-code">
-## Authoring rules{#rules}
+## Règles de développement{#regles}
 
 <!-- - [TODO] : use of style attributes with custom properties. -->
 
@@ -296,31 +296,31 @@ En écrivant du CSS natif, on utilise mieux le CSS ; en écrivant du HTML natif,
 <div>
 <div>
 <header>
-### All component selectors *must* start with its filename.{#selector-filename}
+### Tous les sélecteurs de composants *doivent* commencer par leur nom de fichier.{#fichier-selecteur}
 </header>
 
 <section>
 
-#### Principles
+#### Principes
 
-- [Autonomous concepts](#concept-autonome)
-- [Concept manipulation](#manipulation-concept)
+- [Concepts autonomes](#concept-autonome)
+- [Manipulation de concepts](#manipulation-concept)
 
 </section>
 <section>
 
 #### Notes
 
-To exclude a file from this rule in the Stylelint config, prefix the filename with a digit or "x-" as in "x-quarantine.css"
+Pour exclure un fichier de cette règle dans la configuration Stylelint, préfixez le nom du fichier avec un chiffre ou "x-" comme dans "x-quarantine.css".
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 /* card.css */
 .card {
     ...
@@ -328,7 +328,7 @@ To exclude a file from this rule in the Stylelint config, prefix the filename wi
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 /* card.css */
 .small-card {
     ...
@@ -346,29 +346,29 @@ To exclude a file from this rule in the Stylelint config, prefix the filename wi
 <div>
 <div>
 <header>
-### All paddings should first be uniform and then be adjusted if necessary.
+### Tous les dégagements doivent d'abord être uniformes, puis ajustés si nécessaire.
 </header>
 
 <section>
-#### Principles
+#### Principes
 
-- [Specific role](#specific-role)
+- [Rôle spécifique](#role-specifique)
 </section>
 
 <section>
 #### Notes
 
-Non-uniform paddings may be used in particular instances for overflow reasons or for added pseudo-content.
+Des dégagements non uniformes peuvent être utilisés dans des cas particuliers pour des raisons de débordement ou pour ajouter un pseudo-contenu.
 
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     padding: 20px;
     padding-top: 30px;
@@ -376,7 +376,7 @@ Non-uniform paddings may be used in particular instances for overflow reasons or
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     padding: 30px 20px 20px 20px;
 }
@@ -392,36 +392,36 @@ Non-uniform paddings may be used in particular instances for overflow reasons or
 <div>
 <div>
 <header>
-### Paddings are to be applied on containing and interactive elements only.
+### Les dégagements doivent être appliqués uniquement aux éléments conteneurs et interactifs.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [One role only](#role-unique)
+- [Rôle unique](#role-unique)
 </section>
 
 <section>
 #### Notes
 
-Text elements should only host text styles while container elements can host theming styles. In some instances, container elements could host text styles to be inherited by children.
+Les éléments de texte ne doivent héberger que des styles de texte, tandis que les éléments conteneurs peuvent héberger des styles de thème. Dans certains cas, les éléments conteneurs peuvent héberger des styles de texte dont les enfants hériteront.
 
 </section>
 
 </div>
 
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card header {
     padding: 10px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card h2 {
     padding: 10px;
 }
@@ -438,35 +438,35 @@ Text elements should only host text styles while container elements can host the
 <div>
 <div>
 <header>
-### Horizontal margins should not be applied to text elements.
+### Les marges horizontales ne doivent pas être appliquées aux éléments de texte.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Specific roles and usage](#specific-role)
-- [One role only](#role-unique)
+- [Rôle spécifique](#role-specifique)
+- [Rôle unique](#role-unique)
 </section>
 
 <section>
 #### Notes
 
-Horizontal margins can be applied to text elements in the case of _inline elements_ such as icons or tags &amp; on indented elements like `blockquote`{.html}.
+Des marges horizontales peuvent être appliquées aux éléments de texte dans le cas d'_éléments en ligne_ tels que des icônes ou des balises et sur des éléments en retrait comme `blockquote`{.html}.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     padding: 20px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card p {
     margin-left: 40px;
     margin-right: 40px;
@@ -484,29 +484,29 @@ Horizontal margins can be applied to text elements in the case of _inline elemen
 <div>
 <div>
 <header>
-### Typographic elements should use heritage when possible.
+### Les éléments typographiques doivent utiliser l'héritage lorsque cela est possible.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Specific roles and usage](#specific-role)
-- [Global scope](#portee-globale)
+- [Rôle spécifique](#role-specifique)
+- [Portée globale](#portee-globale)
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 
 ```css
-/* Do */
+/* Correct */
 html {
     line-height: 1.2;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 p {
     line-height: 1.2;
 }
@@ -523,36 +523,36 @@ p {
 <div>
 <div>
 <header>
-### Design tokens should be used for most numerical values.
+### Le langage graphique doit être utilisé pour la plupart des valeurs numériques.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Designing language](#designing-language)
-- [Designer empowerment](#design-empowerment)
-- [Development tools](#outil-devs)
+- [Langage de conception](#langage-conception)
+- [Autonomie de la conception](#concepteurs-autonomes)
+- [Profiter des outils de développement](#outil-devs)
 </section>
 
 <section>
 #### Notes
 
-Numerical values should only be used for exceptional alignments. These should be commented to communicate the intent. Even then, why not create a bespoke property meaningfully named?
+Les valeurs numériques ne doivent être utilisées que pour des alignements exceptionnels. Ceux-ci doivent être commentés pour communiquer l’intention. Même dans ce cas, pourquoi ne pas créer une propriété personnalisée portant un nom significatif ?
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     padding: var(--small-spacing);
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     padding: 20px;
 }
@@ -569,35 +569,35 @@ Numerical values should only be used for exceptional alignments. These should be
 <div>
 <div>
 <header>
-### Repeating default rules is discouraged.
+### La répétition des règles par défaut est déconseillée.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Selector intention](#intention-selecteur)
-- [Selector function](#fonction-selecteur)
+- [Intention du sélecteur](#intention-selecteur)
+- [Fonction du sélecteur](#fonction-selecteur)
 </section>
 
 <section>
 #### Notes
 
-Any instance of repeating default *must* be justified in a comment.
+Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .dropdown:not(:hover) {
     display: none;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .dropdown {
     display: none;
 }
@@ -618,15 +618,15 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### All class entities besides components *must* be prefixed.
+### Toutes les entités de classe en dehors des composants *doivent* être préfixées.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Child concepts](#concept-enfant)
-- [Selector intention](#intention-selecteur)
-- [Selector function](#fonction-selecteur)
-- [Autonomous concepts](#concept-autonome)
+- [Concepts enfant](#concept-enfant)
+- [Intention du sélecteur](#intention-selecteur)
+- [Fonction du sélecteur](#fonction-selecteur)
+- [Autonomie des concepts](#concept-autonome)
 </section>
 
 <section>
@@ -634,17 +634,17 @@ Any instance of repeating default *must* be justified in a comment.
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 <div>
 ```css
-/* Do */
+/* Correct */
 .card.as-circle {
     width: 20px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card.circle {
     width: 20px;
 }
@@ -661,22 +661,22 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### Nesting is restricted to one level only.
+### L'imbrication est limitée à un seul niveau.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Child concepts](#concept-enfant)
-- [Selector intention](#intention-selecteur)
+- [Concepts enfant](#concept-enfant)
+- [Intention du sélecteur](#intention-selecteur)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     & header p {
         color: grey;
@@ -685,7 +685,7 @@ Any instance of repeating default *must* be justified in a comment.
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     & header {
         & p {
@@ -706,30 +706,30 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### The use of specific dimensions should be avoided.
+### L'utilisation de dimensions spécifiques doit être évitée.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Properties are not equal](#properties-not-equal)
-- [Specific role](#specific-role)
-- [Browser rendering](#rendu-navigateur)
+- [Propriétés inégales](#proprietes-inegales)
+- [Rôle spécifique](#role-specifique)
+- [Profiter du navigateur](#rendu-navigateur)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     max-width: 30ch;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     width: 30ch;
 }
@@ -746,30 +746,30 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### Use attribute selectors to convey unicity.
+### Utilisez des sélecteurs d'attributs pour communiquer l'unicité.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Selector intention](#intention-selecteur)
-- [Specific role](#specific-role)
-- [Harness specificity](#exploiter-specificite)
+- [Intention du sélecteur](#intention-selecteur)
+- [Rôle spécifique](#role-specifique)
+- [Exploiter la spécificité](#exploiter-specificite)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 [id="main"] {
     max-width: 80ch;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 #main {
     max-width: 80ch;
 }
@@ -786,35 +786,35 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### The use of positioning and display rules should minimized.
+### L'utilisation de règles de positionnement et d'affichage doit être minimisée.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Properties are not equal](#properties-not-equal)
-- [Browser rendering](#rendu-navigateur)
+- [Propriétés inégales](#proprietes-inegales)
+- [Profiter du navigateur](#rendu-navigateur)
 </section>
 
 <section>
 #### Notes
 
-Use these properties only on elements needing them. Use the narrowest selectors that makes sense in the context.
+Utilisez ces propriétés uniquement sur les éléments qui en ont besoin. Utilisez les sélecteurs les plus étroits qui ont du sens dans le contexte.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card header {
     display: flex;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 header {
     display: flex;
 }
@@ -831,29 +831,29 @@ header {
 <div>
 <div>
 <header>
-### Overqualified selectors are discouraged.
+### Les sélecteurs surqualifiés sont déconseillés.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Harness specificity](#exploiter-specificite)
-- [Selector intention](#intention-selecteur)
+- [Exploiter la spécificité](#exploiter-specificite)
+- [Intention du sélecteur](#intention-selecteur)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     color: red;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 article.card {
     color: red;
 }
@@ -870,31 +870,31 @@ article.card {
 <div>
 <div>
 <header>
-### Components cannot exert outside influence.
+### Les composants ne peuvent pas exercer d'influence extérieure.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Autonomous concepts](#concept-autonome)
-- [Properties are not equal](#properties-not-equal)
-- [Specific roles and usage](#specific-role)
+- [Autonomie des concepts](#concept-autonome)
+- [Propriétés inégales](#proprietes-inegales)
+- [Rôle spécifique](#role-specifique)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .as-pile>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     margin-top: 20px;
 }
@@ -911,28 +911,28 @@ article.card {
 <div>
 <div>
 <header>
-### Overflow should not be hidden.
+### Le débordement ne doit pas être masqué.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Browser rendering](#rendu-navigateur)
-- [Properties are not equal](#properties-not-equal)
+- [Profiter du navigateur](#rendu-navigateur)
+- [Propriétés inégales](#proprietes-inegales)
 </section>
 
 <section>
 #### Notes
 
-By hiding the way browsers treat overflowing items, we may hide content without knowing. By using `auto`{.css} instead of `hidden`{.css}, the oveflowing content will be accessible *and* the scrollbar will signal the design problem instead of hiding it. Hiding scrollbars may be necessary in some particular composition (see this very site's portrait adaptation for an example!).
+En masquant la façon dont les navigateurs traitent les éléments débordants, nous pouvons masquer du contenu sans le savoir. En utilisant `auto`{.css} au lieu de `hidden`{.css}, le contenu débordant sera accessible *et* la barre de défilement signalera le problème de conception au lieu de le masquer. Masquer les barres de défilement peut être nécessaire dans certaines compositions particulières (voir l'adaptation portrait de ce même site pour un exemple !).
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .container {
     max-height: 50dvh;
     overflow: auto;
@@ -940,7 +940,7 @@ By hiding the way browsers treat overflowing items, we may hide content without 
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .container {
     max-height: 50dvh;
     overflow: hidden;
@@ -958,27 +958,27 @@ By hiding the way browsers treat overflowing items, we may hide content without 
 <div>
 <div>
 <header>
-### Numbers in class names are to be avoided.
+### Les nombres dans les noms de classes sont à éviter.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Selector intention](#intention-selecteur)
+- [Intention du sélecteur](#intention-selecteur)
 </section>
 
 <section>
 #### Notes
 
-Numbers may convey intention in grid system cases as in, for example, `grid-10`{.html} or `col-3`{.html}. Still, the utility of these systems is low in modern CSS times. Leaving them aside is suggested.
+Les nombres peuvent transmettre une intention dans les cas de système de grille comme, par exemple, `grid-10`{.html} ou `col-3`{.html}. Néanmoins, l’utilité de ces systèmes est faible à l’époque moderne du CSS. Il est suggéré de les laisser de côté.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     color: grey;
     font-size: 18px;
@@ -991,7 +991,7 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     color: grey;
     font-size: 18px;
@@ -1014,36 +1014,36 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
 <div>
 <div>
 <header>
-### Magic numbers *must* be avoided or explained in a line comment.
+### Les nombres magiques *doivent* être évités ou expliqués dans un commentaire de ligne.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Designing language](#designing-language)
-- [Designer empowerment](#design-empowerment)
-- [Specific roles and usage](#specific-role)
+- [Langage de conception](#langage-conception)
+- [Autonomie de la conception](#concepteurs-autonomes)
+- [Rôle spécifique](#role-specifique)
 </section>
 
 <section>
 #### Notes
 
-Value and unit choices should be dictated by the graphic language and its design tokens. Absolute values in numerical form should be reserved to special cases like bespoke icon alignment or bullet list padding. The intention *must* be clear in itself or commented if not.
+Les choix de valeurs et d'unités doivent être dictés par le langage graphique et ses jetons de conception. Les valeurs absolues sous forme numérique doivent être réservées à des cas particuliers tels que l'alignement d'icônes sur mesure ou le dégagement d'une liste à puces. L'intention *doit* être claire en elle-même ou commentée sinon.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     line-height: var(--line-tight);
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     line-height: 17px;
 }
@@ -1060,36 +1060,36 @@ Value and unit choices should be dictated by the graphic language and its design
 <div>
 <div>
 <header>
-### Rhythm *must* be applied in one direction only, preferably top.
+### Le rythme *doit* être appliqué dans une seule direction, de préférence vers le haut.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Designing language](#designing-language)
-- [Specific roles and usage](#specific-role)
+- [Langage de conception](#langage-conception)
+- [Rôle spécifique](#role-specifique)
 </section>
 
 <section>
 #### Notes
 
-Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphical elements and should be applied as such in CSS. The [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} selector (*+*) is tailor made for this task. When using a flex container, the `gap`{.css} property does it all for you!
+L'espacement est le rythme, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (*+*) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .as-pile>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .as-pile>* {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -1107,35 +1107,35 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 <div>
 <div>
 <header>
-### The use of problematic units is discouraged.
+### L'utilisation d'unités problématiques est déconseillée.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Specific roles and usage](#specific-role)
+- [Rôle spécifique](#role-specifique)
 </section>
 
 <section>
 #### Notes
 
-Static viewport units (vh, vw, vmin, vmax) are famously problematic, particularly when used as `100vh`{.css} or `100vw`{.css}. [Dynamic viewport units](https://caniuse.com/viewport-unit-variants){target="\_blank"} are better suited for this task.
+Les unités de fenêtre d'affichage statiques (vh, vw, vmin, vmax) sont notoirement problématiques, en particulier lorsqu'elles sont utilisées comme `100vh`{.css} ou `100vw`{.css}. Les [unités dynamiques de fenêtre](https://caniuse.com/viewport-unit-variants){target="\_blank"} sont mieux adaptées à cette tâche.
 
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 nav {
     max-height: 100dvh;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 nav {
     max-height: 100vh;
 }
@@ -1150,30 +1150,30 @@ nav {
 <div>
 <div>
 <header>
-### Tag selectors should be leveraged inside components.
+### Les sélecteurs de balises doivent être exploités à l'intérieur des composants.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Component structure](#structure-composant)
-- [Expressive HTML](#html-expressif)
+- [Structure du composant](#structure-composant)
+- [HTML expressif](#html-expressif)
 </section>
 
 </div>
 
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card header {
     padding: 20px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card .card__header {
     padding: 20px;
 }
@@ -1190,29 +1190,29 @@ nav {
 <div>
 <div>
 <header>
-### One entity per file with a soft cap of about a hundred lines.
+### Une entité par fichier avec une limite souple d'une centaine de lignes.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Autonomous concepts](#concept-autonome)
-- [Concept manipulation](#manipulation-concept)
+- [Autonomie des concepts](#concept-autonome)
+- [Manipulation de concept](#manipulation-concept)
 </section>
 
 <section>
 #### Notes
 
-This is one of the most important rules for achieving sustainable CSS. One autonomous concept per file prevents the multiplication of overrides and redefinition across the codebase. 
+C’est l’une des règles les plus importantes pour parvenir à un CSS durable. Un concept autonome par fichier évite la multiplication des surcharges et des redéfinitions dans la base de code.
 
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 /* card.css */
 .card {
     padding: 20px;
@@ -1225,7 +1225,7 @@ This is one of the most important rules for achieving sustainable CSS. One auton
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 /* card.css */
 .card {
     padding: 20px;
@@ -1247,36 +1247,36 @@ This is one of the most important rules for achieving sustainable CSS. One auton
 <div>
 <div>
 <header>
-### Selectors *must* strictly include only necessary selection parts.
+### Les sélecteurs *doivent* inclure strictement et uniquement les éléments de sélection nécessaires.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Component structure](#structure-composant)
-- [Selector intention](#intention-selecteur)
-- [Harness specificity](#exploiter-specificite)
+- [Structure du composant](#structure-composant)
+- [Intention du sélecteur](#intention-selecteur)
+- [Exploiter la spécificité](#exploiter-specificite)
 </section>
 
 <section>
 #### Notes
 
-This mistake, being passed as "best practices", is the source of many self-induced CSS headaches. Fortunately, the solution is simple: *do not use selection parts that you could remove without changing the original intention*.
+Cette erreur, considérée à tort comme une « meilleure pratique », est à l'origine de nombreux maux de tête CSS dont nous sommes nous-mêmes responsables. Heureusement, la solution est simple : *n'utilisez pas d'éléments de sélection que vous pourriez supprimer sans changer l'intention initiale*.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card p {
     font-size: 14px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card div p {
     font-size: 14px;
 }
@@ -1293,23 +1293,23 @@ This mistake, being passed as "best practices", is the source of many self-induc
 <div>
 <div>
 <header>
-### Duplication of a set of more than 3 rules is discouraged.
+### La duplication d'un ensemble de plus de 3 règles est déconseillée.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Rule repetition](#repetition-regles)
-- [Autonomous concepts](#concept-autonome)
+- [Répétition de règles](#repetition-regles)
+- [Autonomie des concepts](#concept-autonome)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 
 <div>
 ```css
-/* Do */
+/* Correct */
 /* button.css */
 .button {
     padding: 10px;
@@ -1320,7 +1320,7 @@ This mistake, being passed as "best practices", is the source of many self-induc
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 /* card.css */
 .card a {
     padding: 10px;
@@ -1349,26 +1349,26 @@ This mistake, being passed as "best practices", is the source of many self-induc
 <div>
 <div>
 <header>
-### The use of the global scope is encouraged for all fundamental design layers.
+### L'utilisation de la portée globale est encouragée pour toutes les couches de conception fondamentales.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Designing language](#designing-language)
-- [Designer empowerment](#design-empowerment)
-- [Global scope](#portee-globale)
-- [Global rules](#regles-globales)
-- [Harness specificity](#exploiter-specificite)
+- [Langage de conception](#langage-conception)
+- [Autonomie de la conception](#concepteurs-autonomes)
+- [Portée globale](#portee-globale)
+- [Règles globales](#regles-globales)
+- [Exploiter la spécificité](#exploiter-specificite)
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 
 <div>
 ```css
-/* Do */
+/* Correct */
 /* rhythm.css */
 p+p {
     margin-top: 20px;
@@ -1376,7 +1376,7 @@ p+p {
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 /* post.css */
 .post p+p {
     margin-top: 20px;
@@ -1399,26 +1399,26 @@ p+p {
 <div>
 <div>
 <header>
-### HTML structure should be as flat as possible and bereft of single tag nesting.
+### La structure HTML doit être aussi plate que possible et dépourvue d'imbrication de balises uniques.
 </header>
 
 <section>
-#### Principles
+#### Principes
 
-- [Component structure](#structure-composant)
-- [Expressive HTML](#html-expressif)
+- [Structure du composant](#structure-composant)
+- [HTML expressif](#html-expressif)
 </section>
 
 <section>
 #### Notes
 
-Sometimes it could make sense to add a div even if it's the only child. The case of a content grid comes to mind. See this page's source for an example.
+Parfois, il peut être judicieux d'ajouter un `div`{.html} même s'il s'agit du seul enfant. Le cas d’une grille de contenu vient à l’esprit. Voir la source de cette page pour un exemple.
 
 </section>
 
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```html
@@ -1452,35 +1452,35 @@ Sometimes it could make sense to add a div even if it's the only child. The case
 <div>
 <div>
 <header>
-### Specificity *must* be kept as low as possible.
+### La spécificité *doit* être maintenue aussi faible que possible.
 </header>
 <section>
-#### Principles
+#### Principes
 
-- [Harness specificity](#exploiter-specificite)
-- [Child specificity](#enfant-specificite)
+- [Exploiter la spécificité](#exploiter-specificite)
+- [Spécificité des enfants](#enfant-specificite)
 </section>
 
 <section>
 #### Notes
 
-Sometimes it makes sense to add specificity. But don't do it until proven necessary.
+Il est parfois judicieux d’ajouter des précisions. Mais ne le faites pas avant que cela ne soit prouvé nécessaire.
 
 </section>
 </div>
 <aside>
-#### Example
+#### Exemple
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card :where(h1, h2, h3, h4, h5, h6) {
     font-size: 24px;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card :is(h1, h2, h3, h4, h5, h6) {
     font-size: 24px;
 }
@@ -1495,7 +1495,7 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 </section>
 
 <section>
-## Related tools{#tools}
+## Outils reliés{#outils}
 
 - Browser Inspector (debugging, experimenting and navigating)
 - Scaffolding &amp; code library (use it... or not!)

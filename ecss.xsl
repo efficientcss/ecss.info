@@ -14,7 +14,10 @@
 
 	<!-- On démarre la machine -->
 	<xsl:template match="/">
-		<html lang="fr">
+		<xsl:variable name="lang">
+			<xsl:value-of select="/root/@lang" />
+		</xsl:variable>
+		<html lang="{$lang}">
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="stylesheet" href="assets/css/e.css" />

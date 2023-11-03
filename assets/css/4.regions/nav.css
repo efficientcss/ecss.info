@@ -1,4 +1,4 @@
-[id=nav] {
+[id^=nav] {
 	--ScaleLevel: var(--Tall);
 
 	display: flex;

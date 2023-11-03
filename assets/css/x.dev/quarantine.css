@@ -1,3 +1,8 @@
+html[lang="fr"] [id="nav-en"],
+html[lang="en"] [id="nav-fr"] {
+	display: none;
+}
+
 .of-side-by-side-text-code {}
 .of-side-by-side-text-code div>* {
 	flex-grow: 1;

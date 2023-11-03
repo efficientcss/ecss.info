@@ -12,7 +12,7 @@ Avoiding common styling problems is simple. And you only need efficient CSS. Not
 
 👮 Gently nudge you and your team into ECSS.
 
-[Install the Stylelint config](https://www.npmjs.com/package/ecss-stylelint-config)
+[Install the Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
 
 </section>
 

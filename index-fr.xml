@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ecss.xsl" ?>
+<root lang="fr">
+<div id="introduction">
+<header>
+<p>Éviter les problèmes de style courants est simple. Et vous n’avez
+besoin que de CSS efficace. Rien de plus.</p>
+<p><strong>ECSS établit des règles simples pour des styliser
+simplement.</strong> Plus besoin de tout nommer, plus de dépendances
+technologiques. Uniquement du CSS intentionnel, cohérent, simple,
+expressif, prévisible et durable.</p>
+</header>
+<div style="--DivItemBasis: 12rem;">
+<section>
+<h3 class="h4">
+Vous voulez de l’aide pour appliquer les règles ?
+</h3>
+<p>👮 Poussez doucement vous et votre équipe vers l’ECSS.</p>
+<p><a
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">Installez
+la configuration Stylelint</a></p>
+</section>
+<section>
+<h3 class="h4">
+Envie de construire quelque chose ?
+</h3>
+<p>🏁 Un point de départ rapide &amp; efficace est à portée de main
+!</p>
+<p><a href="https://github.com/efficientcss/scaffolding">Téléchargez la
+bibliothèque de fichiers de départ</a></p>
+</section>
+<section>
+<h3 class="h4">
+Vous voulez connaître la bête ?
+</h3>
+<p>📰 Plongez dans les principes et la documentation ECSS.</p>
+</section>
+<section>
+<h3 class="h4">
+Curieux de tout savoir ?
+</h3>
+<p>Eh bien, continuez à faire défiler la page !</p>
+</section>
+</div>
+<section>
+<h2 id="pourquoi-ecss">Pourquoi ECSS ?</h2>
+<p>Parce que le CSS en tant que langage est mal compris et injustement
+mal-aimé. Parce que des règles simples et des outils à faible impact
+peuvent grandement contribuer à garantir que la base de code CSS est
+légère, simple et évolutive. ECSS est une approche globale pour produire
+des systèmes de conception efficaces avec CSS.</p>
+</section>
+</div>
+<section>
+<h2 id="valeurs">Valeurs</h2>
+<div style="--DivItemBasis: 20rem;">
+<section>
+<h3 id="intentionnalité">Intentionnalité</h3>
+<p><strong>Objectifs clairs, décisions rationnelles.</strong></p>
+<p>Chaque parcelle de CSS a un objectif. Cet objectif doit être clair
+pour quiconque lit le code. Que ce soit dans le HTML ou le CSS. Les
+sélecteurs sont le véhicule parfait pour l’intentionnalité. ECSS
+encourage l’utilisation de sélecteurs rationnels.</p>
+</section>
+<section>
+<h3 id="cohérence">Cohérence</h3>
+<p><strong>La répétition de patrons permet d’économiser du temps et de
+l’énergie.</strong></p>
+Des directives de dénomination flexibles confèrent à la base de code une
+cohérence encourageant la standardisation et la réutilisation. Les
+préfixes et les directives d’utilisation appliqués via le
+<em>linting</em> garantissent que tous les membres de votre équipe
+suivront les règles ECSS.
+</section>
+<section>
+<h3 id="simplicité">Simplicité</h3>
+<p><strong>« Simple » consiste à écrire moins de code et à limiter les
+dépendances.</strong></p>
+<p>La soupe de classe et la division ne sont pas simples. Un nombre
+incalculable de requêtes multimédias ne le sont pas non plus. Mais le
+CSS moderne l’est. En acceptant CSS pour ce qu’il est (un langage de
+conception graphique !), vous pouvez faire <em>beaucoup</em> de style
+avec très peu de code.</p>
+</section>
+<section>
+<h3 id="expressivité">Expressivité</h3>
+<p><strong>Un code qui parle de lui-même est réellement
+accessible.</strong></p>
+<p><code class="sourceCode html">thumbnail as-circle with-border</code>
+est instantanément compréhensible alors que <code
+class="sourceCode html">h-10 w-10 bdr-50 br-1 overh</code> ne l’est pas.
+Le code doit communiquer des informations. Plus les informations sont
+claires, plus il est facile de comprendre le système. Une sémantique
+erronée doit céder la place à l’expressivité. Les meilleures pratiques
+expressives fonctionnent.</p>
+</section>
+<section>
+<h3 id="prévisibilité">Prévisibilité</h3>
+<p><strong>L’utilisation de règles de création simples mais cohérentes
+conduit à la prévisibilité.</strong></p>
+<p>Ça fait du bien de plonger dans du code inconnu… tout en sachant déjà
+à quoi il ressemble. La cohérence, les modèles répétitifs, la simplicité
+(oui, encore une fois) se fondent dans un code prévisible. Et un code
+prévisible signifie moins de stress, moins de frictions et des équipes
+plus heureuses !</p>
+</section>
+<section>
+<h3 id="durabilité">Durabilité</h3>
+<p><strong>Le CSS « à la vanille » est prêt pour l’avenir.</strong></p>
+<p>En pratique, cela signifie être à la fine pointe du progrès et de
+l’évolution. Pas besoin d’attendre que des librairies tierces
+implémentent de nouvelles fonctionnalités. Vous pouvez utiliser <code
+class="sourceCode css">clamp()</code> dès maintenant et dire au revoir à
+80 % de vos requêtes <code
+class="sourceCode css"><span class="im">@media</span></code>. Plus de
+<code class="sourceCode html">sm-ceci md-cela</code>. Uniquement du code
+propre et moderne.</p>
+</section>
+</div>
+</section>
+<link rel="stylesheet" href="assets/css/6.components/of-side-by-side-h-p.css" />
+<section class="of-side-by-side-h-p as-numbered-list">
+<h2 id="principes">Principes directeurs</h2>
+<article>
+<h3 id="langage-conception">CSS est un langage de <em>conception
+graphique</em>, pas un langage de programmation.</h3>
+<p>La création CSS doit refléter les modèles, les concepts et les
+perspectives de <em>conception graphique</em>. Avec des échelles
+globales (désolé), des « tokens », des règles, etc., vous limitez la
+répétition et facilitez l’extension future de vos styles graphiques.</p>
+</article>
+<article>
+<h3 id="concepteurs-autonomes">Donner aux concepteurs graphiques les
+moyens d’affiner leur travail de manière autonome est efficace.</h3>
+<p>Rendre les parties nécessaires du CSS intelligibles aux concepteurs
+(codeurs ou non !) réduit le stress, le temps et favorise une bonne
+allocation des ressources humaines, affiner le design dans le navigateur
+est un grand vecteur de rentabilité économique.</p>
+</article>
+<article>
+<h3 id="proprietes-inegales">Toutes les propriétés CSS ne sont pas nées
+égales.</h3>
+<p>Les propriétés du modèle de boîte (<code
+class="sourceCode css">display</code>, <code
+class="sourceCode css">position</code>, <code
+class="sourceCode css">width</code>, etc.) sont extrêmement sensibles et
+potentiellement bien plus perturbatrices que, disons, la couleur ou la
+typographie. Les premiers appartiennent aux auteurs CSS professionnels
+et les seconds sont ceux que les concepteurs devraient pouvoir utiliser,
+modifier et expérimenter en contexte.</p>
+</article>
+<article>
+<h3 id="role-specifique">Les propriétés et les unités ont des rôles et
+une utilisation spécifiques.</h3>
+<p>Limiter leur utilisation à ces rôles améliore la clarté et favorise
+la cohérence ainsi que la prévisibilité. Il en va de même pour les
+unités. Certaines suggèrent de la typographie, d’autres des images ou du
+rythme. Utilisez-les intentionnellement et rationnellement pour
+communiquer du sens.</p>
+</article>
+<article>
+<h3 id="structure-composant">Les composants et les modèles <em>ont
+besoin</em> d’une structure.</h3>
+<p>Essayer de l’abstraire est vain. Au lieu de cela, la documentation et
+la diligence sont essentielles. Le HTML est sémantiquement riche, alors
+choisissez les bonnes balises et évitez de les modifier pour des raisons
+superficielles. On ne supprimerait ou ne modifierait pas <code
+class="sourceCode html">class=&quot;header&quot;</code> sans d’abord
+comprendre son objectif, et il ne faut pas non plus modifier ou
+supprimer <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></code>
+sur un coup de tête.</p>
+</article>
+<article>
+<h3 id="intention-selecteur">Les sélecteurs CSS sont des véhicules
+d’intention.</h3>
+<p>Chaque particule de sélection doit avoir un but et sinon, elle doit
+être éliminée. Ce <code class="sourceCode css">div</code> étranger dans
+<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
+est ce qui rend le CSS fragile. Ce ne sont <em>pas</em> les <a
+href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">“meilleures
+pratiques”</a>.</p>
+</article>
+<article>
+<h3 id="fonction-selecteur">Les types de sélecteurs ont tous une
+fonction.</h3>
+<p>Chacun d’eux peut être utile dans un certain contexte. Aucune règle
+d’usage absolue ne doit être édictée. Ce n’est pas « toujours » ou
+« jamais » mais « ça dépend » et « pourquoi ». Les règles absolues sont
+corrompent absolument. Ou quelque chose comme ça…</p>
+</article>
+<article>
+<h3 id="exploiter-specificite">La spécificité doit être exploitée et non
+rejetée.</h3>
+<p>Néanmoins, « toujours » (hum) la garder aussi basse que possible.
+Oui, en 2015, cela n’était peut-être pas facile. Mais nous sommes en
+2023 et de <a
+href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers">nouvelles</a>
+<a
+href="https://developer.mozilla.org/en-US/%20docs/Web/CSS/:where">fonctionnalités</a>
+sont désormais largement pris en charge. Utilisez-les.</p>
+</article>
+<article>
+<h3 id="portee-globale">La portée globale en CSS n’est pas un
+péché.</h3>
+<p>N’oubliez pas que <em>CSS est un langage de conception graphique</em>
+et que sa portée globale s’intègre parfaitement dans l’approche
+dimensionnelle fondamentalement stratifiée de la conception graphique.
+Les meilleures pratiques de programmation ne correspondent pas
+nécessairement aux meilleures pratiques de conception graphique. Adoptez
+les meilleures pratiques de conception graphique.</p>
+</article>
+<article>
+<h3 id="regles-globales">Les règles de conception globales doivent être
+en grande partie anonymes.</h3>
+<p>Seulement quelques déclarations par ensemble de règles uniquement.
+Nous parlons de rythme, de typographie, de couleur ; pas <code
+class="sourceCode css">display</code> ou <code
+class="sourceCode css">position</code>. <em>C’est</em> le moyen de
+limiter la répétition, les ballonnements et la complexité.</p>
+</article>
+<article>
+<h3 id="comprendre-concept">Il faut attendre qu’un concept soit bien
+compris avant de le nommer.</h3>
+<p>En attendant, utilisez des éléments HTML. L’abstraction prématurée ou
+<a href="https://en.wikipedia.org/wiki/Overengineering">“résoudre des
+problèmes pas encore rencontrés”</a> sont des problèmes plus importants
+que l’utilisation de <code class="sourceCode css">header</code> en CSS.
+Oui, ce sont les meilleures pratiques de programmation. Mais qui vous a
+dit que le développement CSS était pour les puristes ?</p>
+</article>
+<article>
+<h3 id="repetition-regles">Lorsque plus de 3 règles sont répétées plus
+de 3 fois, un concept <em>apparaît</em>.</h3>
+<p>Les règles devraient ensuite être centralisées en nommant et en
+utilisant ledit concept au lieu des règles simples. La réutilisabilité,
+l’expressivité et la simplicité s’en trouvent alors grandement
+améliorées.</p>
+</article>
+<article>
+<h3 id="concept-autonome">Les concepts nommés doivent être autonomes et
+autosuffisants.</h3>
+<p>Les concepts nommés ne doivent pas être définis à l’intérieur d’un
+autre concept nommé. Si jamais cela est nécessaire, le concept enfant
+doit être étendu au concept parent et ne doit <em>pas</em> être
+réutilisé ailleurs.</p>
+</article>
+<article>
+<h3 id="manipulation-concept">La manipulation de concepts nommés dans
+plusieurs fichiers est strictement interdite.</h3>
+<p>Toutes les règles d’un concept nommé doivent résider dans le même
+fichier CSS unique. Pour que les auteurs et les responsables aient
+confiance dans le système, il doit exister une seule <a
+href="https://en.wikipedia.org/wiki/Single_source_of_truth">source de
+vérité</a> pour tout concept.</p>
+</article>
+<article>
+<h3 id="concept-enfant">Les concepts « enfants » reliés à l’état, les
+variantes ou la structure doivent être dotés d’un préfixe.</h3>
+<p>Ces concepts peuvent être représentés sous forme de classes enfants
+ou combinées. Ne jamais utiliser ces classes seules, mais toujours en
+complément du concept parent. Oui, voici « jamais » <em>et</em> «
+toujours » dans la même phrase. <a
+href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double péril, tout
+va bien”</a> dirait un grand gestionnaire.</p>
+</article>
+<article>
+<h3 id="enfant-specificite">Les classes avec préfixe doivent
+généralement être implémentées avec des sélecteurs réduisant la
+spécificité.</h3>
+<p>Sauf nécessité contraire, il faut s’efforcer de maintenir la
+spécificité à 21 ou moins. Avec une préférence autour de 10 à 12. Il
+faut ici utiliser des pseudo-sélecteurs modernes et largement
+supportés.</p>
+</article>
+<article>
+<h3 id="efficience-selecteur">On ne trouvera peut-être pas au premier
+abord la manière efficace de sélectionner les éléments d’interface.</h3>
+<p>L’intention peut ne pas être claire au début du travail de
+stylisation. Au lieu d’essayer et d’essayer en vain, un fichier de code
+« quarantaine » doit être utilisé temporairement jusqu’à ce que la bonne
+sélection se manifeste. Toutefois, aucun fichier de quarantaine ne
+devrait jamais être publié publiquement « en production ».</p>
+</article>
+<article>
+<h3 id="html-expressif">Le HTML doit être aussi simple et expressif que
+possible.</h3>
+<p>Évitez de « sur-contenir », n’utilisez pas <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+là où vous pourriez utiliser <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">aside</span><span class="dt">&gt;</span></code>.
+N’enveloppez pas votre navigation à un seul niveau dans des listes à
+puces. Et oui, une navigation simple est <a
+href="https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element">accessible</a>.
+« Keep it simple… Suzy », qu’ils disent en anglais.</p>
+</article>
+<article>
+<h3 id="role-unique">Tout élément HTML ne doit assumer qu’un seul
+rôle.</h3>
+<p>Conformément à la célèbre <a
+href="https://en.wikipedia.org/wiki/Single-responsibility_principle">meilleure
+pratique</a> de programmation (encore une fois, la programmation dans la
+conception), les balises sémantiques sont pour… la sémantique tandis que
+<code>&lt;div&gt;</code>{. html} ou <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></code>
+sont destinées à la division graphique ou logique. Tout type de grille
+doit être implémenté avec les balises <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>.</p>
+</article>
+<article>
+<h3 id="adaptation-incluse">Toute adaptation de <code
+class="sourceCode css"><span class="im">@media</span></code> doit être
+incluse dans le fichier de son concept associé.</h3>
+<p>Pas sous forme de fichier séparé, ni sous forme de classes suffixées.
+Si l’on utilise des classes utilitaires, les règles fournies ne doivent
+pas dépendre de la requête mais plutôt être universellement nécessaires,
+dans chaque configuration média.</p>
+</article>
+<article>
+<h3 id="feuille-globale">Des feuilles de style entières sont mieux
+utilisées lorsqu’elles sont globales.</h3>
+<p>Les requêtes <code
+class="sourceCode css"><span class="im">@media</span></code> doivent
+être utilisées dans les balises HTML <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">link</span><span class="dt">&gt;</span></code>
+pour des considérations de réutilisation, de performance et
+d’optimisation. Chaque couche de fondamentale conception graphique doit
+être autonome, indépendante et amovible.</p>
+</article>
+<article>
+<h3 id="styliser-composant">Le style des composants ne doit être servi
+qu’avec des composants actifs.</h3>
+<p>Pas sous la forme d’un gros fichier minifié dans la balise <code
+class="sourceCode html"><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></code>
+du document. De cette façon, le fameux problème du chargement de code
+CSS inutilisé est pratiquement résolu, sans aucune dette technologique.
+Le premier rendu est également plus rapide puisque seul ce qui est
+utilisé dans la fenêtre est traité par le navigateur. En prime, vous
+obtenez le chemin du fichier CSS dans le fichier du composant.</p>
+</article>
+<article>
+<h3 id="rendu-navigateur">Laissez le navigateur faire autant de travail
+de rendu que possible.</h3>
+<p>En adoptant la fluidité, l’adaptabilité est principalement assurée
+par le navigateur. Moins de règles sont nécessaires pour assurer un
+rendu correct dans le nombre infini de contextes d’utilisation.</p>
+</article>
+<article>
+<h3 id="outil-devs">Make full use of freely available development tools
+by going with the grain of the Web platform.</h3>
+<p>En utilisant des ensembles de règles « juste à temps », des
+« tokens » de conception, la cascade et la sélection intentionnelle, le
+flux de travail de débogage et d’affinage est plus simple, plus léger et
+plus clair.</p>
+</article>
+<article>
+<h3 id="code-natif">Éviter les abstractions technologiques telles que
+les « frameworks » de haut niveau favorisent un code natif plus léger et
+plus simple.</h3>
+<p>En écrivant du CSS natif, on utilise mieux le CSS ; en écrivant du
+HTML natif, on utilise mieux le HTML. Meilleur CSS et meilleur HTML
+produisent une meilleure expérience utilisateur.</p>
+</article>
+</section>
+<section class="of-side-by-side-text-code">
+<h2 id="regles">Règles de développement</h2>
+<!-- - [TODO] : use of style attributes with custom properties. -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="fichier-selecteur">Tous les sélecteurs de composants
+<em>doivent</em> commencer par leur nom de fichier.</h3>
+</header>
+<section>
+<h4 id="principes-1">Principes</h4>
+<ul>
+<li><a href="#concept-autonome">Concepts autonomes</a></li>
+<li><a href="#manipulation-concept">Manipulation de concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes">Notes</h4>
+<p>Pour exclure un fichier de cette règle dans la configuration
+Stylelint, préfixez le nom du fichier avec un chiffre ou “x-” comme dans
+“x-quarantine.css”.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">...</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.small-card</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">...</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="tous-les-dégagements-doivent-dabord-être-uniformes-puis-ajustés-si-nécessaire.">Tous
+les dégagements doivent d’abord être uniformes, puis ajustés si
+nécessaire.</h3>
+</header>
+<section>
+<h4 id="principes-2">Principes</h4>
+<ul>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-1">Notes</h4>
+<p>Des dégagements non uniformes peuvent être utilisés dans des cas
+particuliers pour des raisons de débordement ou pour ajouter un
+pseudo-contenu.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-1">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">30</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-dégagements-doivent-être-appliqués-uniquement-aux-éléments-conteneurs-et-interactifs.">Les
+dégagements doivent être appliqués uniquement aux éléments conteneurs et
+interactifs.</h3>
+</header>
+<section>
+<h4 id="principes-3">Principes</h4>
+<ul>
+<li><a href="#role-unique">Rôle unique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-2">Notes</h4>
+<p>Les éléments de texte ne doivent héberger que des styles de texte,
+tandis que les éléments conteneurs peuvent héberger des styles de thème.
+Dans certains cas, les éléments conteneurs peuvent héberger des styles
+de texte dont les enfants hériteront.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-2">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> h2 {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-marges-horizontales-ne-doivent-pas-être-appliquées-aux-éléments-de-texte.">Les
+marges horizontales ne doivent pas être appliquées aux éléments de
+texte.</h3>
+</header>
+<section>
+<h4 id="principes-4">Principes</h4>
+<ul>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#role-unique">Rôle unique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-3">Notes</h4>
+<p>Des marges horizontales peuvent être appliquées aux éléments de texte
+dans le cas d’<em>éléments en ligne</em> tels que des icônes ou des
+balises et sur des éléments en retrait comme <code
+class="sourceCode html">blockquote</code>.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-3">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-éléments-typographiques-doivent-utiliser-lhéritage-lorsque-cela-est-possible.">Les
+éléments typographiques doivent utiliser l’héritage lorsque cela est
+possible.</h3>
+</header>
+<section>
+<h4 id="principes-5">Principes</h4>
+<ul>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#portee-globale">Portée globale</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-4">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="le-langage-graphique-doit-être-utilisé-pour-la-plupart-des-valeurs-numériques.">Le
+langage graphique doit être utilisé pour la plupart des valeurs
+numériques.</h3>
+</header>
+<section>
+<h4 id="principes-6">Principes</h4>
+<ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
+<li><a href="#outil-devs">Profiter des outils de développement</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-4">Notes</h4>
+<p>Les valeurs numériques ne doivent être utilisées que pour des
+alignements exceptionnels. Ceux-ci doivent être commentés pour
+communiquer l’intention. Même dans ce cas, pourquoi ne pas créer une
+propriété personnalisée portant un nom significatif ?</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-5">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="fu">var(</span><span class="va">--small-spacing</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="la-répétition-des-règles-par-défaut-est-déconseillée.">La
+répétition des règles par défaut est déconseillée.</h3>
+</header>
+<section>
+<h4 id="principes-7">Principes</h4>
+<ul>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-5">Notes</h4>
+<p>Tout cas de répétition d’un défaut <em>doit</em> être justifié dans
+un commentaire.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-6">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:not(:hover)</span> {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span> {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:hover</span> {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="toutes-les-entités-de-classe-en-dehors-des-composants-doivent-être-préfixées.">Toutes
+les entités de classe en dehors des composants <em>doivent</em> être
+préfixées.</h3>
+</header>
+<section>
+<h4 id="principes-8">Principes</h4>
+<ul>
+<li><a href="#concept-enfant">Concepts enfant</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-6">Notes</h4>
+</section>
+</div>
+<aside>
+<h4 id="exemple-7">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-circle</span> {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.circle</span> {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="limbrication-est-limitée-à-un-seul-niveau.">L’imbrication est
+limitée à un seul niveau.</h3>
+</header>
+<section>
+<h4 id="principes-9">Principes</h4>
+<ul>
+<li><a href="#concept-enfant">Concepts enfant</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-8">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    &amp; header p {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    &amp; header {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        &amp; p {</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="lutilisation-de-dimensions-spécifiques-doit-être-évitée.">L’utilisation
+de dimensions spécifiques doit être évitée.</h3>
+</header>
+<section>
+<h4 id="principes-10">Principes</h4>
+<ul>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-9">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="utilisez-des-sélecteurs-dattributs-pour-communiquer-lunicité.">Utilisez
+des sélecteurs d’attributs pour communiquer l’unicité.</h3>
+</header>
+<section>
+<h4 id="principes-11">Principes</h4>
+<ul>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-10">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[id</span><span class="op">=</span><span class="st">&quot;main&quot;</span><span class="ex">]</span> {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#main</span> {</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="lutilisation-de-règles-de-positionnement-et-daffichage-doit-être-minimisée.">L’utilisation
+de règles de positionnement et d’affichage doit être minimisée.</h3>
+</header>
+<section>
+<h4 id="principes-12">Principes</h4>
+<ul>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-7">Notes</h4>
+<p>Utilisez ces propriétés uniquement sur les éléments qui en ont
+besoin. Utilisez les sélecteurs les plus étroits qui ont du sens dans le
+contexte.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-11">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>header {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="les-sélecteurs-surqualifiés-sont-déconseillés.">Les sélecteurs
+surqualifiés sont déconseillés.</h3>
+</header>
+<section>
+<h4 id="principes-13">Principes</h4>
+<ul>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-12">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>article<span class="fu">.card</span> {</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-composants-ne-peuvent-pas-exercer-dinfluence-extérieure.">Les
+composants ne peuvent pas exercer d’influence extérieure.</h3>
+</header>
+<section>
+<h4 id="principes-14">Principes</h4>
+<ul>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-13">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="le-débordement-ne-doit-pas-être-masqué.">Le débordement ne doit
+pas être masqué.</h3>
+</header>
+<section>
+<h4 id="principes-15">Principes</h4>
+<ul>
+<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-8">Notes</h4>
+<p>En masquant la façon dont les navigateurs traitent les éléments
+débordants, nous pouvons masquer du contenu sans le savoir. En utilisant
+<code class="sourceCode css">auto</code> au lieu de <code
+class="sourceCode css">hidden</code>, le contenu débordant sera
+accessible <em>et</em> la barre de défilement signalera le problème de
+conception au lieu de le masquer. Masquer les barres de défilement peut
+être nécessaire dans certaines compositions particulières (voir
+l’adaptation portrait de ce même site pour un exemple !).</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-14">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">50</span>dvh<span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span>: <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">50</span>dvh<span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3 id="les-nombres-dans-les-noms-de-classes-sont-à-éviter.">Les nombres
+dans les noms de classes sont à éviter.</h3>
+</header>
+<section>
+<h4 id="principes-16">Principes</h4>
+<ul>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-9">Notes</h4>
+<p>Les nombres peuvent transmettre une intention dans les cas de système
+de grille comme, par exemple, <code
+class="sourceCode html">grid-10</code> ou <code
+class="sourceCode html">col-3</code>. Néanmoins, l’utilité de ces
+systèmes est faible à l’époque moderne du CSS. Il est suggéré de les
+laisser de côté.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-15">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-featured</span> {</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card-1</span> {</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-nombres-magiques-doivent-être-évités-ou-expliqués-dans-un-commentaire-de-ligne.">Les
+nombres magiques <em>doivent</em> être évités ou expliqués dans un
+commentaire de ligne.</h3>
+</header>
+<section>
+<h4 id="principes-17">Principes</h4>
+<ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-10">Notes</h4>
+<p>Les choix de valeurs et d’unités doivent être dictés par le langage
+graphique et ses jetons de conception. Les valeurs absolues sous forme
+numérique doivent être réservées à des cas particuliers tels que
+l’alignement d’icônes sur mesure ou le dégagement d’une liste à puces.
+L’intention <em>doit</em> être claire en elle-même ou commentée
+sinon.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-16">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="fu">var(</span><span class="va">--line-tight</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="le-rythme-doit-être-appliqué-dans-une-seule-direction-de-préférence-vers-le-haut.">Le
+rythme <em>doit</em> être appliqué dans une seule direction, de
+préférence vers le haut.</h3>
+</header>
+<section>
+<h4 id="principes-18">Principes</h4>
+<ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-11">Notes</h4>
+<p>L’espacement est le rythme, un concept de design fondamental. Le
+rythme se produit <em>entre</em> les éléments graphiques et doit être
+appliqué comme tel en CSS. Le sélecteur <a
+href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/"
+target="_blank">hibou lobotomisé</a> (<em>+</em>) est conçu sur mesure
+pour cette tâche. Lorsque vous utilisez un conteneur flexible, la
+propriété <code class="sourceCode css">gap</code> fait tout pour
+vous !</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-17">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*</span> {</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="lutilisation-dunités-problématiques-est-déconseillée.">L’utilisation
+d’unités problématiques est déconseillée.</h3>
+</header>
+<section>
+<h4 id="principes-19">Principes</h4>
+<ul>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-12">Notes</h4>
+<p>Les unités de fenêtre d’affichage statiques (vh, vw, vmin, vmax) sont
+notoirement problématiques, en particulier lorsqu’elles sont utilisées
+comme <code class="sourceCode css">100vh</code> ou <code
+class="sourceCode css">100vw</code>. Les <a
+href="https://caniuse.com/viewport-unit-variants" target="_blank">unités
+dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-18">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">100</span>dvh<span class="op">;</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-sélecteurs-de-balises-doivent-être-exploités-à-lintérieur-des-composants.">Les
+sélecteurs de balises doivent être exploités à l’intérieur des
+composants.</h3>
+</header>
+<section>
+<h4 id="principes-20">Principes</h4>
+<ul>
+<li><a href="#structure-composant">Structure du composant</a></li>
+<li><a href="#html-expressif">HTML expressif</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-19">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.card__header</span> {</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="une-entité-par-fichier-avec-une-limite-souple-dune-centaine-de-lignes.">Une
+entité par fichier avec une limite souple d’une centaine de lignes.</h3>
+</header>
+<section>
+<h4 id="principes-21">Principes</h4>
+<ul>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
+<li><a href="#manipulation-concept">Manipulation de concept</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-13">Notes</h4>
+<p>C’est l’une des règles les plus importantes pour parvenir à un CSS
+durable. Un concept autonome par fichier évite la multiplication des
+surcharges et des redéfinitions dans la base de code.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-20">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* .metainfo.css */</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="les-sélecteurs-doivent-inclure-strictement-et-uniquement-les-éléments-de-sélection-nécessaires.">Les
+sélecteurs <em>doivent</em> inclure strictement et uniquement les
+éléments de sélection nécessaires.</h3>
+</header>
+<section>
+<h4 id="principes-22">Principes</h4>
+<ul>
+<li><a href="#structure-composant">Structure du composant</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-14">Notes</h4>
+<p>Cette erreur, considérée à tort comme une « meilleure pratique », est
+à l’origine de nombreux maux de tête CSS dont nous sommes nous-mêmes
+responsables. Heureusement, la solution est simple : <em>n’utilisez pas
+d’éléments de sélection que vous pourriez supprimer sans changer
+l’intention initiale</em>.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-21">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> div p {</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="la-duplication-dun-ensemble-de-plus-de-3-règles-est-déconseillée.">La
+duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
+</header>
+<section>
+<h4 id="principes-23">Principes</h4>
+<ul>
+<li><a href="#repetition-regles">Répétition de règles</a></li>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-22">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* button.css */</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.button</span> {</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> a {</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> button {</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="lutilisation-de-la-portée-globale-est-encouragée-pour-toutes-les-couches-de-conception-fondamentales.">L’utilisation
+de la portée globale est encouragée pour toutes les couches de
+conception fondamentales.</h3>
+</header>
+<section>
+<h4 id="principes-24">Principes</h4>
+<ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
+<li><a href="#portee-globale">Portée globale</a></li>
+<li><a href="#regles-globales">Règles globales</a></li>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 id="exemple-23">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rhythm.css */</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>p<span class="op">+</span>p {</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> p<span class="op">+</span>p {</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* prose.css */</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.prose</span> p<span class="op">+</span>p {</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<article>
+<div>
+<div>
+<header>
+<h3
+id="la-structure-html-doit-être-aussi-plate-que-possible-et-dépourvue-dimbrication-de-balises-uniques.">La
+structure HTML doit être aussi plate que possible et dépourvue
+d’imbrication de balises uniques.</h3>
+</header>
+<section>
+<h4 id="principes-25">Principes</h4>
+<ul>
+<li><a href="#structure-composant">Structure du composant</a></li>
+<li><a href="#html-expressif">HTML expressif</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-15">Notes</h4>
+<p>Parfois, il peut être judicieux d’ajouter un <code
+class="sourceCode html">div</code> même s’il s’agit du seul enfant. Le
+cas d’une grille de contenu vient à l’esprit. Voir la source de cette
+page pour un exemple.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-24">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do --&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">article</span><span class="dt">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Don&#39;t --&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">article</span><span class="dt">&gt;</span></span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr />
+<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
+<article>
+<div>
+<div>
+<header>
+<h3
+id="la-spécificité-doit-être-maintenue-aussi-faible-que-possible.">La
+spécificité <em>doit</em> être maintenue aussi faible que possible.</h3>
+</header>
+<section>
+<h4 id="principes-26">Principes</h4>
+<ul>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+<li><a href="#enfant-specificite">Spécificité des enfants</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-16">Notes</h4>
+<p>Il est parfois judicieux d’ajouter des précisions. Mais ne le faites
+pas avant que cela ne soit prouvé nécessaire.</p>
+</section>
+</div>
+<aside>
+<h4 id="exemple-25">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:where(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:is(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+</section>
+<section>
+<h2 id="outils">Outils reliés</h2>
+<ul>
+<li>Browser Inspector (debugging, experimenting and navigating)</li>
+<li>Scaffolding &amp; code library (use it… or not!)</li>
+<li>Stylelint (lint and inform)</li>
+<li>CSSCSS (find rule duplication in your codebase)</li>
+<li>PurifyCSS, PurgeCSS or Chrome Coverage outil-dev</li>
+</ul>
+</section>
+</root>

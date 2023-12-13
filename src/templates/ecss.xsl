@@ -19,39 +19,14 @@
 		</xsl:variable>
 		<html lang="{$lang}">
 		<head>
-			<script>
-				let chosenLang = "";
-				if(!localStorage.lang) {
-					chosenLang = navigator.languages[0].split("-")[0];
-					if(chosenLang.includes("en") || chosenLang.includes("fr")) {
-						localStorage.setItem("lang", chosenLang);
-					} else {
-						localStorage.setItem("lang", "en");
-					}
-				} else {
-					chosenLang = localStorage.getItem("lang");
-				}
-
-				const applyChosenLang = () => { 
-					document.documentElement.setAttribute("lang", chosenLang);
-					document.querySelectorAll('main').forEach((e) => {
-						const contentLang = e.getAttribute("lang");
-						if(contentLang == chosenLang) {
-							e.removeAttribute('hidden');
-						} else {
-							e.setAttribute('hidden', 'until-found');
-						}
-					});
-				}
-			</script>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" href="assets/css/e.css" />
-			<link rel="stylesheet" href="assets/fonts/hankenGrotesk.css" />
-			<link rel="stylesheet" href="assets/css/4.regions/html.css" />
-			<link rel="stylesheet" media="(orientation:landscape)" href="assets/css/5.compositions/side-nav-main-pile.css" />
-			<link rel="stylesheet" media="(orientation:portrait)" href="assets/css/5.compositions/bottom-nav-sliding-content.css" />
+			<link rel="stylesheet" href="../assets/css/e.css" />
+			<link rel="stylesheet" href="../assets/fonts/hankenGrotesk.css" />
+			<link rel="stylesheet" href="../assets/css/4.regions/html.css" />
+			<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
+			<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
 			<!-- <link rel="stylesheet" href="x.dev/debug.css" /> -->
-			<link rel="stylesheet" href="assets/css/x.dev/quarantine.css" />
+			<link rel="stylesheet" href="../assets/css/x.dev/quarantine.css" />
 			<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
 			<meta charset="UTF-8" />
 			<title>ECSS</title>

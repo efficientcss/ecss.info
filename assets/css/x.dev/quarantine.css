@@ -3,6 +3,11 @@ html[lang="en"] [id="nav-fr"] {
 	display: none;
 }
 
+html[lang=fr] main[lang=en],
+html[lang=en] main[lang=fr] {
+	opacity: 0;
+}
+
 .of-side-by-side-text-code {}
 .of-side-by-side-text-code div>* {
 	flex-grow: 1;

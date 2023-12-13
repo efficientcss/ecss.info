@@ -15,6 +15,7 @@
 					<a href="#principles">Principles</a>
 					<a href="#rules">Rules</a>
 					<a href="#tools">Tools</a>
+					<button lang="fr">Français</button>
 				</nav>
 				<nav id="nav-fr" lang="fr">
 					<a href="#introduction">Intro</a>
@@ -22,12 +23,28 @@
 					<a href="#principes">Principes</a>
 					<a href="#regles">Règles</a>
 					<a href="#outils">Outils</a>
+					<button lang="en">English</button>
 				</nav>
 			</header>
 			<link rel="stylesheet" href="assets/css/4.regions/main.css"/>
-			<main>
+			<main lang="en" hidden="until-found">
 				<xsl:apply-templates mode="main-content" />
 			</main>
+			<main lang="fr">
+				<h2>test</h2>
+			</main>
+			<script>
+				window.addEventListener("DOMContentLoaded", applyChosenLang);
+				const langSwitchers = document.querySelectorAll('button[lang]');
+				langSwitchers.forEach((e) => {
+					e.addEventListener("click", () => {
+						chosenLang = e.getAttribute("lang");
+						localStorage.setItem("lang", chosenLang);
+						applyChosenLang();
+					});
+				});
+
+			</script>
 		</body>
 	</xsl:template>
 </xsl:stylesheet>

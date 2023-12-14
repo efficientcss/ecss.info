@@ -288,6 +288,7 @@ En écrivant du CSS natif, on utilise mieux le CSS ; en écrivant du HTML natif,
 
 </section>
 
+<link rel="stylesheet" href="../assets/css/6.components/of-side-by-side-text-code.css" />
 <section class="of-side-by-side-text-code">
 ## Règles de développement{#regles}
 

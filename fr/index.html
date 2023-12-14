@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="../assets/css/x.dev/quarantine.css">
 <link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css">
 <meta charset="UTF-8">
-<title>ECSS</title>
+<meta name="description" content="ECSS établit des règles simples pour des styliser simplement. Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable.">
+<title>ECSS — Des règles simples pour du CSS efficient</title>
 </head>
 <link rel="stylesheet" href="../assets/css/4.regions/body.css">
 <body class="side-nav-main-pile bottom-nav-sliding-content">
@@ -21,6 +22,9 @@
 <main>
 <div id="introduction">
 <header>
+<h2 class="as-visually-hidden">
+Introduction
+</h2>
 <p>Éviter les problèmes de style courants est simple. Et vous n’avez
 besoin que de CSS efficace. Rien de plus.</p>
 <p><strong>ECSS établit des règles simples pour des styliser
@@ -379,7 +383,7 @@ Stylelint, préfixez le nom du fichier avec un chiffre ou “x-” comme dans
 </section>
 </div>
 <aside>
-<h4 id="exemple">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
@@ -418,7 +422,7 @@ pseudo-contenu.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-1">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-1">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -457,7 +461,7 @@ de texte dont les enfants hériteront.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-2">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-2">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -495,7 +499,7 @@ balises et sur des éléments en retrait comme <code class="sourceCode html">blo
 </section>
 </div>
 <aside>
-<h4 id="exemple-3">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-3">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -528,7 +532,7 @@ possible.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-4">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-4">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
@@ -568,7 +572,7 @@ propriété personnalisée portant un nom significatif ?</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-5">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-5">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -604,7 +608,7 @@ un commentaire.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-6">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-6">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:not(:hover)</span> {</span>
@@ -645,7 +649,7 @@ préfixées.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-7">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-7">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-circle</span> {</span>
@@ -676,7 +680,7 @@ limitée à un seul niveau.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-8">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-8">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -714,7 +718,7 @@ de dimensions spécifiques doit être évitée.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-9">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-9">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -746,7 +750,7 @@ des sélecteurs d’attributs pour communiquer l’unicité.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-10">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-10">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[id</span><span class="op">=</span><span class="st">"main"</span><span class="ex">]</span> {</span>
@@ -783,7 +787,7 @@ contexte.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-11">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-11">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -814,7 +818,7 @@ surqualifiés sont déconseillés.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-12">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-12">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -846,7 +850,7 @@ composants ne peuvent pas exercer d’influence extérieure.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-13">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-13">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb27"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
@@ -887,7 +891,7 @@ l’adaptation portrait de ce même site pour un exemple !).</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-14">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-14">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb29"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
@@ -926,7 +930,7 @@ laisser de côté.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-15">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-15">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb31"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -980,7 +984,7 @@ sinon.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-16">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-16">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb33"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -1021,7 +1025,7 @@ vous !</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-17">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-17">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb35"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
@@ -1059,7 +1063,7 @@ dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-18">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-18">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
@@ -1090,7 +1094,7 @@ composants.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-19">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-19">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -1127,7 +1131,7 @@ surcharges et des redéfinitions dans la base de code.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-20">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-20">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb41"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
@@ -1179,7 +1183,7 @@ l’intention initiale</em>.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-21">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-21">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb43"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
@@ -1210,7 +1214,7 @@ duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-22">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-22">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* button.css */</span></span>
@@ -1261,7 +1265,7 @@ conception fondamentales.</h3>
 </section>
 </div>
 <aside>
-<h4 id="exemple-23">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-23">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb47"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rhythm.css */</span></span>
@@ -1306,7 +1310,7 @@ page pour un exemple.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-24">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-24">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do --&gt;</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
@@ -1347,7 +1351,7 @@ pas avant que cela ne soit prouvé nécessaire.</p>
 </section>
 </div>
 <aside>
-<h4 id="exemple-25">Exemple</h4>
+<h4 class="as-visually-hidden" id="exemple-25">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb51"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:where(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>

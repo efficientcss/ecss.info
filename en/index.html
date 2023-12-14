@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="../assets/css/x.dev/quarantine.css">
 <link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css">
 <meta charset="UTF-8">
-<title>ECSS</title>
+<meta name="description" content="ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.">
+<title>ECSS — Simple Rules for efficient CSS</title>
 </head>
 <link rel="stylesheet" href="../assets/css/4.regions/body.css">
 <body class="side-nav-main-pile bottom-nav-sliding-content">
@@ -21,6 +22,9 @@
 <main>
 <div id="intro">
 <header>
+<h2 class="as-visually-hidden">
+Introduction
+</h2>
 <p>Avoiding common styling problems is simple. And you only need
 efficient CSS. Nothing more.</p>
 <p><strong>ECSS sets simple rules for simple styling.</strong> No more
@@ -325,6 +329,7 @@ one writes HTML better. With better CSS and better HTML comes a better
 user experience.</p>
 </article>
 </section>
+<link rel="stylesheet" href="../assets/css/6.components/of-side-by-side-text-code.css">
 <section class="of-side-by-side-text-code">
 <h2 id="rules">Authoring rules</h2>
 <!-- - [TODO] : use of style attributes with custom properties. -->
@@ -349,7 +354,7 @@ filename with a digit or “x-” as in “x-quarantine.css”</p>
 </section>
 </div>
 <aside>
-<h4 id="example">Example</h4>
+<h4 class="as-visually-hidden" id="example">Example</h4>
 <div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
@@ -386,7 +391,7 @@ reasons or for added pseudo-content.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-1">Example</h4>
+<h4 class="as-visually-hidden" id="example-1">Example</h4>
 <div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -423,7 +428,7 @@ host text styles to be inherited by children.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-2">Example</h4>
+<h4 class="as-visually-hidden" id="example-2">Example</h4>
 <div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -460,7 +465,7 @@ elements like <code class="sourceCode html">blockquote</code>.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-3">Example</h4>
+<h4 class="as-visually-hidden" id="example-3">Example</h4>
 <div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -492,7 +497,7 @@ elements should use heritage when possible.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-4">Example</h4>
+<h4 class="as-visually-hidden" id="example-4">Example</h4>
 <div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
@@ -530,7 +535,7 @@ create a bespoke property meaningfully named?</p>
 </section>
 </div>
 <aside>
-<h4 id="example-5">Example</h4>
+<h4 class="as-visually-hidden" id="example-5">Example</h4>
 <div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -566,7 +571,7 @@ comment.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-6">Example</h4>
+<h4 class="as-visually-hidden" id="example-6">Example</h4>
 <div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:not(:hover)</span> {</span>
@@ -606,7 +611,7 @@ class entities besides components <em>must</em> be prefixed.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-7">Example</h4>
+<h4 class="as-visually-hidden" id="example-7">Example</h4>
 <div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-circle</span> {</span>
@@ -637,7 +642,7 @@ to one level only.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-8">Example</h4>
+<h4 class="as-visually-hidden" id="example-8">Example</h4>
 <div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -675,7 +680,7 @@ specific dimensions should be avoided.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-9">Example</h4>
+<h4 class="as-visually-hidden" id="example-9">Example</h4>
 <div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -707,7 +712,7 @@ selectors to convey unicity.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-10">Example</h4>
+<h4 class="as-visually-hidden" id="example-10">Example</h4>
 <div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[id</span><span class="op">=</span><span class="st">"main"</span><span class="ex">]</span> {</span>
@@ -743,7 +748,7 @@ selectors that makes sense in the context.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-11">Example</h4>
+<h4 class="as-visually-hidden" id="example-11">Example</h4>
 <div>
 <div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -774,7 +779,7 @@ selectors are discouraged.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-12">Example</h4>
+<h4 class="as-visually-hidden" id="example-12">Example</h4>
 <div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -806,7 +811,7 @@ exert outside influence.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-13">Example</h4>
+<h4 class="as-visually-hidden" id="example-13">Example</h4>
 <div>
 <div class="sourceCode" id="cb27"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
@@ -846,7 +851,7 @@ example!).</p>
 </section>
 </div>
 <aside>
-<h4 id="example-14">Example</h4>
+<h4 class="as-visually-hidden" id="example-14">Example</h4>
 <div>
 <div class="sourceCode" id="cb29"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
@@ -884,7 +889,7 @@ systems is low in modern CSS times. Leaving them aside is suggested.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-15">Example</h4>
+<h4 class="as-visually-hidden" id="example-15">Example</h4>
 <div>
 <div class="sourceCode" id="cb31"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -935,7 +940,7 @@ intention <em>must</em> be clear in itself or commented if not.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-16">Example</h4>
+<h4 class="as-visually-hidden" id="example-16">Example</h4>
 <div>
 <div class="sourceCode" id="cb33"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
@@ -973,7 +978,7 @@ for this task. When using a flex container, the <code class="sourceCode css">gap
 </section>
 </div>
 <aside>
-<h4 id="example-17">Example</h4>
+<h4 class="as-visually-hidden" id="example-17">Example</h4>
 <div>
 <div class="sourceCode" id="cb35"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
@@ -1011,7 +1016,7 @@ task.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-18">Example</h4>
+<h4 class="as-visually-hidden" id="example-18">Example</h4>
 <div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
@@ -1041,7 +1046,7 @@ selectors should be leveraged inside components.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-19">Example</h4>
+<h4 class="as-visually-hidden" id="example-19">Example</h4>
 <div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
@@ -1078,7 +1083,7 @@ overrides and redefinition across the codebase.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-20">Example</h4>
+<h4 class="as-visually-hidden" id="example-20">Example</h4>
 <div>
 <div class="sourceCode" id="cb41"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
@@ -1128,7 +1133,7 @@ original intention</em>.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-21">Example</h4>
+<h4 class="as-visually-hidden" id="example-21">Example</h4>
 <div>
 <div class="sourceCode" id="cb43"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
@@ -1159,7 +1164,7 @@ of a set of more than 3 rules is discouraged.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-22">Example</h4>
+<h4 class="as-visually-hidden" id="example-22">Example</h4>
 <div>
 <div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* button.css */</span></span>
@@ -1210,7 +1215,7 @@ layers.</h3>
 </section>
 </div>
 <aside>
-<h4 id="example-23">Example</h4>
+<h4 class="as-visually-hidden" id="example-23">Example</h4>
 <div>
 <div class="sourceCode" id="cb47"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rhythm.css */</span></span>
@@ -1255,7 +1260,7 @@ for an example.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-24">Example</h4>
+<h4 class="as-visually-hidden" id="example-24">Example</h4>
 <div>
 <div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do --&gt;</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
@@ -1296,7 +1301,7 @@ proven necessary.</p>
 </section>
 </div>
 <aside>
-<h4 id="example-25">Example</h4>
+<h4 class="as-visually-hidden" id="example-25">Example</h4>
 <div>
 <div class="sourceCode" id="cb51"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:where(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>

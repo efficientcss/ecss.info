@@ -1,6 +1,6 @@
 @layer theming {
 	/* Content rhythm ----------------------- */
-	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link))~* {
+	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link, script, .as-visually-hidden))~* {
 		margin-top: var(--Row);
 	}
 

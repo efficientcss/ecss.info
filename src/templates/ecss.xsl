@@ -29,7 +29,16 @@
 			<link rel="stylesheet" href="../assets/css/x.dev/quarantine.css" />
 			<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
 			<meta charset="UTF-8" />
-			<title>ECSS</title>
+			<xsl:choose>
+				<xsl:when test="$lang='en'">
+					<meta name="description" content="ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS." />
+					<title>ECSS — Simple Rules for efficient CSS</title>
+				</xsl:when>
+				<xsl:otherwise>
+					<meta name="description" content="ECSS établit des règles simples pour des styliser simplement. Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable." />
+					<title>ECSS — Des règles simples pour du CSS efficient</title>
+				</xsl:otherwise>
+			</xsl:choose>
 		</head>
 		<xsl:call-template name="body" />
 	</html>

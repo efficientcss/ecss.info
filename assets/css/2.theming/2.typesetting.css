@@ -48,7 +48,7 @@
 		max-width: 50rem;
 	}
 
-	main>div>header p:first-child {
+	main>div>header p:first-of-type {
 		font-weight: 800;
 		--ScaleLevel: var(--Huge);
 	}

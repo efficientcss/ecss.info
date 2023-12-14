@@ -19,15 +19,18 @@
 		</xsl:variable>
 		<html lang="{$lang}">
 		<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" href="../assets/css/e.css" />
-			<link rel="stylesheet" href="../assets/fonts/hankenGrotesk.css" />
+			<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
+			<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />
+			<link rel="preload" href="https://p.typekit.net" crossorigin="" />
+
+			<link rel="stylesheet" href="../assets/css/1.base/1.layers.css" />
+			<link rel="stylesheet" href="../assets/css/min.e.css" />
 			<link rel="stylesheet" href="../assets/css/4.regions/html.css" />
 			<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
 			<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
-			<!-- <link rel="stylesheet" href="x.dev/debug.css" /> -->
-			<link rel="stylesheet" href="../assets/css/x.dev/quarantine.css" />
 			<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta charset="UTF-8" />
 			<xsl:choose>
 				<xsl:when test="$lang='en'">
@@ -43,4 +46,4 @@
 		<xsl:call-template name="body" />
 	</html>
 </xsl:template>
-</xsl:stylesheet>
+		</xsl:stylesheet>

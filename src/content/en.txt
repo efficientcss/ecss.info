@@ -22,14 +22,16 @@ Avoiding common styling problems is simple. And you only need efficient CSS. Not
 
 🏁 A quick &amp; efficient starting point is within reach!
 
-[Download the scaffolding library](https://github.com/efficientcss/scaffolding)
+[Clone the scaffolding library (WIP)](https://github.com/efficientcss/scaffolding)
 
 </section>
 
 <section>
 <h3 class="h4">Want to know the beast?</h3>
 
-📰 Dive into ECSS principles and documentation.
+📰 Go ahead and see what you think of it!
+
+[Dive into ECSS rules](#rules)
 
 </section>
 
@@ -1148,6 +1150,8 @@ nav {
 </div>
 </article>
 
+---
+
 <article>
 
 <div>
@@ -1501,8 +1505,8 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 ## Related tools{#tools}
 
 - Browser Inspector (debugging, experimenting and navigating)
-- Scaffolding &amp; code library (use it... or not!)
-- Stylelint (lint and inform)
-- CSSCSS (find rule duplication in your codebase)
-- PurifyCSS, PurgeCSS or Chrome Coverage devtool
+- [Scaffolding &amp; code library](https://github.com/efficientcss/scaffolding) (use it... or not!)
+- [Stylelint](https://stylelint.io) (lint and inform)
+- [CSSCSS](https://github.com/zmoazeni/csscss) (find rule duplication in your codebase)
+- [PurifyCSS](https://github.com/purifycss/purifycss), [PurgeCSS](https://github.com/FullHuman/purgecss) or Chrome Coverage devtool
 </section>

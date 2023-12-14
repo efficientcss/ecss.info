@@ -27,14 +27,15 @@ the Stylelint config</a></p>
 Eager to build something?
 </h3>
 <p>🏁 A quick &amp; efficient starting point is within reach!</p>
-<p><a href="https://github.com/efficientcss/scaffolding">Download the
-scaffolding library</a></p>
+<p><a href="https://github.com/efficientcss/scaffolding">Clone the
+scaffolding library (WIP)</a></p>
 </section>
 <section>
 <h3 class="h4">
 Want to know the beast?
 </h3>
-<p>📰 Dive into ECSS principles and documentation.</p>
+<p>📰 Go ahead and see what you think of it!</p>
+<p><a href="#rules">Dive into ECSS rules</a></p>
 </section>
 <section>
 <h3 class="h4">
@@ -1086,6 +1087,7 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#
 </aside>
 </div>
 </article>
+<hr />
 <article>
 <div>
 <div>
@@ -1395,10 +1397,14 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#
 <h2 id="tools">Related tools</h2>
 <ul>
 <li>Browser Inspector (debugging, experimenting and navigating)</li>
-<li>Scaffolding &amp; code library (use it… or not!)</li>
-<li>Stylelint (lint and inform)</li>
-<li>CSSCSS (find rule duplication in your codebase)</li>
-<li>PurifyCSS, PurgeCSS or Chrome Coverage devtool</li>
+<li><a href="https://github.com/efficientcss/scaffolding">Scaffolding
+&amp; code library</a> (use it… or not!)</li>
+<li><a href="https://stylelint.io">Stylelint</a> (lint and inform)</li>
+<li><a href="https://github.com/zmoazeni/csscss">CSSCSS</a> (find rule
+duplication in your codebase)</li>
+<li><a href="https://github.com/purifycss/purifycss">PurifyCSS</a>, <a
+href="https://github.com/FullHuman/purgecss">PurgeCSS</a> or Chrome
+Coverage devtool</li>
 </ul>
 </section>
 </root>

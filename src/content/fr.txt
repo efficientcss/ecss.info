@@ -1,5 +1,6 @@
 <div id="introduction">
 <header>
+<h2 class="as-visually-hidden">Introduction</h2>
 
 Éviter les problèmes de style courants est simple. Et vous n’avez besoin que de CSS efficace. Rien de plus.
 
@@ -316,7 +317,7 @@ Pour exclure un fichier de cette règle dans la configuration Stylelint, préfix
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -364,7 +365,7 @@ Des dégagements non uniformes peuvent être utilisés dans des cas particuliers
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -410,7 +411,7 @@ Les éléments de texte ne doivent héberger que des styles de texte, tandis que
 </div>
 
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -455,7 +456,7 @@ Des marges horizontales peuvent être appliquées aux éléments de texte dans l
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -494,7 +495,7 @@ Des marges horizontales peuvent être appliquées aux éléments de texte dans l
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 
@@ -541,7 +542,7 @@ Les valeurs numériques ne doivent être utilisées que pour des alignements exc
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -586,7 +587,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -634,7 +635,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 <div>
 ```css
 /* Correct */
@@ -672,7 +673,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -718,7 +719,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -758,7 +759,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -803,7 +804,7 @@ Utilisez ces propriétés uniquement sur les éléments qui en ont besoin. Utili
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -842,7 +843,7 @@ header {
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -882,7 +883,7 @@ article.card {
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 
 <div>
@@ -928,7 +929,7 @@ En masquant la façon dont les navigateurs traitent les éléments débordants, 
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -974,7 +975,7 @@ Les nombres peuvent transmettre une intention dans les cas de système de grille
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1032,7 +1033,7 @@ Les choix de valeurs et d'unités doivent être dictés par le langage graphique
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1077,7 +1078,7 @@ L'espacement est le rythme, un concept de design fondamental. Le rythme se produ
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 
 <div>
@@ -1124,7 +1125,7 @@ Les unités de fenêtre d'affichage statiques (vh, vw, vmin, vmax) sont notoirem
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1162,7 +1163,7 @@ nav {
 </div>
 
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1208,7 +1209,7 @@ C’est l’une des règles les plus importantes pour parvenir à un CSS durable
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1265,7 +1266,7 @@ Cette erreur, considérée à tort comme une « meilleure pratique », est à 
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
@@ -1304,7 +1305,7 @@ Cette erreur, considérée à tort comme une « meilleure pratique », est à 
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 
 <div>
@@ -1363,7 +1364,7 @@ Cette erreur, considérée à tort comme une « meilleure pratique », est à 
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 
 <div>
@@ -1418,7 +1419,7 @@ Parfois, il peut être judicieux d'ajouter un `div`{.html} même s'il s'agit du 
 
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```html
@@ -1469,7 +1470,7 @@ Il est parfois judicieux d’ajouter des précisions. Mais ne le faites pas avan
 </section>
 </div>
 <aside>
-#### Exemple
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css

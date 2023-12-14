@@ -1,5 +1,6 @@
 <div id="intro">
 <header>
+<h2 class="as-visually-hidden">Introduction</h2>
 
 Avoiding common styling problems is simple. And you only need efficient CSS. Nothing more.
 
@@ -288,6 +289,7 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 
 </section>
 
+<link rel="stylesheet" href="../assets/css/6.components/of-side-by-side-text-code.css" />
 <section class="of-side-by-side-text-code">
 ## Authoring rules{#rules}
 
@@ -317,7 +319,7 @@ To exclude a file from this rule in the Stylelint config, prefix the filename wi
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -365,7 +367,7 @@ Non-uniform paddings may be used in particular instances for overflow reasons or
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -411,7 +413,7 @@ Text elements should only host text styles while container elements can host the
 </div>
 
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -456,7 +458,7 @@ Horizontal margins can be applied to text elements in the case of _inline elemen
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -495,7 +497,7 @@ Horizontal margins can be applied to text elements in the case of _inline elemen
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 
@@ -542,7 +544,7 @@ Numerical values should only be used for exceptional alignments. These should be
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -587,7 +589,7 @@ Any instance of repeating default *must* be justified in a comment.
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -635,7 +637,7 @@ Any instance of repeating default *must* be justified in a comment.
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 <div>
 ```css
 /* Do */
@@ -673,7 +675,7 @@ Any instance of repeating default *must* be justified in a comment.
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -719,7 +721,7 @@ Any instance of repeating default *must* be justified in a comment.
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -759,7 +761,7 @@ Any instance of repeating default *must* be justified in a comment.
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -804,7 +806,7 @@ Use these properties only on elements needing them. Use the narrowest selectors 
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -843,7 +845,7 @@ header {
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -883,7 +885,7 @@ article.card {
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 
 <div>
@@ -929,7 +931,7 @@ By hiding the way browsers treat overflowing items, we may hide content without 
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -975,7 +977,7 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1033,7 +1035,7 @@ Value and unit choices should be dictated by the graphic language and its design
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1078,7 +1080,7 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 
 <div>
@@ -1125,7 +1127,7 @@ Static viewport units (vh, vw, vmin, vmax) are famously problematic, particularl
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1163,7 +1165,7 @@ nav {
 </div>
 
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1209,7 +1211,7 @@ This is one of the most important rules for achieving sustainable CSS. One auton
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1266,7 +1268,7 @@ This mistake, being passed as "best practices", is the source of many self-induc
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css
@@ -1305,7 +1307,7 @@ This mistake, being passed as "best practices", is the source of many self-induc
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 
 <div>
@@ -1364,7 +1366,7 @@ This mistake, being passed as "best practices", is the source of many self-induc
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 
 <div>
@@ -1419,7 +1421,7 @@ Sometimes it could make sense to add a div even if it's the only child. The case
 
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```html
@@ -1470,7 +1472,7 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 </section>
 </div>
 <aside>
-#### Example
+#### Example {.as-visually-hidden}
 
 <div>
 ```css

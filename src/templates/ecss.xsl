@@ -25,7 +25,6 @@
 
 			<link rel="stylesheet" href="../assets/css/1.base/1.layers.css" />
 			<link rel="stylesheet" href="../assets/css/min.e.css" />
-			<link rel="stylesheet" href="../assets/css/4.regions/html.css" />
 			<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
 			<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
 			<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />

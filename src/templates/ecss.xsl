@@ -17,7 +17,7 @@
 		<xsl:variable name="lang">
 			<xsl:value-of select="/root/@lang" />
 		</xsl:variable>
-		<html lang="{$lang}">
+		<html lang="{$lang}" class="side-nav-main-pile bottom-nav-sliding-content">
 		<head>
 			<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
 			<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />

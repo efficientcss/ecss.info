@@ -1,11 +1,18 @@
 @layer compositions {
 	.side-nav-main-pile {
-		--max-content-width: 120ch;
-
-		gap: calc(var(--Row) * 2);
+		display: flex;
+		min-height: 100%;
 	}
 
-	.side-nav-main-pile>header {
+	.side-nav-main-pile body {
+		--max-content-width: 120ch;
+
+		flex-grow: 1;
+		gap: calc(var(--Row) * 2);
+		margin: var(--Row);
+	}
+
+	.side-nav-main-pile body>header {
 		position: sticky;
 		top: var(--Row);
 		align-self: start;
@@ -16,18 +23,18 @@
 		top: -0.1em;
 	}
 
-	.side-nav-main-pile>header>nav {
+	.side-nav-main-pile body>header>nav {
 		flex-direction: column;
 		margin-top: calc(var(--Row) * 2);
 	}
 
-	.side-nav-main-pile>main {
+	.side-nav-main-pile body>main {
 		margin-top: calc(var(--Row) * 1.25);
 		padding-top: calc(var(--Row) * 1.5);
 		border-top: var(--type-relative-border-width) solid currentColor;
 	}
 
-	.side-nav-main-pile>main>* {
+	.side-nav-main-pile body>main>* {
 		max-width: var(--max-content-width);
 		margin-right: auto;
 		margin-left: auto;

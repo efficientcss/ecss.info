@@ -1,11 +1,22 @@
 @layer compositions {
-	.bottom-nav-sliding-content {
-		flex-direction: column;
-		padding: initial;
-		overflow-x: hidden;
+	.bottom-nav-sliding-content,
+	.bottom-nav-sliding-content body,
+	.bottom-nav-sliding-content body>main {
 	}
 
-	.bottom-nav-sliding-content>main {
+	.bottom-nav-sliding-content,
+	.bottom-nav-sliding-content body,
+	.bottom-nav-sliding-content body>main,
+	.bottom-nav-sliding-content body>main>* {
+		width: 100%;
+		height: 100%;
+	}
+
+	.bottom-nav-sliding-content body {
+		flex-direction: column;
+	}
+
+	.bottom-nav-sliding-content body>main {
 		display: inherit;
 		flex-basis: 0;
 		flex-direction: row;
@@ -14,29 +25,28 @@
 		scroll-snap-type: x mandatory;
 	}
 
-	.bottom-nav-sliding-content>main>* {
+	.bottom-nav-sliding-content body>main>* {
+		position: relative;
 		flex-shrink: 0;
 		box-sizing: border-box;
-		max-width: 100dvw;
-		max-height: 100%;
 		margin: 0;
 		padding: var(--Row) calc(var(--Row) / 2);
 		overflow-y: auto;
 		scroll-snap-align: start;
 	}
-	.bottom-nav-sliding-content>main>div {
+	.bottom-nav-sliding-content body>main>div {
 		flex-direction: column;
 	}
 
-	.bottom-nav-sliding-content>header {
+	.bottom-nav-sliding-content body>header {
 		display: contents;
 	}
 
-	.bottom-nav-sliding-content>header>h1 {
+	.bottom-nav-sliding-content body>header>h1 {
 		margin: calc(var(--Row) / 2);
 	}
 
-	.bottom-nav-sliding-content>header>nav {
+	.bottom-nav-sliding-content body>header>nav {
 		position: sticky;
 		bottom: 0;
 		order: 1;
@@ -48,7 +58,7 @@
 		border-top: 3px solid currentColor;
 	}
 
-	.bottom-nav-sliding-content>header>nav:before {
+	.bottom-nav-sliding-content body>header>nav:before {
 
 		position: sticky;
 		right: 0;
@@ -64,7 +74,7 @@
 		content: "...";
 	}
 
-	.bottom-nav-sliding-content>header>nav:after {
+	.bottom-nav-sliding-content body>header>nav:after {
 
 		position: relative;
 		z-index: 1;
@@ -80,11 +90,11 @@
 		place-items: center;
 	}
 
-	.bottom-nav-sliding-content>header>nav>a {
+	.bottom-nav-sliding-content body>header>nav>a {
 		padding: calc(var(--Row) / 2);
 	}
 
-	.bottom-nav-sliding-content>header>nav>a:last-child {
+	.bottom-nav-sliding-content body>header>nav>a:last-child {
 		margin-right: calc(var(--Row) / -2);
 	}
 }

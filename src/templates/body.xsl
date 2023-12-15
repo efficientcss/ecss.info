@@ -5,7 +5,7 @@
 	</xsl:template>
 	<xsl:template match="root" mode="body" name="body">
 		<link rel="stylesheet" href="../assets/css/4.regions/body.css"/>
-		<body class="side-nav-main-pile bottom-nav-sliding-content">
+		<body>
 			<header>
 				<h1>ecss</h1>
 				<link rel="stylesheet" href="../assets/css/4.regions/nav.css"/>

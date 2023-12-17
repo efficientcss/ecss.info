@@ -1,11 +1,6 @@
 @layer compositions {
 	.bottom-nav-sliding-content,
 	.bottom-nav-sliding-content body,
-	.bottom-nav-sliding-content body>main {
-	}
-
-	.bottom-nav-sliding-content,
-	.bottom-nav-sliding-content body,
 	.bottom-nav-sliding-content body>main,
 	.bottom-nav-sliding-content body>main>* {
 		width: 100%;

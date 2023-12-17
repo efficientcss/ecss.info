@@ -8,6 +8,7 @@
 }
 
 .of-side-by-side-text-code {
+	/* stylelint-disable-next-line csstree/validator -- recent property */
 	text-wrap: balance;
 }
 

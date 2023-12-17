@@ -1,5 +1,6 @@
 @layer theming {
 	/* Content rhythm ----------------------- */
+	/* stylelint-disable-next-line -- exception for visually-hidden */
 	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link, script, .as-visually-hidden))~* {
 		margin-top: var(--Row);
 	}

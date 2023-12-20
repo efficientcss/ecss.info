@@ -44,6 +44,7 @@
 	/* Better typographic display */
 	html { 
 		text-rendering: geometricPrecision; 
+		-webkit-font-smoothing: antialiased;
 	}
 
 	/* Prevent the spring effect */

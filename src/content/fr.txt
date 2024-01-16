@@ -29,7 +29,9 @@
 <section>
 <h3 class="h4">Vous voulez connaître la bête ?</h3>
 
-📰 Plongez dans les principes et la documentation ECSS.
+📰 Allez, voyons ce que vous en pensez !
+
+[Plongez dans les règles ECSS](#regles)
 
 </section>
 
@@ -74,7 +76,7 @@ Des directives de dénomination flexibles confèrent à la base de code une coh�
 
 **« Simple » consiste à écrire moins de code et à limiter les dépendances.**
 
-La soupe de classe et la division ne sont pas simples. Un nombre incalculable de requêtes multimédias ne le sont pas non plus. Mais le CSS moderne l’est. En acceptant CSS pour ce qu'il est (un langage de conception graphique !), vous pouvez faire *beaucoup* de style avec très peu de code.
+La soupe de classe et l'abus de `div`{.html} ne sont pas simples. Un nombre incalculable de requêtes `@media`{.css} ne le sont pas non plus. Mais le CSS moderne l’est. En acceptant CSS pour ce qu'il est (un langage de conception graphique !), vous pouvez faire *beaucoup* de style avec très peu de code.
 
 </section>
 
@@ -83,7 +85,7 @@ La soupe de classe et la division ne sont pas simples. Un nombre incalculable de
 
 **Un code qui parle de lui-même est réellement accessible.**
 
-`thumbnail as-circle with-border`{.html} est instantanément compréhensible alors que `h-10 w-10 bdr-50 br-1 overh`{.html} ne l'est pas. Le code doit communiquer des informations. Plus les informations sont claires, plus il est facile de comprendre le système. Une sémantique erronée doit céder la place à l'expressivité. Les meilleures pratiques expressives fonctionnent.
+`thumbnail as-circle with-border`{.html} est instantanément compréhensible alors que `h-10 w-10 bdr-50 br-1 overh`{.html} ne l'est pas. Le code doit communiquer des informations. Plus les informations sont claires, plus il est facile de comprendre le système. Une sémantique erronée doit céder la place à l'expressivité. *Les meilleures pratiques expressives fonctionnent.*
 
 </section>
 
@@ -121,7 +123,7 @@ La création CSS doit refléter les modèles, les concepts et les perspectives d
 <article>
 ### Donner aux concepteurs graphiques les moyens d'affiner leur travail de manière autonome est efficace.{#concepteurs-autonomes}
 
-Rendre les parties nécessaires du CSS intelligibles aux concepteurs (codeurs ou non !) réduit le stress, le temps et favorise une bonne allocation des ressources humaines, affiner le design dans le navigateur est un grand vecteur de rentabilité économique.
+Rendre les parties nécessaires du CSS intelligibles aux concepteurs (codeurs ou non !) réduit le stress, le temps et favorise une bonne allocation des ressources humaines. Affiner le design dans le navigateur est un grand vecteur de rentabilité économique.
 
 </article>
 
@@ -156,14 +158,14 @@ Chaque particule de sélection doit avoir un but et sinon, elle doit être élim
 <article>
 ### Les types de sélecteurs ont tous une fonction.{#fonction-selecteur}
 
-Chacun d’eux peut être utile dans un certain contexte. Aucune règle d’usage absolue ne doit être édictée. Ce n'est pas « toujours » ou « jamais » mais « ça dépend » et « pourquoi ». Les règles absolues sont corrompent absolument. Ou quelque chose comme ça...
+Chacun d’eux peut être utile dans un certain contexte. Aucune règle d’usage absolue ne doit être édictée. Ce n'est pas « toujours » ou « jamais » mais « ça dépend » et « pourquoi ». Les règles absolues corrompent absolument. Ou quelque chose comme ça...
 
 </article>
 
 <article>
 ### La spécificité doit être exploitée et non rejetée.{#exploiter-specificite}
 
-Néanmoins, « toujours » (hum) la garder aussi basse que possible. Oui, en 2015, cela n’était peut-être pas facile. Mais nous sommes en 2023 et de [nouvelles](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) [fonctionnalités](https://developer.mozilla.org/en-US/ docs/Web/CSS/:where) sont désormais largement pris en charge. Utilisez-les.
+Néanmoins, « toujours » (hum) la garder aussi basse que possible. Oui, en 2015, cela n’était peut-être pas facile. Mais nous sommes en 2023 et de [nouvelles](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) [fonctionnalités](https://developer.mozilla.org/en-US/ docs/Web/CSS/:where) sont désormais largement prises en charge. Utilisez-les.
 
 </article>
 
@@ -177,14 +179,14 @@ N'oubliez pas que *CSS est un langage de conception graphique* et que sa portée
 <article>
 ### Les règles de conception globales doivent être en grande partie anonymes.{#regles-globales}
 
-Seulement quelques déclarations par ensemble de règles uniquement. Nous parlons de rythme, de typographie, de couleur ; pas `display`{.css} ou `position`{.css}. *C'est* le moyen de limiter la répétition, les ballonnements et la complexité.
+Seulement quelques déclarations par ensemble de règles uniquement. Nous parlons de rythme, de typographie, de couleur ; pas `display`{.css} ou `position`{.css}. *C'est ça,* le moyen de limiter la répétition, les ballonnements et la complexité.
 
 </article>
 
 <article>
 ### Il faut attendre qu'un concept soit bien compris avant de le nommer.{#comprendre-concept}
 
-En attendant, utilisez des éléments HTML. L'abstraction prématurée ou ["résoudre des problèmes pas encore rencontrés"](https://en.wikipedia.org/wiki/Overengineering) sont des problèmes plus importants que l'utilisation de `header`{.css} en CSS. Oui, ce sont les meilleures pratiques de programmation. Mais qui vous a dit que le développement CSS était pour les puristes ?
+En attendant, utilisez des éléments HTML. L'abstraction prématurée ou ["résoudre des problèmes pas encore rencontrés"](https://en.wikipedia.org/wiki/Overengineering) sont des problèmes plus importants que l'utilisation de `header`{.css} en CSS. Oui, ce sont les meilleures pratiques de programmation. Mais qui vous a dit que le développement CSS était purement de la conception graphique ?
 
 </article>
 
@@ -198,7 +200,7 @@ Les règles devraient ensuite être centralisées en nommant et en utilisant led
 <article>
 ### Les concepts nommés doivent être autonomes et autosuffisants.{#concept-autonome}
 
-Les concepts nommés ne doivent pas être définis à l'intérieur d'un autre concept nommé. Si jamais cela est nécessaire, le concept enfant doit être étendu au concept parent et ne doit *pas* être réutilisé ailleurs.
+Les concepts nommés ne doivent pas être définis à l'intérieur d'un autre concept nommé. Si jamais cela est nécessaire, le concept enfant doit être interne au concept parent et ne doit *pas* être réutilisé ailleurs.
 
 </article>
 
@@ -212,7 +214,7 @@ Toutes les règles d'un concept nommé doivent résider dans le même fichier CS
 <article>
 ### Les concepts « enfants » reliés à l'état, les variantes ou la structure doivent être dotés d'un préfixe.{#concept-enfant}
 
-Ces concepts peuvent être représentés sous forme de classes enfants ou combinées. Ne jamais utiliser ces classes seules, mais toujours en complément du concept parent. Oui, voici « jamais » *et* « toujours » dans la même phrase. ["Double péril, tout va bien"](https://www.youtube.com/watch?v=Z58eTP2gcw0) dirait un grand gestionnaire.
+Ces concepts peuvent être représentés sous forme de classes enfants ou combinées. Ne jamais utiliser ces classes seules, mais toujours en complément du concept parent. Oui, voici « jamais » *et* « toujours » dans la même phrase. ["Double jeopardy, we are fine"](https://www.youtube.com/watch?v=Z58eTP2gcw0) dirait un grand gestionnaire.
 
 </article>
 
@@ -240,7 +242,7 @@ L'intention peut ne pas être claire au début du travail de stylisation. Au lie
 <article>
 ### Tout élément HTML ne doit assumer qu'un seul rôle.{#role-unique}
 
-Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{. html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille doit être implémenté avec les balises `<div>`{.html}.
+Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{. html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille devrait être implémenté avec les balises `<div>`{.html}.
 
 </article>
 
@@ -254,7 +256,7 @@ Pas sous forme de fichier séparé, ni sous forme de classes suffixées. Si l'on
 <article>
 ### Des feuilles de style entières sont mieux utilisées lorsqu'elles sont globales.{#feuille-globale}
 
-Les requêtes `@media`{.css} doivent être utilisées dans les balises HTML `<link>`{.html} pour des considérations de réutilisation, de performance et d'optimisation. Chaque couche de fondamentale conception graphique doit être autonome, indépendante et amovible.
+Les requêtes `@media`{.css} devraient être utilisées dans les balises HTML `<link>`{.html} pour des considérations de réutilisation, de performance et d'optimisation. Chaque couche de fondamentale conception graphique devrait être autonome, indépendante et amovible.
 
 </article>
 
@@ -273,9 +275,9 @@ En adoptant la fluidité, l'adaptabilité est principalement assurée par le nav
 </article>
 
 <article>
-### Make full use of freely available development tools by going with the grain of the Web platform.{#outil-devs}
+### Utilisez pleinement les outils de développement disponibles gratuitement en suivant le grain de la plateforme Web.{#outil-devs}
 
-En utilisant des ensembles de règles « juste à temps », des « tokens » de conception, la cascade et la sélection intentionnelle, le flux de travail de débogage et d'affinage est plus simple, plus léger et plus clair.
+En utilisant des ensembles de règles « juste à temps », des « tokens » de conception, la cascade et la sélection intentionnelle, le flux de travail de débogage et d'affinage est plus simple, plus léger et plus clair. Les « devtools » sont nos amis !
 
 </article>
 
@@ -313,7 +315,7 @@ En écrivant du CSS natif, on utilise mieux le CSS ; en écrivant du HTML natif,
 
 #### Notes
 
-Pour exclure un fichier de cette règle dans la configuration Stylelint, préfixez le nom du fichier avec un chiffre ou "x-" comme dans "x-quarantine.css".
+Pour exclure un fichier de cette règle dans la configuration **Stylelint**, préfixez le nom du fichier avec un chiffre ou "x-" comme dans "x-quarantine.css".
 
 </section>
 </div>
@@ -348,7 +350,7 @@ Pour exclure un fichier de cette règle dans la configuration Stylelint, préfix
 <div>
 <div>
 <header>
-### Tous les dégagements doivent d'abord être uniformes, puis ajustés si nécessaire.
+### Tous les dégagements devraient d'abord être uniformes, puis ajustés si nécessaire.
 </header>
 
 <section>
@@ -360,7 +362,7 @@ Pour exclure un fichier de cette règle dans la configuration Stylelint, préfix
 <section>
 #### Notes
 
-Des dégagements non uniformes peuvent être utilisés dans des cas particuliers pour des raisons de débordement ou pour ajouter un pseudo-contenu.
+Des dégagements non uniformes peuvent être utilisés dans des cas particuliers pour des raisons de débordement `overflow`{.css} ou pour ajouter un pseudo-contenu.
 
 </section>
 
@@ -440,7 +442,7 @@ Les éléments de texte ne doivent héberger que des styles de texte, tandis que
 <div>
 <div>
 <header>
-### Les marges horizontales ne doivent pas être appliquées aux éléments de texte.
+### Les marges horizontales ne devraient pas être appliquées aux éléments de texte.
 </header>
 <section>
 #### Principes
@@ -452,7 +454,7 @@ Les éléments de texte ne doivent héberger que des styles de texte, tandis que
 <section>
 #### Notes
 
-Des marges horizontales peuvent être appliquées aux éléments de texte dans le cas d'_éléments en ligne_ tels que des icônes ou des balises et sur des éléments en retrait comme `blockquote`{.html}.
+Des marges horizontales peuvent être appliquées aux éléments de texte dans le cas d'_éléments en ligne_ `inline`{.css} tels que des icônes ou des balises et sur des éléments en retrait comme `blockquote`{.html}.
 
 </section>
 </div>
@@ -525,7 +527,7 @@ p {
 <div>
 <div>
 <header>
-### Le langage graphique doit être utilisé pour la plupart des valeurs numériques.
+### Le langage graphique devrait être utilisé pour la plupart des valeurs numériques.
 </header>
 <section>
 #### Principes
@@ -620,7 +622,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 <div>
 <div>
 <header>
-### Toutes les entités de classe en dehors des composants *doivent* être préfixées.
+### Toutes les entités de classe outre les composants *doivent* être préfixées.
 </header>
 <section>
 #### Principes
@@ -633,6 +635,17 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 
 <section>
 #### Notes
+
+Nous proposons cette nomenclature de prefixes :
+
+- `as-`{.css} : forme graphique générique.
+- `of-`{.css} : groupe d'éléments.
+- `is-`{.css} état interactif du système.
+- `on-`{.css} : interaction de l'usager.
+- `in-`{.css} : concept interne.
+- `with-`{.css} : règle fonctionnelle.
+- `from-*-to-`{.css} : patrons adaptatifs.
+
 </section>
 </div>
 <aside>
@@ -643,12 +656,20 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 .card.as-circle {
     width: 20px;
 }
+
+.card .in-ctn {
+    display: grid;
+}
 ```
 
 ```css
 /* Incorrect */
 .card.circle {
     width: 20px;
+}
+
+.card .ctn {
+    display: grid;
 }
 ```
 </div>
@@ -671,6 +692,14 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 - [Concepts enfant](#concept-enfant)
 - [Intention du sélecteur](#intention-selecteur)
 </section>
+<section>
+#### Notes
+
+L'imbrication peut encourager le développement en mode « pilote automatique », sans réfléchir à notre intention de sélection. C'est l'une des raisons pour lesquelles, ultimement, nous écrirons `.card div h2`{.css} au lieu de `.card h2`{.css}, fragilisant notre CSS. Un seul niveau d’imbrication devrait suffire dans presque tous les cas.
+
+</section>
+
+
 
 </div>
 <aside>
@@ -680,7 +709,11 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 ```css
 /* Correct */
 .card {
-    & header p {
+    & div {
+        display: grid;
+    }
+
+    & h2 {
         color: grey;
     }
 }
@@ -689,8 +722,10 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 ```css
 /* Incorrect */
 .card {
-    & header {
-        & p {
+    & div {
+        display: grid;
+
+        & h2 {
             color: grey;
         }
     }
@@ -717,6 +752,13 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 - [Rôle spécifique](#role-specifique)
 - [Profiter du navigateur](#rendu-navigateur)
 </section>
+<section>
+#### Notes
+
+Le Web est fluide et la création CSS devrait adopter cette fluidité. En choisissant de limiter les dimensions de nos composants au lieu de les dicter, nous déléguons au navigateur, le laissant faire son travail. Les dimensions fixes ne devraient être appliquées qu'aux éléments graphiques tels que les images, les vidéos et les icônes.
+
+</section>
+
 
 </div>
 <aside>
@@ -757,6 +799,13 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 - [Rôle spécifique](#role-specifique)
 - [Exploiter la spécificité](#exploiter-specificite)
 </section>
+<section>
+#### Notes
+
+Les identifiants `id` véhiculent du sens mais leur sélecteur CSS est un cauchemar de spécificité. Utilisez le sélecteur d'attribut pour conserver le sens (unicité !) tout en gardant la spécificité à des niveaux raisonnables. D'autres cas d'utilisation incluent les contrôles et champs de formulaire et les états gérés par le js (p. ex. `[data-state="active"]`{.css})
+
+</section>
+
 
 </div>
 <aside>
@@ -841,6 +890,12 @@ header {
 - [Exploiter la spécificité](#exploiter-specificite)
 - [Intention du sélecteur](#intention-selecteur)
 </section>
+<section>
+#### Notes
+
+Les entités de classe ne devraient pas être combinées à des sélecteurs de balises. Les sélecteurs génériques peuvent être utilisés comme morceau de sélection mais pas comme qualificatifs. Exceptionnellement, certaines balises à usage spécifique comme `html`{.css} ou `body`{.css} pourraient être utilisées pour restreindre l'application d'une entité de classe.
+
+</section>
 
 </div>
 <aside>
@@ -849,6 +904,10 @@ header {
 <div>
 ```css
 /* Correct */
+html.is-loading {
+    opacity: 0;
+}
+
 .card {
     color: red;
 }
@@ -880,6 +939,12 @@ article.card {
 - [Autonomie des concepts](#concept-autonome)
 - [Propriétés inégales](#proprietes-inegales)
 - [Rôle spécifique](#role-specifique)
+</section>
+<section>
+#### Notes
+
+Les composants sont faits pour être insérés dans des « trous ». Ces trous sont gérés par un autre composant ou un utilitaire de plus haut niveau (p. ex. une grille ou un carrousel). Aucun composant en ce sens ne devrait incorporer de marges. Celles-ci sont appliquées en tant que rythme par un parent. Ainsi, les composants sont polyvalents et réutilisables en divers contextes.
+
 </section>
 
 </div>
@@ -1074,7 +1139,7 @@ Les choix de valeurs et d'unités doivent être dictés par le langage graphique
 <section>
 #### Notes
 
-L'espacement est le rythme, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (*+*) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
+Espacer est rythmer, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (*+*) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
 
 </section>
 </div>
@@ -1120,7 +1185,7 @@ L'espacement est le rythme, un concept de design fondamental. Le rythme se produ
 <section>
 #### Notes
 
-Les unités de fenêtre d'affichage statiques (vh, vw, vmin, vmax) sont notoirement problématiques, en particulier lorsqu'elles sont utilisées comme `100vh`{.css} ou `100vw`{.css}. Les [unités dynamiques de fenêtre](https://caniuse.com/viewport-unit-variants){target="\_blank"} sont mieux adaptées à cette tâche.
+Les unités de fenêtre d'affichage statiques (`vh`{.css}, `vw`{.css}, `vmin`{.css}, `vmax`{.css}) sont notoirement problématiques, en particulier lorsqu'elles sont utilisées comme `100vh`{.css} ou `100vw`{.css}. Les [unités dynamiques de fenêtre](https://caniuse.com/viewport-unit-variants){target="\_blank"} sont mieux adaptées à cette tâche.
 
 </section>
 
@@ -1132,14 +1197,14 @@ Les unités de fenêtre d'affichage statiques (vh, vw, vmin, vmax) sont notoirem
 ```css
 /* Correct */
 nav {
-    max-height: 100dvh;
+    min-height: 100dvh;
 }
 ```
 
 ```css
 /* Incorrect */
 nav {
-    max-height: 100vh;
+    min-height: 100vh;
 }
 ```
 </div>
@@ -1159,6 +1224,12 @@ nav {
 
 - [Structure du composant](#structure-composant)
 - [HTML expressif](#html-expressif)
+</section>
+<section>
+#### Notes
+
+Les composants doivent prescrire une certaine structure HTML. L’utilisation de cette structure via des sélecteurs de balises intentionnels est le meilleur moyen d’assurer la persistance structurelle, de maintenir la spécificité et la complexité à un niveau faible et d’éviter de se fatiguer à force de tout nommer. Pourquoi renommer ce qui est déjà nommé ?
+
 </section>
 
 </div>
@@ -1204,7 +1275,7 @@ nav {
 <section>
 #### Notes
 
-C’est l’une des règles les plus importantes pour parvenir à un CSS durable. Un concept autonome par fichier évite la multiplication des surcharges et des redéfinitions dans la base de code.
+C’est l’une des règles les plus importantes pour parvenir à un CSS durable. Un concept autonome par fichier évite la multiplication des surcharges et redéfinitions de propriétés dans la base de code. C'est même facile à appliquer avec la [configuration ECSS Stylelint](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss).
 
 </section>
 
@@ -1303,7 +1374,12 @@ Cette erreur, considérée à tort comme une « meilleure pratique », est à 
 - [Répétition de règles](#repetition-regles)
 - [Autonomie des concepts](#concept-autonome)
 </section>
+<section>
+#### Notes
 
+Répéter un patron au lieu de le nommer et de regrouper ses règles dans un ensemble de règles unique est une erreur CSS classique. Et il peut être difficile de trouver et de cibler les instances de ce problème. Des outils tels que les plugins PostCSS peuvent aider en identifiant les répétitions atteignant un seuil défini dans une base de code.
+
+</section>
 </div>
 <aside>
 #### Exemple {.as-visually-hidden}
@@ -1466,7 +1542,7 @@ Parfois, il peut être judicieux d'ajouter un `div`{.html} même s'il s'agit du 
 <section>
 #### Notes
 
-Il est parfois judicieux d’ajouter des précisions. Mais ne le faites pas avant que cela ne soit prouvé nécessaire.
+Il est parfois judicieux d’augmenter la spécificité. Mais ne le faites pas avant que cela ne soit prouvé nécessaire.
 
 </section>
 </div>
@@ -1499,9 +1575,9 @@ Il est parfois judicieux d’ajouter des précisions. Mais ne le faites pas avan
 <section>
 ## Outils reliés{#outils}
 
-- Browser Inspector (debugging, experimenting and navigating)
-- Scaffolding &amp; code library (use it... or not!)
-- Stylelint (lint and inform)
-- CSSCSS (find rule duplication in your codebase)
-- PurifyCSS, PurgeCSS or Chrome Coverage outil-dev
+- Inspecteur du navigateur
+- [Scaffolding &amp; code library](https://github.com/efficientcss/scaffolding)
+- [Stylelint](https://stylelint.io
+- [CSSCSS](https://github.com/zmoazeni/csscss
+- [PurifyCSS](https://github.com/purifycss/purifycss), [PurgeCSS](https://github.com/FullHuman/purgecss) ou Chrome Coverage devtool
 </section>

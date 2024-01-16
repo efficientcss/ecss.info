@@ -77,7 +77,7 @@ Flexible naming guidelines give the codebase a consistency encouraging standardi
 
 **"Simple" is writing less code &amp; and limiting dependencies.**
 
-Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
+Class soup &amp; divitis aren't simple. Untold numbers of `@media`{.css} queries aren't either. But modern CSS is. By accepting CSS for what it is (a designing language!) you can do *a lot* of styling mileage with very little code.
 
 </section>
 
@@ -86,7 +86,7 @@ Class soup &amp; divitis aren't simple. Untold numbers of media queries aren't e
 
 **Code that speaks for itself is actually achievable.**
 
-"thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 br-1 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. Expressive best practices work.
+"thumbnail as-circle with-border" is instantly understandable while "h-10 w-10 bdr-50 br-1 overh" is not. Code should communicate information. The clearer the information, the easier it is to understand the system. Mistaken semantics should give way to expressiveness. *Expressive best practices work.*
 
 </section>
 
@@ -104,7 +104,7 @@ It feels good to dive into unknown code... while already knowing what it looks l
 
 **Vanilla CSS is future ready.**
 
-In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use clamp() as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`{.html}. Only clean and modern code.
+In practice it means being at the forefront of progress and evolution. No need to wait for third parties to implement new features. You can use `clamp()`{.css} as of now and say goodbye to 80% of your media queries. No more `sm-this md-that`{.html}. Only clean and modern code.
 
 </section>
 </div>
@@ -124,14 +124,14 @@ CSS authoring should reflect *design* patterns, concepts and perspectives. With 
 <article>
 ### Empowering designers to refine their work autonomously is efficient.{#design-empowerment}
 
-Making the needed parts of CSS being intelligible (code-savvy or not!) to designers cuts stress, time and promotes good allocation of human resources, refining design in the browser is a great vector of economic profitability.
+Making the needed parts of CSS being intelligible (code-savvy or not!) to designers cuts stress, time and promotes good allocation of human resources. Refining design in the browser is a great vector of economic profitability.
 
 </article>
 
 <article>
 ### Not all CSS properties are born equal.{#properties-not-equal}
 
-The box-model properties (`display`{.css}, `position`{.css}, `width`{.css}, etc.) are extremely sensitive and potentially way more disruptive than, say, color or type ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use, modify and experiment with in context.
+The box-model properties (`display`{.css}, `position`{.css}, `width`{.css}, etc.) are extremely sensitive and potentially way more disruptive than, say, color or typographic ones. The former are the stuff of professional CSS authors and the latter are the ones designers should be able to use, modify and experiment with in context.
 
 </article>
 
@@ -187,7 +187,7 @@ Only a few declarations per ruleset only. We are talking rhythm, typography, col
 <article>
 ### One should wait until a concept is clearly understood before naming it.{#understood-concept}
 
-Until then use HTML elements. Premature abstraction or ["solving problems not yet encountered"](https://en.wikipedia.org/wiki/Overengineering) are bigger problems than the use of `header`{.css} in CSS. Yes, these are programming best practices. But who told you CSS development was pure?
+Until then use HTML elements. Premature abstraction or ["solving problems not yet encountered"](https://en.wikipedia.org/wiki/Overengineering) are bigger problems than the use of `header`{.css} in CSS. Yes, these are programming best practices. But who told you CSS development was pure design?
 
 </article>
 
@@ -201,7 +201,7 @@ Rules should then be concentrated by naming and using said concept instead of th
 <article>
 ### Named concepts must be autonomous and self-sufficient.{#autonomous-concept}
 
-Named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be scoped to the parent concept and is *not* to be reused anywhere else.
+Named concepts should not be defined inside another named concept. If it ever is necessary, the child concept must be internal to the parent concept and is *not* to be reused anywhere else.
 
 </article>
 
@@ -248,7 +248,7 @@ As per the famous programming [best practice](https://en.wikipedia.org/wiki/Sing
 </article>
 
 <article>
-### Any media query adaptation must be included in its related concept's file.{#adaptation-included}
+### Any `@media`{.css} query adaptation must be included in its related concept's file.{#adaptation-included}
 
 Not as as a separate file, not as suffixed classes. If one uses utility classes, the provided rules should not be query dependent but rather be universally needed, in every media configuration.
 
@@ -278,7 +278,7 @@ By embracing fluidity, adaptativity is mostly done by the browser. Less rules ar
 <article>
 ### Make full use of freely available development tools by going with the grain of the Web platform.{#devtools}
 
-By using "just-in-time" rulesets, design tokens, the cascade and intentional selection, the debugging & refining workflow is simpler, lighter and clearer.
+By using "just-in-time" rulesets, design tokens, the cascade and intentional selection, the debugging & refining workflow is simpler, lighter and clearer. Devtools are our friends!
 
 </article>
 
@@ -316,7 +316,7 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 
 #### Notes
 
-To exclude a file from this rule in the Stylelint config, prefix the filename with a digit or "x-" as in "x-quarantine.css"
+To exclude a file from this rule in the **Stylelint** config, prefix the filename with a digit or "x-" as in "x-quarantine.css"
 
 </section>
 </div>
@@ -363,7 +363,7 @@ To exclude a file from this rule in the Stylelint config, prefix the filename wi
 <section>
 #### Notes
 
-Non-uniform paddings may be used in particular instances for overflow reasons or for added pseudo-content.
+Non-uniform paddings may be used in particular instances for `overflow`{.css} reasons or for added pseudo-content.
 
 </section>
 
@@ -455,7 +455,7 @@ Text elements should only host text styles while container elements can host the
 <section>
 #### Notes
 
-Horizontal margins can be applied to text elements in the case of _inline elements_ such as icons or tags &amp; on indented elements like `blockquote`{.html}.
+Horizontal margins can be applied to text elements in the case of `inline`{.css} elements such as icons or tags &amp; on indented elements like `blockquote`{.html}.
 
 </section>
 </div>
@@ -489,7 +489,7 @@ Horizontal margins can be applied to text elements in the case of _inline elemen
 <div>
 <div>
 <header>
-### Typographic elements should use heritage when possible.
+### Typographic elements should use inheritance when possible.
 </header>
 <section>
 #### Principles
@@ -636,6 +636,17 @@ Any instance of repeating default *must* be justified in a comment.
 
 <section>
 #### Notes
+
+We propose this nomenclature of prefixes:
+
+- `as-`{.css}: generic graphical form.
+- `of-`{.css}: group of elements.
+- `is-`{.css} interactive state of the system.
+- `on-`{.css}: user interaction.
+- `in-`{.css}: internal concept.
+- `with-`{.css}: functional rule.
+- `from-*-to-`{.css}: adaptive patterns.
+
 </section>
 </div>
 <aside>
@@ -646,12 +657,20 @@ Any instance of repeating default *must* be justified in a comment.
 .card.as-circle {
     width: 20px;
 }
+
+.card .in-ctn {
+    display: grid;
+}
 ```
 
 ```css
 /* Don't */
 .card.circle {
     width: 20px;
+}
+
+.card .ctn {
+    display: grid;
 }
 ```
 </div>
@@ -673,6 +692,12 @@ Any instance of repeating default *must* be justified in a comment.
 
 - [Child concepts](#child-concepts)
 - [Selector intention](#selector-intention)
+</section>
+<section>
+#### Notes
+
+Nesting can encourage authoring on autopilot, without thinking about our selection intention. That's one reason why we will ultimately write `.card div h2`{.css} instead of `.card h2`{.css}, fragilizing our CSS. One level of nesting should be enough almost all cases.
+
 </section>
 
 </div>
@@ -720,6 +745,12 @@ Any instance of repeating default *must* be justified in a comment.
 - [Specific role](#specific-role)
 - [Browser rendering](#browser-rendering)
 </section>
+<section>
+#### Notes
+
+The Web is fluid and authoring should embrace this fluidity. By choosing to limit dimensions of our components instead of dictating them, we delegate work to the browser, letting it do its job. Fixed dimensions should be only be applied to graphical elements like pictures, videos and icons.
+
+</section>
 
 </div>
 <aside>
@@ -759,6 +790,12 @@ Any instance of repeating default *must* be justified in a comment.
 - [Selector intention](#selector-intention)
 - [Specific role](#specific-role)
 - [Harness specificity](#harness-specificity)
+</section>
+<section>
+#### Notes
+
+Ids convey meaning but their CSS selector is a specificity nightmare. Use attribute selector to keep the meaning (unicity!) while keeping specificiy at sane levels. Other use cases includes form controls &amp; inputs and js managed states (ie: `[data-state="active"]`{.css})
+
 </section>
 
 </div>
@@ -844,6 +881,12 @@ header {
 - [Harness specificity](#harness-specificity)
 - [Selector intention](#selector-intention)
 </section>
+<section>
+#### Notes
+
+Class entities should not be combined with tag selectors. Generic selectors can be used as a selection piece but not as qualifiers. Exceptionally, certain specific tags such as `html`{.css} or `body`{.css} could be used to restrict the application of a class entity.
+
+</section>
 
 </div>
 <aside>
@@ -852,6 +895,10 @@ header {
 <div>
 ```css
 /* Do */
+html.is-loading {
+    opacity: 0;
+}
+
 .card {
     color: red;
 }
@@ -884,6 +931,13 @@ article.card {
 - [Properties are not equal](#properties-not-equal)
 - [Specific roles and usage](#specific-role)
 </section>
+<section>
+#### Notes
+
+Components are made to fit into “holes”. These holes are managed by another component or a higher-level utility (e.g. a grid or carousel). No component in this sense should incorporate margins. These are applied as a rhythm by a parent. Thus, the components are versatile and reusable in various contexts.
+
+</section>
+
 
 </div>
 <aside>
@@ -1123,7 +1177,7 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 <section>
 #### Notes
 
-Static viewport units (vh, vw, vmin, vmax) are famously problematic, particularly when used as `100vh`{.css} or `100vw`{.css}. [Dynamic viewport units](https://caniuse.com/viewport-unit-variants){target="\_blank"} are better suited for this task.
+Static viewport units (`vh`{.css}, `vw`{.css}, `vmin`{.css}, `vmax`{.css}) are famously problematic, particularly when used as `100vh`{.css} or `100vw`{.css}. [Dynamic viewport units](https://caniuse.com/viewport-unit-variants){target="\_blank"} are better suited for this task.
 
 </section>
 
@@ -1135,14 +1189,14 @@ Static viewport units (vh, vw, vmin, vmax) are famously problematic, particularl
 ```css
 /* Do */
 nav {
-    max-height: 100dvh;
+    min-height: 100dvh;
 }
 ```
 
 ```css
 /* Don't */
 nav {
-    max-height: 100vh;
+    min-height: 100vh;
 }
 ```
 </div>
@@ -1164,6 +1218,12 @@ nav {
 
 - [Component structure](#component-structure)
 - [Expressive HTML](#expressive-html)
+</section>
+<section>
+#### Notes
+
+Components need to prescribe a certain HTML structure. Using said structure through intentional tag selectors is the best way to insure structural persistence, to keep specificity and complexity low and prevent naming fatigue. Why rename that which is already named?
+
 </section>
 
 </div>
@@ -1209,7 +1269,7 @@ nav {
 <section>
 #### Notes
 
-This is one of the most important rules for achieving sustainable CSS. One autonomous concept per file prevents the multiplication of overrides and redefinition across the codebase. 
+This is one of the most important rules for achieving sustainable CSS. One autonomous concept per file prevents the multiplication of overrides and redefinition across the codebase. It's even easy to enforce with the [ECSS Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss).
 
 </section>
 
@@ -1307,6 +1367,12 @@ This mistake, being passed as "best practices", is the source of many self-induc
 
 - [Rule repetition](#rule-repetition)
 - [Autonomous concepts](#autonomous-concept)
+</section>
+<section>
+#### Notes
+
+Repeating a pattern instead of naming it and grouping its rules inside a unique declaration block is a classic CSS mistake. And it can be hard to find and target instances of this problem. Tools like PostCSS plugins can help by identifying repetition meeting a defined threshold throughout a codebase.
+
 </section>
 
 </div>

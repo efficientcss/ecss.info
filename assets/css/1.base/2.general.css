@@ -67,7 +67,7 @@
 		max-height: 0;
 		line-height: 0;
 		border: none; 
-		border-top: 1px solid currentColor;
+		border-top: 2px solid currentColor;
 	}
 
 	/* Prepare svg to be manipulated */

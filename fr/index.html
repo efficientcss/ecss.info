@@ -55,7 +55,8 @@ bibliothèque de fichiers de départ</a></p>
 <h3 class="h4">
 Vous voulez connaître la bête ?
 </h3>
-<p>📰 Plongez dans les principes et la documentation ECSS.</p>
+<p>📰 Allez, voyons ce que vous en pensez !</p>
+<p><a href="#regles">Plongez dans les règles ECSS</a></p>
 </section>
 <section>
 <h3 class="h4">
@@ -98,11 +99,11 @@ suivront les règles ECSS.
 <h3 id="simplicité">Simplicité</h3>
 <p><strong>« Simple » consiste à écrire moins de code et à limiter les
 dépendances.</strong></p>
-<p>La soupe de classe et la division ne sont pas simples. Un nombre
-incalculable de requêtes multimédias ne le sont pas non plus. Mais le
-CSS moderne l’est. En acceptant CSS pour ce qu’il est (un langage de
-conception graphique !), vous pouvez faire <em>beaucoup</em> de style
-avec très peu de code.</p>
+<p>La soupe de classe et l’abus de <code class="sourceCode html">div</code> ne sont pas simples. Un nombre
+incalculable de requêtes <code class="sourceCode css"><span class="im">@media</span></code> ne le sont
+pas non plus. Mais le CSS moderne l’est. En acceptant CSS pour ce qu’il
+est (un langage de conception graphique !), vous pouvez faire
+<em>beaucoup</em> de style avec très peu de code.</p>
 </section>
 <section>
 <h3 id="expressivité">Expressivité</h3>
@@ -112,8 +113,8 @@ accessible.</strong></p>
 est instantanément compréhensible alors que <code class="sourceCode html">h-10 w-10 bdr-50 br-1 overh</code> ne l’est pas.
 Le code doit communiquer des informations. Plus les informations sont
 claires, plus il est facile de comprendre le système. Une sémantique
-erronée doit céder la place à l’expressivité. Les meilleures pratiques
-expressives fonctionnent.</p>
+erronée doit céder la place à l’expressivité. <em>Les meilleures
+pratiques expressives fonctionnent.</em></p>
 </section>
 <section>
 <h3 id="prévisibilité">Prévisibilité</h3>
@@ -130,8 +131,8 @@ plus heureuses !</p>
 <p><strong>Le CSS « à la vanille » est prêt pour l’avenir.</strong></p>
 <p>En pratique, cela signifie être à la fine pointe du progrès et de
 l’évolution. Pas besoin d’attendre que des librairies tierces
-implémentent de nouvelles fonctionnalités. Vous pouvez utiliser <code class="sourceCode css">clamp()</code> dès maintenant et dire au revoir à
-80 % de vos requêtes <code class="sourceCode css"><span class="im">@media</span></code>. Plus de
+implémentent de nouvelles fonctionnalités. Vous pouvez utiliser <code class="sourceCode css">clamp<span class="in">()</span></code> dès
+maintenant et dire au revoir à 80 % de vos requêtes <code class="sourceCode css"><span class="im">@media</span></code>. Plus de
 <code class="sourceCode html">sm-ceci md-cela</code>. Uniquement du code
 propre et moderne.</p>
 </section>
@@ -153,7 +154,7 @@ répétition et facilitez l’extension future de vos styles graphiques.</p>
 moyens d’affiner leur travail de manière autonome est efficace.</h3>
 <p>Rendre les parties nécessaires du CSS intelligibles aux concepteurs
 (codeurs ou non !) réduit le stress, le temps et favorise une bonne
-allocation des ressources humaines, affiner le design dans le navigateur
+allocation des ressources humaines. Affiner le design dans le navigateur
 est un grand vecteur de rentabilité économique.</p>
 </article>
 <article>
@@ -199,7 +200,7 @@ pratiques”</a>.</p>
 fonction.</h3>
 <p>Chacun d’eux peut être utile dans un certain contexte. Aucune règle
 d’usage absolue ne doit être édictée. Ce n’est pas « toujours » ou
-« jamais » mais « ça dépend » et « pourquoi ». Les règles absolues sont
+« jamais » mais « ça dépend » et « pourquoi ». Les règles absolues
 corrompent absolument. Ou quelque chose comme ça…</p>
 </article>
 <article>
@@ -209,7 +210,7 @@ rejetée.</h3>
 Oui, en 2015, cela n’était peut-être pas facile. Mais nous sommes en
 2023 et de <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers">nouvelles</a>
 <a href="https://developer.mozilla.org/en-US/%20docs/Web/CSS/:where">fonctionnalités</a>
-sont désormais largement pris en charge. Utilisez-les.</p>
+sont désormais largement prises en charge. Utilisez-les.</p>
 </article>
 <article>
 <h3 id="portee-globale">La portée globale en CSS n’est pas un
@@ -225,7 +226,7 @@ les meilleures pratiques de conception graphique.</p>
 <h3 id="regles-globales">Les règles de conception globales doivent être
 en grande partie anonymes.</h3>
 <p>Seulement quelques déclarations par ensemble de règles uniquement.
-Nous parlons de rythme, de typographie, de couleur ; pas <code class="sourceCode css">display</code> ou <code class="sourceCode css">position</code>. <em>C’est</em> le moyen de
+Nous parlons de rythme, de typographie, de couleur ; pas <code class="sourceCode css">display</code> ou <code class="sourceCode css">position</code>. <em>C’est ça,</em> le moyen de
 limiter la répétition, les ballonnements et la complexité.</p>
 </article>
 <article>
@@ -236,7 +237,8 @@ compris avant de le nommer.</h3>
 problèmes pas encore rencontrés”</a> sont des problèmes plus importants
 que l’utilisation de <code class="sourceCode css">header</code> en CSS.
 Oui, ce sont les meilleures pratiques de programmation. Mais qui vous a
-dit que le développement CSS était pour les puristes ?</p>
+dit que le développement CSS était purement de la conception
+graphique ?</p>
 </article>
 <article>
 <h3 id="repetition-regles">Lorsque plus de 3 règles sont répétées plus
@@ -251,7 +253,7 @@ améliorées.</p>
 autosuffisants.</h3>
 <p>Les concepts nommés ne doivent pas être définis à l’intérieur d’un
 autre concept nommé. Si jamais cela est nécessaire, le concept enfant
-doit être étendu au concept parent et ne doit <em>pas</em> être
+doit être interne au concept parent et ne doit <em>pas</em> être
 réutilisé ailleurs.</p>
 </article>
 <article>
@@ -267,9 +269,9 @@ vérité</a> pour tout concept.</p>
 variantes ou la structure doivent être dotés d’un préfixe.</h3>
 <p>Ces concepts peuvent être représentés sous forme de classes enfants
 ou combinées. Ne jamais utiliser ces classes seules, mais toujours en
-complément du concept parent. Oui, voici « jamais » <em>et</em> «
-toujours » dans la même phrase. <a href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double péril, tout
-va bien”</a> dirait un grand gestionnaire.</p>
+complément du concept parent. Oui, voici « jamais » <em>et</em>
+« toujours » dans la même phrase. <a href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double jeopardy, we
+are fine”</a> dirait un grand gestionnaire.</p>
 </article>
 <article>
 <h3 id="enfant-specificite">Les classes avec préfixe doivent
@@ -306,7 +308,7 @@ pratique</a> de programmation (encore une fois, la programmation dans la
 conception), les balises sémantiques sont pour… la sémantique tandis que
 <code>&lt;div&gt;</code>{. html} ou <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></code>
 sont destinées à la division graphique ou logique. Tout type de grille
-doit être implémenté avec les balises <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>.</p>
+devrait être implémenté avec les balises <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>.</p>
 </article>
 <article>
 <h3 id="adaptation-incluse">Toute adaptation de <code class="sourceCode css"><span class="im">@media</span></code> doit être
@@ -319,11 +321,11 @@ dans chaque configuration média.</p>
 <article>
 <h3 id="feuille-globale">Des feuilles de style entières sont mieux
 utilisées lorsqu’elles sont globales.</h3>
-<p>Les requêtes <code class="sourceCode css"><span class="im">@media</span></code> doivent
+<p>Les requêtes <code class="sourceCode css"><span class="im">@media</span></code> devraient
 être utilisées dans les balises HTML <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">link</span><span class="dt">&gt;</span></code>
 pour des considérations de réutilisation, de performance et
-d’optimisation. Chaque couche de fondamentale conception graphique doit
-être autonome, indépendante et amovible.</p>
+d’optimisation. Chaque couche de fondamentale conception graphique
+devrait être autonome, indépendante et amovible.</p>
 </article>
 <article>
 <h3 id="styliser-composant">Le style des composants ne doit être servi
@@ -343,12 +345,12 @@ par le navigateur. Moins de règles sont nécessaires pour assurer un
 rendu correct dans le nombre infini de contextes d’utilisation.</p>
 </article>
 <article>
-<h3 id="outil-devs">Make full use of freely available development tools
-by going with the grain of the Web platform.</h3>
+<h3 id="outil-devs">Utilisez pleinement les outils de développement
+disponibles gratuitement en suivant le grain de la plateforme Web.</h3>
 <p>En utilisant des ensembles de règles « juste à temps », des
 « tokens » de conception, la cascade et la sélection intentionnelle, le
 flux de travail de débogage et d’affinage est plus simple, plus léger et
-plus clair.</p>
+plus clair. Les « devtools » sont nos amis !</p>
 </article>
 <article>
 <h3 id="code-natif">Éviter les abstractions technologiques telles que
@@ -380,8 +382,8 @@ produisent une meilleure expérience utilisateur.</p>
 <section>
 <h4 id="notes">Notes</h4>
 <p>Pour exclure un fichier de cette règle dans la configuration
-Stylelint, préfixez le nom du fichier avec un chiffre ou “x-” comme dans
-“x-quarantine.css”.</p>
+<strong>Stylelint</strong>, préfixez le nom du fichier avec un chiffre
+ou “x-” comme dans “x-quarantine.css”.</p>
 </section>
 </div>
 <aside>
@@ -390,12 +392,12 @@ Stylelint, préfixez le nom du fichier avec un chiffre ou “x-” comme dans
 <div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">...</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.small-card</span> {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">...</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -406,8 +408,8 @@ Stylelint, préfixez le nom du fichier avec un chiffre ou “x-” comme dans
 <div>
 <div>
 <header>
-<h3 id="tous-les-dégagements-doivent-dabord-être-uniformes-puis-ajustés-si-nécessaire.">Tous
-les dégagements doivent d’abord être uniformes, puis ajustés si
+<h3 id="tous-les-dégagements-devraient-dabord-être-uniformes-puis-ajustés-si-nécessaire.">Tous
+les dégagements devraient d’abord être uniformes, puis ajustés si
 nécessaire.</h3>
 </header>
 <section>
@@ -419,7 +421,7 @@ nécessaire.</h3>
 <section>
 <h4 id="notes-1">Notes</h4>
 <p>Des dégagements non uniformes peuvent être utilisés dans des cas
-particuliers pour des raisons de débordement ou pour ajouter un
+particuliers pour des raisons de débordement <code class="sourceCode css">overflow</code> ou pour ajouter un
 pseudo-contenu.</p>
 </section>
 </div>
@@ -428,12 +430,12 @@ pseudo-contenu.</p>
 <div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">30</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -467,11 +469,11 @@ de texte dont les enfants hériteront.</p>
 <div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> h2 {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -482,8 +484,8 @@ de texte dont les enfants hériteront.</p>
 <div>
 <div>
 <header>
-<h3 id="les-marges-horizontales-ne-doivent-pas-être-appliquées-aux-éléments-de-texte.">Les
-marges horizontales ne doivent pas être appliquées aux éléments de
+<h3 id="les-marges-horizontales-ne-devraient-pas-être-appliquées-aux-éléments-de-texte.">Les
+marges horizontales ne devraient pas être appliquées aux éléments de
 texte.</h3>
 </header>
 <section>
@@ -496,8 +498,8 @@ texte.</h3>
 <section>
 <h4 id="notes-3">Notes</h4>
 <p>Des marges horizontales peuvent être appliquées aux éléments de texte
-dans le cas d’<em>éléments en ligne</em> tels que des icônes ou des
-balises et sur des éléments en retrait comme <code class="sourceCode html">blockquote</code>.</p>
+dans le cas d’<em>éléments en ligne</em> <code class="sourceCode css">inline</code> tels que des icônes ou des balises
+et sur des éléments en retrait comme <code class="sourceCode html">blockquote</code>.</p>
 </section>
 </div>
 <aside>
@@ -505,12 +507,12 @@ balises et sur des éléments en retrait comme <code class="sourceCode html">blo
 <div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -538,11 +540,11 @@ possible.</h3>
 <div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -553,8 +555,8 @@ possible.</h3>
 <div>
 <div>
 <header>
-<h3 id="le-langage-graphique-doit-être-utilisé-pour-la-plupart-des-valeurs-numériques.">Le
-langage graphique doit être utilisé pour la plupart des valeurs
+<h3 id="le-langage-graphique-devrait-être-utilisé-pour-la-plupart-des-valeurs-numériques.">Le
+langage graphique devrait être utilisé pour la plupart des valeurs
 numériques.</h3>
 </header>
 <section>
@@ -578,11 +580,11 @@ propriété personnalisée portant un nom significatif ?</p>
 <div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="fu">var(</span><span class="va">--small-spacing</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--small-spacing</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -614,15 +616,15 @@ un commentaire.</p>
 <div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:not(:hover)</span> {</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span> {</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:hover</span> {</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">block</span><span class="op">;</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -633,8 +635,8 @@ un commentaire.</p>
 <div>
 <div>
 <header>
-<h3 id="toutes-les-entités-de-classe-en-dehors-des-composants-doivent-être-préfixées.">Toutes
-les entités de classe en dehors des composants <em>doivent</em> être
+<h3 id="toutes-les-entités-de-classe-outre-les-composants-doivent-être-préfixées.">Toutes
+les entités de classe outre les composants <em>doivent</em> être
 préfixées.</h3>
 </header>
 <section>
@@ -648,6 +650,28 @@ préfixées.</h3>
 </section>
 <section>
 <h4 id="notes-6">Notes</h4>
+<p>Nous proposons cette nomenclature de prefixes :</p>
+<ul>
+<li>
+<code class="sourceCode css">as-</code> : forme graphique
+générique.</li>
+<li>
+<code class="sourceCode css">of-</code> : groupe d’éléments.</li>
+<li>
+<code class="sourceCode css">is-</code> état interactif du
+système.</li>
+<li>
+<code class="sourceCode css">on-</code> : interaction de
+l’usager.</li>
+<li>
+<code class="sourceCode css">in-</code> : concept interne.</li>
+<li>
+<code class="sourceCode css">with-</code> : règle
+fonctionnelle.</li>
+<li>
+<code class="sourceCode css">from-<span class="op">*</span>-to-</code> :
+patrons adaptatifs.</li>
+</ul>
 </section>
 </div>
 <aside>
@@ -655,12 +679,20 @@ préfixées.</h3>
 <div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-circle</span> {</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.in-ctn</span> {</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.circle</span> {</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.ctn</span> {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
 </div>
@@ -680,24 +712,39 @@ limitée à un seul niveau.</h3>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-7">Notes</h4>
+<p>L’imbrication peut encourager le développement en mode « pilote
+automatique », sans réfléchir à notre intention de sélection. C’est
+l’une des raisons pour lesquelles, ultimement, nous écrirons <code class="sourceCode css"><span class="fu">.card</span> div h2</code> au
+lieu de <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
+fragilisant notre CSS. Un seul niveau d’imbrication devrait suffire dans
+presque tous les cas.</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-8">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    &amp; header p {</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> div {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> h2 {</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    &amp; header {</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        &amp; p {</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> div {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> h2 {</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
 </div>
@@ -718,17 +765,25 @@ de dimensions spécifiques doit être évitée.</h3>
 <li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-8">Notes</h4>
+<p>Le Web est fluide et la création CSS devrait adopter cette fluidité.
+En choisissant de limiter les dimensions de nos composants au lieu de
+les dicter, nous déléguons au navigateur, le laissant faire son travail.
+Les dimensions fixes ne devraient être appliquées qu’aux éléments
+graphiques tels que les images, les vidéos et les icônes.</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-9">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span>: <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -750,17 +805,26 @@ des sélecteurs d’attributs pour communiquer l’unicité.</h3>
 <li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-9">Notes</h4>
+<p>Les identifiants <code>id</code> véhiculent du sens mais leur
+sélecteur CSS est un cauchemar de spécificité. Utilisez le sélecteur
+d’attribut pour conserver le sens (unicité !) tout en gardant la
+spécificité à des niveaux raisonnables. D’autres cas d’utilisation
+incluent les contrôles et champs de formulaire et les états gérés par le
+js (p. ex. <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-10">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[id</span><span class="op">=</span><span class="st">"main"</span><span class="ex">]</span> {</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="ss">id</span><span class="op">=</span><span class="st">"main"</span><span class="ex">]</span> {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#main</span> {</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span>: <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -782,7 +846,7 @@ de règles de positionnement et d’affichage doit être minimisée.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-7">Notes</h4>
+<h4 id="notes-10">Notes</h4>
 <p>Utilisez ces propriétés uniquement sur les éléments qui en ont
 besoin. Utilisez les sélecteurs les plus étroits qui ont du sens dans le
 contexte.</p>
@@ -793,11 +857,11 @@ contexte.</p>
 <div>
 <div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>header {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span>: <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -818,17 +882,29 @@ surqualifiés sont déconseillés.</h3>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-11">Notes</h4>
+<p>Les entités de classe ne devraient pas être combinées à des
+sélecteurs de balises. Les sélecteurs génériques peuvent être utilisés
+comme morceau de sélection mais pas comme qualificatifs.
+Exceptionnellement, certaines balises à usage spécifique comme <code class="sourceCode css">html</code> ou <code class="sourceCode css">body</code> pourraient être utilisées pour
+restreindre l’application d’une entité de classe.</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-12">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>html<span class="fu">.is-loading</span> {</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">opacity</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>article<span class="fu">.card</span> {</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -850,17 +926,26 @@ composants ne peuvent pas exercer d’influence extérieure.</h3>
 <li><a href="#role-specifique">Rôle spécifique</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-12">Notes</h4>
+<p>Les composants sont faits pour être insérés dans des « trous ». Ces
+trous sont gérés par un autre composant ou un utilitaire de plus haut
+niveau (p. ex. une grille ou un carrousel). Aucun composant en ce sens
+ne devrait incorporer de marges. Celles-ci sont appliquées en tant que
+rythme par un parent. Ainsi, les composants sont polyvalents et
+réutilisables en divers contextes.</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-13">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb27"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb28"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -882,7 +967,7 @@ pas être masqué.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-8">Notes</h4>
+<h4 id="notes-13">Notes</h4>
 <p>En masquant la façon dont les navigateurs traitent les éléments
 débordants, nous pouvons masquer du contenu sans le savoir. En utilisant
 <code class="sourceCode css">auto</code> au lieu de <code class="sourceCode css">hidden</code>, le contenu débordant sera
@@ -897,13 +982,13 @@ l’adaptation portrait de ce même site pour un exemple !).</p>
 <div>
 <div class="sourceCode" id="cb29"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">50</span>dvh<span class="op">;</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span>: <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">50dvh</span><span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">50</span>dvh<span class="op">;</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">50dvh</span><span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span><span class="op">;</span></span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -924,7 +1009,7 @@ dans les noms de classes sont à éviter.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-9">Notes</h4>
+<h4 id="notes-14">Notes</h4>
 <p>Les nombres peuvent transmettre une intention dans les cas de système
 de grille comme, par exemple, <code class="sourceCode html">grid-10</code> ou <code class="sourceCode html">col-3</code>. Néanmoins, l’utilité de ces
 systèmes est faible à l’époque moderne du CSS. Il est suggéré de les
@@ -936,23 +1021,23 @@ laisser de côté.</p>
 <div>
 <div class="sourceCode" id="cb31"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-featured</span> {</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb32"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card-1</span> {</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -976,7 +1061,7 @@ commentaire de ligne.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-10">Notes</h4>
+<h4 id="notes-15">Notes</h4>
 <p>Les choix de valeurs et d’unités doivent être dictés par le langage
 graphique et ses jetons de conception. Les valeurs absolues sous forme
 numérique doivent être réservées à des cas particuliers tels que
@@ -990,11 +1075,11 @@ sinon.</p>
 <div>
 <div class="sourceCode" id="cb33"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="fu">var(</span><span class="va">--line-tight</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--line-tight</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb34"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1017,10 +1102,10 @@ préférence vers le haut.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-11">Notes</h4>
-<p>L’espacement est le rythme, un concept de design fondamental. Le
-rythme se produit <em>entre</em> les éléments graphiques et doit être
-appliqué comme tel en CSS. Le sélecteur <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">hibou lobotomisé</a> (<em>+</em>) est conçu sur mesure
+<h4 id="notes-16">Notes</h4>
+<p>Espacer est rythmer, un concept de design fondamental. Le rythme se
+produit <em>entre</em> les éléments graphiques et doit être appliqué
+comme tel en CSS. Le sélecteur <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">hibou lobotomisé</a> (<em>+</em>) est conçu sur mesure
 pour cette tâche. Lorsque vous utilisez un conteneur flexible, la
 propriété <code class="sourceCode css">gap</code> fait tout pour
 vous !</p>
@@ -1031,12 +1116,12 @@ vous !</p>
 <div>
 <div class="sourceCode" id="cb35"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb36"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*</span> {</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1057,10 +1142,9 @@ d’unités problématiques est déconseillée.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-12">Notes</h4>
-<p>Les unités de fenêtre d’affichage statiques (vh, vw, vmin, vmax) sont
-notoirement problématiques, en particulier lorsqu’elles sont utilisées
-comme <code class="sourceCode css">100vh</code> ou <code class="sourceCode css">100vw</code>. Les <a href="https://caniuse.com/viewport-unit-variants" target="_blank">unités
+<h4 id="notes-17">Notes</h4>
+<p>Les unités de fenêtre d’affichage statiques (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) sont notoirement problématiques, en
+particulier lorsqu’elles sont utilisées comme <code class="sourceCode css">100vh</code> ou <code class="sourceCode css">100vw</code>. Les <a href="https://caniuse.com/viewport-unit-variants" target="_blank">unités
 dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
 </section>
 </div>
@@ -1069,11 +1153,11 @@ dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
 <div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">100</span>dvh<span class="op">;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">100dvh</span><span class="op">;</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span>: <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1094,17 +1178,26 @@ composants.</h3>
 <li><a href="#html-expressif">HTML expressif</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-18">Notes</h4>
+<p>Les composants doivent prescrire une certaine structure HTML.
+L’utilisation de cette structure via des sélecteurs de balises
+intentionnels est le meilleur moyen d’assurer la persistance
+structurelle, de maintenir la spécificité et la complexité à un niveau
+faible et d’éviter de se fatiguer à force de tout nommer. Pourquoi
+renommer ce qui est déjà nommé ?</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-19">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb40"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.card__header</span> {</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1126,10 +1219,12 @@ entité par fichier avec une limite souple d’une centaine de lignes.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-13">Notes</h4>
+<h4 id="notes-19">Notes</h4>
 <p>C’est l’une des règles les plus importantes pour parvenir à un CSS
 durable. Un concept autonome par fichier évite la multiplication des
-surcharges et des redéfinitions dans la base de code.</p>
+surcharges et redéfinitions de propriétés dans la base de code. C’est
+même facile à appliquer avec la <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">configuration
+ECSS Stylelint</a>.</p>
 </section>
 </div>
 <aside>
@@ -1138,21 +1233,21 @@ surcharges et des redéfinitions dans la base de code.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* .metainfo.css */</span></span>
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb42"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1176,7 +1271,7 @@ sélecteurs <em>doivent</em> inclure strictement et uniquement les
 </ul>
 </section>
 <section>
-<h4 id="notes-14">Notes</h4>
+<h4 id="notes-20">Notes</h4>
 <p>Cette erreur, considérée à tort comme une « meilleure pratique », est
 à l’origine de nombreux maux de tête CSS dont nous sommes nous-mêmes
 responsables. Heureusement, la solution est simple : <em>n’utilisez pas
@@ -1189,11 +1284,11 @@ l’intention initiale</em>.</p>
 <div>
 <div class="sourceCode" id="cb43"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb44"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> div p {</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1214,6 +1309,15 @@ duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
 <li><a href="#concept-autonome">Autonomie des concepts</a></li>
 </ul>
 </section>
+<section>
+<h4 id="notes-21">Notes</h4>
+<p>Répéter un patron au lieu de le nommer et de regrouper ses règles
+dans un ensemble de règles unique est une erreur CSS classique. Et il
+peut être difficile de trouver et de cibler les instances de ce
+problème. Des outils tels que les plugins PostCSS peuvent aider en
+identifiant les répétitions atteignant un seuil défini dans une base de
+code.</p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-22">Exemple</h4>
@@ -1221,26 +1325,26 @@ duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
 <div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* button.css */</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.button</span> {</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb46"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> a {</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
 <span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> button {</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1272,17 +1376,17 @@ conception fondamentales.</h3>
 <div class="sourceCode" id="cb47"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rhythm.css */</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>p<span class="op">+</span>p {</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb48"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> p<span class="op">+</span>p {</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* prose.css */</span></span>
 <span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.prose</span> p<span class="op">+</span>p {</span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1305,7 +1409,7 @@ d’imbrication de balises uniques.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-15">Notes</h4>
+<h4 id="notes-22">Notes</h4>
 <p>Parfois, il peut être judicieux d’ajouter un <code class="sourceCode html">div</code> même s’il s’agit du seul enfant. Le
 cas d’une grille de contenu vient à l’esprit. Voir la source de cette
 page pour un exemple.</p>
@@ -1347,9 +1451,9 @@ spécificité <em>doit</em> être maintenue aussi faible que possible.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-16">Notes</h4>
-<p>Il est parfois judicieux d’ajouter des précisions. Mais ne le faites
-pas avant que cela ne soit prouvé nécessaire.</p>
+<h4 id="notes-23">Notes</h4>
+<p>Il est parfois judicieux d’augmenter la spécificité. Mais ne le
+faites pas avant que cela ne soit prouvé nécessaire.</p>
 </section>
 </div>
 <aside>
@@ -1357,11 +1461,11 @@ pas avant que cela ne soit prouvé nécessaire.</p>
 <div>
 <div class="sourceCode" id="cb51"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:where(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb52"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:is(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1371,11 +1475,14 @@ pas avant que cela ne soit prouvé nécessaire.</p>
 <section>
 <h2 id="outils">Outils reliés</h2>
 <ul>
-<li>Browser Inspector (debugging, experimenting and navigating)</li>
-<li>Scaffolding &amp; code library (use it… or not!)</li>
-<li>Stylelint (lint and inform)</li>
-<li>CSSCSS (find rule duplication in your codebase)</li>
-<li>PurifyCSS, PurgeCSS or Chrome Coverage outil-dev</li>
+<li>Inspecteur du navigateur</li>
+<li><a href="https://github.com/efficientcss/scaffolding">Scaffolding
+&amp; code library</a></li>
+<li>[Stylelint](https://stylelint.io</li>
+<li>[CSSCSS](https://github.com/zmoazeni/csscss</li>
+<li>
+<a href="https://github.com/purifycss/purifycss">PurifyCSS</a>, <a href="https://github.com/FullHuman/purgecss">PurgeCSS</a> ou Chrome
+Coverage devtool</li>
 </ul>
 </section>
 </main>

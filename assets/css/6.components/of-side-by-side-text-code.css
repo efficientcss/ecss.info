@@ -19,10 +19,12 @@
 .of-side-by-side-text-code>article>div>* {
 	flex-basis: var(--text-basis);
 	align-content: start;
+	flex-grow: 2;
 }
 
 .of-side-by-side-text-code>article>div>*+* {
 	flex-basis: var(--code-basis);
+	flex-grow: 1;
 }
 
 .of-side-by-side-text-code>article :is(section, header) {

@@ -1,6 +1,4 @@
 [id=nav] {
-	--ScaleLevel: var(--Tall);
-
 	display: flex;
 	gap: calc(var(--Row) / 2);
 }

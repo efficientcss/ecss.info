@@ -1,4 +1,4 @@
 [id=nav] {
 	display: flex;
-	gap: calc(var(--Row) / 2);
+	gap: var(--SpacingThinner);
 }

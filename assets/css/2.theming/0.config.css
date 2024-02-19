@@ -40,6 +40,24 @@
 
 		--RowFactor: 1.56125;
 	}
+		--SpacingPico:      0.1rem;
+		--SpacingNano:      0.3rem;
+		--SpacingMicro:     0.5rem;
+		/*--- */
+		--SpacingThinnest:  calc(var(--Row) * 0.25);
+		--SpacingThinner:   calc(var(--Row) * 0.50);
+		--SpacingThin:      calc(var(--Row) * 0.75);
+		--SpacingRow:            var(--Row);
+		--SpacingBroad:     calc(var(--Row) * 1.25);
+		--SpacingBroader:   calc(var(--Row) * 1.5);
+		--SpacingBroadest:  calc(var(--Row) * 2);
+		--SpacingLarge:     calc(var(--Row) * 4);
+		--SpacingLarger:    calc(var(--Row) * 7);
+		--SpacingLargest:   calc(var(--Row) * 10);
+		/*--- */
+		--SpacingMega:      24rem;
+		--SpacingGiga:      54rem;
+		--SpacingTera:      78rem;
 
 	/* Additional configurable properties */
 	/* to be inserted into the :root set above */

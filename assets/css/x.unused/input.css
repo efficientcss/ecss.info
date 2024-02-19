@@ -36,7 +36,7 @@ label input[type=checkbox] {
 
 span+input[type="checkbox"] {
 	align-self: center;
-	margin-left: var(--Row);
+	margin-left: var(--SpacingRow);
 }
 
 

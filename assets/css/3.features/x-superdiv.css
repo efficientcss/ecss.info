@@ -8,7 +8,7 @@
 			--DivItemBasis: 0px;
 			--DivItemGrow: 1;
 			--DivItemShrink: 1;
-			--DivItemGutter: var(--Row);
+			--DivItemGutter: var(--SpacingRow);
 			--DivItemMaxWidth: initial;
 		}
 	}
@@ -21,7 +21,7 @@
 			--DivItemBasis: calc((54ch - 100%) * 999);
 			--DivItemGrow: 1;
 			/* --DivItemShrink: 0; */
-			--DivItemGutter: var(--Row);
+			--DivItemGutter: var(--SpacingRow);
 			--DivItemMaxWidth: 100%;
 		}
 
@@ -36,7 +36,7 @@
 			--DivDisplay: block;
 			max-width: var(--DivMaxWidth);
 			column-count: 2;
-			column-gap: var(--Row);
+			column-gap: var(--SpacingRow);
 			column-width: var(--DivColumnWidth);
 		}
 
@@ -46,7 +46,7 @@
 		}
 
 		.prose>*+* {
-			margin-top: calc(var(--Row) / 2);
+			margin-top: var(--SpacingThinner);
 		}
 
 		.prose>*:only-child {

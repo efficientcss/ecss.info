@@ -49,7 +49,7 @@
 	}
 
 	main>div>header p:first-of-type {
-		font-weight: 800;
+		--FontWeight: 800;
 		--ScaleLevel: var(--Huge);
 	}
 

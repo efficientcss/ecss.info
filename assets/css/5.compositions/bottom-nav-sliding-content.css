@@ -63,9 +63,9 @@
 		justify-content: end;
 		order: 1;
 
-		background-image: linear-gradient(to left, #ffd6e7 60%, #ffd6e700 100%);
 		width: var(--SpacingRow);
 		padding: var(--SpacingMicro);
+		background-image: linear-gradient(to left, var(--ColorSupport) 60%, rgba(var(--rgbColorSupport), 0) 100%);
 		content: "...";
 	}
 
@@ -77,10 +77,10 @@
 		flex-shrink: 0;
 
 		box-sizing: border-box;
-		background-color: #ffd6e7;
 		width: var(--SpacingRow);
 		margin-right: calc(var(--SpacingBroadest) * -1);
 		padding-right: var(--SpacingThinnest);
+		background-color: var(--ColorSupport);
 		content: "";
 		place-items: center;
 	}

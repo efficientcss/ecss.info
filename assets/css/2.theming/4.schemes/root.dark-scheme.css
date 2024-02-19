@@ -12,10 +12,10 @@
 	--ColorLtSupport: var(--dk-primary);
 	--ColorAccent: var(--dk-yellow);
 	--ColorSupport: var(--lt-purple);
-	--ColorForeign: var(--lt-red);
-	--ColorLocal: var(--lt-blue);
+
 	--ColorBgControls: var(--dk-purple);
 	--ColorControls: var(--ltr-purple);
+	
 	--ColorBgComplete: var(--dk-green);
 	--ColorBgIncomplete: var(--dk-red);
 	--ColorBgActive: var(--dk-yellow);

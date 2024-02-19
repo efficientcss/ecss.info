@@ -8,8 +8,4 @@
 	main>div {
 		display: block;
 	}
-
-	main>div>*+* {
-		margin-top: calc(var(--Row) * 2);
-	}
 }

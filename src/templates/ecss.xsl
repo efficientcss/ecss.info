@@ -39,7 +39,7 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<meta name="description" content="ECSS établit des règles simples pour des styliser simplement. Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable." />
-					<title>ECSS — Des règles simples pour du CSS efficient</title>
+					<title>ECSS — Des règles simples pour du CSS efficace</title>
 				</xsl:otherwise>
 			</xsl:choose>
 		</head>

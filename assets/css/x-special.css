@@ -70,35 +70,35 @@ div.sourceCode
 @media screen {
 	pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-:not(p)>code span { color: #c6d0f5; } /* Normal */
-:not(p)>code span.al { color: #e78284; font-weight: bold; } /* Alert */
-:not(p)>code span.an { color: #e5c890; } /* Annotation */
-:not(p)>code span.at { color: #babbf1; } /* Attribute */
-:not(p)>code span.bn { color: #e78284; } /* BaseN */
-:not(p)>code span.bu { color: #e78284; } /* BuiltIn */
-:not(p)>code span.cf { color: #ca9ee6; } /* ControlFlow */
-:not(p)>code span.ch { color: #f4b8e4; } /* Char */
-:not(p)>code span.cn { color: #8caaee; } /* Constant */
-:not(p)>code span.co { color: #737994; font-style: italic; } /* Comment */
-:not(p)>code span.cv { color: #737994; font-style: italic; } /* CommentVar */
-:not(p)>code span.do { color: #e78284; } /* Documentation */
-:not(p)>code span.dt { color: #ca9ee6; } /* DataType */
-:not(p)>code span.dv { color: #ef9f76; } /* DecVal */
-:not(p)>code span.er { color: #e78284; text-decoration: underline; } /* Error */
-:not(p)>code span.ex { color: #8caaee; } /* Extension */
-:not(p)>code span.fl { color: #ef9f76; } /* Float */
-:not(p)>code span.fu { color: #8caaee; } /* Function */
-:not(p)>code span.im { color: #a6d189; } /* Import */
-:not(p)>code span.in { color: #ef9f76; } /* Information */
-:not(p)>code span.kw { color: #ca9ee6; } /* Keyword */
-:not(p)>code span.op { color: #99d1db; } /* Operator */
-:not(p)>code span.ot { color: #ef9f76; } /* Other */
-:not(p)>code span.pp { color: #f4b8e4; } /* Preprocessor */
-:not(p)>code span.re { color: #737994; font-style: italic; } /* RegionMarker */
-:not(p)>code span.sc { color: #f4b8e4; } /* SpecialChar */
-:not(p)>code span.ss { color: #e78284; } /* SpecialString */
-:not(p)>code span.st { color: #a6d189; } /* String */
-:not(p)>code span.va { color: #f4b8e4; } /* Variable */
-:not(p)>code span.vs { color: #e78284; } /* VerbatimString */
-:not(p)>code span.wa { color: #ef9f76; } /* Warning */
+:not(p, h1, h2, h3, h4, h5, h6)>code span { color: #c6d0f5; } /* Normal */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.al { color: #e78284; font-weight: bold; } /* Alert */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.an { color: #e5c890; } /* Annotation */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.at { color: #babbf1; } /* Attribute */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.bn { color: #e78284; } /* BaseN */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.bu { color: #e78284; } /* BuiltIn */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.cf { color: #ca9ee6; } /* ControlFlow */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.ch { color: #f4b8e4; } /* Char */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.cn { color: #8caaee; } /* Constant */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.co { color: #737994; font-style: italic; } /* Comment */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.cv { color: #737994; font-style: italic; } /* CommentVar */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.do { color: #e78284; } /* Documentation */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.dt { color: #ca9ee6; } /* DataType */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.dv { color: #ef9f76; } /* DecVal */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.er { color: #e78284; text-decoration: underline; } /* Error */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.ex { color: #8caaee; } /* Extension */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.fl { color: #ef9f76; } /* Float */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.fu { color: #8caaee; } /* Function */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.im { color: #a6d189; } /* Import */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.in { color: #ef9f76; } /* Information */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.kw { color: #ca9ee6; } /* Keyword */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.op { color: #99d1db; } /* Operator */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.ot { color: #ef9f76; } /* Other */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.pp { color: #f4b8e4; } /* Preprocessor */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.re { color: #737994; font-style: italic; } /* RegionMarker */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.sc { color: #f4b8e4; } /* SpecialChar */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.ss { color: #e78284; } /* SpecialString */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.st { color: #a6d189; } /* String */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.va { color: #f4b8e4; } /* Variable */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.vs { color: #e78284; } /* VerbatimString */
+:not(p, h1, h2, h3, h4, h5, h6)>code span.wa { color: #ef9f76; } /* Warning */
 

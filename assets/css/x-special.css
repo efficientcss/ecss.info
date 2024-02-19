@@ -3,7 +3,7 @@ h3 small {
 }
 
 [id] {
-	scroll-margin: calc(var(--Row) * 1);
+	scroll-margin: var(--SpacingRow);
 }
 
 p code {
@@ -27,7 +27,7 @@ pre > code.sourceCode > span:empty { height: 1.2em; }
 
 div.sourceCode { 
 	background-color: #222634;
-	padding: calc(var(--Row) / 2);
+	padding: var(--SpacingThinner);
 	border-radius: 6px;
 	border-bottom: 1px solid #00000010;
 	/* border-bottom-width: 2px; */

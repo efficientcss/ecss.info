@@ -2,9 +2,9 @@
 	body {
 		display: flex;
 
-		color: #0a0c5b;
-		background-color: #F6E5C5;
-		background-image: linear-gradient(25deg, #ffd6e7, transparent);
+		color: var(--Color);
+		background-color: var(--ColorBg);
+		background-image: linear-gradient(25deg, var(--ColorSupport), transparent);
 		background-attachment: fixed;
 	}
 }

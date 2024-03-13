@@ -8,4 +8,8 @@
 	main>div {
 		display: block;
 	}
+
+	main a:hover {
+		text-decoration: none;
+	}
 }

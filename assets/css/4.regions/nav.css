@@ -2,3 +2,7 @@
 	display: flex;
 	gap: var(--SpacingThinner);
 }
+
+[id=nav] a:hover {
+	text-decoration: underline;
+}

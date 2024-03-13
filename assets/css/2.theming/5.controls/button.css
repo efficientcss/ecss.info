@@ -1,6 +1,18 @@
 button, .button {
 	-webkit-appearance: none;
 	appearance: none;
+	font-weight: 600;
+	background-color: var(--Yellow);
+	color: var(--Blue);
+	display: inline-block;
+	padding: var(--SpacingPico) var(--SpacingThinnest);
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+:is(button, .button):hover {
+	color: var(--Yellow);
+	background-color: var(--Blue);
 }
 
 :is(button, .button):focus {

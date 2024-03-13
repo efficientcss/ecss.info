@@ -13,7 +13,7 @@ Avoiding common styling problems is simple. And you only need efficient CSS. Not
 
 👮 Gently nudge you and your team into ECSS.
 
-[Install the Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
+[Install the Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss){.button}
 
 </section>
 
@@ -1570,7 +1570,7 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 <section>
 ## Related tools{#tools}
 
-- Browser Inspector (debugging, experimenting and navigating)
+- [ECSS Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss) (get live authoring tips!)
 - [Scaffolding &amp; code library](https://github.com/efficientcss/scaffolding) (use it... or not!)
 - [Stylelint](https://stylelint.io) (lint and inform)
 - [CSSCSS](https://github.com/zmoazeni/csscss) (find rule duplication in your codebase)

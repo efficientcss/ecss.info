@@ -19,8 +19,8 @@ Want help enforcing rules?
 </h3>
 <p>👮 Gently nudge you and your team into ECSS.</p>
 <p><a
-href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">Install
-the Stylelint config</a></p>
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss"
+class="button">Install the Stylelint config</a></p>
 </section>
 <section>
 <h3 class="h4">
@@ -1493,7 +1493,9 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#
 <section>
 <h2 id="tools">Related tools</h2>
 <ul>
-<li>Browser Inspector (debugging, experimenting and navigating)</li>
+<li><a
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">ECSS
+Stylelint config</a> (get live authoring tips!)</li>
 <li><a href="https://github.com/efficientcss/scaffolding">Scaffolding
 &amp; code library</a> (use it… or not!)</li>
 <li><a href="https://stylelint.io">Stylelint</a> (lint and inform)</li>

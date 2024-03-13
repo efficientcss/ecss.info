@@ -13,7 +13,7 @@
 
 👮 Poussez doucement vous et votre équipe vers l'ECSS.
 
-[Installez la configuration Stylelint](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
+[Installez la config Stylelint](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss){.button}
 
 </section>
 
@@ -1575,9 +1575,9 @@ Il est parfois judicieux d’augmenter la spécificité. Mais ne le faites pas a
 <section>
 ## Outils reliés{#outils}
 
-- Inspecteur du navigateur
+- [Config Stylelint pour ECSS](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
 - [Scaffolding &amp; code library](https://github.com/efficientcss/scaffolding)
-- [Stylelint](https://stylelint.io
+- [Stylelint](https://stylelint.io)
 - [CSSCSS](https://github.com/zmoazeni/csscss
 - [PurifyCSS](https://github.com/purifycss/purifycss), [PurgeCSS](https://github.com/FullHuman/purgecss) ou Chrome Coverage devtool
 </section>

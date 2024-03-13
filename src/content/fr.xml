@@ -20,8 +20,8 @@ Vous voulez de l’aide pour appliquer les règles ?
 </h3>
 <p>👮 Poussez doucement vous et votre équipe vers l’ECSS.</p>
 <p><a
-href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">Installez
-la configuration Stylelint</a></p>
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss"
+class="button">Installez la config Stylelint</a></p>
 </section>
 <section>
 <h3 class="h4">
@@ -1571,10 +1571,12 @@ class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#
 <section>
 <h2 id="outils">Outils reliés</h2>
 <ul>
-<li>Inspecteur du navigateur</li>
+<li><a
+href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">Config
+Stylelint pour ECSS</a></li>
 <li><a href="https://github.com/efficientcss/scaffolding">Scaffolding
 &amp; code library</a></li>
-<li>[Stylelint](https://stylelint.io</li>
+<li><a href="https://stylelint.io">Stylelint</a></li>
 <li>[CSSCSS](https://github.com/zmoazeni/csscss</li>
 <li><a href="https://github.com/purifycss/purifycss">PurifyCSS</a>, <a
 href="https://github.com/FullHuman/purgecss">PurgeCSS</a> ou Chrome

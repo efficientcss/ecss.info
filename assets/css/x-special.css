@@ -1,6 +1,17 @@
 h3 small {
 	margin-left: .75em;
 }
+[href^=mailto] {
+	white-space: nowrap;
+}
+
+[href^=mailto] i {
+	font-weight: 800;
+	font-size: 1.3em;
+	line-height: 1;
+	vertical-align: text-bottom;
+	margin-right: var(--SpacingPico);
+}
 
 [id] {
 	scroll-margin: var(--SpacingRow);

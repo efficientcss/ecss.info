@@ -28,6 +28,10 @@
 		margin-top: var(--SpacingBroadest);
 	}
 
+	.side-nav-main-pile body>header>nav [lang] {
+		margin-top: var(--SpacingRow);
+	}
+
 	.side-nav-main-pile body>main {
 		margin-top: var(--SpacingBroad);
 		padding-top: var(--SpacingBroader);

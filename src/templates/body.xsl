@@ -17,7 +17,8 @@
 							<a href="#principles">Principles</a>
 							<a href="#rules">Rules</a>
 							<a href="#tools">Tools</a>
-							<a href="../fr">Français</a>
+							<a href="mailto:contact@ecss.info">Contact <i>✉</i></a>
+							<a href="../fr" lang="fr">Français</a>
 						</nav>
 					</xsl:when>
 					<xsl:otherwise>
@@ -27,7 +28,8 @@
 							<a href="#principes">Principes</a>
 							<a href="#regles">Règles</a>
 							<a href="#outils">Outils</a>
-							<a href="../en">English</a>
+							<a href="mailto:contact@ecss.info">Contact <i>✉</i></a>
+							<a href="../en" lang="en">English</a>
 						</nav>
 					</xsl:otherwise>
 				</xsl:choose>

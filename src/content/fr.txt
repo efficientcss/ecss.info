@@ -1139,7 +1139,7 @@ Les choix de valeurs et d'unités doivent être dictés par le langage graphique
 <section>
 #### Notes
 
-Espacer est rythmer, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (*+*) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
+Espacer est rythmer, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (`*+*`{.css}) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
 
 </section>
 </div>

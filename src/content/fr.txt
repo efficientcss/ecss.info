@@ -242,7 +242,7 @@ L'intention peut ne pas être claire au début du travail de stylisation. Au lie
 <article>
 ### Tout élément HTML ne doit assumer qu'un seul rôle.{#role-unique}
 
-Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{. html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille devrait être implémenté avec les balises `<div>`{.html}.
+Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{.html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille devrait être implémenté avec les balises `<div>`{.html}.
 
 </article>
 

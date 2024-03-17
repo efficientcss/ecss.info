@@ -1,4 +1,4 @@
-@layer base {
+@layer general {
 	/* Basic generic styles ----------------------- */
 	/* Should only contain tag selectors. No classes are accepted.
 	Must not change from project to project. Versioned. */

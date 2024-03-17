@@ -1,8 +1,13 @@
 @layer theming {
 	/* Content rhythm ----------------------- */
 	/* stylelint-disable-next-line -- exception for visually-hidden */
-	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link, script, .as-visually-hidden))~* {
+	:not(:where(html, body, nav, div, label, ul, ol, li, p, a, span))>:not(:where(link, script, noscript, .as-visually-hidden))~* {
 		margin-top: var(--SpacingRow);
+	}
+
+	noscript {
+	/* stylelint-disable-next-line -- exception for noscript tag */
+		margin-bottom: var(--SpacingRow);
 	}
 
 	:is(h1, h2, h3, h4, h5, h6)+:is(h1, h2, h3, h4, h5, h6) {
@@ -34,7 +39,7 @@
 	/* *+is(input, select, textarea) */
 
 	/* Basic container rhythm */
-	main>*+* {
+	main>:not(script, noscript)~* {
 		margin-top: var(--SpacingLarge);
 	}
 

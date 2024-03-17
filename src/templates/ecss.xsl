@@ -19,6 +19,7 @@
 		<html lang="{$lang}" class="side-nav-main-pile bottom-nav-sliding-content">
 		<head>
 			<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>
+			<script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer=""></script>
 			<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
 			<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />
 			<link rel="preload" href="https://p.typekit.net" crossorigin="" />

@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en" class="side-nav-main-pile bottom-nav-sliding-content">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer></script><script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer></script><link rel="preconnect" href="https://use.typekit.net" crossorigin="">
+<link rel="preconnect" href="https://p.typekit.net" crossorigin="">
+<link rel="preload" href="https://p.typekit.net" crossorigin="">
+<link rel="stylesheet" href="../assets/css/min.e.css">
+<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css">
+<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css">
+<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="description" content="ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.">
+<title>ECSS — Simple Rules for efficient CSS</title>
+</head>
+<link rel="stylesheet" href="../assets/css/4.regions/body.css">
+<body>
+<header><h1>ecss</h1>
+<link rel="stylesheet" href="../assets/css/4.regions/nav.css">
+<nav id="nav"><a href="#intro">Intro</a><a href="#values">Values</a><a href="#principles">Principles</a><a href="#rules">Rules</a><a href="#tools">Tools</a><a href="mailto:contact@ecss.info">Contact <i>✉</i></a><a href="../fr" lang="fr">Français</a></nav></header><link rel="stylesheet" href="../assets/css/4.regions/main.css">
+<main>
+<div id="intro">
+<header>
+<h2 class="as-visually-hidden">
+Introduction
+</h2>
+<p>Avoiding common styling problems is simple. And you only need
+efficient CSS. Nothing more.</p>
+<p><strong>ECSS sets simple rules for simple styling.</strong> No more
+naming everything, no more technological dependencies. Only intentional,
+consistent, simple, expressive, predictable, sustainable CSS.</p>
+</header>
+<div style="--DivItemBasis: 12rem;">
+<section>
+<h3 class="h4">
+Want help enforcing rules?
+</h3>
+<p>👮 Gently nudge you and your team into ECSS.</p>
+<p><a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss" class="button">Install the Stylelint config</a></p>
+</section>
+<section>
+<h3 class="h4">
+Eager to build something?
+</h3>
+<p>🏁 A quick &amp; efficient starting point is within reach!</p>
+<p><a href="https://github.com/efficientcss/scaffolding">Clone the
+scaffolding library (WIP)</a></p>
+</section>
+<section>
+<h3 class="h4">
+Want to know the beast?
+</h3>
+<p>📰 Go ahead and see what you think of it!</p>
+<p><a href="#rules">Dive into ECSS rules</a></p>
+</section>
+<section>
+<h3 class="h4">
+Curious about it all?
+</h3>
+<p>Well, keep scrolling!</p>
+</section>
+</div>
+<section>
+<h2 id="why-ecss">Why ECSS?</h2>
+<p>Because CSS as a language is misunderstood and undeservedly maligned.
+Because simple rules and low impact tools can go a long way in making
+sure the CSS codebase is light, simple and scalable. ECSS is a global
+approach to producing efficient design systems with CSS.</p>
+</section>
+</div>
+<section>
+<h2 id="values">Values</h2>
+<div style="--DivItemBasis: 20rem;">
+<section>
+<h3 id="intentionality">Intentionality</h3>
+<p><strong>Clear objectives, rational decisions.</strong></p>
+<p>Every parcel of CSS has an objective. This objective should be clear
+to anyone reading the code. Be it HTML or CSS. Selectors are the perfect
+vehicle for intentionality. ECSS incentivizes the use of rational
+selectors.</p>
+</section>
+<section>
+<h3 id="consistency">Consistency</h3>
+<p><strong>Repeating patterns save time &amp; energy.</strong></p>
+<p>Flexible naming guidelines give the codebase a consistency
+encouraging standardization and reuse. Prefixes and usage guidelines
+enforced through linting insures everyone on your team will follow ECSS
+rules.</p>
+</section>
+<section>
+<h3 id="simplicity">Simplicity</h3>
+<p><strong>“Simple” is writing less code &amp; and limiting
+dependencies.</strong></p>
+<p>Class soup &amp; divitis aren’t simple. Untold numbers of <code class="sourceCode css"><span class="im">@media</span></code> queries
+aren’t either. But modern CSS is. By accepting CSS for what it is (a
+designing language!) you can do <em>a lot</em> of styling mileage with
+very little code.</p>
+</section>
+<section>
+<h3 id="expressivity">Expressivity</h3>
+<p><strong>Code that speaks for itself is actually
+achievable.</strong></p>
+<p>“thumbnail as-circle with-border” is instantly understandable while
+“h-10 w-10 bdr-50 br-1 overh” is not. Code should communicate
+information. The clearer the information, the easier it is to understand
+the system. Mistaken semantics should give way to expressiveness.
+<em>Expressive best practices work.</em></p>
+</section>
+<section>
+<h3 id="predictability">Predictability</h3>
+<p><strong>Using simple but consistent authoring rules leads to
+predictability.</strong></p>
+<p>It feels good to dive into unknown code… while already knowing what
+it looks like. Consistency, repeating patterns, simplicity (yes, again)
+all coalesce into predictable code. And predictable code means less
+stress, less friction and happier teams!</p>
+</section>
+<section>
+<h3 id="sustainability">Sustainability</h3>
+<p><strong>Vanilla CSS is future ready.</strong></p>
+<p>In practice it means being at the forefront of progress and
+evolution. No need to wait for third parties to implement new features.
+You can use <code class="sourceCode css">clamp<span class="in">()</span></code> as of now
+and say goodbye to 80% of your media queries. No more <code class="sourceCode html">sm-this md-that</code>. Only clean and modern
+code.</p>
+</section>
+</div>
+</section>
+<link rel="stylesheet" href="../assets/css/6.components/of-side-by-side-h-p.css">
+<section class="of-side-by-side-h-p as-numbered-list">
+<h2 id="principles">Guiding principles</h2>
+<article>
+<h3 id="designing-language">CSS is a <em>designing</em> language, not a
+programming one.</h3>
+<p>CSS authoring should reflect <em>design</em> patterns, concepts and
+perspectives. With global (sorry) scales, tokens, rules, etc. you limit
+repetition and facilitate future styling extension.</p>
+</article>
+<article>
+<h3 id="design-empowerment">Empowering designers to refine their work
+autonomously is efficient.</h3>
+<p>Making the needed parts of CSS being intelligible (code-savvy or
+not!) to designers cuts stress, time and promotes good allocation of
+human resources. Refining design in the browser is a great vector of
+economic profitability.</p>
+</article>
+<article>
+<h3 id="properties-not-equal">Not all CSS properties are born
+equal.</h3>
+<p>The box-model properties (<code class="sourceCode css">display</code>, <code class="sourceCode css">position</code>, <code class="sourceCode css">width</code>, etc.) are extremely sensitive and
+potentially way more disruptive than, say, color or typographic ones.
+The former are the stuff of professional CSS authors and the latter are
+the ones designers should be able to use, modify and experiment with in
+context.</p>
+</article>
+<article>
+<h3 id="specific-role">Properties &amp; units have specific roles and
+usage.</h3>
+<p>Limiting their use to these roles enhances clarity and promotes
+consistency as well as predictability. The same goes for units. Some
+suggest type, others, images or rhythm. Use them intentionally &amp;
+rationally to communicate meaning.</p>
+</article>
+<article>
+<h3 id="component-structure">Components and patterns <em>need</em>
+structure.</h3>
+<p>Trying to abstract it away is vain. Instead, documentation and
+dilligence are key. HTML is semantically rich, so choose the right tags
+and refrain from changing them for superficial reasons. One would not
+remove or change <code class="sourceCode html">class="header"</code> without
+understanding its purpose first, then one should not change or remove
+<code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></code>
+on a whim either.</p>
+</article>
+<article>
+<h3 id="selector-intention">CSS Selectors are vehicles for
+intention.</h3>
+<p>Every selector particle must have a purpose and if not, must be
+discarded with. This extraneous <code class="sourceCode css">div</code>
+in <code class="sourceCode css"><span class="fu">.card</span> div h2</code> is
+what makes CSS brittle. These are <em>not</em> <a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">“best
+practices”</a>.</p>
+</article>
+<article>
+<h3 id="selector-function">Selector types all have a function.</h3>
+<p>Each one of them may be of use in a certain context. No absolute
+usage rule should be edicted. It’s not “always” or “never” but “it
+depends” and “why”. Absolute rules absolutely corrupt. Or something like
+that.</p>
+</article>
+<article>
+<h3 id="harness-specificity">Selection specificity should be harnessed,
+not rejected.</h3>
+<p>Nevertheless, “always” (ahem) keep it as low as possible. Yes, in
+2015 it may have not been easy. But it’s 2023 and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers">new</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where">features</a>
+are now widely supported. Use them.</p>
+</article>
+<article>
+<h3 id="global-scope">Global scope in CSS is not a sin.</h3>
+<p>Remember, <em>CSS is a designing language</em> and the global scope
+fits perfectly in design’s fundamentally layered, dimensional approach.
+Programming best practices are not necessarily designing best practices.
+Embrace design best practices.</p>
+</article>
+<article>
+<h3 id="global-rules">Global design rules must be largely anonymous
+&amp; unqualified.</h3>
+<p>Only a few declarations per ruleset only. We are talking rhythm,
+typography, color; not <code class="sourceCode css">display</code> or
+<code class="sourceCode css">position</code>. <em>This</em> is the way
+of limiting repetition, bloat &amp; complexity.</p>
+</article>
+<article>
+<h3 id="understood-concept">One should wait until a concept is clearly
+understood before naming it.</h3>
+<p>Until then use HTML elements. Premature abstraction or <a href="https://en.wikipedia.org/wiki/Overengineering">“solving problems
+not yet encountered”</a> are bigger problems than the use of <code class="sourceCode css">header</code> in CSS. Yes, these are programming
+best practices. But who told you CSS development was pure design?</p>
+</article>
+<article>
+<h3 id="rule-repetition">When more than 3 rules are repeated more than 3
+times, a concept <em>is</em> emerging.</h3>
+<p>Rules should then be concentrated by naming and using said concept
+instead of the bare rules. Reusability, expressivity and simplicity are
+then greatly improved.</p>
+</article>
+<article>
+<h3 id="autonomous-concept">Named concepts must be autonomous and
+self-sufficient.</h3>
+<p>Named concepts should not be defined inside another named concept. If
+it ever is necessary, the child concept must be internal to the parent
+concept and is <em>not</em> to be reused anywhere else.</p>
+</article>
+<article>
+<h3 id="concept-manipulation">Manipulating named concepts throughout
+multiple files is strictly prohibited.</h3>
+<p>All rules for a named concept must reside in the same, unique CSS
+file. For authors and maintainers to have confidence in the system,
+there must a single <a href="https://en.wikipedia.org/wiki/Single_source_of_truth">source of
+truth</a> for any concept.</p>
+</article>
+<article>
+<h3 id="child-concepts">State, variant or structural are child concepts
+and must be namespaced &amp; prefixed.</h3>
+<p>These concepts may be represented as child or combined classes. Never
+to be used alone, always alongside the parent concept. Yes, here are
+both “never” <em>and</em> “always” in the same sentence. <a href="https://www.youtube.com/watch?v=Z58eTP2gcw0">“Double jeopardy, we
+are fine”</a>.</p>
+</article>
+<article>
+<h3 id="child-specificity">Namespaced classes should generally be
+implemented with specificity reducing selectors.</h3>
+<p>Unless otherwise needed, one should strive to keep specificity at 21
+or below. With a preference for around 10 to 12. Modern and widely
+supported pseudo-selectors must here be used.</p>
+</article>
+<article>
+<h3 id="selector-efficiency">One may not come up at first with the
+efficient way to select interface elements.</h3>
+<p>One’s intention may not be clear at the beginning of a styling job.
+Instead of fruitlessly trying and trying, a code “quarantine” file
+should be temporarily used until the right selection manifests itself.
+Still, no quarantine file should ever be published publicly.</p>
+</article>
+<article>
+<h3 id="expressive-html">HTML should be as simple and expressive as can
+be.</h3>
+<p>Refrain from over-containing, don’t use <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+where you could use <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">aside</span><span class="dt">&gt;</span></code>.
+Dont wrap your single-level navigation in unordered lists. And yes,
+simple navigation is <a href="https://dockyard.com/blog/2019/11/29/using-nav-without-a-list-element">accessible</a>.
+Keep it simple… Suzy.</p>
+</article>
+<article>
+<h3 id="one-role">Any HTML element should endorse one role only.</h3>
+<p>As per the famous programming <a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">best
+practice</a> (again, programming in designing), semantic tags are for…
+semantics whilst <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+or <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></code>
+tags are for graphical or logical division. Any type of grid should be
+implemented with <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></code>
+tags.</p>
+</article>
+<article>
+<h3 id="adaptation-included">Any <code class="sourceCode css"><span class="im">@media</span></code> query
+adaptation must be included in its related concept’s file.</h3>
+<p>Not as as a separate file, not as suffixed classes. If one uses
+utility classes, the provided rules should not be query dependent but
+rather be universally needed, in every media configuration.</p>
+</article>
+<article>
+<h3 id="global-stylesheet">Whole stylesheets are better used when
+global.</h3>
+<p>Media query scopes should be used in HTML <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">link</span><span class="dt">&gt;</span></code>
+tags to promote reuse, performance and optimization concerns. Each
+fundamental design layer should be autonomous, independent and
+removable.</p>
+</article>
+<article>
+<h3 id="component-styling">Component styling should only be served with
+live components.</h3>
+<p>Not as a big minified file in the <code class="sourceCode html"><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></code>
+tag of the document. This way, the infamous problem of loading unused
+CSS is practically solved, without any technological debt. First render
+is also faster since only what is used is processed by the browser. As a
+bonus, you get the CSS file path in component file.</p>
+</article>
+<article>
+<h3 id="browser-rendering">Let the browser do as much of the rendering
+work as it can.</h3>
+<p>By embracing fluidity, adaptativity is mostly done by the browser.
+Less rules are needed to insure correct rendering in the infinite number
+of usage contexts.</p>
+</article>
+<article>
+<h3 id="devtools">Make full use of freely available development tools by
+going with the grain of the Web platform.</h3>
+<p>By using “just-in-time” rulesets, design tokens, the cascade and
+intentional selection, the debugging &amp; refining workflow is simpler,
+lighter and clearer. Devtools are our friends!</p>
+</article>
+<article>
+<h3 id="native-code">Eschewing technological abstractions like
+high-level frameworks spurs lighter, simpler native code.</h3>
+<p>By writing native CSS, one uses CSS better; by writing native HTML,
+one writes HTML better. With better CSS and better HTML comes a better
+user experience.</p>
+</article>
+</section>
+<link rel="stylesheet" href="../assets/css/6.components/of-side-by-side-text-code.css">
+<section class="of-side-by-side-text-code">
+<h2 id="rules">Authoring rules</h2>
+<!-- - [TODO] : use of style attributes with custom properties. -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="selector-filename">All component selectors <em>must</em> start
+with its filename.</h3>
+</header>
+<section>
+<h4 id="principles-1">Principles</h4>
+<ul>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#concept-manipulation">Concept manipulation</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes">Notes</h4>
+<p>To exclude a file from this rule in the <strong>Stylelint</strong>
+config, prefix the filename with a digit or “x-” as in
+“x-quarantine.css”</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example">Example</h4>
+<div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.small-card</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="all-paddings-should-first-be-uniform-and-then-be-adjusted-if-necessary.">All
+paddings should first be uniform and then be adjusted if necessary.</h3>
+</header>
+<section>
+<h4 id="principles-2">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific role</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-1">Notes</h4>
+<p>Non-uniform paddings may be used in particular instances for <code class="sourceCode css">overflow</code> reasons or for added
+pseudo-content.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-1">Example</h4>
+<div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="paddings-are-to-be-applied-on-containing-and-interactive-elements-only.">Paddings
+are to be applied on containing and interactive elements only.</h3>
+</header>
+<section>
+<h4 id="principles-3">Principles</h4>
+<ul>
+<li><a href="#one-role">One role only</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-2">Notes</h4>
+<p>Text elements should only host text styles while container elements
+can host theming styles. In some instances, container elements could
+host text styles to be inherited by children.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-2">Example</h4>
+<div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> h2 {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="horizontal-margins-should-not-be-applied-to-text-elements.">Horizontal
+margins should not be applied to text elements.</h3>
+</header>
+<section>
+<h4 id="principles-4">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#one-role">One role only</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-3">Notes</h4>
+<p>Horizontal margins can be applied to text elements in the case of
+<code class="sourceCode css">inline</code> elements such as icons or
+tags &amp; on indented elements like <code class="sourceCode html">blockquote</code>.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-3">Example</h4>
+<div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="typographic-elements-should-use-inheritance-when-possible.">Typographic
+elements should use inheritance when possible.</h3>
+</header>
+<section>
+<h4 id="principles-5">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#global-scope">Global scope</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-4">Example</h4>
+<div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="design-tokens-should-be-used-for-most-numerical-values.">Design
+tokens should be used for most numerical values.</h3>
+</header>
+<section>
+<h4 id="principles-6">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#devtools">Development tools</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-4">Notes</h4>
+<p>Numerical values should only be used for exceptional alignments.
+These should be commented to communicate the intent. Even then, why not
+create a bespoke property meaningfully named?</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-5">Example</h4>
+<div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--small-spacing</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="repeating-default-rules-is-discouraged.">Repeating default rules
+is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-7">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-5">Notes</h4>
+<p>Any instance of repeating default <em>must</em> be justified in a
+comment.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-6">Example</h4>
+<div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:not(:hover)</span> {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span> {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.dropdown</span><span class="in">:hover</span> {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="all-class-entities-besides-components-must-be-prefixed.">All
+class entities besides components <em>must</em> be prefixed.</h3>
+</header>
+<section>
+<h4 id="principles-8">Principles</h4>
+<ul>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-6">Notes</h4>
+<p>We propose this nomenclature of prefixes:</p>
+<ul>
+<li>
+<code class="sourceCode css">as-</code>: generic graphical
+form.</li>
+<li>
+<code class="sourceCode css">of-</code>: group of elements.</li>
+<li>
+<code class="sourceCode css">is-</code> interactive state of the
+system.</li>
+<li>
+<code class="sourceCode css">on-</code>: user interaction.</li>
+<li>
+<code class="sourceCode css">in-</code>: internal concept.</li>
+<li>
+<code class="sourceCode css">with-</code>: functional rule.</li>
+<li>
+<code class="sourceCode css">from-<span class="op">*</span>-to-</code>:
+adaptive patterns.</li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-7">Example</h4>
+<div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-circle</span> {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.in-ctn</span> {</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.circle</span> {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.ctn</span> {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="nesting-is-restricted-to-one-level-only.">Nesting is restricted
+to one level only.</h3>
+</header>
+<section>
+<h4 id="principles-9">Principles</h4>
+<ul>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-7">Notes</h4>
+<p>Nesting can encourage authoring on autopilot, without thinking about
+our selection intention. That’s one reason why we will ultimately write
+<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
+instead of <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
+fragilizing our CSS. One level of nesting should be enough almost all
+cases.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-8">Example</h4>
+<div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> header p {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> header {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> p {</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-specific-dimensions-should-be-avoided.">The use of
+specific dimensions should be avoided.</h3>
+</header>
+<section>
+<h4 id="principles-10">Principles</h4>
+<ul>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-8">Notes</h4>
+<p>The Web is fluid and authoring should embrace this fluidity. By
+choosing to limit dimensions of our components instead of dictating
+them, we delegate work to the browser, letting it do its job. Fixed
+dimensions should be only be applied to graphical elements like
+pictures, videos and icons.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-9">Example</h4>
+<div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="use-attribute-selectors-to-convey-unicity.">Use attribute
+selectors to convey unicity.</h3>
+</header>
+<section>
+<h4 id="principles-11">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-9">Notes</h4>
+<p>Ids convey meaning but their CSS selector is a specificity nightmare.
+Use attribute selector to keep the meaning (unicity!) while keeping
+specificiy at sane levels. Other use cases includes form controls &amp;
+inputs and js managed states (ie: <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-10">Example</h4>
+<div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="ss">id</span><span class="op">=</span><span class="st">"main"</span><span class="ex">]</span> {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#main</span> {</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-positioning-and-display-rules-should-minimized.">The
+use of positioning and display rules should minimized.</h3>
+</header>
+<section>
+<h4 id="principles-12">Principles</h4>
+<ul>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-10">Notes</h4>
+<p>Use these properties only on elements needing them. Use the narrowest
+selectors that makes sense in the context.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-11">Example</h4>
+<div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>header {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="overqualified-selectors-are-discouraged.">Overqualified
+selectors are discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-13">Principles</h4>
+<ul>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-11">Notes</h4>
+<p>Class entities should not be combined with tag selectors. Generic
+selectors can be used as a selection piece but not as qualifiers.
+Exceptionally, certain specific tags such as <code class="sourceCode css">html</code> or <code class="sourceCode css">body</code> could be used to restrict the
+application of a class entity.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-12">Example</h4>
+<div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>html<span class="fu">.is-loading</span> {</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">opacity</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>article<span class="fu">.card</span> {</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="components-cannot-exert-outside-influence.">Components cannot
+exert outside influence.</h3>
+</header>
+<section>
+<h4 id="principles-14">Principles</h4>
+<ul>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-12">Notes</h4>
+<p>Components are made to fit into “holes”. These holes are managed by
+another component or a higher-level utility (e.g. a grid or carousel).
+No component in this sense should incorporate margins. These are applied
+as a rhythm by a parent. Thus, the components are versatile and reusable
+in various contexts.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-13">Example</h4>
+<div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="overflow-should-not-be-hidden.">Overflow should not be
+hidden.</h3>
+</header>
+<section>
+<h4 id="principles-15">Principles</h4>
+<ul>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-13">Notes</h4>
+<p>By hiding the way browsers treat overflowing items, we may hide
+content without knowing. By using <code class="sourceCode css">auto</code> instead of <code class="sourceCode css">hidden</code>, the oveflowing content will be
+accessible <em>and</em> the scrollbar will signal the design problem
+instead of hiding it. Hiding scrollbars may be necessary in some
+particular composition (see this very site’s portrait adaptation for an
+example!).</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-14">Example</h4>
+<div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">50dvh</span><span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.container</span> {</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-height</span><span class="ch">:</span> <span class="dv">50dvh</span><span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="numbers-in-class-names-are-to-be-avoided.">Numbers in class
+names are to be avoided.</h3>
+</header>
+<section>
+<h4 id="principles-16">Principles</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-14">Notes</h4>
+<p>Numbers may convey intention in grid system cases as in, for example,
+<code class="sourceCode html">grid-10</code> or <code class="sourceCode html">col-3</code>. Still, the utility of these
+systems is low in modern CSS times. Leaving them aside is suggested.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-15">Example</h4>
+<div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card.as-featured</span> {</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.card-1</span> {</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="magic-numbers-must-be-avoided-or-explained-in-a-line-comment.">Magic
+numbers <em>must</em> be avoided or explained in a line comment.</h3>
+</header>
+<section>
+<h4 id="principles-17">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-15">Notes</h4>
+<p>Value and unit choices should be dictated by the graphic language and
+its design tokens. Absolute values in numerical form should be reserved
+to special cases like bespoke icon alignment or bullet list padding. The
+intention <em>must</em> be clear in itself or commented if not.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-16">Example</h4>
+<div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--line-tight</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="rhythm-must-be-applied-in-one-direction-only-preferably-top.">Rhythm
+<em>must</em> be applied in one direction only, preferably top.</h3>
+</header>
+<section>
+<h4 id="principles-18">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-16">Notes</h4>
+<p>Spacing is rhythm, a fundamental design concept. Rhythm occurs
+<em>between</em> graphical elements and should be applied as such in
+CSS. The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">lobotomized owl</a> selector (<em>+</em>) is tailor made
+for this task. When using a flex container, the <code class="sourceCode css">gap</code> property does it all for you!</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-17">Example</h4>
+<div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*</span> {</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-problematic-units-is-discouraged.">The use of
+problematic units is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-19">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-17">Notes</h4>
+<p>Static viewport units (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) are famously problematic,
+particularly when used as <code class="sourceCode css">100vh</code> or
+<code class="sourceCode css">100vw</code>. <a href="https://caniuse.com/viewport-unit-variants" target="_blank">Dynamic viewport units</a> are better suited for this
+task.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-18">Example</h4>
+<div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">100dvh</span><span class="op">;</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">vh</span><span class="op">;</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="tag-selectors-should-be-leveraged-inside-components.">Tag
+selectors should be leveraged inside components.</h3>
+</header>
+<section>
+<h4 id="principles-20">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-18">Notes</h4>
+<p>Components need to prescribe a certain HTML structure. Using said
+structure through intentional tag selectors is the best way to insure
+structural persistence, to keep specificity and complexity low and
+prevent naming fatigue. Why rename that which is already named?</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-19">Example</h4>
+<div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.card__header</span> {</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="one-entity-per-file-with-a-soft-cap-of-about-a-hundred-lines.">One
+entity per file with a soft cap of about a hundred lines.</h3>
+</header>
+<section>
+<h4 id="principles-21">Principles</h4>
+<ul>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#concept-manipulation">Concept manipulation</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-19">Notes</h4>
+<p>This is one of the most important rules for achieving sustainable
+CSS. One autonomous concept per file prevents the multiplication of
+overrides and redefinition across the codebase. It’s even easy to
+enforce with the <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">ECSS
+Stylelint config</a>.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-20">Example</h4>
+<div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* .metainfo.css */</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.metainfo</span> {</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="selectors-must-strictly-include-only-necessary-selection-parts.">Selectors
+<em>must</em> strictly include only necessary selection parts.</h3>
+</header>
+<section>
+<h4 id="principles-22">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-20">Notes</h4>
+<p>This mistake, being passed as “best practices”, is the source of many
+self-induced CSS headaches. Fortunately, the solution is simple: <em>do
+not use selection parts that you could remove without changing the
+original intention</em>.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-21">Example</h4>
+<div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> div p {</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="duplication-of-a-set-of-more-than-3-rules-is-discouraged.">Duplication
+of a set of more than 3 rules is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-23">Principles</h4>
+<ul>
+<li><a href="#rule-repetition">Rule repetition</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-21">Notes</h4>
+<p>Repeating a pattern instead of naming it and grouping its rules
+inside a unique declaration block is a classic CSS mistake. And it can
+be hard to find and target instances of this problem. Tools like PostCSS
+plugins can help by identifying repetition meeting a defined threshold
+throughout a codebase.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-22">Example</h4>
+<div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* button.css */</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.button</span> {</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* card.css */</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> a {</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> button {</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-the-global-scope-is-encouraged-for-all-fundamental-design-layers.">The
+use of the global scope is encouraged for all fundamental design
+layers.</h3>
+</header>
+<section>
+<h4 id="principles-24">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#global-scope">Global scope</a></li>
+<li><a href="#global-rules">Global rules</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-23">Example</h4>
+<div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* rhythm.css */</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>p<span class="op">+</span>p {</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">/* post.css */</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.post</span> p<span class="op">+</span>p {</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co">/* prose.css */</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.prose</span> p<span class="op">+</span>p {</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="html-structure-should-be-as-flat-as-possible-and-bereft-of-single-tag-nesting.">HTML
+structure should be as flat as possible and bereft of single tag
+nesting.</h3>
+</header>
+<section>
+<h4 id="principles-25">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-22">Notes</h4>
+<p>Sometimes it could make sense to add a div even if it’s the only
+child. The case of a content grid comes to mind. See this page’s source
+for an example.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-24">Example</h4>
+<div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do --&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">article</span><span class="dt">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Don't --&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">article</span><span class="dt">&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">article</span><span class="dt">&gt;</span></span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="specificity-must-be-kept-as-low-as-possible.">Specificity
+<em>must</em> be kept as low as possible.</h3>
+</header>
+<section>
+<h4 id="principles-26">Principles</h4>
+<ul>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#child-specificity">Child specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-23">Notes</h4>
+<p>Sometimes it makes sense to add specificity. But don’t do it until
+proven necessary.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-25">Example</h4>
+<div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Do */</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:where(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Don't */</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="in">:is(</span>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6<span class="in">)</span> {</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</aside>
+</div>
+</article>
+</section>
+<section>
+<h2 id="tools">Related tools</h2>
+<ul>
+<li>
+<a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">ECSS
+Stylelint config</a> (get live authoring tips!)</li>
+<li>
+<a href="https://github.com/efficientcss/scaffolding">Scaffolding
+&amp; code library</a> (use it… or not!)</li>
+<li>
+<a href="https://stylelint.io">Stylelint</a> (lint and inform)</li>
+<li>
+<a href="https://github.com/zmoazeni/csscss">CSSCSS</a> (find rule
+duplication in your codebase)</li>
+<li>
+<a href="https://github.com/purifycss/purifycss">PurifyCSS</a>, <a href="https://github.com/FullHuman/purgecss">PurgeCSS</a> or Chrome
+Coverage devtool</li>
+</ul>
+</section>
+</main>
+</body>
+</html>

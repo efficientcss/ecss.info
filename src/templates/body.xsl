@@ -3,6 +3,14 @@
 	<xsl:template match="*" mode="main-content">
 		<xsl:apply-templates/>
 	</xsl:template>
+
+	<xsl:template match="root[@lang='fr']" mode="noscript">
+		<p lang="fr">Le javascript est désactivé. Veuillez vous rendre <a href="full.html">ici</a> pour accéder au contenu complet.</p>
+	</xsl:template>
+	<xsl:template match="root[@lang='en']" mode="noscript">
+		<p lang="en">JavaScript is disabled. Please go <a href="full.html">here</a> to access the full content.</p>
+	</xsl:template>
+	
 	<xsl:template match="root" mode="body" name="body">
 		<link rel="stylesheet" href="../assets/css/4.regions/body.css"/>
 		<body>
@@ -36,6 +44,11 @@
 			</header>
 			<link rel="stylesheet" href="../assets/css/4.regions/main.css"/>
 			<main>
+				<xsl:if test="$script">
+					<noscript>
+						<xsl:apply-templates select="." mode="noscript"/>
+					</noscript>
+				</xsl:if>
 				<xsl:apply-templates mode="main-content" />
 			</main>
 		</body>

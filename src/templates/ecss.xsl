@@ -10,13 +10,12 @@
 			<xsl:apply-templates select="@*|node()" />
 		</xsl:copy>
 	</xsl:template>
-
+	<xsl:variable name="lang">
+		<xsl:value-of select="/root/@lang" />
+	</xsl:variable>
 
 	<!-- On démarre la machine -->
 	<xsl:template match="/">
-		<xsl:variable name="lang">
-			<xsl:value-of select="/root/@lang" />
-		</xsl:variable>
 		<html lang="{$lang}" class="side-nav-main-pile bottom-nav-sliding-content">
 		<head>
 			<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>

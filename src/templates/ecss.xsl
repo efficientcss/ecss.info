@@ -17,32 +17,32 @@
 	<!-- On démarre la machine -->
 	<xsl:template match="/">
 		<html lang="{$lang}" class="side-nav-main-pile bottom-nav-sliding-content">
-		<head>
-			<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>
-			<script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer=""></script>
-			<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
-			<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />
-			<link rel="preload" href="https://p.typekit.net" crossorigin="" />
+			<head>
+				<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>
+				<script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer=""></script>
+				<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
+				<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />
+				<link rel="preload" href="https://p.typekit.net" crossorigin="" />
 
-			<link rel="stylesheet" href="../assets/css/min.e.css" />
-			<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
-			<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
-			<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
+				<link rel="stylesheet" href="../assets/css/min.e.css" />
+				<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
+				<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
+				<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
 
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<meta charset="UTF-8" />
-			<xsl:choose>
-				<xsl:when test="$lang='en'">
-					<meta name="description" content="ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS." />
-					<title>ECSS — Simple Rules for efficient CSS</title>
-				</xsl:when>
-				<xsl:otherwise>
-					<meta name="description" content="ECSS établit des règles simples pour des styliser simplement. Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable." />
-					<title>ECSS — Des règles simples pour du CSS efficace</title>
-				</xsl:otherwise>
-			</xsl:choose>
-		</head>
-		<xsl:call-template name="body" />
-	</html>
-</xsl:template>
-		</xsl:stylesheet>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta charset="UTF-8" />
+				<xsl:choose>
+					<xsl:when test="$lang='en'">
+						<meta name="description" content="ECSS sets simple rules for simple styling. No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS." />
+						<title>ECSS — Simple Rules for efficient CSS</title>
+					</xsl:when>
+					<xsl:otherwise>
+						<meta name="description" content="ECSS établit des règles simples pour des styliser simplement. Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable." />
+						<title>ECSS — Des règles simples pour du CSS efficace</title>
+					</xsl:otherwise>
+				</xsl:choose>
+			</head>
+			<xsl:call-template name="body" />
+		</html>
+	</xsl:template>
+</xsl:stylesheet>

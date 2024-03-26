@@ -1131,7 +1131,7 @@ Value and unit choices should be dictated by the graphic language and its design
 <section>
 #### Notes
 
-Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphical elements and should be applied as such in CSS. The [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} selector (*+*) is tailor made for this task. When using a flex container, the `gap`{.css} property does it all for you!
+Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphical elements and should be applied as such in CSS. The [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} selector (`*+*`{.css}) is tailor made for this task. When using a flex container, the `gap`{.css} property does it all for you!
 
 </section>
 </div>

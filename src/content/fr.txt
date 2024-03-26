@@ -242,7 +242,7 @@ L'intention peut ne pas être claire au début du travail de stylisation. Au lie
 <article>
 ### Tout élément HTML ne doit assumer qu'un seul rôle.{#role-unique}
 
-Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{. html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille devrait être implémenté avec les balises `<div>`{.html}.
+Conformément à la célèbre [meilleure pratique](https://en.wikipedia.org/wiki/Single-responsibility_principle) de programmation (encore une fois, la programmation dans la conception), les balises sémantiques sont pour... la sémantique tandis que `<div>`{.html} ou `<span>`{.html} sont destinées à la division graphique ou logique. Tout type de grille devrait être implémenté avec les balises `<div>`{.html}.
 
 </article>
 
@@ -1139,7 +1139,7 @@ Les choix de valeurs et d'unités doivent être dictés par le langage graphique
 <section>
 #### Notes
 
-Espacer est rythmer, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (*+*) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
+Espacer est rythmer, un concept de design fondamental. Le rythme se produit *entre* les éléments graphiques et doit être appliqué comme tel en CSS. Le sélecteur [hibou lobotomisé](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} (`*+*`{.css}) est conçu sur mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la propriété `gap`{.css} fait tout pour vous !
 
 </section>
 </div>
@@ -1578,6 +1578,6 @@ Il est parfois judicieux d’augmenter la spécificité. Mais ne le faites pas a
 - [Config Stylelint pour ECSS](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss)
 - [Scaffolding &amp; code library](https://github.com/efficientcss/scaffolding)
 - [Stylelint](https://stylelint.io)
-- [CSSCSS](https://github.com/zmoazeni/csscss
+- [CSSCSS](https://github.com/zmoazeni/csscss)
 - [PurifyCSS](https://github.com/purifycss/purifycss), [PurgeCSS](https://github.com/FullHuman/purgecss) ou Chrome Coverage devtool
 </section>

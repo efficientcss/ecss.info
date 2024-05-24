@@ -2,9 +2,9 @@
 <header>
 <h2 class="as-visually-hidden">Introduction</h2>
 
-Avoiding common styling problems is simple. And you only need efficient CSS. Nothing more.
+Efficient CSS is all you need to avoid common styling problems. Nothing more, really.
 
-**ECSS sets simple rules for simple styling.** No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
+**ECSS sets simple rules for efficient styling.** No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
 
 </header>
 <div style="--DivItemBasis: 12rem;">
@@ -115,7 +115,7 @@ In practice it means being at the forefront of progress and evolution. No need t
 ## Guiding principles{#principles}
 
 <article>
-### CSS is a *designing* language, not a programming one.{#designing-language}
+### CSS is a *designing* language, not a scripting one.{#designing-language}
 
 CSS authoring should reflect *design* patterns, concepts and perspectives. With global (sorry) scales, tokens, rules, etc. you limit repetition and facilitate future styling extension.
 
@@ -828,7 +828,7 @@ Ids convey meaning but their CSS selector is a specificity nightmare. Use attrib
 <div>
 <div>
 <header>
-### The use of positioning and display rules should minimized.
+### The use of positioning and display rules should be minimized.
 </header>
 <section>
 #### Principles

@@ -2,9 +2,9 @@
 <header>
 <h2 class="as-visually-hidden">Introduction</h2>
 
-Éviter les problèmes de style courants est simple. Et vous n’avez besoin que de CSS efficace. Rien de plus.
+Écrire du CSS efficace est suffisant pour éviter les problèmes de stylistique courants. Vraiment.
 
-**ECSS établit des règles simples pour des styliser simplement.** Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable.
+**ECSS établit des règles simples pour des styliser efficacement.** Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, simple, expressif, prévisible et durable.
 
 </header>
 <div style="--DivItemBasis: 12rem;">
@@ -114,7 +114,7 @@ En pratique, cela signifie être à la fine pointe du progrès et de l’évolut
 ## Principes directeurs{#principes}
 
 <article>
-### CSS est un langage de *conception graphique*, pas un langage de programmation.{#langage-conception}
+### CSS est un langage de *conception graphique*, pas un langage de script.{#langage-conception}
 
 La création CSS doit refléter les modèles, les concepts et les perspectives de *conception graphique*. Avec des échelles globales (désolé), des « tokens », des règles, etc., vous limitez la répétition et facilitez l'extension future de vos styles graphiques.
 

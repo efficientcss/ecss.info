@@ -3,7 +3,17 @@
 	html { font-family: var(--BaseFontStack, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"); }
 
 	/* Adaptation of the typography ----------------------- */
-	@media (max-width: 60em) { :root { --Scale: var(--MajorSecond); } }
+	@media (max-width: 60em) { 
+		:root { 
+			--Scale: var(--MajorSecond); 
+		} 
+
+		main>div>header p:last-of-type,
+		main h2+p:only-of-type {
+			--LineHeightFactor: 1.25;
+		}
+
+	}
 	@media (min-width: 60em) { :root { --Scale: var(--MinorThird); } }
 
 

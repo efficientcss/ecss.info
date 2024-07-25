@@ -33,7 +33,7 @@ pre > code.sourceCode > span {
 	line-height: 1;
 }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; font-family: "input-mono-narrow", monospace; }
+.sourceCode { overflow: visible; font-family: "Input Mono Narrow", "Droid Sans Mono", "Menlo", "IBM Plex Mono", "Fira Code", monospace; }
 /* code.sourceCode > span { color: inherit; text-decoration: inherit; } */
 
 div.sourceCode { 

@@ -20,14 +20,10 @@
 			<head>
 				<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>
 				<script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer=""></script>
-				<link rel="preconnect" href="https://use.typekit.net" crossorigin="" />
-				<link rel="preconnect" href="https://p.typekit.net" crossorigin="" />
-				<link rel="preload" href="https://p.typekit.net" crossorigin="" />
 
 				<link rel="stylesheet" href="../assets/css/min.e.css" />
 				<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />
 				<link rel="stylesheet" media="(orientation:portrait)" href="../assets/css/5.compositions/bottom-nav-sliding-content.css" />
-				<link rel="stylesheet" href="https://use.typekit.net/qly6uoc.css" />
 
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta charset="UTF-8" />

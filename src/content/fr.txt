@@ -350,7 +350,7 @@ Pour exclure un fichier de cette règle dans la configuration **Stylelint**, pr�
 <div>
 <div>
 <header>
-### Tous les dégagements devraient d'abord être uniformes, puis ajustés si nécessaire.
+### Tous les dégagements devraient d'abord être uniformes, puis ajustés si nécessaire. {#degagement-irregulier}
 </header>
 
 <section>
@@ -362,7 +362,7 @@ Pour exclure un fichier de cette règle dans la configuration **Stylelint**, pr�
 <section>
 #### Notes
 
-Des dégagements non uniformes peuvent être utilisés dans des cas particuliers pour des raisons de débordement `overflow`{.css} ou pour ajouter un pseudo-contenu.
+Des dégagements non uniformes peuvent être utilisés dans des cas particuliers pour des raisons de débordement `overflow`{.css} ou pour ajouter un pseudo-contenu. Si ces raisons sont absentes, il pourrait être préférable d'utiliser les marges pour créer ces espacements.
 
 </section>
 
@@ -396,7 +396,7 @@ Des dégagements non uniformes peuvent être utilisés dans des cas particuliers
 <div>
 <div>
 <header>
-### Les dégagements doivent être appliqués uniquement aux éléments conteneurs et interactifs.
+### Les dégagements doivent être appliqués uniquement aux éléments conteneurs et interactifs.{#degagement-contenu}
 </header>
 <section>
 #### Principes
@@ -442,7 +442,7 @@ Les éléments de texte ne doivent héberger que des styles de texte, tandis que
 <div>
 <div>
 <header>
-### Les marges horizontales ne devraient pas être appliquées aux éléments de texte.
+### Les marges horizontales ne devraient pas être appliquées aux éléments de texte.{#marges-contenu}
 </header>
 <section>
 #### Principes
@@ -488,13 +488,19 @@ Des marges horizontales peuvent être appliquées aux éléments de texte dans l
 <div>
 <div>
 <header>
-### Les éléments typographiques doivent utiliser l'héritage lorsque cela est possible.
+### Les éléments typographiques doivent utiliser l'héritage lorsque cela est possible.{#heritage-texte}
 </header>
 <section>
 #### Principes
 
 - [Rôle spécifique](#role-specifique)
 - [Portée globale](#portee-globale)
+</section>
+<section>
+#### Notes
+
+L'héritage permet une stylistique de haut niveau. Avec peu de code, on ratisse large tout limitant la spécificité au minimum.
+
 </section>
 </div>
 <aside>
@@ -527,7 +533,7 @@ p {
 <div>
 <div>
 <header>
-### Le langage graphique devrait être utilisé pour la plupart des valeurs numériques.
+### Le langage graphique devrait être utilisé pour la plupart des valeurs numériques.{#variables-design}
 </header>
 <section>
 #### Principes
@@ -560,6 +566,73 @@ Les valeurs numériques ne doivent être utilisées que pour des alignements exc
 .card {
     padding: 20px;
 }
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### Les propriétés « conjointes » devraient être rassemblées grâce à l'imbrication.{#proprietes-conjointes}
+</header>
+<section>
+#### Principes
+
+- [Intention du sélecteur](#intention-selecteur)
+- [Structure du composant](#structure-composant)
+- [Fonction du sélecteur](#fonction-selecteur)
+</section>
+
+<section>
+#### Notes
+
+Certaines propriétés nécessitent d'être conjointes à d'autres, à l'aide d'une structure précise, pour être fonctionnelles. Il est important garder cette relation claire et explicite. L'imbrication remplit simplement ce rôle.
+
+</section>
+</div>
+<aside>
+#### Exemple {.as-visually-hidden}
+
+<div>
+```css
+/* Correct */
+.flex-module {
+    display: flex;
+
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
+
+    & > * {
+        flex-basis: 40ch;
+    }
+}
+```
+
+```css
+/* Incorrect */
+.flex-module {
+    display: flex;
+}
+
+/* ... */
+
+.unrelated-selector {
+    flex-basis: 40ch;
+}
+
+@media (orientation: portrait) {
+    .flex-module {
+        flex-direction: column;
+    }
+}
+
 ```
 </div>
 </aside>
@@ -622,7 +695,7 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 <div>
 <div>
 <header>
-### Toutes les entités de classe outre les composants *doivent* être préfixées.
+### Toutes les entités de classe outre les composants *doivent* être préfixées.{#entites-prefixees}
 </header>
 <section>
 #### Principes
@@ -632,9 +705,10 @@ Tout cas de répétition d'un défaut *doit* être justifié dans un commentaire
 - [Fonction du sélecteur](#fonction-selecteur)
 - [Autonomie des concepts](#concept-autonome)
 </section>
-
 <section>
 #### Notes
+
+La modification de composantes et entités à travers la base de code, d'un fichier à un autre, est la plus grande source d'imprévisibilité (et probablement de frustration) du développement CSS. En forçant l'usage de préfixes explicites et exclusifs, le CSS devient substantiellement plus prévisible, expressif et robuste.
 
 Nous proposons cette nomenclature de prefixes :
 
@@ -642,7 +716,8 @@ Nous proposons cette nomenclature de prefixes :
 - `of-`{.css} : groupe d'éléments.
 - `is-`{.css} état interactif du système.
 - `on-`{.css} : interaction de l'usager.
-- `in-`{.css} : concept interne.
+- `to-`{.css} : rôle fonctionnel.
+- `__`{.css} : entité interne.
 - `with-`{.css} : règle fonctionnelle.
 - `from-*-to-`{.css} : patrons adaptatifs.
 
@@ -650,6 +725,7 @@ Nous proposons cette nomenclature de prefixes :
 </div>
 <aside>
 #### Exemple {.as-visually-hidden}
+
 <div>
 ```css
 /* Correct */
@@ -657,9 +733,18 @@ Nous proposons cette nomenclature de prefixes :
     width: 20px;
 }
 
-.card .in-ctn {
+.card .__ctn {
     display: grid;
 }
+
+button.to-toggle-nav {
+    appearance: none;
+}
+
+.with-background-color-black {
+    background-color: black;
+}
+
 ```
 
 ```css
@@ -670,6 +755,10 @@ Nous proposons cette nomenclature de prefixes :
 
 .card .ctn {
     display: grid;
+}
+
+.bg-dark {
+    background-color: black;
 }
 ```
 </div>
@@ -684,7 +773,72 @@ Nous proposons cette nomenclature de prefixes :
 <div>
 <div>
 <header>
-### L'imbrication est limitée à un seul niveau.
+### Les sélecteurs imbriqués doivent commencer par `&`{.css}.{#selecteurs-imbriques}
+</header>
+<section>
+#### Principes
+
+- [Fonction du sélecteur](#fonction-selecteur)
+
+</section>
+<section>
+#### Notes
+
+L'usage du `&` dans la sélection rend l'imbrication explicite et prévient les erreurs de compréhension dues à de longues imbrications.
+
+</section>
+</div>
+<aside>
+#### Exemple {.as-visually-hidden}
+<div>
+```css
+/* Correct */
+.sidebar-layout {
+    display: grid;
+
+    &>main {
+        grid-column: 1 / 3;
+    }
+
+    /* ... */
+
+    &>footer {
+        grid-column: 1 / 4;
+    }
+}
+
+```
+
+```css
+/* Incorrect */
+.sidebar-layout {
+    display: grid;
+
+    main {
+        grid-column: 1 / 3;
+    }
+
+    /* ... */
+
+    footer {
+        grid-column: 1 / 4;
+    }
+}
+
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### L'imbrication est limitée à deux niveaux.{#niveau-imbrication}
 </header>
 <section>
 #### Principes
@@ -743,7 +897,7 @@ L'imbrication peut encourager le développement en mode « pilote automatique 
 <div>
 <div>
 <header>
-### L'utilisation de dimensions spécifiques doit être évitée.
+### L'utilisation de dimensions spécifiques doit être évitée.{#dimensions-specifiques}
 </header>
 <section>
 #### Principes
@@ -882,7 +1036,7 @@ header {
 <div>
 <div>
 <header>
-### Les sélecteurs surqualifiés sont déconseillés.
+### Les sélecteurs surqualifiés sont déconseillés.{#selecteurs-surqualifies}
 </header>
 <section>
 #### Principes
@@ -931,7 +1085,7 @@ article.card {
 <div>
 <div>
 <header>
-### Les composants ne peuvent pas exercer d'influence extérieure.
+### Les composants ne peuvent pas exercer d'influence extérieure.{#composants-exterieur}
 </header>
 <section>
 #### Principes
@@ -978,7 +1132,7 @@ Les composants sont faits pour être insérés dans des « trous ». Ces trous
 <div>
 <div>
 <header>
-### Le débordement ne doit pas être masqué.
+### Le débordement ne doit pas être masqué.{#debordement-masque}
 </header>
 <section>
 #### Principes
@@ -1025,18 +1179,20 @@ En masquant la façon dont les navigateurs traitent les éléments débordants, 
 <div>
 <div>
 <header>
-### Les nombres dans les noms de classes sont à éviter.
+### Les chiffres dans les noms de classes sont à éviter.{#chiffres-classes}
 </header>
 <section>
+
 #### Principes
 
+- [Attendre avant de nommer](#comprendre-concept)
 - [Intention du sélecteur](#intention-selecteur)
-</section>
 
+</section>
 <section>
 #### Notes
 
-Les nombres peuvent transmettre une intention dans les cas de système de grille comme, par exemple, `grid-10`{.html} ou `col-3`{.html}. Néanmoins, l’utilité de ces systèmes est faible à l’époque moderne du CSS. Il est suggéré de les laisser de côté.
+Ajouter un chiffre à une classe démontre une pauvre compréhension de son rôle et ne communique aucune intention claire. Demandez-vous pourquoi vous devez ajouter un chiffre et utilisez la réponse pour nommer explicitement votre classe. Si vous devez utiliser la structure pour styliser certains éléments, utilisez plutôt les pseudo-classes pertinentes.
 
 </section>
 </div>
@@ -1055,6 +1211,14 @@ Les nombres peuvent transmettre une intention dans les cas de système de grille
     color: red;
     font-size: 20px;
 }
+
+.image:nth-child(2) {
+    margin-left: 20px;
+}
+
+:nth-child(2 of .image) {
+    margin-left: 20px;
+}
 ```
 
 ```css
@@ -1067,6 +1231,10 @@ Les nombres peuvent transmettre une intention dans les cas de système de grille
 .card-1 {
     color: red;
     font-size: 20px;
+}
+
+.image2 {
+    margin-left: 20px;
 }
 ```
 </div>
@@ -1081,7 +1249,7 @@ Les nombres peuvent transmettre une intention dans les cas de système de grille
 <div>
 <div>
 <header>
-### Les nombres magiques *doivent* être évités ou expliqués dans un commentaire de ligne.
+### Les nombres magiques *doivent* être évités ou expliqués dans un commentaire de ligne.{#nombres-magiques}
 </header>
 <section>
 #### Principes
@@ -1320,7 +1488,7 @@ C’est l’une des règles les plus importantes pour parvenir à un CSS durable
 <div>
 <div>
 <header>
-### Les sélecteurs *doivent* inclure strictement et uniquement les éléments de sélection nécessaires.
+### Les sélecteurs *doivent* inclure strictement et uniquement les éléments de sélection nécessaires.{#selecteurs-necessaires}
 </header>
 <section>
 #### Principes
@@ -1530,7 +1698,7 @@ Parfois, il peut être judicieux d'ajouter un `div`{.html} même s'il s'agit du 
 <div>
 <div>
 <header>
-### La spécificité *doit* être maintenue aussi faible que possible.
+### La spécificité *doit* être maintenue aussi faible que possible.{#specificite-selecteur}
 </header>
 <section>
 #### Principes

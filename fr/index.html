@@ -395,9 +395,8 @@ ou “x-” comme dans “x-quarantine.css”.</p>
 <div>
 <div>
 <header>
-<h3 id="tous-les-dégagements-devraient-dabord-être-uniformes-puis-ajustés-si-nécessaire.">Tous
-les dégagements devraient d’abord être uniformes, puis ajustés si
-nécessaire.</h3>
+<h3 id="degagement-irregulier">Tous les dégagements devraient d’abord
+être uniformes, puis ajustés si nécessaire.</h3>
 </header>
 <section>
 <h4 id="principes-2">Principes</h4>
@@ -409,7 +408,8 @@ nécessaire.</h3>
 <h4 id="notes-1">Notes</h4>
 <p>Des dégagements non uniformes peuvent être utilisés dans des cas
 particuliers pour des raisons de débordement <code class="sourceCode css">overflow</code> ou pour ajouter un
-pseudo-contenu.</p>
+pseudo-contenu. Si ces raisons sont absentes, il pourrait être
+préférable d’utiliser les marges pour créer ces espacements.</p>
 </section>
 </div>
 <aside>
@@ -426,9 +426,8 @@ pseudo-contenu.</p>
 <div>
 <div>
 <header>
-<h3 id="les-dégagements-doivent-être-appliqués-uniquement-aux-éléments-conteneurs-et-interactifs.">Les
-dégagements doivent être appliqués uniquement aux éléments conteneurs et
-interactifs.</h3>
+<h3 id="degagement-contenu">Les dégagements doivent être appliqués
+uniquement aux éléments conteneurs et interactifs.</h3>
 </header>
 <section>
 <h4 id="principes-3">Principes</h4>
@@ -458,9 +457,8 @@ de texte dont les enfants hériteront.</p>
 <div>
 <div>
 <header>
-<h3 id="les-marges-horizontales-ne-devraient-pas-être-appliquées-aux-éléments-de-texte.">Les
-marges horizontales ne devraient pas être appliquées aux éléments de
-texte.</h3>
+<h3 id="marges-contenu">Les marges horizontales ne devraient pas être
+appliquées aux éléments de texte.</h3>
 </header>
 <section>
 <h4 id="principes-4">Principes</h4>
@@ -490,9 +488,8 @@ et sur des éléments en retrait comme <code class="sourceCode html">blockquote<
 <div>
 <div>
 <header>
-<h3 id="les-éléments-typographiques-doivent-utiliser-lhéritage-lorsque-cela-est-possible.">Les
-éléments typographiques doivent utiliser l’héritage lorsque cela est
-possible.</h3>
+<h3 id="heritage-texte">Les éléments typographiques doivent utiliser
+l’héritage lorsque cela est possible.</h3>
 </header>
 <section>
 <h4 id="principes-5">Principes</h4>
@@ -500,6 +497,11 @@ possible.</h3>
 <li><a href="#role-specifique">Rôle spécifique</a></li>
 <li><a href="#portee-globale">Portée globale</a></li>
 </ul>
+</section>
+<section>
+<h4 id="notes-4">Notes</h4>
+<p>L’héritage permet une stylistique de haut niveau. Avec peu de code,
+on ratisse large tout limitant la spécificité au minimum.</p>
 </section>
 </div>
 <aside>
@@ -516,9 +518,8 @@ possible.</h3>
 <div>
 <div>
 <header>
-<h3 id="le-langage-graphique-devrait-être-utilisé-pour-la-plupart-des-valeurs-numériques.">Le
-langage graphique devrait être utilisé pour la plupart des valeurs
-numériques.</h3>
+<h3 id="variables-design">Le langage graphique devrait être utilisé pour
+la plupart des valeurs numériques.</h3>
 </header>
 <section>
 <h4 id="principes-6">Principes</h4>
@@ -529,7 +530,7 @@ numériques.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-4">Notes</h4>
+<h4 id="notes-5">Notes</h4>
 <p>Les valeurs numériques ne doivent être utilisées que pour des
 alignements exceptionnels. Ceux-ci doivent être commentés pour
 communiquer l’intention. Même dans ce cas, pourquoi ne pas créer une
@@ -550,20 +551,23 @@ propriété personnalisée portant un nom significatif ?</p>
 <div>
 <div>
 <header>
-<h3 id="la-répétition-des-règles-par-défaut-est-déconseillée.">La
-répétition des règles par défaut est déconseillée.</h3>
+<h3 id="proprietes-conjointes">Les propriétés « conjointes » devraient
+être rassemblées grâce à l’imbrication.</h3>
 </header>
 <section>
 <h4 id="principes-7">Principes</h4>
 <ul>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#structure-composant">Structure du composant</a></li>
 <li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-5">Notes</h4>
-<p>Tout cas de répétition d’un défaut <em>doit</em> être justifié dans
-un commentaire.</p>
+<h4 id="notes-6">Notes</h4>
+<p>Certaines propriétés nécessitent d’être conjointes à d’autres, à
+l’aide d’une structure précise, pour être fonctionnelles. Il est
+important garder cette relation claire et explicite. L’imbrication
+remplit simplement ce rôle.</p>
 </section>
 </div>
 <aside>
@@ -580,43 +584,20 @@ un commentaire.</p>
 <div>
 <div>
 <header>
-<h3 id="toutes-les-entités-de-classe-outre-les-composants-doivent-être-préfixées.">Toutes
-les entités de classe outre les composants <em>doivent</em> être
-préfixées.</h3>
+<h3 id="la-répétition-des-règles-par-défaut-est-déconseillée.">La
+répétition des règles par défaut est déconseillée.</h3>
 </header>
 <section>
 <h4 id="principes-8">Principes</h4>
 <ul>
-<li><a href="#concept-enfant">Concepts enfant</a></li>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 <li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
-<li><a href="#concept-autonome">Autonomie des concepts</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-6">Notes</h4>
-<p>Nous proposons cette nomenclature de prefixes :</p>
-<ul>
-<li>
-<code class="sourceCode css">as-</code> : forme graphique
-générique.</li>
-<li>
-<code class="sourceCode css">of-</code> : groupe d’éléments.</li>
-<li>
-<code class="sourceCode css">is-</code> état interactif du
-système.</li>
-<li>
-<code class="sourceCode css">on-</code> : interaction de
-l’usager.</li>
-<li>
-<code class="sourceCode css">in-</code> : concept interne.</li>
-<li>
-<code class="sourceCode css">with-</code> : règle
-fonctionnelle.</li>
-<li>
-<code class="sourceCode css">from-<span class="op">*</span>-to-</code> :
-patrons adaptatifs.</li>
-</ul>
+<h4 id="notes-7">Notes</h4>
+<p>Tout cas de répétition d’un défaut <em>doit</em> être justifié dans
+un commentaire.</p>
 </section>
 </div>
 <aside>
@@ -633,24 +614,49 @@ patrons adaptatifs.</li>
 <div>
 <div>
 <header>
-<h3 id="limbrication-est-limitée-à-un-seul-niveau.">L’imbrication est
-limitée à un seul niveau.</h3>
+<h3 id="entites-prefixees">Toutes les entités de classe outre les
+composants <em>doivent</em> être préfixées.</h3>
 </header>
 <section>
 <h4 id="principes-9">Principes</h4>
 <ul>
 <li><a href="#concept-enfant">Concepts enfant</a></li>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-7">Notes</h4>
-<p>L’imbrication peut encourager le développement en mode « pilote
-automatique », sans réfléchir à notre intention de sélection. C’est
-l’une des raisons pour lesquelles, ultimement, nous écrirons <code class="sourceCode css"><span class="fu">.card</span> div h2</code> au
-lieu de <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
-fragilisant notre CSS. Un seul niveau d’imbrication devrait suffire dans
-presque tous les cas.</p>
+<h4 id="notes-8">Notes</h4>
+<p>La modification de composantes et entités à travers la base de code,
+d’un fichier à un autre, est la plus grande source d’imprévisibilité (et
+probablement de frustration) du développement CSS. En forçant l’usage de
+préfixes explicites et exclusifs, le CSS devient substantiellement plus
+prévisible, expressif et robuste.</p>
+<p>Nous proposons cette nomenclature de prefixes :</p>
+<ul>
+<li>
+<code class="sourceCode css">as-</code> : forme graphique
+générique.</li>
+<li>
+<code class="sourceCode css">of-</code> : groupe d’éléments.</li>
+<li>
+<code class="sourceCode css">is-</code> état interactif du
+système.</li>
+<li>
+<code class="sourceCode css">on-</code> : interaction de
+l’usager.</li>
+<li>
+<code class="sourceCode css">to-</code> : rôle fonctionnel.</li>
+<li>
+<code class="sourceCode css">__</code> : entité interne.</li>
+<li>
+<code class="sourceCode css">with-</code> : règle
+fonctionnelle.</li>
+<li>
+<code class="sourceCode css">from-<span class="op">*</span>-to-</code> :
+patrons adaptatifs.</li>
+</ul>
 </section>
 </div>
 <aside>
@@ -667,24 +673,20 @@ presque tous les cas.</p>
 <div>
 <div>
 <header>
-<h3 id="lutilisation-de-dimensions-spécifiques-doit-être-évitée.">L’utilisation
-de dimensions spécifiques doit être évitée.</h3>
+<h3 id="selecteurs-imbriques">Les sélecteurs imbriqués doivent commencer
+par <code class="sourceCode css"><span class="op">&amp;</span></code>.</h3>
 </header>
 <section>
 <h4 id="principes-10">Principes</h4>
 <ul>
-<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
-<li><a href="#role-specifique">Rôle spécifique</a></li>
-<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
+<li><a href="#fonction-selecteur">Fonction du sélecteur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-8">Notes</h4>
-<p>Le Web est fluide et la création CSS devrait adopter cette fluidité.
-En choisissant de limiter les dimensions de nos composants au lieu de
-les dicter, nous déléguons au navigateur, le laissant faire son travail.
-Les dimensions fixes ne devraient être appliquées qu’aux éléments
-graphiques tels que les images, les vidéos et les icônes.</p>
+<h4 id="notes-9">Notes</h4>
+<p>L’usage du <code>&amp;</code> dans la sélection rend l’imbrication
+explicite et prévient les erreurs de compréhension dues à de longues
+imbrications.</p>
 </section>
 </div>
 <aside>
@@ -701,25 +703,24 @@ graphiques tels que les images, les vidéos et les icônes.</p>
 <div>
 <div>
 <header>
-<h3 id="utilisez-des-sélecteurs-dattributs-pour-communiquer-lunicité.">Utilisez
-des sélecteurs d’attributs pour communiquer l’unicité.</h3>
+<h3 id="niveau-imbrication">L’imbrication est limitée à deux
+niveaux.</h3>
 </header>
 <section>
 <h4 id="principes-11">Principes</h4>
 <ul>
+<li><a href="#concept-enfant">Concepts enfant</a></li>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
-<li><a href="#role-specifique">Rôle spécifique</a></li>
-<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-9">Notes</h4>
-<p>Les identifiants <code>id</code> véhiculent du sens mais leur
-sélecteur CSS est un cauchemar de spécificité. Utilisez le sélecteur
-d’attribut pour conserver le sens (unicité !) tout en gardant la
-spécificité à des niveaux raisonnables. D’autres cas d’utilisation
-incluent les contrôles et champs de formulaire et les états gérés par le
-js (p. ex. <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
+<h4 id="notes-10">Notes</h4>
+<p>L’imbrication peut encourager le développement en mode « pilote
+automatique », sans réfléchir à notre intention de sélection. C’est
+l’une des raisons pour lesquelles, ultimement, nous écrirons <code class="sourceCode css"><span class="fu">.card</span> div h2</code> au
+lieu de <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
+fragilisant notre CSS. Un seul niveau d’imbrication devrait suffire dans
+presque tous les cas.</p>
 </section>
 </div>
 <aside>
@@ -736,21 +737,24 @@ js (p. ex. <code class="sourceCode css"><span class="ex">[</span><span class="s
 <div>
 <div>
 <header>
-<h3 id="lutilisation-de-règles-de-positionnement-et-daffichage-doit-être-minimisée.">L’utilisation
-de règles de positionnement et d’affichage doit être minimisée.</h3>
+<h3 id="dimensions-specifiques">L’utilisation de dimensions spécifiques
+doit être évitée.</h3>
 </header>
 <section>
 <h4 id="principes-12">Principes</h4>
 <ul>
 <li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
 <li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-10">Notes</h4>
-<p>Utilisez ces propriétés uniquement sur les éléments qui en ont
-besoin. Utilisez les sélecteurs les plus étroits qui ont du sens dans le
-contexte.</p>
+<h4 id="notes-11">Notes</h4>
+<p>Le Web est fluide et la création CSS devrait adopter cette fluidité.
+En choisissant de limiter les dimensions de nos composants au lieu de
+les dicter, nous déléguons au navigateur, le laissant faire son travail.
+Les dimensions fixes ne devraient être appliquées qu’aux éléments
+graphiques tels que les images, les vidéos et les icônes.</p>
 </section>
 </div>
 <aside>
@@ -767,23 +771,25 @@ contexte.</p>
 <div>
 <div>
 <header>
-<h3 id="les-sélecteurs-surqualifiés-sont-déconseillés.">Les sélecteurs
-surqualifiés sont déconseillés.</h3>
+<h3 id="utilisez-des-sélecteurs-dattributs-pour-communiquer-lunicité.">Utilisez
+des sélecteurs d’attributs pour communiquer l’unicité.</h3>
 </header>
 <section>
 <h4 id="principes-13">Principes</h4>
 <ul>
-<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
 <li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-11">Notes</h4>
-<p>Les entités de classe ne devraient pas être combinées à des
-sélecteurs de balises. Les sélecteurs génériques peuvent être utilisés
-comme morceau de sélection mais pas comme qualificatifs.
-Exceptionnellement, certaines balises à usage spécifique comme <code class="sourceCode css">html</code> ou <code class="sourceCode css">body</code> pourraient être utilisées pour
-restreindre l’application d’une entité de classe.</p>
+<h4 id="notes-12">Notes</h4>
+<p>Les identifiants <code>id</code> véhiculent du sens mais leur
+sélecteur CSS est un cauchemar de spécificité. Utilisez le sélecteur
+d’attribut pour conserver le sens (unicité !) tout en gardant la
+spécificité à des niveaux raisonnables. D’autres cas d’utilisation
+incluent les contrôles et champs de formulaire et les états gérés par le
+js (p. ex. <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
 </section>
 </div>
 <aside>
@@ -800,25 +806,21 @@ restreindre l’application d’une entité de classe.</p>
 <div>
 <div>
 <header>
-<h3 id="les-composants-ne-peuvent-pas-exercer-dinfluence-extérieure.">Les
-composants ne peuvent pas exercer d’influence extérieure.</h3>
+<h3 id="lutilisation-de-règles-de-positionnement-et-daffichage-doit-être-minimisée.">L’utilisation
+de règles de positionnement et d’affichage doit être minimisée.</h3>
 </header>
 <section>
 <h4 id="principes-14">Principes</h4>
 <ul>
-<li><a href="#concept-autonome">Autonomie des concepts</a></li>
 <li><a href="#proprietes-inegales">Propriétés inégales</a></li>
-<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-12">Notes</h4>
-<p>Les composants sont faits pour être insérés dans des « trous ». Ces
-trous sont gérés par un autre composant ou un utilitaire de plus haut
-niveau (p. ex. une grille ou un carrousel). Aucun composant en ce sens
-ne devrait incorporer de marges. Celles-ci sont appliquées en tant que
-rythme par un parent. Ainsi, les composants sont polyvalents et
-réutilisables en divers contextes.</p>
+<h4 id="notes-13">Notes</h4>
+<p>Utilisez ces propriétés uniquement sur les éléments qui en ont
+besoin. Utilisez les sélecteurs les plus étroits qui ont du sens dans le
+contexte.</p>
 </section>
 </div>
 <aside>
@@ -835,25 +837,23 @@ réutilisables en divers contextes.</p>
 <div>
 <div>
 <header>
-<h3 id="le-débordement-ne-doit-pas-être-masqué.">Le débordement ne doit
-pas être masqué.</h3>
+<h3 id="selecteurs-surqualifies">Les sélecteurs surqualifiés sont
+déconseillés.</h3>
 </header>
 <section>
 <h4 id="principes-15">Principes</h4>
 <ul>
-<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
-<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-13">Notes</h4>
-<p>En masquant la façon dont les navigateurs traitent les éléments
-débordants, nous pouvons masquer du contenu sans le savoir. En utilisant
-<code class="sourceCode css">auto</code> au lieu de <code class="sourceCode css">hidden</code>, le contenu débordant sera
-accessible <em>et</em> la barre de défilement signalera le problème de
-conception au lieu de le masquer. Masquer les barres de défilement peut
-être nécessaire dans certaines compositions particulières (voir
-l’adaptation portrait de ce même site pour un exemple !).</p>
+<h4 id="notes-14">Notes</h4>
+<p>Les entités de classe ne devraient pas être combinées à des
+sélecteurs de balises. Les sélecteurs génériques peuvent être utilisés
+comme morceau de sélection mais pas comme qualificatifs.
+Exceptionnellement, certaines balises à usage spécifique comme <code class="sourceCode css">html</code> ou <code class="sourceCode css">body</code> pourraient être utilisées pour
+restreindre l’application d’une entité de classe.</p>
 </section>
 </div>
 <aside>
@@ -870,21 +870,25 @@ l’adaptation portrait de ce même site pour un exemple !).</p>
 <div>
 <div>
 <header>
-<h3 id="les-nombres-dans-les-noms-de-classes-sont-à-éviter.">Les nombres
-dans les noms de classes sont à éviter.</h3>
+<h3 id="composants-exterieur">Les composants ne peuvent pas exercer
+d’influence extérieure.</h3>
 </header>
 <section>
 <h4 id="principes-16">Principes</h4>
 <ul>
-<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-14">Notes</h4>
-<p>Les nombres peuvent transmettre une intention dans les cas de système
-de grille comme, par exemple, <code class="sourceCode html">grid-10</code> ou <code class="sourceCode html">col-3</code>. Néanmoins, l’utilité de ces
-systèmes est faible à l’époque moderne du CSS. Il est suggéré de les
-laisser de côté.</p>
+<h4 id="notes-15">Notes</h4>
+<p>Les composants sont faits pour être insérés dans des « trous ». Ces
+trous sont gérés par un autre composant ou un utilitaire de plus haut
+niveau (p. ex. une grille ou un carrousel). Aucun composant en ce sens
+ne devrait incorporer de marges. Celles-ci sont appliquées en tant que
+rythme par un parent. Ainsi, les composants sont polyvalents et
+réutilisables en divers contextes.</p>
 </section>
 </div>
 <aside>
@@ -901,26 +905,24 @@ laisser de côté.</p>
 <div>
 <div>
 <header>
-<h3 id="les-nombres-magiques-doivent-être-évités-ou-expliqués-dans-un-commentaire-de-ligne.">Les
-nombres magiques <em>doivent</em> être évités ou expliqués dans un
-commentaire de ligne.</h3>
+<h3 id="debordement-masque">Le débordement ne doit pas être masqué.</h3>
 </header>
 <section>
 <h4 id="principes-17">Principes</h4>
 <ul>
-<li><a href="#langage-conception">Langage de conception</a></li>
-<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
-<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#rendu-navigateur">Profiter du navigateur</a></li>
+<li><a href="#proprietes-inegales">Propriétés inégales</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-15">Notes</h4>
-<p>Les choix de valeurs et d’unités doivent être dictés par le langage
-graphique et ses jetons de conception. Les valeurs absolues sous forme
-numérique doivent être réservées à des cas particuliers tels que
-l’alignement d’icônes sur mesure ou le dégagement d’une liste à puces.
-L’intention <em>doit</em> être claire en elle-même ou commentée
-sinon.</p>
+<h4 id="notes-16">Notes</h4>
+<p>En masquant la façon dont les navigateurs traitent les éléments
+débordants, nous pouvons masquer du contenu sans le savoir. En utilisant
+<code class="sourceCode css">auto</code> au lieu de <code class="sourceCode css">hidden</code>, le contenu débordant sera
+accessible <em>et</em> la barre de défilement signalera le problème de
+conception au lieu de le masquer. Masquer les barres de défilement peut
+être nécessaire dans certaines compositions particulières (voir
+l’adaptation portrait de ce même site pour un exemple !).</p>
 </section>
 </div>
 <aside>
@@ -937,25 +939,24 @@ sinon.</p>
 <div>
 <div>
 <header>
-<h3 id="le-rythme-doit-être-appliqué-dans-une-seule-direction-de-préférence-vers-le-haut.">Le
-rythme <em>doit</em> être appliqué dans une seule direction, de
-préférence vers le haut.</h3>
+<h3 id="chiffres-classes">Les chiffres dans les noms de classes sont à
+éviter.</h3>
 </header>
 <section>
 <h4 id="principes-18">Principes</h4>
 <ul>
-<li><a href="#langage-conception">Langage de conception</a></li>
-<li><a href="#role-specifique">Rôle spécifique</a></li>
+<li><a href="#comprendre-concept">Attendre avant de nommer</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-16">Notes</h4>
-<p>Espacer est rythmer, un concept de design fondamental. Le rythme se
-produit <em>entre</em> les éléments graphiques et doit être appliqué
-comme tel en CSS. Le sélecteur <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">hibou lobotomisé</a> (<code class="sourceCode css"><span class="op">*+*</span></code>) est conçu sur
-mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la
-propriété <code class="sourceCode css">gap</code> fait tout pour
-vous !</p>
+<h4 id="notes-17">Notes</h4>
+<p>Ajouter un chiffre à une classe démontre une pauvre compréhension de
+son rôle et ne communique aucune intention claire. Demandez-vous
+pourquoi vous devez ajouter un chiffre et utilisez la réponse pour
+nommer explicitement votre classe. Si vous devez utiliser la structure
+pour styliser certains éléments, utilisez plutôt les pseudo-classes
+pertinentes.</p>
 </section>
 </div>
 <aside>
@@ -972,20 +973,25 @@ vous !</p>
 <div>
 <div>
 <header>
-<h3 id="lutilisation-dunités-problématiques-est-déconseillée.">L’utilisation
-d’unités problématiques est déconseillée.</h3>
+<h3 id="nombres-magiques">Les nombres magiques <em>doivent</em> être
+évités ou expliqués dans un commentaire de ligne.</h3>
 </header>
 <section>
 <h4 id="principes-19">Principes</h4>
 <ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
 <li><a href="#role-specifique">Rôle spécifique</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-17">Notes</h4>
-<p>Les unités de fenêtre d’affichage statiques (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) sont notoirement problématiques, en
-particulier lorsqu’elles sont utilisées comme <code class="sourceCode css">100vh</code> ou <code class="sourceCode css">100vw</code>. Les <a href="https://caniuse.com/viewport-unit-variants" target="_blank">unités
-dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
+<h4 id="notes-18">Notes</h4>
+<p>Les choix de valeurs et d’unités doivent être dictés par le langage
+graphique et ses jetons de conception. Les valeurs absolues sous forme
+numérique doivent être réservées à des cas particuliers tels que
+l’alignement d’icônes sur mesure ou le dégagement d’une liste à puces.
+L’intention <em>doit</em> être claire en elle-même ou commentée
+sinon.</p>
 </section>
 </div>
 <aside>
@@ -997,29 +1003,30 @@ dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
 </aside>
 </div>
 </article>
+<hr>
 <article>
 <div>
 <div>
 <header>
-<h3 id="les-sélecteurs-de-balises-doivent-être-exploités-à-lintérieur-des-composants.">Les
-sélecteurs de balises doivent être exploités à l’intérieur des
-composants.</h3>
+<h3 id="le-rythme-doit-être-appliqué-dans-une-seule-direction-de-préférence-vers-le-haut.">Le
+rythme <em>doit</em> être appliqué dans une seule direction, de
+préférence vers le haut.</h3>
 </header>
 <section>
 <h4 id="principes-20">Principes</h4>
 <ul>
-<li><a href="#structure-composant">Structure du composant</a></li>
-<li><a href="#html-expressif">HTML expressif</a></li>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-18">Notes</h4>
-<p>Les composants doivent prescrire une certaine structure HTML.
-L’utilisation de cette structure via des sélecteurs de balises
-intentionnels est le meilleur moyen d’assurer la persistance
-structurelle, de maintenir la spécificité et la complexité à un niveau
-faible et d’éviter de se fatiguer à force de tout nommer. Pourquoi
-renommer ce qui est déjà nommé ?</p>
+<h4 id="notes-19">Notes</h4>
+<p>Espacer est rythmer, un concept de design fondamental. Le rythme se
+produit <em>entre</em> les éléments graphiques et doit être appliqué
+comme tel en CSS. Le sélecteur <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">hibou lobotomisé</a> (<code class="sourceCode css"><span class="op">*+*</span></code>) est conçu sur
+mesure pour cette tâche. Lorsque vous utilisez un conteneur flexible, la
+propriété <code class="sourceCode css">gap</code> fait tout pour
+vous !</p>
 </section>
 </div>
 <aside>
@@ -1036,23 +1043,20 @@ renommer ce qui est déjà nommé ?</p>
 <div>
 <div>
 <header>
-<h3 id="une-entité-par-fichier-avec-une-limite-souple-dune-centaine-de-lignes.">Une
-entité par fichier avec une limite souple d’une centaine de lignes.</h3>
+<h3 id="lutilisation-dunités-problématiques-est-déconseillée.">L’utilisation
+d’unités problématiques est déconseillée.</h3>
 </header>
 <section>
 <h4 id="principes-21">Principes</h4>
 <ul>
-<li><a href="#concept-autonome">Autonomie des concepts</a></li>
-<li><a href="#manipulation-concept">Manipulation de concept</a></li>
+<li><a href="#role-specifique">Rôle spécifique</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-19">Notes</h4>
-<p>C’est l’une des règles les plus importantes pour parvenir à un CSS
-durable. Un concept autonome par fichier évite la multiplication des
-surcharges et redéfinitions de propriétés dans la base de code. C’est
-même facile à appliquer avec la <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">configuration
-ECSS Stylelint</a>.</p>
+<h4 id="notes-20">Notes</h4>
+<p>Les unités de fenêtre d’affichage statiques (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) sont notoirement problématiques, en
+particulier lorsqu’elles sont utilisées comme <code class="sourceCode css">100vh</code> ou <code class="sourceCode css">100vw</code>. Les <a href="https://caniuse.com/viewport-unit-variants" target="_blank">unités
+dynamiques de fenêtre</a> sont mieux adaptées à cette tâche.</p>
 </section>
 </div>
 <aside>
@@ -1064,30 +1068,29 @@ ECSS Stylelint</a>.</p>
 </aside>
 </div>
 </article>
-<hr>
 <article>
 <div>
 <div>
 <header>
-<h3 id="les-sélecteurs-doivent-inclure-strictement-et-uniquement-les-éléments-de-sélection-nécessaires.">Les
-sélecteurs <em>doivent</em> inclure strictement et uniquement les
-éléments de sélection nécessaires.</h3>
+<h3 id="les-sélecteurs-de-balises-doivent-être-exploités-à-lintérieur-des-composants.">Les
+sélecteurs de balises doivent être exploités à l’intérieur des
+composants.</h3>
 </header>
 <section>
 <h4 id="principes-22">Principes</h4>
 <ul>
 <li><a href="#structure-composant">Structure du composant</a></li>
-<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
-<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+<li><a href="#html-expressif">HTML expressif</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-20">Notes</h4>
-<p>Cette erreur, considérée à tort comme une « meilleure pratique », est
-à l’origine de nombreux maux de tête CSS dont nous sommes nous-mêmes
-responsables. Heureusement, la solution est simple : <em>n’utilisez pas
-d’éléments de sélection que vous pourriez supprimer sans changer
-l’intention initiale</em>.</p>
+<h4 id="notes-21">Notes</h4>
+<p>Les composants doivent prescrire une certaine structure HTML.
+L’utilisation de cette structure via des sélecteurs de balises
+intentionnels est le meilleur moyen d’assurer la persistance
+structurelle, de maintenir la spécificité et la complexité à un niveau
+faible et d’éviter de se fatiguer à force de tout nommer. Pourquoi
+renommer ce qui est déjà nommé ?</p>
 </section>
 </div>
 <aside>
@@ -1104,24 +1107,23 @@ l’intention initiale</em>.</p>
 <div>
 <div>
 <header>
-<h3 id="la-duplication-dun-ensemble-de-plus-de-3-règles-est-déconseillée.">La
-duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
+<h3 id="une-entité-par-fichier-avec-une-limite-souple-dune-centaine-de-lignes.">Une
+entité par fichier avec une limite souple d’une centaine de lignes.</h3>
 </header>
 <section>
 <h4 id="principes-23">Principes</h4>
 <ul>
-<li><a href="#repetition-regles">Répétition de règles</a></li>
 <li><a href="#concept-autonome">Autonomie des concepts</a></li>
+<li><a href="#manipulation-concept">Manipulation de concept</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-21">Notes</h4>
-<p>Répéter un patron au lieu de le nommer et de regrouper ses règles
-dans un ensemble de règles unique est une erreur CSS classique. Et il
-peut être difficile de trouver et de cibler les instances de ce
-problème. Des outils tels que les plugins PostCSS peuvent aider en
-identifiant les répétitions atteignant un seuil défini dans une base de
-code.</p>
+<h4 id="notes-22">Notes</h4>
+<p>C’est l’une des règles les plus importantes pour parvenir à un CSS
+durable. Un concept autonome par fichier évite la multiplication des
+surcharges et redéfinitions de propriétés dans la base de code. C’est
+même facile à appliquer avec la <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">configuration
+ECSS Stylelint</a>.</p>
 </section>
 </div>
 <aside>
@@ -1138,19 +1140,24 @@ code.</p>
 <div>
 <div>
 <header>
-<h3 id="lutilisation-de-la-portée-globale-est-encouragée-pour-toutes-les-couches-de-conception-fondamentales.">L’utilisation
-de la portée globale est encouragée pour toutes les couches de
-conception fondamentales.</h3>
+<h3 id="selecteurs-necessaires">Les sélecteurs <em>doivent</em> inclure
+strictement et uniquement les éléments de sélection nécessaires.</h3>
 </header>
 <section>
 <h4 id="principes-24">Principes</h4>
 <ul>
-<li><a href="#langage-conception">Langage de conception</a></li>
-<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
-<li><a href="#portee-globale">Portée globale</a></li>
-<li><a href="#regles-globales">Règles globales</a></li>
+<li><a href="#structure-composant">Structure du composant</a></li>
+<li><a href="#intention-selecteur">Intention du sélecteur</a></li>
 <li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
 </ul>
+</section>
+<section>
+<h4 id="notes-23">Notes</h4>
+<p>Cette erreur, considérée à tort comme une « meilleure pratique », est
+à l’origine de nombreux maux de tête CSS dont nous sommes nous-mêmes
+responsables. Heureusement, la solution est simple : <em>n’utilisez pas
+d’éléments de sélection que vous pourriez supprimer sans changer
+l’intention initiale</em>.</p>
 </section>
 </div>
 <aside>
@@ -1167,22 +1174,24 @@ conception fondamentales.</h3>
 <div>
 <div>
 <header>
-<h3 id="la-structure-html-doit-être-aussi-plate-que-possible-et-dépourvue-dimbrication-de-balises-uniques.">La
-structure HTML doit être aussi plate que possible et dépourvue
-d’imbrication de balises uniques.</h3>
+<h3 id="la-duplication-dun-ensemble-de-plus-de-3-règles-est-déconseillée.">La
+duplication d’un ensemble de plus de 3 règles est déconseillée.</h3>
 </header>
 <section>
 <h4 id="principes-25">Principes</h4>
 <ul>
-<li><a href="#structure-composant">Structure du composant</a></li>
-<li><a href="#html-expressif">HTML expressif</a></li>
+<li><a href="#repetition-regles">Répétition de règles</a></li>
+<li><a href="#concept-autonome">Autonomie des concepts</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-22">Notes</h4>
-<p>Parfois, il peut être judicieux d’ajouter un <code class="sourceCode html">div</code> même s’il s’agit du seul enfant. Le
-cas d’une grille de contenu vient à l’esprit. Voir la source de cette
-page pour un exemple.</p>
+<h4 id="notes-24">Notes</h4>
+<p>Répéter un patron au lieu de le nommer et de regrouper ses règles
+dans un ensemble de règles unique est une erreur CSS classique. Et il
+peut être difficile de trouver et de cibler les instances de ce
+problème. Des outils tels que les plugins PostCSS peuvent aider en
+identifiant les répétitions atteignant un seuil défini dans une base de
+code.</p>
 </section>
 </div>
 <aside>
@@ -1195,25 +1204,23 @@ page pour un exemple.</p>
 </div>
 </article>
 <hr>
-<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
 <article>
 <div>
 <div>
 <header>
-<h3 id="la-spécificité-doit-être-maintenue-aussi-faible-que-possible.">La
-spécificité <em>doit</em> être maintenue aussi faible que possible.</h3>
+<h3 id="lutilisation-de-la-portée-globale-est-encouragée-pour-toutes-les-couches-de-conception-fondamentales.">L’utilisation
+de la portée globale est encouragée pour toutes les couches de
+conception fondamentales.</h3>
 </header>
 <section>
 <h4 id="principes-26">Principes</h4>
 <ul>
+<li><a href="#langage-conception">Langage de conception</a></li>
+<li><a href="#concepteurs-autonomes">Autonomie de la conception</a></li>
+<li><a href="#portee-globale">Portée globale</a></li>
+<li><a href="#regles-globales">Règles globales</a></li>
 <li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
-<li><a href="#enfant-specificite">Spécificité des enfants</a></li>
 </ul>
-</section>
-<section>
-<h4 id="notes-23">Notes</h4>
-<p>Il est parfois judicieux d’augmenter la spécificité. Mais ne le
-faites pas avant que cela ne soit prouvé nécessaire.</p>
 </section>
 </div>
 <aside>
@@ -1221,6 +1228,69 @@ faites pas avant que cela ne soit prouvé nécessaire.</p>
 <div>
 <div class="sourceCode" id="cb51" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb51" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb52" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb52" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="la-structure-html-doit-être-aussi-plate-que-possible-et-dépourvue-dimbrication-de-balises-uniques.">La
+structure HTML doit être aussi plate que possible et dépourvue
+d’imbrication de balises uniques.</h3>
+</header>
+<section>
+<h4 id="principes-27">Principes</h4>
+<ul>
+<li><a href="#structure-composant">Structure du composant</a></li>
+<li><a href="#html-expressif">HTML expressif</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-25">Notes</h4>
+<p>Parfois, il peut être judicieux d’ajouter un <code class="sourceCode html">div</code> même s’il s’agit du seul enfant. Le
+cas d’une grille de contenu vient à l’esprit. Voir la source de cette
+page pour un exemple.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="exemple-26">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb53" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb53" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb54" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb54" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<!-- ### Rulesets should be auto-sufficient and avoid implicit but necessary rules. (see #11, #12) -->
+<article>
+<div>
+<div>
+<header>
+<h3 id="specificite-selecteur">La spécificité <em>doit</em> être
+maintenue aussi faible que possible.</h3>
+</header>
+<section>
+<h4 id="principes-28">Principes</h4>
+<ul>
+<li><a href="#exploiter-specificite">Exploiter la spécificité</a></li>
+<li><a href="#enfant-specificite">Spécificité des enfants</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-26">Notes</h4>
+<p>Il est parfois judicieux d’augmenter la spécificité. Mais ne le
+faites pas avant que cela ne soit prouvé nécessaire.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="exemple-27">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb55" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb55" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb56" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb56" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>

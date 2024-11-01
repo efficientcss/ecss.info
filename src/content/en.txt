@@ -351,7 +351,7 @@ To exclude a file from this rule in the **Stylelint** config, prefix the filenam
 <div>
 <div>
 <header>
-### All paddings should first be uniform and then be adjusted if necessary.
+### All paddings should first be uniform and then be adjusted if necessary.{#padding-irregular}
 </header>
 
 <section>
@@ -363,7 +363,7 @@ To exclude a file from this rule in the **Stylelint** config, prefix the filenam
 <section>
 #### Notes
 
-Non-uniform paddings may be used in particular instances for `overflow`{.css} reasons or for added pseudo-content.
+Non-uniform paddings may be used in particular instances for `overflow`{.css} reasons or for added pseudo-content. Without these reasons, non-uniform spacing may be better created with margins.
 
 </section>
 
@@ -397,7 +397,7 @@ Non-uniform paddings may be used in particular instances for `overflow`{.css} re
 <div>
 <div>
 <header>
-### Paddings are to be applied on containing and interactive elements only.
+### Paddings are to be applied on containing and interactive elements only.{#content-padding}
 </header>
 <section>
 #### Principles
@@ -443,7 +443,7 @@ Text elements should only host text styles while container elements can host the
 <div>
 <div>
 <header>
-### Horizontal margins should not be applied to text elements.
+### Horizontal margins should not be applied to text elements.{#content-margin}
 </header>
 <section>
 #### Principles
@@ -489,13 +489,19 @@ Horizontal margins can be applied to text elements in the case of `inline`{.css}
 <div>
 <div>
 <header>
-### Typographic elements should use inheritance when possible.
+### Typographic elements should use inheritance when possible.{#type-inheritance}
 </header>
 <section>
 #### Principles
 
 - [Specific roles and usage](#specific-role)
 - [Global scope](#global-scope)
+</section>
+<section>
+#### Notes
+
+Inheritance allows for high-level styling. With little code, we cast a wide net while limiting specificity to a minimum.
+
 </section>
 </div>
 <aside>
@@ -528,7 +534,7 @@ p {
 <div>
 <div>
 <header>
-### Design tokens should be used for most numerical values.
+### Design tokens should be used for most numerical values.{#design-tokens}
 </header>
 <section>
 #### Principles
@@ -561,6 +567,74 @@ Numerical values should only be used for exceptional alignments. These should be
 .card {
     padding: 20px;
 }
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### Conjoined properties should be kept together using nesting.{#conjoined-properties}
+</header>
+<section>
+#### Principes
+
+- [Selector intention](#selector-intention)
+- [Selector function](#selector-function)
+- [Component structure](#component-structure)
+
+</section>
+
+<section>
+#### Notes
+
+Certain properties need to be joined to others, using a precise structure, to be functional. It is important to keep this relationship clear and explicit. Nesting simply fulfills this role.
+
+</section>
+</div>
+<aside>
+#### Exemple {.as-visually-hidden}
+
+<div>
+```css
+/* Correct */
+.flex-module {
+    display: flex;
+
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
+
+    & > * {
+        flex-basis: 40ch;
+    }
+}
+```
+
+```css
+/* Incorrect */
+.flex-module {
+    display: flex;
+}
+
+/* ... */
+
+.unrelated-selector {
+    flex-basis: 40ch;
+}
+
+@media (orientation: portrait) {
+    .flex-module {
+        flex-direction: column;
+    }
+}
+
 ```
 </div>
 </aside>
@@ -623,7 +697,7 @@ Any instance of repeating default *must* be justified in a comment.
 <div>
 <div>
 <header>
-### All class entities besides components *must* be prefixed.
+### All class entities besides components *must* be prefixed.{#prefixed-entities}
 </header>
 <section>
 #### Principles
@@ -637,13 +711,16 @@ Any instance of repeating default *must* be justified in a comment.
 <section>
 #### Notes
 
+Modifying components and entities across the code base, from one file to another, is the greatest source of unpredictability (and probably frustration) in CSS development. By forcing the use of explicit and exclusive prefixes, CSS becomes substantially more predictable, expressive and robust.
+
 We propose this nomenclature of prefixes:
 
-- `as-`{.css}: generic graphical form.
+- `as-`{.css}: generic graphic form.
 - `of-`{.css}: group of elements.
 - `is-`{.css} interactive state of the system.
 - `on-`{.css}: user interaction.
-- `in-`{.css}: internal concept.
+- `to-`{.css}: functional role.
+- `__`{.css}: internal entity.
 - `with-`{.css}: functional rule.
 - `from-*-to-`{.css}: adaptive patterns.
 
@@ -653,24 +730,36 @@ We propose this nomenclature of prefixes:
 #### Example {.as-visually-hidden}
 <div>
 ```css
-/* Do */
+/* Correct */
 .card.as-circle {
     width: 20px;
 }
 
-.card .in-ctn {
+.card .__ctn {
     display: grid;
+}
+
+button.to-toggle-nav {
+    appearance: none;
+}
+
+.with-background-color-black {
+    background-color: black;
 }
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card.circle {
     width: 20px;
 }
 
 .card .ctn {
     display: grid;
+}
+
+.bg-dark {
+    background-color: black;
 }
 ```
 </div>
@@ -685,7 +774,72 @@ We propose this nomenclature of prefixes:
 <div>
 <div>
 <header>
-### Nesting is restricted to one level only.
+### Nested selectors must start with `&`{.css}.{#nested-selectors}
+</header>
+<section>
+#### Principes
+
+- [Selector function](#selector-function)
+
+</section>
+<section>
+#### Notes
+
+The use of `&` in the selection makes the nesting explicit and prevents comprehension errors due to long nestings.
+
+</section>
+</div>
+<aside>
+#### Exemple {.as-visually-hidden}
+<div>
+```css
+/* Correct */
+.sidebar-layout {
+    display: grid;
+
+    &>main {
+        grid-column: 1 / 3;
+    }
+
+    /* ... */
+
+    &>footer {
+        grid-column: 1 / 4;
+    }
+}
+
+```
+
+```css
+/* Incorrect */
+.sidebar-layout {
+    display: grid;
+
+    main {
+        grid-column: 1 / 3;
+    }
+
+    /* ... */
+
+    footer {
+        grid-column: 1 / 4;
+    }
+}
+
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### Nesting is restricted to one level only.{#nesting-level}
 </header>
 <section>
 #### Principles
@@ -736,7 +890,7 @@ Nesting can encourage authoring on autopilot, without thinking about our selecti
 <div>
 <div>
 <header>
-### The use of specific dimensions should be avoided.
+### The use of specific sizes should be avoided.{#specific-sizes}
 </header>
 <section>
 #### Principles
@@ -873,7 +1027,7 @@ header {
 <div>
 <div>
 <header>
-### Overqualified selectors are discouraged.
+### Overqualified selectors are discouraged.{#overqualified-selectors}
 </header>
 <section>
 #### Principles
@@ -922,7 +1076,7 @@ article.card {
 <div>
 <div>
 <header>
-### Components cannot exert outside influence.
+### Components cannot exert outside influence.{#component-outside}
 </header>
 <section>
 #### Principles
@@ -970,7 +1124,7 @@ Components are made to fit into “holes”. These holes are managed by another 
 <div>
 <div>
 <header>
-### Overflow should not be hidden.
+### Overflow should not be hidden.{#overflow-hidden}
 </header>
 <section>
 #### Principles
@@ -1017,27 +1171,29 @@ By hiding the way browsers treat overflowing items, we may hide content without 
 <div>
 <div>
 <header>
-### Numbers in class names are to be avoided.
+### Numbers in class names are to be avoided.{#numbered-classes}
 </header>
 <section>
+
 #### Principles
 
+- [Wait before naming](#understood-concept)
 - [Selector intention](#selector-intention)
-</section>
 
+</section>
 <section>
 #### Notes
 
-Numbers may convey intention in grid system cases as in, for example, `grid-10`{.html} or `col-3`{.html}. Still, the utility of these systems is low in modern CSS times. Leaving them aside is suggested.
+Adding a number to a class demonstrates a poor understanding of its role and communicates no clear intent. Ask yourself why you need to add a number and use the answer to explicitly name your class. If you need to use the structure to style certain elements, use the relevant pseudo-classes instead.
 
 </section>
 </div>
 <aside>
-#### Example {.as-visually-hidden}
+#### Exemple {.as-visually-hidden}
 
 <div>
 ```css
-/* Do */
+/* Correct */
 .card {
     color: grey;
     font-size: 18px;
@@ -1047,10 +1203,18 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
     color: red;
     font-size: 20px;
 }
+
+.image:nth-child(2) {
+    margin-left: 20px;
+}
+
+:nth-child(2 of .image) {
+    margin-left: 20px;
+}
 ```
 
 ```css
-/* Don't */
+/* Incorrect */
 .card {
     color: grey;
     font-size: 18px;
@@ -1059,6 +1223,10 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
 .card-1 {
     color: red;
     font-size: 20px;
+}
+
+.image2 {
+    margin-left: 20px;
 }
 ```
 </div>
@@ -1073,7 +1241,7 @@ Numbers may convey intention in grid system cases as in, for example, `grid-10`{
 <div>
 <div>
 <header>
-### Magic numbers *must* be avoided or explained in a line comment.
+### Magic numbers *must* be avoided or explained in a line comment.{#magic-numbers}
 </header>
 <section>
 #### Principles
@@ -1314,7 +1482,7 @@ This is one of the most important rules for achieving sustainable CSS. One auton
 <div>
 <div>
 <header>
-### Selectors *must* strictly include only necessary selection parts.
+### Selectors *must* strictly include only necessary selection parts.{#selector-parts}
 </header>
 <section>
 #### Principles
@@ -1525,7 +1693,7 @@ Sometimes it could make sense to add a div even if it's the only child. The case
 <div>
 <div>
 <header>
-### Specificity *must* be kept as low as possible.
+### Specificity *must* be kept as low as possible.{#selector-specificity}
 </header>
 <section>
 #### Principles

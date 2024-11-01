@@ -365,8 +365,8 @@ config, prefix the filename with a digit or “x-” as in
 <div>
 <div>
 <header>
-<h3 id="all-paddings-should-first-be-uniform-and-then-be-adjusted-if-necessary.">All
-paddings should first be uniform and then be adjusted if necessary.</h3>
+<h3 id="padding-irregular">All paddings should first be uniform and then
+be adjusted if necessary.</h3>
 </header>
 <section>
 <h4 id="principles-2">Principles</h4>
@@ -377,7 +377,8 @@ paddings should first be uniform and then be adjusted if necessary.</h3>
 <section>
 <h4 id="notes-1">Notes</h4>
 <p>Non-uniform paddings may be used in particular instances for <code class="sourceCode css">overflow</code> reasons or for added
-pseudo-content.</p>
+pseudo-content. Without these reasons, non-uniform spacing may be better
+created with margins.</p>
 </section>
 </div>
 <aside>
@@ -394,8 +395,8 @@ pseudo-content.</p>
 <div>
 <div>
 <header>
-<h3 id="paddings-are-to-be-applied-on-containing-and-interactive-elements-only.">Paddings
-are to be applied on containing and interactive elements only.</h3>
+<h3 id="content-padding">Paddings are to be applied on containing and
+interactive elements only.</h3>
 </header>
 <section>
 <h4 id="principles-3">Principles</h4>
@@ -424,8 +425,8 @@ host text styles to be inherited by children.</p>
 <div>
 <div>
 <header>
-<h3 id="horizontal-margins-should-not-be-applied-to-text-elements.">Horizontal
-margins should not be applied to text elements.</h3>
+<h3 id="content-margin">Horizontal margins should not be applied to text
+elements.</h3>
 </header>
 <section>
 <h4 id="principles-4">Principles</h4>
@@ -455,8 +456,8 @@ tags &amp; on indented elements like <code class="sourceCode html">blockquote</c
 <div>
 <div>
 <header>
-<h3 id="typographic-elements-should-use-inheritance-when-possible.">Typographic
-elements should use inheritance when possible.</h3>
+<h3 id="type-inheritance">Typographic elements should use inheritance
+when possible.</h3>
 </header>
 <section>
 <h4 id="principles-5">Principles</h4>
@@ -464,6 +465,11 @@ elements should use inheritance when possible.</h3>
 <li><a href="#specific-role">Specific roles and usage</a></li>
 <li><a href="#global-scope">Global scope</a></li>
 </ul>
+</section>
+<section>
+<h4 id="notes-4">Notes</h4>
+<p>Inheritance allows for high-level styling. With little code, we cast
+a wide net while limiting specificity to a minimum.</p>
 </section>
 </div>
 <aside>
@@ -480,8 +486,8 @@ elements should use inheritance when possible.</h3>
 <div>
 <div>
 <header>
-<h3 id="design-tokens-should-be-used-for-most-numerical-values.">Design
-tokens should be used for most numerical values.</h3>
+<h3 id="design-tokens">Design tokens should be used for most numerical
+values.</h3>
 </header>
 <section>
 <h4 id="principles-6">Principles</h4>
@@ -492,7 +498,7 @@ tokens should be used for most numerical values.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-4">Notes</h4>
+<h4 id="notes-5">Notes</h4>
 <p>Numerical values should only be used for exceptional alignments.
 These should be commented to communicate the intent. Even then, why not
 create a bespoke property meaningfully named?</p>
@@ -503,6 +509,38 @@ create a bespoke property meaningfully named?</p>
 <div>
 <div class="sourceCode" id="cb11" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb11" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb12" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb12" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="conjoined-properties">Conjoined properties should be kept
+together using nesting.</h3>
+</header>
+<section>
+<h4 id="principes">Principes</h4>
+<ul>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+<li><a href="#component-structure">Component structure</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-6">Notes</h4>
+<p>Certain properties need to be joined to others, using a precise
+structure, to be functional. It is important to keep this relationship
+clear and explicit. Nesting simply fulfills this role.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="exemple">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb13" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb13" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb14" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb14" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -523,63 +561,13 @@ is discouraged.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-5">Notes</h4>
+<h4 id="notes-7">Notes</h4>
 <p>Any instance of repeating default <em>must</em> be justified in a
 comment.</p>
 </section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="example-6">Example</h4>
-<div>
-<div class="sourceCode" id="cb13" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb13" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb14" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb14" data-hx-trigger="intersect once"></div>
-</div>
-</aside>
-</div>
-</article>
-<hr>
-<article>
-<div>
-<div>
-<header>
-<h3 id="all-class-entities-besides-components-must-be-prefixed.">All
-class entities besides components <em>must</em> be prefixed.</h3>
-</header>
-<section>
-<h4 id="principles-8">Principles</h4>
-<ul>
-<li><a href="#child-concepts">Child concepts</a></li>
-<li><a href="#selector-intention">Selector intention</a></li>
-<li><a href="#selector-function">Selector function</a></li>
-<li><a href="#autonomous-concept">Autonomous concepts</a></li>
-</ul>
-</section>
-<section>
-<h4 id="notes-6">Notes</h4>
-<p>We propose this nomenclature of prefixes:</p>
-<ul>
-<li>
-<code class="sourceCode css">as-</code>: generic graphical
-form.</li>
-<li>
-<code class="sourceCode css">of-</code>: group of elements.</li>
-<li>
-<code class="sourceCode css">is-</code> interactive state of the
-system.</li>
-<li>
-<code class="sourceCode css">on-</code>: user interaction.</li>
-<li>
-<code class="sourceCode css">in-</code>: internal concept.</li>
-<li>
-<code class="sourceCode css">with-</code>: functional rule.</li>
-<li>
-<code class="sourceCode css">from-<span class="op">*</span>-to-</code>:
-adaptive patterns.</li>
-</ul>
-</section>
-</div>
-<aside>
-<h4 class="as-visually-hidden" id="example-7">Example</h4>
 <div>
 <div class="sourceCode" id="cb15" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb15" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb16" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb16" data-hx-trigger="intersect once"></div>
@@ -592,28 +580,50 @@ adaptive patterns.</li>
 <div>
 <div>
 <header>
-<h3 id="nesting-is-restricted-to-one-level-only.">Nesting is restricted
-to one level only.</h3>
+<h3 id="prefixed-entities">All class entities besides components
+<em>must</em> be prefixed.</h3>
 </header>
 <section>
-<h4 id="principles-9">Principles</h4>
+<h4 id="principles-8">Principles</h4>
 <ul>
 <li><a href="#child-concepts">Child concepts</a></li>
 <li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#selector-function">Selector function</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-7">Notes</h4>
-<p>Nesting can encourage authoring on autopilot, without thinking about
-our selection intention. That’s one reason why we will ultimately write
-<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
-instead of <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
-fragilizing our CSS. One level of nesting should be enough almost all
-cases.</p>
+<h4 id="notes-8">Notes</h4>
+<p>Modifying components and entities across the code base, from one file
+to another, is the greatest source of unpredictability (and probably
+frustration) in CSS development. By forcing the use of explicit and
+exclusive prefixes, CSS becomes substantially more predictable,
+expressive and robust.</p>
+<p>We propose this nomenclature of prefixes:</p>
+<ul>
+<li>
+<code class="sourceCode css">as-</code>: generic graphic form.</li>
+<li>
+<code class="sourceCode css">of-</code>: group of elements.</li>
+<li>
+<code class="sourceCode css">is-</code> interactive state of the
+system.</li>
+<li>
+<code class="sourceCode css">on-</code>: user interaction.</li>
+<li>
+<code class="sourceCode css">to-</code>: functional role.</li>
+<li>
+<code class="sourceCode css">__</code>: internal entity.</li>
+<li>
+<code class="sourceCode css">with-</code>: functional rule.</li>
+<li>
+<code class="sourceCode css">from-<span class="op">*</span>-to-</code>:
+adaptive patterns.</li>
+</ul>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-8">Example</h4>
+<h4 class="as-visually-hidden" id="example-7">Example</h4>
 <div>
 <div class="sourceCode" id="cb17" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb17" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb18" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb18" data-hx-trigger="intersect once"></div>
@@ -626,8 +636,69 @@ cases.</p>
 <div>
 <div>
 <header>
-<h3 id="the-use-of-specific-dimensions-should-be-avoided.">The use of
-specific dimensions should be avoided.</h3>
+<h3 id="nested-selectors">Nested selectors must start with <code class="sourceCode css"><span class="op">&amp;</span></code>.</h3>
+</header>
+<section>
+<h4 id="principes-1">Principes</h4>
+<ul>
+<li><a href="#selector-function">Selector function</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-9">Notes</h4>
+<p>The use of <code>&amp;</code> in the selection makes the nesting
+explicit and prevents comprehension errors due to long nestings.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="exemple-1">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb19" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb19" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb20" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb20" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="nesting-level">Nesting is restricted to one level only.</h3>
+</header>
+<section>
+<h4 id="principles-9">Principles</h4>
+<ul>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-10">Notes</h4>
+<p>Nesting can encourage authoring on autopilot, without thinking about
+our selection intention. That’s one reason why we will ultimately write
+<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
+instead of <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
+fragilizing our CSS. One level of nesting should be enough almost all
+cases.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-8">Example</h4>
+<div>
+<div class="sourceCode" id="cb21" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb21" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb22" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb22" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="specific-sizes">The use of specific sizes should be
+avoided.</h3>
 </header>
 <section>
 <h4 id="principles-10">Principles</h4>
@@ -638,7 +709,7 @@ specific dimensions should be avoided.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-8">Notes</h4>
+<h4 id="notes-11">Notes</h4>
 <p>The Web is fluid and authoring should embrace this fluidity. By
 choosing to limit dimensions of our components instead of dictating
 them, we delegate work to the browser, letting it do its job. Fixed
@@ -649,8 +720,8 @@ pictures, videos and icons.</p>
 <aside>
 <h4 class="as-visually-hidden" id="example-9">Example</h4>
 <div>
-<div class="sourceCode" id="cb19" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb19" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb20" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb20" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb23" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb23" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb24" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb24" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -672,7 +743,7 @@ selectors to convey unicity.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-9">Notes</h4>
+<h4 id="notes-12">Notes</h4>
 <p>Ids convey meaning but their CSS selector is a specificity nightmare.
 Use attribute selector to keep the meaning (unicity!) while keeping
 specificiy at sane levels. Other use cases includes form controls &amp;
@@ -682,8 +753,8 @@ inputs and js managed states (ie: <code class="sourceCode css"><span class="ex">
 <aside>
 <h4 class="as-visually-hidden" id="example-10">Example</h4>
 <div>
-<div class="sourceCode" id="cb21" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb21" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb22" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb22" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb25" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb25" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb26" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb26" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -704,79 +775,13 @@ use of positioning and display rules should be minimized.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-10">Notes</h4>
+<h4 id="notes-13">Notes</h4>
 <p>Use these properties only on elements needing them. Use the narrowest
 selectors that makes sense in the context.</p>
 </section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="example-11">Example</h4>
-<div>
-<div class="sourceCode" id="cb23" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb23" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb24" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb24" data-hx-trigger="intersect once"></div>
-</div>
-</aside>
-</div>
-</article>
-<hr>
-<article>
-<div>
-<div>
-<header>
-<h3 id="overqualified-selectors-are-discouraged.">Overqualified
-selectors are discouraged.</h3>
-</header>
-<section>
-<h4 id="principles-13">Principles</h4>
-<ul>
-<li><a href="#harness-specificity">Harness specificity</a></li>
-<li><a href="#selector-intention">Selector intention</a></li>
-</ul>
-</section>
-<section>
-<h4 id="notes-11">Notes</h4>
-<p>Class entities should not be combined with tag selectors. Generic
-selectors can be used as a selection piece but not as qualifiers.
-Exceptionally, certain specific tags such as <code class="sourceCode css">html</code> or <code class="sourceCode css">body</code> could be used to restrict the
-application of a class entity.</p>
-</section>
-</div>
-<aside>
-<h4 class="as-visually-hidden" id="example-12">Example</h4>
-<div>
-<div class="sourceCode" id="cb25" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb25" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb26" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb26" data-hx-trigger="intersect once"></div>
-</div>
-</aside>
-</div>
-</article>
-<hr>
-<article>
-<div>
-<div>
-<header>
-<h3 id="components-cannot-exert-outside-influence.">Components cannot
-exert outside influence.</h3>
-</header>
-<section>
-<h4 id="principles-14">Principles</h4>
-<ul>
-<li><a href="#autonomous-concept">Autonomous concepts</a></li>
-<li><a href="#properties-not-equal">Properties are not equal</a></li>
-<li><a href="#specific-role">Specific roles and usage</a></li>
-</ul>
-</section>
-<section>
-<h4 id="notes-12">Notes</h4>
-<p>Components are made to fit into “holes”. These holes are managed by
-another component or a higher-level utility (e.g. a grid or carousel).
-No component in this sense should incorporate margins. These are applied
-as a rhythm by a parent. Thus, the components are versatile and reusable
-in various contexts.</p>
-</section>
-</div>
-<aside>
-<h4 class="as-visually-hidden" id="example-13">Example</h4>
 <div>
 <div class="sourceCode" id="cb27" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb27" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb28" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb28" data-hx-trigger="intersect once"></div>
@@ -789,28 +794,26 @@ in various contexts.</p>
 <div>
 <div>
 <header>
-<h3 id="overflow-should-not-be-hidden.">Overflow should not be
-hidden.</h3>
+<h3 id="overqualified-selectors">Overqualified selectors are
+discouraged.</h3>
 </header>
 <section>
-<h4 id="principles-15">Principles</h4>
+<h4 id="principles-13">Principles</h4>
 <ul>
-<li><a href="#browser-rendering">Browser rendering</a></li>
-<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-13">Notes</h4>
-<p>By hiding the way browsers treat overflowing items, we may hide
-content without knowing. By using <code class="sourceCode css">auto</code> instead of <code class="sourceCode css">hidden</code>, the oveflowing content will be
-accessible <em>and</em> the scrollbar will signal the design problem
-instead of hiding it. Hiding scrollbars may be necessary in some
-particular composition (see this very site’s portrait adaptation for an
-example!).</p>
+<h4 id="notes-14">Notes</h4>
+<p>Class entities should not be combined with tag selectors. Generic
+selectors can be used as a selection piece but not as qualifiers.
+Exceptionally, certain specific tags such as <code class="sourceCode css">html</code> or <code class="sourceCode css">body</code> could be used to restrict the
+application of a class entity.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-14">Example</h4>
+<h4 class="as-visually-hidden" id="example-12">Example</h4>
 <div>
 <div class="sourceCode" id="cb29" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb29" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb30" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb30" data-hx-trigger="intersect once"></div>
@@ -823,24 +826,28 @@ example!).</p>
 <div>
 <div>
 <header>
-<h3 id="numbers-in-class-names-are-to-be-avoided.">Numbers in class
-names are to be avoided.</h3>
+<h3 id="component-outside">Components cannot exert outside
+influence.</h3>
 </header>
 <section>
-<h4 id="principles-16">Principles</h4>
+<h4 id="principles-14">Principles</h4>
 <ul>
-<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-14">Notes</h4>
-<p>Numbers may convey intention in grid system cases as in, for example,
-<code class="sourceCode html">grid-10</code> or <code class="sourceCode html">col-3</code>. Still, the utility of these
-systems is low in modern CSS times. Leaving them aside is suggested.</p>
+<h4 id="notes-15">Notes</h4>
+<p>Components are made to fit into “holes”. These holes are managed by
+another component or a higher-level utility (e.g. a grid or carousel).
+No component in this sense should incorporate margins. These are applied
+as a rhythm by a parent. Thus, the components are versatile and reusable
+in various contexts.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-15">Example</h4>
+<h4 class="as-visually-hidden" id="example-13">Example</h4>
 <div>
 <div class="sourceCode" id="cb31" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb31" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb32" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb32" data-hx-trigger="intersect once"></div>
@@ -853,8 +860,73 @@ systems is low in modern CSS times. Leaving them aside is suggested.</p>
 <div>
 <div>
 <header>
-<h3 id="magic-numbers-must-be-avoided-or-explained-in-a-line-comment.">Magic
-numbers <em>must</em> be avoided or explained in a line comment.</h3>
+<h3 id="overflow-hidden">Overflow should not be hidden.</h3>
+</header>
+<section>
+<h4 id="principles-15">Principles</h4>
+<ul>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-16">Notes</h4>
+<p>By hiding the way browsers treat overflowing items, we may hide
+content without knowing. By using <code class="sourceCode css">auto</code> instead of <code class="sourceCode css">hidden</code>, the oveflowing content will be
+accessible <em>and</em> the scrollbar will signal the design problem
+instead of hiding it. Hiding scrollbars may be necessary in some
+particular composition (see this very site’s portrait adaptation for an
+example!).</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-14">Example</h4>
+<div>
+<div class="sourceCode" id="cb33" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb33" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb34" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb34" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="numbered-classes">Numbers in class names are to be avoided.</h3>
+</header>
+<section>
+<h4 id="principles-16">Principles</h4>
+<ul>
+<li><a href="#understood-concept">Wait before naming</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-17">Notes</h4>
+<p>Adding a number to a class demonstrates a poor understanding of its
+role and communicates no clear intent. Ask yourself why you need to add
+a number and use the answer to explicitly name your class. If you need
+to use the structure to style certain elements, use the relevant
+pseudo-classes instead.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="exemple-2">Exemple</h4>
+<div>
+<div class="sourceCode" id="cb35" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb35" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb36" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb36" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="magic-numbers">Magic numbers <em>must</em> be avoided or
+explained in a line comment.</h3>
 </header>
 <section>
 <h4 id="principles-17">Principles</h4>
@@ -865,7 +937,7 @@ numbers <em>must</em> be avoided or explained in a line comment.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-15">Notes</h4>
+<h4 id="notes-18">Notes</h4>
 <p>Value and unit choices should be dictated by the graphic language and
 its design tokens. Absolute values in numerical form should be reserved
 to special cases like bespoke icon alignment or bullet list padding. The
@@ -873,10 +945,10 @@ intention <em>must</em> be clear in itself or commented if not.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-16">Example</h4>
+<h4 class="as-visually-hidden" id="example-15">Example</h4>
 <div>
-<div class="sourceCode" id="cb33" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb33" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb34" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb34" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb37" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb37" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb38" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb38" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -897,7 +969,7 @@ intention <em>must</em> be clear in itself or commented if not.</p>
 </ul>
 </section>
 <section>
-<h4 id="notes-16">Notes</h4>
+<h4 id="notes-19">Notes</h4>
 <p>Spacing is rhythm, a fundamental design concept. Rhythm occurs
 <em>between</em> graphical elements and should be applied as such in
 CSS. The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">lobotomized owl</a> selector (<code class="sourceCode css"><span class="op">*+*</span></code>) is tailor
@@ -905,10 +977,10 @@ made for this task. When using a flex container, the <code class="sourceCode css
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-17">Example</h4>
+<h4 class="as-visually-hidden" id="example-16">Example</h4>
 <div>
-<div class="sourceCode" id="cb35" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb35" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb36" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb36" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb39" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb39" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb40" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb40" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -928,7 +1000,7 @@ problematic units is discouraged.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-17">Notes</h4>
+<h4 id="notes-20">Notes</h4>
 <p>Static viewport units (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) are famously problematic,
 particularly when used as <code class="sourceCode css">100vh</code> or
 <code class="sourceCode css">100vw</code>. <a href="https://caniuse.com/viewport-unit-variants" target="_blank">Dynamic viewport units</a> are better suited for this
@@ -936,10 +1008,10 @@ task.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-18">Example</h4>
+<h4 class="as-visually-hidden" id="example-17">Example</h4>
 <div>
-<div class="sourceCode" id="cb37" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb37" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb38" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb38" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb41" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb41" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb42" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb42" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -960,7 +1032,7 @@ selectors should be leveraged inside components.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-18">Notes</h4>
+<h4 id="notes-21">Notes</h4>
 <p>Components need to prescribe a certain HTML structure. Using said
 structure through intentional tag selectors is the best way to insure
 structural persistence, to keep specificity and complexity low and
@@ -968,10 +1040,10 @@ prevent naming fatigue. Why rename that which is already named?</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-19">Example</h4>
+<h4 class="as-visually-hidden" id="example-18">Example</h4>
 <div>
-<div class="sourceCode" id="cb39" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb39" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb40" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb40" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb43" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb43" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb44" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb44" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -992,7 +1064,7 @@ entity per file with a soft cap of about a hundred lines.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-19">Notes</h4>
+<h4 id="notes-22">Notes</h4>
 <p>This is one of the most important rules for achieving sustainable
 CSS. One autonomous concept per file prevents the multiplication of
 overrides and redefinition across the codebase. It’s even easy to
@@ -1001,10 +1073,10 @@ Stylelint config</a>.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-20">Example</h4>
+<h4 class="as-visually-hidden" id="example-19">Example</h4>
 <div>
-<div class="sourceCode" id="cb41" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb41" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb42" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb42" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb45" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb45" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb46" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb46" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1014,8 +1086,8 @@ Stylelint config</a>.</p>
 <div>
 <div>
 <header>
-<h3 id="selectors-must-strictly-include-only-necessary-selection-parts.">Selectors
-<em>must</em> strictly include only necessary selection parts.</h3>
+<h3 id="selector-parts">Selectors <em>must</em> strictly include only
+necessary selection parts.</h3>
 </header>
 <section>
 <h4 id="principles-22">Principles</h4>
@@ -1026,7 +1098,7 @@ Stylelint config</a>.</p>
 </ul>
 </section>
 <section>
-<h4 id="notes-20">Notes</h4>
+<h4 id="notes-23">Notes</h4>
 <p>This mistake, being passed as “best practices”, is the source of many
 self-induced CSS headaches. Fortunately, the solution is simple: <em>do
 not use selection parts that you could remove without changing the
@@ -1034,10 +1106,10 @@ original intention</em>.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-21">Example</h4>
+<h4 class="as-visually-hidden" id="example-20">Example</h4>
 <div>
-<div class="sourceCode" id="cb43" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb43" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb44" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb44" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb47" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb47" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb48" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb48" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1058,7 +1130,7 @@ of a set of more than 3 rules is discouraged.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-21">Notes</h4>
+<h4 id="notes-24">Notes</h4>
 <p>Repeating a pattern instead of naming it and grouping its rules
 inside a unique declaration block is a classic CSS mistake. And it can
 be hard to find and target instances of this problem. Tools like PostCSS
@@ -1067,10 +1139,10 @@ throughout a codebase.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-22">Example</h4>
+<h4 class="as-visually-hidden" id="example-21">Example</h4>
 <div>
-<div class="sourceCode" id="cb45" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb45" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb46" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb46" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb49" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb49" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb50" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb50" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1096,10 +1168,10 @@ layers.</h3>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-23">Example</h4>
+<h4 class="as-visually-hidden" id="example-22">Example</h4>
 <div>
-<div class="sourceCode" id="cb47" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb47" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb48" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb48" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb51" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb51" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb52" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb52" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1121,17 +1193,17 @@ nesting.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-22">Notes</h4>
+<h4 id="notes-25">Notes</h4>
 <p>Sometimes it could make sense to add a div even if it’s the only
 child. The case of a content grid comes to mind. See this page’s source
 for an example.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-24">Example</h4>
+<h4 class="as-visually-hidden" id="example-23">Example</h4>
 <div>
-<div class="sourceCode" id="cb49" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb49" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb50" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb50" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb53" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb53" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb54" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb54" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1142,8 +1214,8 @@ for an example.</p>
 <div>
 <div>
 <header>
-<h3 id="specificity-must-be-kept-as-low-as-possible.">Specificity
-<em>must</em> be kept as low as possible.</h3>
+<h3 id="selector-specificity">Specificity <em>must</em> be kept as low
+as possible.</h3>
 </header>
 <section>
 <h4 id="principles-26">Principles</h4>
@@ -1153,16 +1225,16 @@ for an example.</p>
 </ul>
 </section>
 <section>
-<h4 id="notes-23">Notes</h4>
+<h4 id="notes-26">Notes</h4>
 <p>Sometimes it makes sense to add specificity. But don’t do it until
 proven necessary.</p>
 </section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-25">Example</h4>
+<h4 class="as-visually-hidden" id="example-24">Example</h4>
 <div>
-<div class="sourceCode" id="cb51" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb51" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb52" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb52" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb55" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb55" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb56" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb56" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>

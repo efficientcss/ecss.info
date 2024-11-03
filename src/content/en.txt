@@ -465,16 +465,16 @@ Horizontal margins can be applied to text elements in the case of `inline`{.css}
 <div>
 ```css
 /* Do */
-.card {
+.card header {
     padding: 20px;
 }
 ```
 
 ```css
 /* Don't */
-.card p {
-    margin-left: 40px;
-    margin-right: 40px;
+.card h2 {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 ```
 </div>
@@ -512,14 +512,14 @@ Inheritance allows for high-level styling. With little code, we cast a wide net 
 ```css
 /* Do */
 html {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 ```
 
 ```css
 /* Don't */
 p {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 ```
 </div>
@@ -730,7 +730,7 @@ We propose this nomenclature of prefixes:
 #### Example {.as-visually-hidden}
 <div>
 ```css
-/* Correct */
+/* Do */
 .card.as-circle {
     width: 20px;
 }
@@ -749,7 +749,7 @@ button.to-toggle-nav {
 ```
 
 ```css
-/* Incorrect */
+/* Don't */
 .card.circle {
     width: 20px;
 }
@@ -793,7 +793,7 @@ The use of `&` in the selection makes the nesting explicit and prevents comprehe
 #### Exemple {.as-visually-hidden}
 <div>
 ```css
-/* Correct */
+/* Do */
 .sidebar-layout {
     display: grid;
 
@@ -811,7 +811,7 @@ The use of `&` in the selection makes the nesting explicit and prevents comprehe
 ```
 
 ```css
-/* Incorrect */
+/* Don't */
 .sidebar-layout {
     display: grid;
 
@@ -839,13 +839,14 @@ The use of `&` in the selection makes the nesting explicit and prevents comprehe
 <div>
 <div>
 <header>
-### Nesting is restricted to one level only.{#nesting-level}
+### Nesting is restricted to two levels only.{#nesting-level}
 </header>
 <section>
 #### Principles
 
 - [Child concepts](#child-concepts)
 - [Selector intention](#selector-intention)
+
 </section>
 <section>
 #### Notes
@@ -862,8 +863,14 @@ Nesting can encourage authoring on autopilot, without thinking about our selecti
 ```css
 /* Do */
 .card {
-    & header p {
-        color: grey;
+    &:hover
+        & div {
+            display: grid;
+        }
+
+        & h2 {
+            color: grey;
+        }
     }
 }
 ```
@@ -871,9 +878,13 @@ Nesting can encourage authoring on autopilot, without thinking about our selecti
 ```css
 /* Don't */
 .card {
-    & header {
-        & p {
-            color: grey;
+    &:hover
+        & div {
+            display: grid;
+
+            & h2 {
+                color: grey;
+            }
         }
     }
 }
@@ -914,14 +925,14 @@ The Web is fluid and authoring should embrace this fluidity. By choosing to limi
 ```css
 /* Do */
 .card {
-    max-width: 30ch;
+    max-width: 40ch;
 }
 ```
 
 ```css
 /* Don't */
 .card {
-    width: 30ch;
+    width: 40ch;
 }
 ```
 </div>
@@ -1101,14 +1112,14 @@ Components are made to fit into “holes”. These holes are managed by another 
 <div>
 ```css
 /* Do */
-.as-pile>*+* {
+.as-stack>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
 /* Don't */
-.card {
+.image-module {
     margin-top: 20px;
 }
 ```
@@ -1193,7 +1204,7 @@ Adding a number to a class demonstrates a poor understanding of its role and com
 
 <div>
 ```css
-/* Correct */
+/* Do */
 .card {
     color: grey;
     font-size: 18px;
@@ -1214,7 +1225,7 @@ Adding a number to a class demonstrates a poor understanding of its role and com
 ```
 
 ```css
-/* Incorrect */
+/* Don't */
 .card {
     color: grey;
     font-size: 18px;
@@ -1264,15 +1275,15 @@ Value and unit choices should be dictated by the graphic language and its design
 <div>
 ```css
 /* Do */
-.card {
-    line-height: var(--line-tight);
+.sidebar {
+    top: var(--header-height);
 }
 ```
 
 ```css
 /* Don't */
-.card {
-    line-height: 17px;
+.sidebar {
+    top: 53px;
 }
 ```
 </div>
@@ -1310,14 +1321,14 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 <div>
 ```css
 /* Do */
-.as-pile>*+* {
+.as-stack>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
 /* Don't */
-.as-pile>* {
+.as-stack>* {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -1409,7 +1420,7 @@ Components need to prescribe a certain HTML structure. Using said structure thro
 
 ```css
 /* Don't */
-.card .card__header {
+.card__header {
     padding: 20px;
 }
 ```

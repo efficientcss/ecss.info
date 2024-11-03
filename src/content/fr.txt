@@ -464,16 +464,16 @@ Des marges horizontales peuvent être appliquées aux éléments de texte dans l
 <div>
 ```css
 /* Correct */
-.card {
+.card header {
     padding: 20px;
 }
 ```
 
 ```css
 /* Incorrect */
-.card p {
-    margin-left: 40px;
-    margin-right: 40px;
+.card h2 {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 ```
 </div>
@@ -511,14 +511,14 @@ L'héritage permet une stylistique de haut niveau. Avec peu de code, on ratisse 
 ```css
 /* Correct */
 html {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 ```
 
 ```css
 /* Incorrect */
 p {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 ```
 </div>
@@ -845,6 +845,7 @@ L'usage du `&` dans la sélection rend l'imbrication explicite et prévient les 
 
 - [Concepts enfant](#concept-enfant)
 - [Intention du sélecteur](#intention-selecteur)
+
 </section>
 <section>
 #### Notes
@@ -852,8 +853,6 @@ L'usage du `&` dans la sélection rend l'imbrication explicite et prévient les 
 L'imbrication peut encourager le développement en mode « pilote automatique », sans réfléchir à notre intention de sélection. C'est l'une des raisons pour lesquelles, ultimement, nous écrirons `.card div h2`{.css} au lieu de `.card h2`{.css}, fragilisant notre CSS. Un seul niveau d’imbrication devrait suffire dans presque tous les cas.
 
 </section>
-
-
 
 </div>
 <aside>
@@ -863,12 +862,14 @@ L'imbrication peut encourager le développement en mode « pilote automatique 
 ```css
 /* Correct */
 .card {
-    & div {
-        display: grid;
-    }
+    &:hover
+        & div {
+            display: grid;
+        }
 
-    & h2 {
-        color: grey;
+        & h2 {
+            color: grey;
+        }
     }
 }
 ```
@@ -876,11 +877,13 @@ L'imbrication peut encourager le développement en mode « pilote automatique 
 ```css
 /* Incorrect */
 .card {
-    & div {
-        display: grid;
+    &:hover
+        & div {
+            display: grid;
 
-        & h2 {
-            color: grey;
+            & h2 {
+                color: grey;
+            }
         }
     }
 }
@@ -922,14 +925,14 @@ Le Web est fluide et la création CSS devrait adopter cette fluidité. En choisi
 ```css
 /* Correct */
 .card {
-    max-width: 30ch;
+    max-width: 40ch;
 }
 ```
 
 ```css
 /* Incorrect */
 .card {
-    width: 30ch;
+    width: 40ch;
 }
 ```
 </div>
@@ -1109,14 +1112,14 @@ Les composants sont faits pour être insérés dans des « trous ». Ces trous
 <div>
 ```css
 /* Correct */
-.as-pile>*+* {
+.as-stack>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
 /* Incorrect */
-.card {
+.image-module {
     margin-top: 20px;
 }
 ```
@@ -1272,15 +1275,15 @@ Les choix de valeurs et d'unités doivent être dictés par le langage graphique
 <div>
 ```css
 /* Correct */
-.card {
-    line-height: var(--line-tight);
+.sidebar {
+    top: var(--header-height);
 }
 ```
 
 ```css
 /* Incorrect */
-.card {
-    line-height: 17px;
+.sidebar {
+    top: 53px;
 }
 ```
 </div>
@@ -1318,14 +1321,14 @@ Espacer est rythmer, un concept de design fondamental. Le rythme se produit *ent
 <div>
 ```css
 /* Correct */
-.as-pile>*+* {
+.as-stack>*+* {
     margin-top: 20px;
 }
 ```
 
 ```css
 /* Incorrect */
-.as-pile>* {
+.as-stack>* {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -1415,7 +1418,7 @@ Les composants doivent prescrire une certaine structure HTML. L’utilisation de
 
 ```css
 /* Incorrect */
-.card .card__header {
+.card__header {
     padding: 20px;
 }
 ```

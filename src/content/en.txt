@@ -4,7 +4,7 @@
 
 Efficient CSS is all you need to avoid common styling problems. Nothing more, really.
 
-**ECSS sets simple rules for efficient styling.** No more naming everything, no more technological dependencies. Only intentional, consistent, simple, expressive, predictable, sustainable CSS.
+**ECSS sets simple rules for efficient styling.** No more naming everything, no more technological dependencies. Only intentional, consistent, expressive, predictable, sustainable CSS.
 
 </header>
 <div style="--DivItemBasis: 12rem;">

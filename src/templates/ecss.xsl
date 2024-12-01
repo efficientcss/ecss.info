@@ -20,6 +20,8 @@
 			<head>
 				<script src="https://cdn.usefathom.com/script.js" data-site="RCGPNGBM" defer=""></script>
 				<script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js" defer=""></script>
+				<link rel="preload" href="../assets/fonts/HankenGrotesk-Italic-VariableFont_wght.woff2" as="font" type="font/woff2" />
+				<link rel="preload" href="../assets/fonts/HankenGrotesk-VariableFont_wght.woff2" as="font" type="font/woff2" />
 
 				<link rel="stylesheet" href="../assets/css/min.e.css" />
 				<link rel="stylesheet" media="(orientation:landscape)" href="../assets/css/5.compositions/side-nav-main-pile.css" />

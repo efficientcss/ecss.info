@@ -16,7 +16,7 @@
 		/* Logical colors */
 		--Color: var(--Blue);
 		--ColorSupport: var(--Pink);
-		--ColorAccent:;
+		--ColorAccent: rgb(255, 243, 166);
 		--ColorBg: var(--Yellow);
 		--rgbColor: var(--rgbBlue);
 		--rgbColorSupport: var(--rgbPink);

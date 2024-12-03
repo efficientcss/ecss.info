@@ -1,3 +1,9 @@
+article:has(:target) :is(h3, h4) {
+	display: inline;
+	background-color: var(--ColorAccent);
+	box-shadow: 4px 0 0 2px var(--ColorBg), -4px 0 0 1px var(--ColorBg);
+}
+
 h3 small {
 	margin-left: .75em;
 }

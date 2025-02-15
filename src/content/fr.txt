@@ -4,7 +4,7 @@
 
 Écrire du CSS efficace est suffisant pour éviter les problèmes de stylistique courants. Vraiment.
 
-**ECSS établit des règles simples pour des styliser efficacement.** Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, expressif, prévisible et durable.
+**ECSS établit des règles simples pour styliser efficacement.** Plus besoin de tout nommer, plus de dépendances technologiques. Uniquement du CSS intentionnel, cohérent, expressif, prévisible et durable.
 
 </header>
 <div style="--DivItemBasis: 12rem;">

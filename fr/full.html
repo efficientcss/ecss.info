@@ -25,10 +25,10 @@ Introduction
 </h2>
 <p>Écrire du CSS efficace est suffisant pour éviter les problèmes de
 stylistique courants. Vraiment.</p>
-<p><strong>ECSS établit des règles simples pour des styliser
+<p><strong>ECSS établit des règles simples pour styliser
 efficacement.</strong> Plus besoin de tout nommer, plus de dépendances
-technologiques. Uniquement du CSS intentionnel, cohérent, simple,
-expressif, prévisible et durable.</p>
+technologiques. Uniquement du CSS intentionnel, cohérent, expressif,
+prévisible et durable.</p>
 </header>
 <div style="--DivItemBasis: 12rem;">
 <section>
@@ -501,13 +501,13 @@ et sur des éléments en retrait comme <code class="sourceCode html">blockquote<
 <h4 class="as-visually-hidden" id="exemple-3">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> header {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> p {</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> h2 {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -539,11 +539,11 @@ on ratisse large tout limitant la spécificité au minimum.</p>
 <div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>html {</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="op">;</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -858,24 +858,28 @@ presque tous les cas.</p>
 <div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> div {</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> h2 {</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span><span class="in">:hover</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> div {</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> h2 {</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span> div {</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> h2 {</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&amp;</span><span class="in">:hover</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> div {</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span><span class="ch">:</span> <span class="dv">grid</span><span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">&amp;</span> h2 {</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">color</span><span class="ch">:</span> <span class="cn">grey</span><span class="op">;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
 </div>
@@ -910,11 +914,11 @@ graphiques tels que les images, les vidéos et les icônes.</p>
 <div>
 <div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">ch</span><span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">ch</span><span class="op">;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1071,11 +1075,11 @@ réutilisables en divers contextes.</p>
 <h4 class="as-visually-hidden" id="exemple-15">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb31"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-stack</span><span class="op">&gt;*+*</span> {</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb32"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.image-module</span> {</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
@@ -1218,12 +1222,12 @@ sinon.</p>
 <h4 class="as-visually-hidden" id="exemple-18">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--line-tight</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.sidebar</span> {</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">top</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--header-height</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> {</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.sidebar</span> {</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">top</span><span class="ch">:</span> <span class="dv">53</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </aside>
@@ -1259,11 +1263,11 @@ vous !</p>
 <h4 class="as-visually-hidden" id="exemple-19">Exemple</h4>
 <div>
 <div class="sourceCode" id="cb39"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Correct */</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*+*</span> {</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-stack</span><span class="op">&gt;*+*</span> {</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb40"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-pile</span><span class="op">&gt;*</span> {</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.as-stack</span><span class="op">&gt;*</span> {</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
@@ -1340,7 +1344,7 @@ renommer ce qui est déjà nommé ?</p>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb44"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Incorrect */</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card</span> <span class="fu">.card__header</span> {</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.card__header</span> {</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>

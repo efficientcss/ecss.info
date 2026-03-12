@@ -4,7 +4,7 @@
 
 body {
 	background-color: #19161b;
-	display: flex;
+	/* display: flex; */
 	color: #cfc05e;
 	font-family: "Input Mono Condensed";
 	font-size: clamp(13px, 1vw, 14px);
@@ -28,13 +28,15 @@ body>aside {
 .album-mosaic {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-rows: 1fr auto;
+	overflow-x: clip;
 
 	article, section {
 		display: contents;
-		grid-template-columns: subgrid;
-		position: relative;
+		/* grid-template-columns: subgrid; */
+		/* position: relative; */
 
-		&:hover {
+		&:hover>* {
 			z-index: 1;
 		}
 
@@ -54,45 +56,164 @@ body>aside {
 		/* grid-column: 1; */
 		/* width: 300px; */
 		/* position: fixed; */
+		order: 1;
 	}
 
-	article *:not(article, img) {
+	article :is(h3, h4) {
 		display: none;
 	}
 
-	h3 {
+	header {
+		position: relative;
 
-		position: sticky;
-		top: 0;
-		background-color: #2d2731;
+		&:before {
+			content: "";
+			position: absolute;
+			inset: -12px;
+			border-radius: 4px;
+			background-color: purple;
+			z-index: -1;
+		}
+
+		&:not(:hover):before {
+			opacity: 0;
+		}
+
+
 	}
 
-	h4 {
-
-		position: sticky;
+	nav {
+		position: absolute;
+		inset-inline: 0;
 		top: 0;
-		background-color: #2d2731;
+		height: auto;
+		margin-inline: auto;
+		text-align: center;
+		/* padding-inline: 20px; */
 
-		grid-column: 2;
+		/* display: grid; */
+		font-size: 30px;
+		/* align-items: start; */
+		/* justify-content: center; */
+		/* align-content: start; */
+		/* grid-template-columns: repeat(auto-fill, 1.4ch); */
+		padding-top: calc(100% - 8px);
+		white-space: nowrap;
+		overflow-y: clip;
+		overflow-x: auto;
+		scrollbar-width: none;
+		scrollbar-color: transparent;
+		
+
+		a {
+			color: white;
+			/* mix-blend-mode: difference; */
+			text-decoration: none;
+			font-size: inherit;
+			display: inline-block;
+			text-align: center;
+			position: relative;
+			line-height: 0.5;
+			/* top: 100%; */
+			background-color: purple;
+			padding: 2px 0;
+			padding-bottom: 10px;
+
+			&:where(:first-child) {
+				padding-left: 10px;
+				border-bottom-left-radius: 5px;
+			}
+			&:where(:last-child) {
+				padding-right: 10px;
+				border-bottom-right-radius: 5px;
+			}
+
+			&:where(:only-child) {
+				display: none;
+			}
+
+			header:not(:hover) & {
+				opacity: 0;
+			}
+		}
 	}
+
+	[data-type=album] {
+		&:has(header a:nth-child(1):hover) article:nth-of-type(1) dl,
+		&:has(header a:nth-child(2):hover) article:nth-of-type(2) dl,
+		&:has(header a:nth-child(3):hover) article:nth-of-type(3) dl,
+		&:has(header a:nth-child(4):hover) article:nth-of-type(4) dl,
+		&:has(header a:nth-child(5):hover) article:nth-of-type(5) dl,
+		&:has(header a:nth-child(6):hover) article:nth-of-type(6) dl,
+		&:has(header a:nth-child(7):hover) article:nth-of-type(7) dl,
+		&:has(header a:nth-child(8):hover) article:nth-of-type(8) dl,
+		&:has(header a:nth-child(9):hover) article:nth-of-type(9) dl,
+		&:has(header a:nth-child(10):hover) article:nth-of-type(10) dl,
+		&:has(header a:nth-child(11):hover) article:nth-of-type(11) dl,
+		&:has(header a:nth-child(12):hover) article:nth-of-type(12) dl,
+		&:has(header a:nth-child(13):hover) article:nth-of-type(13) dl,
+		&:has(header a:nth-child(14):hover) article:nth-of-type(14) dl,
+		&:has(header a:nth-child(15):hover) article:nth-of-type(15) dl,
+		&:has(header a:nth-child(16):hover) article:nth-of-type(16) dl {
+			z-index: 3;
+		}
+	}
+
+	/* h3 { */
+
+	/* 	position: sticky; */
+	/* 	top: 0; */
+	/* 	background-color: #2d2731; */
+	/* } */
+
+	/* h4 { */
+
+	/* 	position: sticky; */
+	/* 	top: 0; */
+	/* 	background-color: #2d2731; */
+
+	/* 	grid-column: 2; */
+	/* } */
 
 	dl {
 		/* display: grid; */
 		/* grid-column: 2; */
 		/* grid-template-columns: repeat(6, 1fr); */
-		display: contents;
+		/* display: contents; */
+		/* position: fixed; */
+		order: 2;
+		grid-column: 1 / -1;
+		bottom: 0;
+		display: grid;
+		grid-template-rows: repeat(2, auto);
+		grid-auto-flow: column;
+		/* grid-auto-columns: max-content; */
+		position: sticky;
+		bottom: 0;
+		padding: 20px;
+		background-color: black;
+		z-index: 2;
+		/* opacity: 0; */
+
+		[data-type=album]:not(:hover) & {
+			display: none;
+		}
 	}
 
 	dt {
-		display: none;
+		/* display: none; */
 	}
 
 	dd {
-		grid-column: 3;
+		/* grid-column: 3; */
+	}
+
+	:is(dd, dt):first-of-type {
+		width: 400px;
 	}
 
 	dd:nth-of-type(even) {
-		grid-column: 4;
+		/* grid-column: 4; */
 		/* display: none; */
 	}
 }

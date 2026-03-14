@@ -2,8 +2,9 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" doctype-system="about:legacy-compat" />
 
-    <xsl:key name="dicts-by-artist" match="dict" use="key[. = 'Artist']/following-sibling::string[1]" />
-    <xsl:key name="dicts-by-album" match="dict" use="key[. = 'Album']/following-sibling::string[1]" />
+	<xsl:param name="max-artists" select="24" />
+	<xsl:key name="dicts-by-artist" match="dict" use="key[. = 'Artist']/following-sibling::string[1]" />
+	<xsl:key name="dicts-by-album" match="dict" use="key[. = 'Album']/following-sibling::string[1]" />
 	<!-- Identity transform -->
 	<!-- Primordial. Permet à la machine de fonctionner. -->
 	<xsl:template match="@*|node()">
@@ -38,15 +39,47 @@
 				<!-- </aside> -->
 				<main class="album-mosaic">
 					<!-- <xsl:apply-templates select="dict/dict/dict" mode="song" /> -->
-					<xsl:apply-templates select="dict/dict/dict[generate-id() = generate-id(key('dicts-by-artist', key[. = 'Artist']/following-sibling::string[1])[1])]" mode="artist">
-						<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" order="ascending"></xsl:sort>
-					</xsl:apply-templates>
+					<xsl:for-each select="dict/dict/dict[generate-id() = generate-id(key('dicts-by-artist', key[. = 'Artist']/following-sibling::string[1])[1])]">
+						<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
+						<xsl:if test="position() &lt;= $max-artists"><xsl:apply-templates select="." mode="artist" /></xsl:if>
+					</xsl:for-each>
 				</main>
+				<script>
+					document.addEventListener("click", (event) => {
+						const goToHash = (hash) => {
+							if (!hash || hash === location.hash) return;
+
+							if (!document.startViewTransition) {
+								location.hash = hash;
+								return;
+							}
+
+							document.startViewTransition(() => {
+								location.hash = hash;
+							});
+						};
+
+						const nav = event.target.closest('nav');
+						if (nav) {
+							const link = nav.querySelector('a[href^="#"]');
+							if (!link) return;
+							event.preventDefault();
+							goToHash(link.getAttribute("href"));
+							return;
+						}
+
+						const link = event.target.closest('a[href^="#"]');
+						if (!link) return;
+
+						event.preventDefault();
+						goToHash(link.getAttribute("href"));
+					});
+				</script>
 			</body>
 		</html>
 	</xsl:template>
 
-	
+
 	<xsl:template match="dict" mode="song">
 		<xsl:variable name="song-id">
 			<xsl:apply-templates select="key[. = 'Album']/following-sibling::string[1]" mode="string-normalizer"/><xsl:text>-</xsl:text><xsl:apply-templates select="key[. = 'Name']/following-sibling::string[1]" mode="string-normalizer"/>
@@ -59,92 +92,105 @@
 	</xsl:template>
 
 
-<!-- 	<xsl:template match="key" mode="song"> -->
-<!-- 		<dl data-type="metadata"> -->
-<!-- 			<xsl:apply-templates select="key[. = 'Name' or . = 'Year']" mode="info"/> -->
-<!-- 		</dl> -->
-<!-- 		<!-1- <xsl:apply-templates select="following-sibling::key[text() = 'Location']" mode="image"/> -1-> -->
-<!-- 	</xsl:template> -->
-	<xsl:template match="key" mode="info">
-		<dt data-type="{text()}">
-			<small><xsl:value-of select="text()"/></small>
-		</dt>
-		<dd>
-			<xsl:apply-templates select="following-sibling::*[1]" mode="info" />
-		</dd>
-	</xsl:template>
-	<xsl:template match="integer" mode="info">
-		<span><xsl:value-of select="text()"/></span>
-	</xsl:template>
-	<xsl:template match="string" mode="info">
-		<!-- <xsl:apply-templates select="ancestor::dict[1]" mode="player"/> -->
-		<span><xsl:value-of select="text()"/></span>
-	</xsl:template>
+	<!-- 	<xsl:template match="key" mode="song"> -->
+		<!-- 		<dl data-type="metadata"> -->
+			<!-- 			<xsl:apply-templates select="key[. = 'Name' or . = 'Year']" mode="info"/> -->
+			<!-- 		</dl> -->
+			<!-- 		<!-1- <xsl:apply-templates select="following-sibling::key[text() = 'Location']" mode="image"/> -1-> -->
+			<!-- 	</xsl:template> -->
+		<xsl:template match="key" mode="info">
+			<xsl:variable name="type-label">
+				<xsl:choose>
+					<xsl:when test="text() = 'Name'">
+						<xsl:value-of select="'Song'"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="text()"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<dt data-label="{text()}">
+				<small><xsl:value-of select="$type-label"/></small>
+			</dt>
+			<dd>
+				<xsl:apply-templates select="following-sibling::*[1]" mode="info" />
+			</dd>
+		</xsl:template>
+		<xsl:template match="integer" mode="info">
+			<span><xsl:value-of select="text()"/></span>
+		</xsl:template>
+		<xsl:template match="string" mode="info">
+			<!-- <xsl:apply-templates select="ancestor::dict[1]" mode="player"/> -->
+			<span><xsl:value-of select="text()"/></span>
+		</xsl:template>
 
-	<xsl:template match="key" mode="image">
-		<xsl:variable name="album" select="following-sibling::string/text()" />
-		<img src="assets/covers/{$album}/cover.webp" alt="{$album}" loading="lazy" style="--placeholder: url('assets/covers/{$album}/cover.webp')" />
-	</xsl:template>
+		<xsl:template match="key" mode="image">
+			<xsl:variable name="album" select="following-sibling::string/text()" />
+			<img src="assets/covers/{$album}/cover.webp" alt="{$album}" loading="lazy"  />
+		</xsl:template>
 
-	<xsl:template match="dict" mode="album">
-		<xsl:variable name="current-album" select="key[. = 'Album']/following-sibling::string[1]" />
-		<article data-type="album">
-			<header>
-				<xsl:apply-templates select="$current-album/following-sibling::key[text() = 'Location']" mode="image" />
-				<h4><xsl:value-of select="$current-album"></xsl:value-of></h4>
-				<nav data-type="songs">
-					<xsl:for-each select="key('dicts-by-album', $current-album)">
-						<xsl:variable name="song-id">
-							<xsl:apply-templates select="key[. = 'Album']/following-sibling::string[1]" mode="string-normalizer"/><xsl:text>-</xsl:text><xsl:apply-templates select="key[. = 'Name']/following-sibling::string[1]" mode="string-normalizer"/>
-						</xsl:variable>
-						<a href="#{$song-id}">.</a>
-					</xsl:for-each>
-				</nav>
-			</header>
-			<xsl:apply-templates select="key('dicts-by-album', $current-album)" mode="song"/>
-			<!-- <dl> -->
-				<!-- 	<xsl:apply-templates select="key('dicts-by-album', $current-album)/key[text() = 'Name' or text() = 'Rating']" mode="info"/> -->
-				<!-- </dl> -->
-		</article>
-	</xsl:template>
+		<xsl:template match="dict" mode="album">
+			<xsl:variable name="current-album" select="key[. = 'Album']/following-sibling::string[1]" />
+			<xsl:variable name="album" select="$current-album/following-sibling::key[text() = 'Location']/following-sibling::string/text()"></xsl:variable>
+			<article data-type="album" style="--placeholder: url('../covers/{$album}/cover.webp')">
+				<div>
+				<header>
+					<xsl:apply-templates select="$current-album/following-sibling::key[text() = 'Location']" mode="image" />
+					<h4><xsl:value-of select="$current-album"></xsl:value-of></h4>
+					<nav data-type="songs">
+						<xsl:for-each select="key('dicts-by-album', $current-album)">
+							<xsl:variable name="song-id">
+								<xsl:apply-templates select="key[. = 'Album']/following-sibling::string[1]" mode="string-normalizer"/><xsl:text>-</xsl:text><xsl:apply-templates select="key[. = 'Name']/following-sibling::string[1]" mode="string-normalizer"/>
+							</xsl:variable>
+							<a href="#{$song-id}">■</a>
+						</xsl:for-each>
+					</nav>
+				</header>
+					<xsl:apply-templates select="key('dicts-by-album', $current-album)" mode="song"/>
+				</div>
+				<!-- <dl> -->
+					<!-- 	<xsl:apply-templates select="key('dicts-by-album', $current-album)/key[text() = 'Name' or text() = 'Rating']" mode="info"/> -->
+					<!-- </dl> -->
+			</article>
+		</xsl:template>
 
-	<xsl:template match="key" mode="player" priority="-1"></xsl:template>
+		<xsl:template match="key" mode="player" priority="-1"></xsl:template>
 
-	<xsl:template match="key[. ='Artist']" mode="player" priority="3">
-		<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/><xsl:text>+</xsl:text>
-	</xsl:template>
+		<xsl:template match="key[. ='Artist']" mode="player" priority="3">
+			<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/><xsl:text>+</xsl:text>
+		</xsl:template>
 
-	<xsl:template match="key[. ='Album']" mode="player" priority="2">
-		<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/>
-	</xsl:template>
+		<xsl:template match="key[. ='Album']" mode="player" priority="2">
+			<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/>
+		</xsl:template>
 
-	<xsl:template match="key[. ='Name']" mode="player" priority="1">
-		<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/><xsl:text>+</xsl:text>
-	</xsl:template>
+		<xsl:template match="key[. ='Name']" mode="player" priority="1">
+			<xsl:apply-templates select="following-sibling::string[1]" mode="string-normalizer"/><xsl:text>+</xsl:text>
+		</xsl:template>
 
-	<xsl:template match="dict" mode="player">
-		<xsl:variable name="query">
-			<xsl:apply-templates select="key" mode="player"/>
-		</xsl:variable>
-		<ul>
-			<li><a href="https://duckduckgo.com/?q=!ducky+LOL%20Cats">Spotify</a></li>
-			<li><a href="https://duckduckgo.com/?q=%5Capple+music+{$query}">Apple Music</a></li>
-			<li><a href="https://duckduckgo.com/?q=%5Cyoutube+{$query}"></a>Youtube</li>
-			<li><a href="https://duckduckgo.com/?q=%5Cbandcamp+{$query}">Bandcamp</a></li>
-		</ul>
-	</xsl:template>
+		<xsl:template match="dict" mode="player">
+			<xsl:variable name="query">
+				<xsl:apply-templates select="key" mode="player"/>
+			</xsl:variable>
+			<ul>
+				<li><a href="https://duckduckgo.com/?q=!ducky+LOL%20Cats">Spotify</a></li>
+				<li><a href="https://duckduckgo.com/?q=%5Capple+music+{$query}">Apple Music</a></li>
+				<li><a href="https://duckduckgo.com/?q=%5Cyoutube+{$query}"></a>Youtube</li>
+				<li><a href="https://duckduckgo.com/?q=%5Cbandcamp+{$query}">Bandcamp</a></li>
+			</ul>
+		</xsl:template>
 
-	<xsl:template match="dict" mode="artist">
-		<xsl:variable name="current-artist" select="key[. = 'Artist']/following-sibling::string[1]" />
+		<xsl:template match="dict" mode="artist">
+			<xsl:variable name="current-artist" select="key[. = 'Artist']/following-sibling::string[1]" />
 
-		<article data-type="artist">
-			<h3>
-				<xsl:value-of select="$current-artist" />
-			</h3>
-			<!-- Apply templates to dicts in the current group -->
-			<xsl:apply-templates select="key('dicts-by-artist', $current-artist)[generate-id() = generate-id(key('dicts-by-album', key[. = 'Album']/following-sibling::string[1])[1])]" mode="album">
-				<xsl:sort select="key[. = 'Year']/following-sibling::integer[1]" order="ascending"></xsl:sort>
-			</xsl:apply-templates>
-		</article>
-	</xsl:template>
-</xsl:stylesheet>
+			<article data-type="artist">
+				<h3>
+					<xsl:value-of select="$current-artist" />
+				</h3>
+				<!-- Apply templates to dicts in the current group -->
+				<xsl:apply-templates select="key('dicts-by-artist', $current-artist)[generate-id() = generate-id(key('dicts-by-album', key[. = 'Album']/following-sibling::string[1])[1])]" mode="album">
+					<xsl:sort select="key[. = 'Year']/following-sibling::integer[1]" order="ascending"></xsl:sort>
+				</xsl:apply-templates>
+			</article>
+		</xsl:template>
+	</xsl:stylesheet>

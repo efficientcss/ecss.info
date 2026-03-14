@@ -1,13 +1,21 @@
+:root {
+	--color-accent: lightblue;
+	--album-selector-width: 10px;
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
+}
 
 body {
-	background-color: #19161b;
+	background-color: lightgrey;
 	/* display: flex; */
-	color: #cfc05e;
-	font-family: "Input Mono Condensed";
+	color: darkblue;
+	font-family: "PP Neue Montreal", "Helvetica Neue", "sans-serif";
 	font-size: clamp(13px, 1vw, 14px);
+	padding: var(--album-selector-width);
 }
 
 img {
@@ -27,18 +35,171 @@ body>aside {
 
 .album-mosaic {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: 0px repeat(auto-fit, minmax(200px, 1fr));
 	grid-template-rows: 1fr auto;
-	overflow-x: clip;
+
+	&:has(:target) {
+		grid-template-columns: 600px repeat(auto-fit, minmax(200px, 1fr));
+
+		& [data-type=artist]:not(:has([data-label=Artist]+dd:hover)) [data-type=album]:not(:has(:target)) header:not(:hover) img {
+			opacity: 0.25;
+			filter: saturate(0);
+		}
+	}
+
+	img {
+		transition: 200ms;
+	}
+
+	[data-type=artist],
+	[data-type=album] {
+		display: contents;
+	}
+
+	[data-type~="album"] {
+		& :is(article, section, div) {
+			display: contents;
+		}
+
+		& header {
+			view-transition-name: match-element;
+		}
+
+		&:has(:target) {
+
+			&::before {
+				content: "";
+				/* order: -2; */
+				aspect-ratio: 1;
+				background: top center / contain no-repeat var(--placeholder);
+				display: block;
+				border: var(--album-selector-width) solid white;
+				/* padding: var(--album-selector-width); */
+				filter: brightness(0.5) saturate(0) contrast(0.5) invert(1);
+				/* view-transition-name: album-cover; */
+				/* position: relative; */
+			}
+
+			& header {
+				/* opacity: 1; */
+				/* filter: saturate(0) contrast(0.5); */
+
+				& img {
+					/* view-transition-name: album-cover; */
+					/* position: relative; */
+				}
+			}
+			[data-type=song]:target {
+				order: -1;
+			}
+
+
+			& div {
+				order: -1;
+				grid-row: 1 / span 99999;
+				grid-column: 1;
+				display: flex;
+				flex-direction: column;
+				background-color: lightgrey;
+				max-height: calc(100dvh - var(--album-selector-width));
+				position: sticky;
+				top: var(--album-selector-width);
+				overflow-y: auto;
+				gap: 20px;
+				align-items: center;
+
+				& :is(dl,header) {
+					width: 100%;
+					max-width: 40ch;
+				}
+
+			}
+
+			dl {
+				display: flex;
+				flex-direction: column;
+			}
+
+			[data-label=Album]+dd {
+				order: -1;
+
+			}
+			:is([data-label=Album], [data-label=Artist])+dd {
+				font-size: 20px;
+				/* text-align: center; */
+			}
+
+			[data-label=Artist]+dd {
+				margin-bottom: 40px;
+				&::before {
+					content: "by ";
+					font-style: italic;
+					/* color: grey; */
+					font-weight: 100;
+				}
+			}
+
+			& dt:is([data-label="Rating"], [data-label=Name])+dd {
+				order: 2;
+			}
+
+			& [data-label=name i],
+			& [data-label=album i],
+			& [data-label=artist i] {
+				display: none;
+			}
+
+			& [data-type=song]:not(:first-of-type) {
+				dt, dt:not([data-label="Rating"]):not([data-label=Name])+dd {
+					display: none;
+				}
+			}
+		}
+
+
+		&:hover header {
+			z-index: 1;
+		}
+
+		&:not(:has(:target)) {
+			/* display: grid; */
+			/* grid-column: 2; */
+			/* grid-template-columns: repeat(6, 1fr); */
+			/* display: contents; */
+			/* position: fixed; */
+			dl {
+				order: 2;
+				grid-column: 2 / -1;
+				bottom: 0;
+				display: grid;
+				grid-template-rows: repeat(2, auto);
+				grid-auto-flow: column;
+				/* grid-auto-columns: max-content; */
+				position: sticky;
+				bottom: 0;
+				padding: 20px;
+				background-color: var(--color-accent);
+				z-index: 2;
+				/* opacity: 0; */
+
+				:is(dd, dt):first-of-type {
+					width: 400px;
+				}
+
+
+			}
+
+			&:not(:hover) dl {
+				display: none;
+			}
+		}
+	}
+
 
 	article, section {
-		display: contents;
 		/* grid-template-columns: subgrid; */
 		/* position: relative; */
 
-		&:hover>* {
-			z-index: 1;
-		}
 
 		&:not(:hover) {
 			img {
@@ -51,6 +212,7 @@ body>aside {
 		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
+		display: block;
 		/* position: sticky; */
 		/* top: 0; */
 		/* grid-column: 1; */
@@ -69,9 +231,9 @@ body>aside {
 		&:before {
 			content: "";
 			position: absolute;
-			inset: -12px;
+			inset: calc(-1 * var(--album-selector-width));
 			border-radius: 4px;
-			background-color: purple;
+			background-color: var(--color-accent);
 			z-index: -1;
 		}
 
@@ -97,13 +259,13 @@ body>aside {
 		/* justify-content: center; */
 		/* align-content: start; */
 		/* grid-template-columns: repeat(auto-fill, 1.4ch); */
-		padding-top: calc(100% - 8px);
+		padding-top: calc(100% - 2px);
 		white-space: nowrap;
 		overflow-y: clip;
 		overflow-x: auto;
 		scrollbar-width: none;
 		scrollbar-color: transparent;
-		
+
 
 		a {
 			color: white;
@@ -112,10 +274,10 @@ body>aside {
 			font-size: inherit;
 			display: inline-block;
 			text-align: center;
-			position: relative;
+			position: static;
 			line-height: 0.5;
 			/* top: 100%; */
-			background-color: purple;
+			background-color: var(--color-accent);
 			padding: 2px 0;
 			padding-bottom: 10px;
 
@@ -129,7 +291,7 @@ body>aside {
 			}
 
 			&:where(:only-child) {
-				display: none;
+				position
 			}
 
 			header:not(:hover) & {
@@ -175,47 +337,7 @@ body>aside {
 	/* 	grid-column: 2; */
 	/* } */
 
-	dl {
-		/* display: grid; */
-		/* grid-column: 2; */
-		/* grid-template-columns: repeat(6, 1fr); */
-		/* display: contents; */
-		/* position: fixed; */
-		order: 2;
-		grid-column: 1 / -1;
-		bottom: 0;
-		display: grid;
-		grid-template-rows: repeat(2, auto);
-		grid-auto-flow: column;
-		/* grid-auto-columns: max-content; */
-		position: sticky;
-		bottom: 0;
-		padding: 20px;
-		background-color: black;
-		z-index: 2;
-		/* opacity: 0; */
 
-		[data-type=album]:not(:hover) & {
-			display: none;
-		}
-	}
-
-	dt {
-		/* display: none; */
-	}
-
-	dd {
-		/* grid-column: 3; */
-	}
-
-	:is(dd, dt):first-of-type {
-		width: 400px;
-	}
-
-	dd:nth-of-type(even) {
-		/* grid-column: 4; */
-		/* display: none; */
-	}
 }
 
 .song-list {

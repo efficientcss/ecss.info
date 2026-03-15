@@ -93,8 +93,12 @@ body>aside {
 				order: -1;
 			}
 
+			nav {
+				display: none;
+			}
 
-			& div {
+
+			&>div {
 				order: -1;
 				grid-row: 1 / span 99999;
 				grid-column: 1;
@@ -116,16 +120,63 @@ body>aside {
 			}
 
 			dl {
-				display: flex;
-				flex-direction: column;
+				display: grid;
+				grid-template-columns: 1fr auto;
+
+				&>* {
+				}
 			}
 
 			[data-label=Album]+dd {
 				order: -1;
 
 			}
+
+			:is([data-label=Genre], [data-label=Year], [data-label=Rating]) {
+				position: absolute;
+				inset-block-end: anchor(start);
+
+				&, &+dd {
+					grid-column: initial;
+				}
+
+				&:where(:not([data-label=Rating]))+dd {
+					margin-bottom: 40px;
+				}
+
+				&:where([data-label=Genre]) {
+					position-anchor: --genre;
+					inset-inline-start: anchor(start);
+
+					&+dd {
+						anchor-name: --genre;
+					}
+				}
+
+				&:where([data-label=Year]) {
+					position-anchor: --year;
+					inset-inline-end: anchor(end);
+
+					&+dd {
+						anchor-name: --year;
+						justify-self: end;
+					}
+				}
+
+				&:where([data-label=Rating]) {
+					position-anchor: --rating;
+					inset-inline-end: anchor(end);
+
+					&+dd {
+						anchor-name: --rating;
+						justify-self: end;
+					}
+				}
+			}
+
 			:is([data-label=Album], [data-label=Artist])+dd {
 				font-size: 20px;
+				grid-column: 1 / -1;
 				/* text-align: center; */
 			}
 
@@ -152,6 +203,11 @@ body>aside {
 			& [data-type=song]:not(:first-of-type) {
 				dt, dt:not([data-label="Rating"]):not([data-label=Name])+dd {
 					display: none;
+				}
+
+				dd {
+					anchor-name: initial;
+					margin-bottom: 0px;
 				}
 			}
 		}

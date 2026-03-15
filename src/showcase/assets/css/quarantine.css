@@ -11,7 +11,6 @@
 
 body {
 	background-color: lightgrey;
-	/* display: flex; */
 	color: darkblue;
 	font-family: "PP Neue Montreal", "Helvetica Neue", "sans-serif";
 	font-size: clamp(13px, 1vw, 14px);
@@ -32,6 +31,9 @@ body>aside {
 }
 
 
+a {
+	color: inherit;
+}
 
 .album-mosaic {
 	display: grid;
@@ -51,9 +53,29 @@ body>aside {
 		transition: 200ms;
 	}
 
+	menu {
+		position: absolute;
+		color: transparent;
+	}
+
 	[data-type=artist],
 	[data-type=album] {
 		display: contents;
+	}
+
+	[data-type=artist]:has([data-label=Artist]+dd:hover) {
+
+		[data-type=album]:has(:target){
+			&::before {
+				filter: initial;
+			}
+
+			header img {
+				opacity: 0.25;
+				filter: saturate(0);
+			}
+		}
+
 	}
 
 	[data-type~="album"] {
@@ -69,26 +91,13 @@ body>aside {
 
 			&::before {
 				content: "";
-				/* order: -2; */
 				aspect-ratio: 1;
 				background: top center / contain no-repeat var(--placeholder);
 				display: block;
-				border: var(--album-selector-width) solid white;
-				/* padding: var(--album-selector-width); */
-				filter: brightness(0.5) saturate(0) contrast(0.5) invert(1);
-				/* view-transition-name: album-cover; */
-				/* position: relative; */
+				border: var(--album-selector-width) solid black;
+				filter: saturate(0) invert(1);
 			}
 
-			& header {
-				/* opacity: 1; */
-				/* filter: saturate(0) contrast(0.5); */
-
-				& img {
-					/* view-transition-name: album-cover; */
-					/* position: relative; */
-				}
-			}
 			[data-type=song]:target {
 				order: -1;
 			}
@@ -177,7 +186,6 @@ body>aside {
 			:is([data-label=Album], [data-label=Artist])+dd {
 				font-size: 20px;
 				grid-column: 1 / -1;
-				/* text-align: center; */
 			}
 
 			[data-label=Artist]+dd {
@@ -185,7 +193,6 @@ body>aside {
 				&::before {
 					content: "by ";
 					font-style: italic;
-					/* color: grey; */
 					font-weight: 100;
 				}
 			}
@@ -218,11 +225,6 @@ body>aside {
 		}
 
 		&:not(:has(:target)) {
-			/* display: grid; */
-			/* grid-column: 2; */
-			/* grid-template-columns: repeat(6, 1fr); */
-			/* display: contents; */
-			/* position: fixed; */
 			dl {
 				order: 2;
 				grid-column: 2 / -1;
@@ -230,13 +232,11 @@ body>aside {
 				display: grid;
 				grid-template-rows: repeat(2, auto);
 				grid-auto-flow: column;
-				/* grid-auto-columns: max-content; */
 				position: sticky;
 				bottom: 0;
 				padding: 20px;
 				background-color: var(--color-accent);
 				z-index: 2;
-				/* opacity: 0; */
 
 				:is(dd, dt):first-of-type {
 					width: 400px;
@@ -252,28 +252,11 @@ body>aside {
 	}
 
 
-	article, section {
-		/* grid-template-columns: subgrid; */
-		/* position: relative; */
-
-
-		&:not(:hover) {
-			img {
-				/* opacity: 0; */
-			}
-		}
-	}
-
 	img {
 		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
 		display: block;
-		/* position: sticky; */
-		/* top: 0; */
-		/* grid-column: 1; */
-		/* width: 300px; */
-		/* position: fixed; */
 		order: 1;
 	}
 
@@ -307,14 +290,7 @@ body>aside {
 		height: auto;
 		margin-inline: auto;
 		text-align: center;
-		/* padding-inline: 20px; */
-
-		/* display: grid; */
 		font-size: 30px;
-		/* align-items: start; */
-		/* justify-content: center; */
-		/* align-content: start; */
-		/* grid-template-columns: repeat(auto-fill, 1.4ch); */
 		padding-top: calc(100% - 2px);
 		white-space: nowrap;
 		overflow-y: clip;
@@ -325,14 +301,12 @@ body>aside {
 
 		a {
 			color: white;
-			/* mix-blend-mode: difference; */
 			text-decoration: none;
 			font-size: inherit;
 			display: inline-block;
 			text-align: center;
 			position: static;
 			line-height: 0.5;
-			/* top: 100%; */
 			background-color: var(--color-accent);
 			padding: 2px 0;
 			padding-bottom: 10px;
@@ -347,7 +321,7 @@ body>aside {
 			}
 
 			&:where(:only-child) {
-				position
+				display: none;
 			}
 
 			header:not(:hover) & {
@@ -376,24 +350,6 @@ body>aside {
 			z-index: 3;
 		}
 	}
-
-	/* h3 { */
-
-	/* 	position: sticky; */
-	/* 	top: 0; */
-	/* 	background-color: #2d2731; */
-	/* } */
-
-	/* h4 { */
-
-	/* 	position: sticky; */
-	/* 	top: 0; */
-	/* 	background-color: #2d2731; */
-
-	/* 	grid-column: 2; */
-	/* } */
-
-
 }
 
 .song-list {

@@ -28,53 +28,15 @@
 				<meta charset="UTF-8" />
 				<title>Songlist</title>
 				<link rel="stylesheet" href="assets/css/quarantine.css" />
+				<script src="assets/js/music.js" defer="defer"></script>
 			</head>
 			<body>
-				<!-- <aside> -->
-				<!-- 	<menu> -->
-				<!-- 		<li><button>Artistes</button></li> -->
-				<!-- 		<li><button>Albums</button></li> -->
-				<!-- 		<li><button>Genres</button></li> -->
-				<!-- 	</menu> -->
-				<!-- </aside> -->
 				<main class="album-mosaic">
-					<!-- <xsl:apply-templates select="dict/dict/dict" mode="song" /> -->
 					<xsl:for-each select="dict/dict/dict[generate-id() = generate-id(key('dicts-by-artist', key[. = 'Artist']/following-sibling::string[1])[1])]">
 						<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
 						<xsl:if test="position() &lt;= $max-artists"><xsl:apply-templates select="." mode="artist" /></xsl:if>
 					</xsl:for-each>
 				</main>
-				<script>
-					document.addEventListener("click", (event) => {
-						const goToHash = (hash) => {
-							if (!hash || hash === location.hash) return;
-
-							if (!document.startViewTransition) {
-								location.hash = hash;
-								return;
-							}
-
-							document.startViewTransition(() => {
-								location.hash = hash;
-							});
-						};
-
-						const nav = event.target.closest('nav');
-						if (nav) {
-							const link = nav.querySelector('a[href^="#"]');
-							if (!link) return;
-							event.preventDefault();
-							goToHash(link.getAttribute("href"));
-							return;
-						}
-
-						const link = event.target.closest('a[href^="#"]');
-						if (!link) return;
-
-						event.preventDefault();
-						goToHash(link.getAttribute("href"));
-					});
-				</script>
 			</body>
 		</html>
 	</xsl:template>
@@ -92,12 +54,7 @@
 	</xsl:template>
 
 
-	<!-- 	<xsl:template match="key" mode="song"> -->
-		<!-- 		<dl data-type="metadata"> -->
-			<!-- 			<xsl:apply-templates select="key[. = 'Name' or . = 'Year']" mode="info"/> -->
-			<!-- 		</dl> -->
-			<!-- 		<!-1- <xsl:apply-templates select="following-sibling::key[text() = 'Location']" mode="image"/> -1-> -->
-			<!-- 	</xsl:template> -->
+
 		<xsl:template match="key" mode="info">
 			<xsl:variable name="type-label">
 				<xsl:choose>
@@ -120,7 +77,7 @@
 			<span><xsl:value-of select="text()"/></span>
 		</xsl:template>
 		<xsl:template match="string" mode="info">
-			<!-- <xsl:apply-templates select="ancestor::dict[1]" mode="player"/> -->
+			<xsl:apply-templates select="ancestor::dict[1]" mode="player"/>
 			<span><xsl:value-of select="text()"/></span>
 		</xsl:template>
 
@@ -148,9 +105,6 @@
 				</header>
 					<xsl:apply-templates select="key('dicts-by-album', $current-album)" mode="song"/>
 				</div>
-				<!-- <dl> -->
-					<!-- 	<xsl:apply-templates select="key('dicts-by-album', $current-album)/key[text() = 'Name' or text() = 'Rating']" mode="info"/> -->
-					<!-- </dl> -->
 			</article>
 		</xsl:template>
 
@@ -172,12 +126,12 @@
 			<xsl:variable name="query">
 				<xsl:apply-templates select="key" mode="player"/>
 			</xsl:variable>
-			<ul>
+			<menu>
 				<li><a href="https://duckduckgo.com/?q=!ducky+LOL%20Cats">Spotify</a></li>
 				<li><a href="https://duckduckgo.com/?q=%5Capple+music+{$query}">Apple Music</a></li>
 				<li><a href="https://duckduckgo.com/?q=%5Cyoutube+{$query}"></a>Youtube</li>
 				<li><a href="https://duckduckgo.com/?q=%5Cbandcamp+{$query}">Bandcamp</a></li>
-			</ul>
+			</menu>
 		</xsl:template>
 
 		<xsl:template match="dict" mode="artist">

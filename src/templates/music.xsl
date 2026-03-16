@@ -17,7 +17,7 @@
 	<xsl:variable name="lang">
 		<xsl:value-of select="/root/@lang" />
 	</xsl:variable>
-	<xsl:variable name="special-characters" select="'/ áàâäéèêëíìîïóòôöúùûüçÁÀÂÄÉÈÊËÍÌÎÏÓÒÔÖÚÙÛÜÇABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;’?.()!:,'"/>
+	<xsl:variable name="special-characters" select="&quot;/ áàâäéèêëíìîïóòôöúùûüçÁÀÂÄÉÈÊËÍÌÎÏÓÒÔÖÚÙÛÜÇABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;'’?.()!:,[\]&quot;"/>
 	<xsl:variable name="normalized-special-characters" select="'--aaaaeeeeiiiioooouuuuçaaaaeeeeiiiioooouuuuçabcdefghijklmnopqrstuvwxyz_'"/>
 
 	<xsl:template match="* | @* | text()" mode="string-normalizer">

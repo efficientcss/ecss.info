@@ -2,7 +2,9 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" doctype-system="about:legacy-compat" />
 
-	<xsl:param name="max-artists" select="24" />
+	<xsl:param name="artist_offset" select="0" />
+	<xsl:param name="max_artists" select="24" />
+	<xsl:param name="enable_infinite_loading" select="1" />
 	<xsl:key name="dicts-by-artist" match="dict" use="key[. = 'Artist']/following-sibling::string[1]" />
 	<xsl:key name="dicts-by-album" match="dict" use="key[. = 'Album']/following-sibling::string[1]" />
 	<!-- Identity transform -->
@@ -23,22 +25,52 @@
 	</xsl:template>
 
 	<xsl:template match="plist">
-		<html lang="en">
-			<head>
-				<meta charset="UTF-8" />
-				<title>Songlist</title>
-				<link rel="stylesheet" href="assets/css/quarantine.css" />
-				<script src="assets/js/music.js" defer="defer"></script>
-			</head>
-			<body>
-				<main class="album-mosaic">
-					<xsl:for-each select="dict/dict/dict[generate-id() = generate-id(key('dicts-by-artist', key[. = 'Artist']/following-sibling::string[1])[1])]">
-						<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
-						<xsl:if test="position() &lt;= $max-artists"><xsl:apply-templates select="." mode="artist" /></xsl:if>
-					</xsl:for-each>
-				</main>
-			</body>
-		</html>
+		<xsl:variable name="artists" select="dict/dict/dict[generate-id() = generate-id(key('dicts-by-artist', key[. = 'Artist']/following-sibling::string[1])[1])]" />
+		<xsl:variable name="total-artists" select="count($artists)" />
+		<xsl:variable name="initial-end">
+			<xsl:choose>
+				<xsl:when test="$artist_offset + $max_artists &gt; $total-artists">
+					<xsl:value-of select="$total-artists" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$artist_offset + $max_artists" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$enable_infinite_loading = 1">
+				<html lang="en">
+					<head>
+						<meta charset="UTF-8" />
+						<title>Songlist</title>
+						<link rel="stylesheet" href="assets/css/quarantine.css" />
+						<script src="https://unpkg.com/htmx.org@2.0.4" defer="defer"></script>
+						<script src="assets/js/music.js" defer="defer"></script>
+					</head>
+					<body>
+						<main class="album-mosaic" id="artist-stream" data-artists-source="artists.html" data-batch-size="{$max_artists}" data-total-artists="{$total-artists}" data-start-index="{$artist_offset + 1}" data-end-index="{$initial-end}" data-next-artist-index="{$initial-end + 1}" data-infinite-loading="{$enable_infinite_loading}">
+							<xsl:for-each select="$artists">
+								<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
+								<xsl:if test="position() &gt; $artist_offset and position() &lt;= $artist_offset + $max_artists">
+									<xsl:apply-templates select="." mode="artist">
+										<xsl:with-param name="artist-index" select="position()" />
+									</xsl:apply-templates>
+								</xsl:if>
+							</xsl:for-each>
+						</main>
+						<div id="artist-load-more" hx-get="artists.html" hx-target="#artist-stream" hx-swap="beforeend" hx-trigger="intersect once threshold:1.0" aria-hidden="true"></div>
+					</body>
+				</html>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:for-each select="$artists">
+					<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
+					<xsl:apply-templates select="." mode="artist">
+						<xsl:with-param name="artist-index" select="position()" />
+					</xsl:apply-templates>
+				</xsl:for-each>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 
@@ -135,9 +167,13 @@
 		</xsl:template>
 
 		<xsl:template match="dict" mode="artist">
+			<xsl:param name="artist-index" select="1" />
 			<xsl:variable name="current-artist" select="key[. = 'Artist']/following-sibling::string[1]" />
+			<xsl:variable name="artist-slug">
+				<xsl:apply-templates select="$current-artist" mode="string-normalizer" />
+			</xsl:variable>
 
-			<article data-type="artist">
+			<article data-type="artist" id="artist-{$artist-index}" data-artist-index="{$artist-index}" data-artist-slug="{$artist-slug}">
 				<h3>
 					<xsl:value-of select="$current-artist" />
 				</h3>

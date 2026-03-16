@@ -35,6 +35,12 @@ a {
 	color: inherit;
 }
 
+[id=artist-load-more] {
+	display: block;
+	block-size: 1px;
+	pointer-events: none;
+	opacity: 0;
+}
 .album-mosaic {
 	display: grid;
 	grid-template-columns: 0px repeat(auto-fit, minmax(200px, 1fr));

@@ -41,6 +41,24 @@ a {
 	pointer-events: none;
 	opacity: 0;
 }
+.as-star-rating {
+	position: relative;
+	display: inline-grid;
+	line-height: 1;
+	letter-spacing: 0.15em;
+
+	& .__base,
+	& .__fill {
+		grid-area: 1 / 1;
+	}
+
+	& .__fill {
+		overflow: hidden;
+		white-space: nowrap;
+		inline-size: calc(var(--rating) - 1px);
+	}
+}
+
 .album-mosaic {
 	display: grid;
 	grid-template-columns: 0px repeat(auto-fit, minmax(200px, 1fr));

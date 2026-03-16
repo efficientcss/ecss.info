@@ -145,10 +145,16 @@
 			<dd>
 				<xsl:apply-templates select="following-sibling::*[1]" mode="info" />
 			</dd>
-		</xsl:template>
-		<xsl:template match="integer" mode="info">
-			<span><xsl:value-of select="text()"/></span>
-		</xsl:template>
+	</xsl:template>
+	<xsl:template match="integer[preceding-sibling::key[1][text() = 'Rating']]" mode="info">
+		<span class="as-star-rating" aria-label="{concat(text() div 20, ' stars out of 5')}" style="--rating: {text()}%">
+			<span class="__base" aria-hidden="true">☆☆☆☆☆</span>
+			<span class="__fill" aria-hidden="true">★★★★★</span>
+		</span>
+	</xsl:template>
+	<xsl:template match="integer" mode="info">
+		<span><xsl:value-of select="text()"/></span>
+	</xsl:template>
 		<xsl:template match="string" mode="info">
 			<xsl:apply-templates select="ancestor::dict[1]" mode="player"/>
 			<span><xsl:value-of select="text()"/></span>

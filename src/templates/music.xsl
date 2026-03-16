@@ -85,11 +85,52 @@
 		</article>
 	</xsl:template>
 
+		<xsl:template name="emit-missing-info">
+			<xsl:param name="label" />
+			<dt data-label="{$label}">
+				<small><xsl:value-of select="$label"/></small>
+			</dt>
+			<dd>
+				<span>n/a</span>
+			</dd>
+		</xsl:template>
 
+		<xsl:template match="key[text() = 'Album']" mode="info">
+			<dt data-label="{text()}">
+				<small><xsl:value-of select="text()"/></small>
+			</dt>
+			<dd>
+				<xsl:apply-templates select="following-sibling::*[1]" mode="info" />
+			</dd>
+			<xsl:if test="not(../key[. = 'Genre'])">
+				<xsl:call-template name="emit-missing-info">
+					<xsl:with-param name="label" select="'Genre'" />
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:if test="not(../key[. = 'Genre']) and not(../key[. = 'Year'])">
+				<xsl:call-template name="emit-missing-info">
+					<xsl:with-param name="label" select="'Year'" />
+				</xsl:call-template>
+			</xsl:if>
+		</xsl:template>
+
+		<xsl:template match="key[text() = 'Genre']" mode="info">
+			<dt data-label="{text()}">
+				<small><xsl:value-of select="text()"/></small>
+			</dt>
+			<dd>
+				<xsl:apply-templates select="following-sibling::*[1]" mode="info" />
+			</dd>
+			<xsl:if test="not(../key[. = 'Year'])">
+				<xsl:call-template name="emit-missing-info">
+					<xsl:with-param name="label" select="'Year'" />
+				</xsl:call-template>
+			</xsl:if>
+		</xsl:template>
 
 		<xsl:template match="key" mode="info">
-			<xsl:variable name="type-label">
-				<xsl:choose>
+		<xsl:variable name="type-label">
+			<xsl:choose>
 					<xsl:when test="text() = 'Name'">
 						<xsl:value-of select="'Song'"/>
 					</xsl:when>

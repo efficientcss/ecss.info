@@ -65,7 +65,7 @@ a {
 	grid-template-rows: 1fr auto;
 
 	&:has(:target) {
-		grid-template-columns: 600px repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: minmax(400px, 2fr) repeat(auto-fit, minmax(200px, 1fr));
 
 		& [data-type=artist]:not(:has([data-label=Artist]+dd:hover)) [data-type=album]:not(:has(:target)) header:not(:hover) img {
 			opacity: 0.25;

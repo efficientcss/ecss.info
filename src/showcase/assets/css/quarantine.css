@@ -70,19 +70,33 @@ a {
 	&:has(:target) {
 		grid-template-columns: minmax(400px, 2fr) repeat(auto-fit, minmax(200px, 1fr));
 
-		& [data-type=artist]:not(:has([data-label=Artist]+dd:hover)) [data-type=album]:not(:has(:target)) header:not(:hover) img {
+		& [data-type=artist]:not(:has([data-label=Artist]+dd:hover)) [data-type=album]:not(:has(:target)) header:not(:hover) {
 			opacity: 0.25;
-			filter: saturate(0);
+
+			& img {
+				filter: saturate(0);
+			}
 		}
 	}
 
 	img {
-		transition: 200ms;
+		transition: 200ms, opacity 400ms, display allow-discrete;
+		transition-delay: 0ms, calc((var(--album-index, 1) - 1) * 40ms), 0ms;
+
+		@starting-style {
+			opacity: 0;
+		}
+
+	}
+
+	:root.is-scrolling-up & img {
+		transition-delay: 0ms, calc((var(--album-count, 1) - var(--album-index, 1)) * 40ms), 0ms;
 	}
 
 	menu {
 		position: absolute;
 		color: transparent;
+		z-index: -1;
 	}
 
 	[data-type=artist],
@@ -107,6 +121,15 @@ a {
 	}
 
 	[data-type~="album"] {
+		transition: background-color: 200ms, display allow-discrete;
+		transition-delay: 0ms, calc((var(--album-index, 1) - 1) * 40ms), 0ms;
+		&:empty {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			aspect-ratio: 1;
+		}
+
 		& :is(article, section, div) {
 			display: contents;
 		}
@@ -131,6 +154,10 @@ a {
 				filter: saturate(0) invert(1);
 			}
 
+			& header::before {
+				inset: 0;
+			}
+
 			[data-type=song]:target {
 				order: -1;
 			}
@@ -147,23 +174,19 @@ a {
 				display: flex;
 				flex-direction: column;
 				background-color: lightgrey;
-				max-height: calc(100dvh - var(--album-selector-width));
+				max-height: 100dvh;
 				position: sticky;
-				top: var(--album-selector-width);
+				top: 0;
 				overflow-y: auto;
-				gap: 20px;
-				align-items: center;
+				gap: 10px;
 
-				& :is(dl,header) {
-					width: 100%;
-					max-width: 40ch;
-				}
 
 			}
 
 			dl {
 				display: grid;
 				grid-template-columns: 1fr auto;
+				margin-inline: 20px;
 
 				&>* {
 				}
@@ -171,7 +194,7 @@ a {
 
 			[data-label=Album]+dd {
 				order: -1;
-
+				margin-top: 10px;
 			}
 
 			:is([data-label=Genre], [data-label=Year], [data-label=Rating]) {
@@ -260,7 +283,7 @@ a {
 		&:not(:has(:target)) {
 			dl {
 				order: 2;
-				grid-column: 2 / -1;
+				grid-column: 5 / -1;
 				bottom: 0;
 				display: grid;
 				grid-template-rows: repeat(2, auto);
@@ -271,11 +294,26 @@ a {
 				background-color: var(--color-accent);
 				z-index: 2;
 
+				& dd {
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+
+			}
+
+			dt:where([data-label=Genre],[data-label=Year]) {
+				&, &+dd {
+					display: none;
+				}
+			}
+
+			[data-type=song] dl {
+				grid-column: 2 / span 3;
+
 				:is(dd, dt):first-of-type {
 					width: 400px;
 				}
-
-
 			}
 
 			&:not(:hover) dl {
@@ -298,22 +336,23 @@ a {
 	}
 
 	header {
+		box-sizing: border-box;
 		position: relative;
+		outline: 0px transparent solid;
+		outline-offset: calc(-1 * var(--album-selector-width));
 
-		&:before {
-			content: "";
-			position: absolute;
-			inset: calc(-1 * var(--album-selector-width));
-			border-radius: 4px;
-			background-color: var(--color-accent);
-			z-index: -1;
+		border: var(--album-selector-width) solid white;
+		transition: outline 400ms  calc((var(--album-index, 1) - 1) * 40ms), border-width 100ms, opacity 200ms, display allow-discrete;
+
+
+
+		&:not(:hover) {
+			border-width: 0px;
 		}
 
-		&:not(:hover):before {
-			opacity: 0;
+		@starting-style {
+			outline: 2px darkgrey solid;
 		}
-
-
 	}
 
 	nav {
@@ -384,6 +423,7 @@ a {
 		}
 	}
 }
+
 
 .song-list {
 	width: 100%;

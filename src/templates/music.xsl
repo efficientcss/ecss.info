@@ -4,7 +4,9 @@
 
 	<xsl:param name="artist_offset" select="0" />
 	<xsl:param name="max_artists" select="24" />
+	<xsl:param name="artists_per_section" select="12" />
 	<xsl:param name="enable_infinite_loading" select="1" />
+	<xsl:param name="render_full_page" select="0" />
 	<xsl:key name="dicts-by-artist" match="dict" use="key[. = 'Artist']/following-sibling::string[1]" />
 	<xsl:key name="dicts-by-album" match="dict" use="key[. = 'Album']/following-sibling::string[1]" />
 	<!-- Identity transform -->
@@ -37,37 +39,63 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+		<xsl:variable name="total_sections" select="floor(($total-artists + $artists_per_section - 1) div $artists_per_section)" />
+		<xsl:variable name="initial_section_end" select="floor(($initial-end + $artists_per_section - 1) div $artists_per_section)" />
 		<xsl:choose>
-			<xsl:when test="$enable_infinite_loading = 1">
+			<xsl:when test="$enable_infinite_loading = 1 or $render_full_page = 1">
 				<html lang="en">
 					<head>
 						<meta charset="UTF-8" />
 						<title>Songlist</title>
 						<link rel="stylesheet" href="assets/css/quarantine.css" />
-						<script src="https://unpkg.com/htmx.org@2.0.4" defer="defer"></script>
+						<xsl:if test="$enable_infinite_loading = 1">
+							<script src="https://unpkg.com/htmx.org@2.0.4" defer="defer"></script>
+						</xsl:if>
 						<script src="assets/js/music.js" defer="defer"></script>
 					</head>
 					<body>
-						<main class="album-mosaic" id="artist-stream" data-artists-source="artists.html" data-batch-size="{$max_artists}" data-total-artists="{$total-artists}" data-start-index="{$artist_offset + 1}" data-end-index="{$initial-end}" data-next-artist-index="{$initial-end + 1}" data-infinite-loading="{$enable_infinite_loading}">
+						<main class="album-mosaic" id="artist-stream" data-artists-source="artists.html" data-batch-size="{$max_artists}" data-total-artists="{$total-artists}" data-total-sections="{$total_sections}" data-start-index="{$artist_offset + 1}" data-end-index="{$initial-end}" data-next-section-index="{$initial_section_end + 1}" data-infinite-loading="{$enable_infinite_loading}">
 							<xsl:for-each select="$artists">
 								<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
-								<xsl:if test="position() &gt; $artist_offset and position() &lt;= $artist_offset + $max_artists">
-									<xsl:apply-templates select="." mode="artist">
-										<xsl:with-param name="artist-index" select="position()" />
-									</xsl:apply-templates>
+								<xsl:variable name="section_index" select="floor((position() - 1) div $artists_per_section) + 1" />
+								<xsl:if test="position() mod $artists_per_section = 1 and ($render_full_page = 1 or $section_index &lt;= $initial_section_end)">
+									<section data-type="artist-section" id="artist-section-{$section_index}" data-section-index="{$section_index}">
+										<xsl:variable name="section_start" select="position()" />
+										<xsl:for-each select="$artists">
+											<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
+											<xsl:if test="position() &gt;= $section_start and position() &lt; $section_start + $artists_per_section">
+												<xsl:apply-templates select="." mode="artist">
+													<xsl:with-param name="artist-index" select="position()" />
+												</xsl:apply-templates>
+											</xsl:if>
+										</xsl:for-each>
+									</section>
 								</xsl:if>
 							</xsl:for-each>
 						</main>
-						<div id="artist-load-more" hx-get="artists.html" hx-target="#artist-stream" hx-swap="beforeend" hx-trigger="intersect once threshold:1.0" aria-hidden="true"></div>
+						<xsl:if test="$enable_infinite_loading = 1">
+							<div id="artist-load-more" aria-hidden="true"></div>
+						</xsl:if>
 					</body>
 				</html>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:for-each select="$artists">
 					<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
-					<xsl:apply-templates select="." mode="artist">
-						<xsl:with-param name="artist-index" select="position()" />
-					</xsl:apply-templates>
+					<xsl:variable name="section_index" select="floor((position() - 1) div $artists_per_section) + 1" />
+					<xsl:if test="position() mod $artists_per_section = 1">
+						<section data-type="artist-section" id="artist-section-{$section_index}" data-section-index="{$section_index}">
+							<xsl:variable name="section_start" select="position()" />
+							<xsl:for-each select="$artists">
+								<xsl:sort select="key[. = 'Artist']/following-sibling::string[1]" />
+								<xsl:if test="position() &gt;= $section_start and position() &lt; $section_start + $artists_per_section">
+									<xsl:apply-templates select="." mode="artist">
+										<xsl:with-param name="artist-index" select="position()" />
+									</xsl:apply-templates>
+								</xsl:if>
+							</xsl:for-each>
+						</section>
+					</xsl:if>
 				</xsl:for-each>
 			</xsl:otherwise>
 		</xsl:choose>

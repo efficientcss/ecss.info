@@ -108,6 +108,10 @@ a {
 		}
 
 		& header {
+			view-transition-name: none;
+		}
+
+		&.is-visible header {
 			view-transition-name: match-element;
 		}
 

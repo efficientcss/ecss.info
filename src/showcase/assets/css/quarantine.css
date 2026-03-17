@@ -9,12 +9,15 @@
 	padding: 0;
 }
 
+html {
+	scroll-snap-type: y proximity;
+}
+
 body {
 	background-color: lightgrey;
 	color: darkblue;
 	font-family: "PP Neue Montreal", "Helvetica Neue", "sans-serif";
 	font-size: clamp(13px, 1vw, 14px);
-	padding: var(--album-selector-width);
 }
 
 img {
@@ -109,6 +112,7 @@ a {
 
 		& header {
 			view-transition-name: none;
+			scroll-snap-align: start;
 		}
 
 		&.is-visible header {

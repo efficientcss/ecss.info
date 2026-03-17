@@ -86,6 +86,7 @@ a {
 	}
 
 	[data-type=artist],
+	[data-type=artist-section],
 	[data-type=album] {
 		display: contents;
 	}

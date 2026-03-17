@@ -80,7 +80,7 @@
 		</xsl:variable>
 		<article data-type="song" id="{$song-id}">
 			<dl data-type="metadata">
-				<xsl:apply-templates select="key[. != 'Location' and . != 'Persistent ID']" mode="info"/>
+				<xsl:apply-templates select="key[. = 'Name' or . = 'Rating']" mode="info"/>
 			</dl>
 		</article>
 	</xsl:template>
@@ -182,7 +182,12 @@
 						</xsl:for-each>
 					</nav>
 				</header>
-					<xsl:apply-templates select="key('dicts-by-album', $current-album)" mode="song"/>
+
+				<dl data-type="metadata">
+					<xsl:apply-templates select="key[. = 'Artist' or . = 'Album' or . = 'Genre' or . = 'Year']" mode="info" />
+				</dl>
+
+				<xsl:apply-templates select="key('dicts-by-album', $current-album)" mode="song"/>
 				</div>
 			</article>
 		</xsl:template>

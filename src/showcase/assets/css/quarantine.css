@@ -292,7 +292,7 @@ a {
 		&:not(:has(:target)) {
 			dl {
 				order: 2;
-				grid-column: 5 / -1;
+				grid-column: 2 / span 2;
 				bottom: 0;
 				display: grid;
 				grid-template-rows: repeat(2, auto);
@@ -302,11 +302,14 @@ a {
 				padding: 20px;
 				background-color: var(--color-accent);
 				z-index: 2;
+				align-self: end;
+				justify-content: start;
 
 				& dd {
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					overflow: hidden;
+					min-width: 200px;
 				}
 
 			}
@@ -318,11 +321,7 @@ a {
 			}
 
 			[data-type=song] dl {
-				grid-column: 2 / span 3;
-
-				:is(dd, dt):first-of-type {
-					width: 400px;
-				}
+				grid-column: 4 / -1;
 			}
 
 			&:not(:hover) dl {

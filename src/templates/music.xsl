@@ -188,15 +188,42 @@
 			<span><xsl:value-of select="text()"/></span>
 		</xsl:template>
 
-		<xsl:template match="key" mode="image">
-			<xsl:variable name="album" select="following-sibling::string/text()" />
-			<img src="assets/covers/{$album}/cover.webp" alt="{$album}" loading="lazy"  />
+		<xsl:template match="key[text() = 'Location']" mode="image">
+			<xsl:variable name="location" select="following-sibling::string/text()" />
+			<xsl:variable name="cover-url" select="../key[text() = 'Cover URL']/following-sibling::string[1]" />
+			<img alt="{$location}" loading="lazy">
+				<xsl:attribute name="src">
+					<xsl:choose>
+						<xsl:when test="starts-with($location, 'http://') or starts-with($location, 'https://')">
+							<xsl:value-of select="$location" />
+						</xsl:when>
+						<xsl:when test="$cover-url">
+							<xsl:value-of select="$cover-url" />
+						</xsl:when>
+						<xsl:otherwise>assets/covers/<xsl:value-of select="$location" />/cover.webp</xsl:otherwise>
+					</xsl:choose>
+				</xsl:attribute>
+			</img>
 		</xsl:template>
 
 		<xsl:template match="dict" mode="album">
 			<xsl:variable name="current-album" select="key[. = 'Album']/following-sibling::string[1]" />
-			<xsl:variable name="album" select="$current-album/following-sibling::key[text() = 'Location']/following-sibling::string/text()"></xsl:variable>
-			<article data-type="album" style="--placeholder: url('../covers/{$album}/cover.webp')">
+			<xsl:variable name="location" select="$current-album/following-sibling::key[text() = 'Location']/following-sibling::string/text()"></xsl:variable>
+			<xsl:variable name="cover-url" select="$current-album/following-sibling::key[text() = 'Cover URL']/following-sibling::string[1]" />
+			<article data-type="album">
+				<xsl:attribute name="style">
+					<xsl:text>--placeholder: url('</xsl:text>
+					<xsl:choose>
+						<xsl:when test="starts-with($location, 'http://') or starts-with($location, 'https://')">
+							<xsl:value-of select="$location" />
+						</xsl:when>
+						<xsl:when test="$cover-url">
+							<xsl:value-of select="$cover-url" />
+						</xsl:when>
+						<xsl:otherwise>../covers/<xsl:value-of select="$location" />/cover.webp</xsl:otherwise>
+					</xsl:choose>
+					<xsl:text>')</xsl:text>
+				</xsl:attribute>
 				<div>
 				<header>
 					<xsl:apply-templates select="$current-album/following-sibling::key[text() = 'Location']" mode="image" />
@@ -238,8 +265,25 @@
 			<xsl:variable name="query">
 				<xsl:apply-templates select="key" mode="player"/>
 			</xsl:variable>
+			<xsl:variable name="spotify-track-url" select="key[. = 'Spotify Track URL']/following-sibling::string[1]" />
+			<xsl:variable name="spotify-album-url" select="key[. = 'Spotify Album URL']/following-sibling::string[1]" />
 			<menu>
-				<li><a href="https://duckduckgo.com/?q=!ducky+LOL%20Cats">Spotify</a></li>
+				<li>
+					<a>
+						<xsl:attribute name="href">
+							<xsl:choose>
+								<xsl:when test="$spotify-track-url">
+									<xsl:value-of select="$spotify-track-url" />
+								</xsl:when>
+								<xsl:when test="$spotify-album-url">
+									<xsl:value-of select="$spotify-album-url" />
+								</xsl:when>
+								<xsl:otherwise>https://duckduckgo.com/?q=!ducky+<xsl:value-of select="$query" /></xsl:otherwise>
+							</xsl:choose>
+						</xsl:attribute>
+						Spotify
+					</a>
+				</li>
 				<li><a href="https://duckduckgo.com/?q=%5Capple+music+{$query}">Apple Music</a></li>
 				<li><a href="https://duckduckgo.com/?q=%5Cyoutube+{$query}"></a>Youtube</li>
 				<li><a href="https://duckduckgo.com/?q=%5Cbandcamp+{$query}">Bandcamp</a></li>

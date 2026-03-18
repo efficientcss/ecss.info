@@ -147,11 +147,20 @@ a {
 
 			&::before {
 				content: "";
+
+			&::before, &::after {
 				aspect-ratio: 1;
 				background: top center / contain no-repeat var(--placeholder);
 				display: block;
-				border: var(--album-selector-width) solid black;
-				filter: saturate(0) invert(1);
+			}
+
+			&:has(header:active)::after {
+				content: "";
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				bottom: 20px;
+				z-index: 2;
 			}
 
 			& header::before {

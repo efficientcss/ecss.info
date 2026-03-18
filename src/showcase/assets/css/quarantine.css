@@ -148,6 +148,10 @@ a {
 			&::before {
 				content: "";
 
+				border: var(--album-selector-width) solid black;
+				filter: saturate(0) invert(1);
+			}
+
 			&::before, &::after {
 				aspect-ratio: 1;
 				background: top center / contain no-repeat var(--placeholder);

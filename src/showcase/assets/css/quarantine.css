@@ -332,7 +332,7 @@ a {
 
 
 	img {
-		width: 100%;
+		flex-basis: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
 		display: block;
@@ -346,6 +346,7 @@ a {
 	header {
 		box-sizing: border-box;
 		position: relative;
+		display: flex;
 		outline: 0px transparent solid;
 		outline-offset: calc(-1 * var(--album-selector-width));
 

@@ -169,7 +169,7 @@ a {
 
 			&>div {
 				order: -1;
-				grid-row: 1 / span 99999;
+				grid-row: 1 / span 999;
 				grid-column: 1;
 				display: flex;
 				flex-direction: column;

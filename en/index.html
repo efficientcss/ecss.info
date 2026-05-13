@@ -351,6 +351,10 @@ with its filename.</h3>
 config, prefix the filename with a digit or “x-” as in
 “x-quarantine.css”</p>
 </section>
+<section>
+<h4 id="checks">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-filename.js" class="css">ecss/selector-filename</a></p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="example">Example</h4>
@@ -380,6 +384,10 @@ be adjusted if necessary.</h3>
 <p>Non-uniform paddings may be used in particular instances for <code class="sourceCode css">overflow</code> reasons or for added
 pseudo-content. Without these reasons, non-uniform spacing may be better
 created with margins.</p>
+</section>
+<section>
+<h4 id="checks-1">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-padding-constraints.js" class="css">ecss/padding-constraints</a></p>
 </section>
 </div>
 <aside>
@@ -411,6 +419,10 @@ interactive elements only.</h3>
 can host theming styles. In some instances, container elements could
 host text styles to be inherited by children.</p>
 </section>
+<section>
+<h4 id="checks-2">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-padding.js" class="css">ecss/content-padding</a></p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="example-2">Example</h4>
@@ -426,21 +438,26 @@ host text styles to be inherited by children.</p>
 <div>
 <div>
 <header>
-<h3 id="content-margin">Horizontal margins should not be applied to text
-elements.</h3>
+<h3 id="content-block">Text tags should generally remain
+block-level.</h3>
 </header>
 <section>
 <h4 id="principles-4">Principles</h4>
 <ul>
-<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#specific-role">Specific role</a></li>
 <li><a href="#one-role">One role only</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-3">Notes</h4>
-<p>Horizontal margins can be applied to text elements in the case of
-<code class="sourceCode css">inline</code> elements such as icons or
-tags &amp; on indented elements like <code class="sourceCode html">blockquote</code>.</p>
+<p>Text selectors should keep text-like display behavior unless there is
+a clear structural reason to do otherwise. Turning them into layout
+containers usually means the surrounding structure is carrying the wrong
+responsibility.</p>
+</section>
+<section>
+<h4 id="checks-3">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-block.js" class="css">ecss/content-block</a></p>
 </section>
 </div>
 <aside>
@@ -457,20 +474,25 @@ tags &amp; on indented elements like <code class="sourceCode html">blockquote</c
 <div>
 <div>
 <header>
-<h3 id="type-inheritance">Typographic elements should use inheritance
-when possible.</h3>
+<h3 id="content-margin">Horizontal margins should not be applied to text
+elements.</h3>
 </header>
 <section>
 <h4 id="principles-5">Principles</h4>
 <ul>
 <li><a href="#specific-role">Specific roles and usage</a></li>
-<li><a href="#global-scope">Global scope</a></li>
+<li><a href="#one-role">One role only</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-4">Notes</h4>
-<p>Inheritance allows for high-level styling. With little code, we cast
-a wide net while limiting specificity to a minimum.</p>
+<p>Horizontal margins can be applied to text elements in the case of
+<code class="sourceCode css">inline</code> elements such as icons or
+tags &amp; on indented elements like <code class="sourceCode html">blockquote</code>.</p>
+</section>
+<section>
+<h4 id="checks-4">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-margin.js" class="css">ecss/content-margin</a></p>
 </section>
 </div>
 <aside>
@@ -487,22 +509,24 @@ a wide net while limiting specificity to a minimum.</p>
 <div>
 <div>
 <header>
-<h3 id="design-tokens">Design tokens should be used for most numerical
-values.</h3>
+<h3 id="type-inheritance">Typographic elements should use inheritance
+when possible.</h3>
 </header>
 <section>
 <h4 id="principles-6">Principles</h4>
 <ul>
-<li><a href="#designing-language">Designing language</a></li>
-<li><a href="#design-empowerment">Designer empowerment</a></li>
-<li><a href="#devtools">Development tools</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#global-scope">Global scope</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-5">Notes</h4>
-<p>Numerical values should only be used for exceptional alignments.
-These should be commented to communicate the intent. Even then, why not
-create a bespoke property meaningfully named?</p>
+<p>Inheritance allows for high-level styling. With little code, we cast
+a wide net while limiting specificity to a minimum.</p>
+</section>
+<section>
+<h4 id="checks-5">Checks</h4>
+<p>No plugin is associated with this section.</p>
 </section>
 </div>
 <aside>
@@ -510,6 +534,42 @@ create a bespoke property meaningfully named?</p>
 <div>
 <div class="sourceCode" id="cb11" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb11" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb12" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb12" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="design-tokens">Design tokens should be used for most numerical
+values.</h3>
+</header>
+<section>
+<h4 id="principles-7">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#devtools">Development tools</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-6">Notes</h4>
+<p>Numerical values should only be used for exceptional alignments.
+These should be commented to communicate the intent. Even then, why not
+create a bespoke property meaningfully named?</p>
+</section>
+<section>
+<h4 id="checks-6">Checks</h4>
+<p>No plugin is associated with this section.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-6">Example</h4>
+<div>
+<div class="sourceCode" id="cb13" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb13" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb14" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb14" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -531,17 +591,27 @@ together using nesting.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-6">Notes</h4>
+<h4 id="notes-7">Notes</h4>
 <p>Certain properties need to be joined to others, using a precise
 structure, to be functional. It is important to keep this relationship
 clear and explicit. Nesting simply fulfills this role.</p>
+</section>
+<section>
+<h4 id="checks-7">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-align-display.js" class="css">ecss/align-display</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-prop.js" class="css">ecss/flex-prop</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-children.js" class="css">ecss/flex-children</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-shorthand.js" class="css">ecss/flex-shorthand</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-position-prop.js" class="css">ecss/position-prop</a></li>
+</ul>
 </section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple">Exemple</h4>
 <div>
-<div class="sourceCode" id="cb13" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb13" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb14" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb14" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb15" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb15" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb16" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb16" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -555,23 +625,27 @@ clear and explicit. Nesting simply fulfills this role.</p>
 is discouraged.</h3>
 </header>
 <section>
-<h4 id="principles-7">Principles</h4>
+<h4 id="principles-8">Principles</h4>
 <ul>
 <li><a href="#selector-intention">Selector intention</a></li>
 <li><a href="#selector-function">Selector function</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-7">Notes</h4>
+<h4 id="notes-8">Notes</h4>
 <p>Any instance of repeating default <em>must</em> be justified in a
 comment.</p>
 </section>
+<section>
+<h4 id="checks-8">Checks</h4>
+<p>No plugin is associated with this section.</p>
+</section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-6">Example</h4>
+<h4 class="as-visually-hidden" id="example-7">Example</h4>
 <div>
-<div class="sourceCode" id="cb15" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb15" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb16" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb16" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb17" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb17" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb18" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb18" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -585,7 +659,7 @@ comment.</p>
 <em>must</em> be prefixed.</h3>
 </header>
 <section>
-<h4 id="principles-8">Principles</h4>
+<h4 id="principles-9">Principles</h4>
 <ul>
 <li><a href="#child-concepts">Child concepts</a></li>
 <li><a href="#selector-intention">Selector intention</a></li>
@@ -594,7 +668,7 @@ comment.</p>
 </ul>
 </section>
 <section>
-<h4 id="notes-8">Notes</h4>
+<h4 id="notes-9">Notes</h4>
 <p>Modifying components and entities across the code base, from one file
 to another, is the greatest source of unpredictability (and probably
 frustration) in CSS development. By forcing the use of explicit and
@@ -622,12 +696,19 @@ system.</li>
 adaptive patterns.</li>
 </ul>
 </section>
+<section>
+<h4 id="checks-9">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-child-prefix.js" class="css">ecss/class-child-prefix</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-combined-prefix.js" class="css">ecss/class-combined-prefix</a></li>
+</ul>
+</section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-7">Example</h4>
+<h4 class="as-visually-hidden" id="example-8">Example</h4>
 <div>
-<div class="sourceCode" id="cb17" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb17" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb18" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb18" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb19" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb19" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb20" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb20" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -646,46 +727,17 @@ adaptive patterns.</li>
 </ul>
 </section>
 <section>
-<h4 id="notes-9">Notes</h4>
+<h4 id="notes-10">Notes</h4>
 <p>The use of <code>&amp;</code> in the selection makes the nesting
 explicit and prevents comprehension errors due to long nestings.</p>
+</section>
+<section>
+<h4 id="checks-10">Checks</h4>
+<p><a href="https://stylelint.io/user-guide/rules/selector-nested-pattern/" class="css">selector-nested-pattern</a></p>
 </section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-1">Exemple</h4>
-<div>
-<div class="sourceCode" id="cb19" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb19" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb20" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb20" data-hx-trigger="intersect once"></div>
-</div>
-</aside>
-</div>
-</article>
-<hr>
-<article>
-<div>
-<div>
-<header>
-<h3 id="nesting-level">Nesting is restricted to two levels only.</h3>
-</header>
-<section>
-<h4 id="principles-9">Principles</h4>
-<ul>
-<li><a href="#child-concepts">Child concepts</a></li>
-<li><a href="#selector-intention">Selector intention</a></li>
-</ul>
-</section>
-<section>
-<h4 id="notes-10">Notes</h4>
-<p>Nesting can encourage authoring on autopilot, without thinking about
-our selection intention. That’s one reason why we will ultimately write
-<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
-instead of <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
-fragilizing our CSS. One level of nesting should be enough almost all
-cases.</p>
-</section>
-</div>
-<aside>
-<h4 class="as-visually-hidden" id="example-8">Example</h4>
 <div>
 <div class="sourceCode" id="cb21" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb21" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb22" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb22" data-hx-trigger="intersect once"></div>
@@ -698,24 +750,27 @@ cases.</p>
 <div>
 <div>
 <header>
-<h3 id="specific-sizes">The use of specific sizes should be
-avoided.</h3>
+<h3 id="nesting-level">Nesting is restricted to two levels only.</h3>
 </header>
 <section>
 <h4 id="principles-10">Principles</h4>
 <ul>
-<li><a href="#properties-not-equal">Properties are not equal</a></li>
-<li><a href="#specific-role">Specific role</a></li>
-<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#child-concepts">Child concepts</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-11">Notes</h4>
-<p>The Web is fluid and authoring should embrace this fluidity. By
-choosing to limit dimensions of our components instead of dictating
-them, we delegate work to the browser, letting it do its job. Fixed
-dimensions should be only be applied to graphical elements like
-pictures, videos and icons.</p>
+<p>Nesting can encourage authoring on autopilot, without thinking about
+our selection intention. That’s one reason why we will ultimately write
+<code class="sourceCode css"><span class="fu">.card</span> div h2</code>
+instead of <code class="sourceCode css"><span class="fu">.card</span> h2</code>,
+fragilizing our CSS. One level of nesting should be enough almost all
+cases.</p>
+</section>
+<section>
+<h4 id="checks-11">Checks</h4>
+<p><a href="https://stylelint.io/user-guide/rules/max-nesting-depth/" class="css">max-nesting-depth</a></p>
 </section>
 </div>
 <aside>
@@ -732,23 +787,33 @@ pictures, videos and icons.</p>
 <div>
 <div>
 <header>
-<h3 id="use-attribute-selectors-to-convey-unicity.">Use attribute
-selectors to convey unicity.</h3>
+<h3 id="specific-sizes">The use of specific sizes should be
+avoided.</h3>
 </header>
 <section>
 <h4 id="principles-11">Principles</h4>
 <ul>
-<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
 <li><a href="#specific-role">Specific role</a></li>
-<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-12">Notes</h4>
-<p>Ids convey meaning but their CSS selector is a specificity nightmare.
-Use attribute selector to keep the meaning (unicity!) while keeping
-specificiy at sane levels. Other use cases includes form controls &amp;
-inputs and js managed states (ie: <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
+<p>The Web is fluid and authoring should embrace this fluidity. By
+choosing to limit dimensions of our components instead of dictating
+them, we delegate work to the browser, letting it do its job. Fixed
+dimensions should be only be applied to graphical elements like
+pictures, videos and icons.</p>
+</section>
+<section>
+<h4 id="checks-12">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-dimensions.js" class="css">ecss/selector-dimensions</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-component-dimensions.js" class="css">ecss/component-dimensions</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-relative-width.js" class="css">ecss/relative-width</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-width-100p.js" class="css">ecss/width-100p</a></li>
+</ul>
 </section>
 </div>
 <aside>
@@ -765,20 +830,27 @@ inputs and js managed states (ie: <code class="sourceCode css"><span class="ex">
 <div>
 <div>
 <header>
-<h3 id="the-use-of-positioning-and-display-rules-should-be-minimized.">The
-use of positioning and display rules should be minimized.</h3>
+<h3 id="use-attribute-selectors-to-convey-unicity.">Use attribute
+selectors to convey unicity.</h3>
 </header>
 <section>
 <h4 id="principles-12">Principles</h4>
 <ul>
-<li><a href="#properties-not-equal">Properties are not equal</a></li>
-<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-13">Notes</h4>
-<p>Use these properties only on elements needing them. Use the narrowest
-selectors that makes sense in the context.</p>
+<p>Ids convey meaning but their CSS selector is a specificity nightmare.
+Use attribute selector to keep the meaning (unicity!) while keeping
+specificiy at sane levels. Other use cases includes form controls &amp;
+inputs and js managed states (ie: <code class="sourceCode css"><span class="ex">[</span><span class="ss">data-state</span><span class="op">=</span><span class="st">"active"</span><span class="ex">]</span></code>)</p>
+</section>
+<section>
+<h4 id="checks-13">Checks</h4>
+<p><a href="https://stylelint.io/user-guide/rules/selector-max-id/" class="css">selector-max-id</a></p>
 </section>
 </div>
 <aside>
@@ -795,22 +867,28 @@ selectors that makes sense in the context.</p>
 <div>
 <div>
 <header>
-<h3 id="overqualified-selectors">Overqualified selectors are
-discouraged.</h3>
+<h3 id="position-display">The use of positioning and display rules
+should be minimized.</h3>
 </header>
 <section>
 <h4 id="principles-13">Principles</h4>
 <ul>
-<li><a href="#harness-specificity">Harness specificity</a></li>
-<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#browser-rendering">Browser rendering</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-14">Notes</h4>
-<p>Class entities should not be combined with tag selectors. Generic
-selectors can be used as a selection piece but not as qualifiers.
-Exceptionally, certain specific tags such as <code class="sourceCode css">html</code> or <code class="sourceCode css">body</code> could be used to restrict the
-application of a class entity.</p>
+<p>Use these properties only on elements needing them. Use the narrowest
+selectors that makes sense in the context.</p>
+</section>
+<section>
+<h4 id="checks-14">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-position-sensitive.js" class="css">ecss/position-sensitive</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-large-selector-rule.js" class="css">ecss/large-selector-rule</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-technique-centered.js" class="css">ecss/technique-centered</a></li>
+</ul>
 </section>
 </div>
 <aside>
@@ -827,24 +905,29 @@ application of a class entity.</p>
 <div>
 <div>
 <header>
-<h3 id="component-outside">Components cannot exert outside
-influence.</h3>
+<h3 id="overqualified-selectors">Overqualified selectors are
+discouraged.</h3>
 </header>
 <section>
 <h4 id="principles-14">Principles</h4>
 <ul>
-<li><a href="#autonomous-concept">Autonomous concepts</a></li>
-<li><a href="#properties-not-equal">Properties are not equal</a></li>
-<li><a href="#specific-role">Specific roles and usage</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-15">Notes</h4>
-<p>Components are made to fit into “holes”. These holes are managed by
-another component or a higher-level utility (e.g. a grid or carousel).
-No component in this sense should incorporate margins. These are applied
-as a rhythm by a parent. Thus, the components are versatile and reusable
-in various contexts.</p>
+<p>Class entities should not be combined with tag selectors. Generic
+selectors can be used as a selection piece but not as qualifiers.
+Exceptionally, certain specific tags such as <code class="sourceCode css">html</code> or <code class="sourceCode css">body</code> could be used to restrict the
+application of a class entity.</p>
+</section>
+<section>
+<h4 id="checks-15">Checks</h4>
+<ul>
+<li><a href="https://stylelint.io/user-guide/rules/selector-no-qualifying-type/" class="css">selector-no-qualifying-type</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-tag-scoped-class.js" class="css">ecss/tag-scoped-class</a></li>
+</ul>
 </section>
 </div>
 <aside>
@@ -861,23 +944,28 @@ in various contexts.</p>
 <div>
 <div>
 <header>
-<h3 id="overflow-hidden">Overflow should not be hidden.</h3>
+<h3 id="component-outside">Components cannot exert outside
+influence.</h3>
 </header>
 <section>
 <h4 id="principles-15">Principles</h4>
 <ul>
-<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
 <li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-16">Notes</h4>
-<p>By hiding the way browsers treat overflowing items, we may hide
-content without knowing. By using <code class="sourceCode css">auto</code> instead of <code class="sourceCode css">hidden</code>, the oveflowing content will be
-accessible <em>and</em> the scrollbar will signal the design problem
-instead of hiding it. Hiding scrollbars may be necessary in some
-particular composition (see this very site’s portrait adaptation for an
-example!).</p>
+<p>Components are made to fit into “holes”. These holes are managed by
+another component or a higher-level utility (e.g. a grid or carousel).
+No component in this sense should incorporate margins. These are applied
+as a rhythm by a parent. Thus, the components are versatile and reusable
+in various contexts.</p>
+</section>
+<section>
+<h4 id="checks-16">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-component-outside.js" class="css">ecss/component-outside</a></p>
 </section>
 </div>
 <aside>
@@ -894,29 +982,70 @@ example!).</p>
 <div>
 <div>
 <header>
-<h3 id="numbered-classes">Numbers in class names are to be avoided.</h3>
+<h3 id="overflow-hidden">Overflow should not be hidden.</h3>
 </header>
 <section>
 <h4 id="principles-16">Principles</h4>
+<ul>
+<li><a href="#browser-rendering">Browser rendering</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-17">Notes</h4>
+<p>By hiding the way browsers treat overflowing items, we may hide
+content without knowing. By using <code class="sourceCode css">auto</code> instead of <code class="sourceCode css">hidden</code>, the oveflowing content will be
+accessible <em>and</em> the scrollbar will signal the design problem
+instead of hiding it. Hiding scrollbars may be necessary in some
+particular composition (see this very site’s portrait adaptation for an
+example!).</p>
+</section>
+<section>
+<h4 id="checks-17">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-overflow-hidden.js" class="css">ecss/overflow-hidden</a></p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-15">Example</h4>
+<div>
+<div class="sourceCode" id="cb35" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb35" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb36" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb36" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="numbered-classes">Numbers in class names are to be avoided.</h3>
+</header>
+<section>
+<h4 id="principles-17">Principles</h4>
 <ul>
 <li><a href="#understood-concept">Wait before naming</a></li>
 <li><a href="#selector-intention">Selector intention</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-17">Notes</h4>
+<h4 id="notes-18">Notes</h4>
 <p>Adding a number to a class demonstrates a poor understanding of its
 role and communicates no clear intent. Ask yourself why you need to add
 a number and use the answer to explicitly name your class. If you need
 to use the structure to style certain elements, use the relevant
 pseudo-classes instead.</p>
 </section>
+<section>
+<h4 id="checks-18">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-numbered.js" class="css">ecss/class-numbered</a></p>
+</section>
 </div>
 <aside>
 <h4 class="as-visually-hidden" id="exemple-2">Exemple</h4>
 <div>
-<div class="sourceCode" id="cb35" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb35" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb36" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb36" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb37" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb37" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb38" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb38" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -930,7 +1059,7 @@ pseudo-classes instead.</p>
 explained in a line comment.</h3>
 </header>
 <section>
-<h4 id="principles-17">Principles</h4>
+<h4 id="principles-18">Principles</h4>
 <ul>
 <li><a href="#designing-language">Designing language</a></li>
 <li><a href="#design-empowerment">Designer empowerment</a></li>
@@ -938,43 +1067,15 @@ explained in a line comment.</h3>
 </ul>
 </section>
 <section>
-<h4 id="notes-18">Notes</h4>
+<h4 id="notes-19">Notes</h4>
 <p>Value and unit choices should be dictated by the graphic language and
 its design tokens. Absolute values in numerical form should be reserved
 to special cases like bespoke icon alignment or bullet list padding. The
 intention <em>must</em> be clear in itself or commented if not.</p>
 </section>
-</div>
-<aside>
-<h4 class="as-visually-hidden" id="example-15">Example</h4>
-<div>
-<div class="sourceCode" id="cb37" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb37" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb38" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb38" data-hx-trigger="intersect once"></div>
-</div>
-</aside>
-</div>
-</article>
-<hr>
-<article>
-<div>
-<div>
-<header>
-<h3 id="rhythm-must-be-applied-in-one-direction-only-preferably-top.">Rhythm
-<em>must</em> be applied in one direction only, preferably top.</h3>
-</header>
 <section>
-<h4 id="principles-18">Principles</h4>
-<ul>
-<li><a href="#designing-language">Designing language</a></li>
-<li><a href="#specific-role">Specific roles and usage</a></li>
-</ul>
-</section>
-<section>
-<h4 id="notes-19">Notes</h4>
-<p>Spacing is rhythm, a fundamental design concept. Rhythm occurs
-<em>between</em> graphical elements and should be applied as such in
-CSS. The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">lobotomized owl</a> selector (<code class="sourceCode css"><span class="op">*+*</span></code>) is tailor
-made for this task. When using a flex container, the <code class="sourceCode css">gap</code> property does it all for you!</p>
+<h4 id="checks-19">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/stylelint-magic-numbers.js" class="css">magic-numbers/magic-numbers</a></p>
 </section>
 </div>
 <aside>
@@ -991,21 +1092,26 @@ made for this task. When using a flex container, the <code class="sourceCode css
 <div>
 <div>
 <header>
-<h3 id="the-use-of-problematic-units-is-discouraged.">The use of
-problematic units is discouraged.</h3>
+<h3 id="rhythm-must-be-applied-in-one-direction-only-preferably-top.">Rhythm
+<em>must</em> be applied in one direction only, preferably top.</h3>
 </header>
 <section>
 <h4 id="principles-19">Principles</h4>
 <ul>
+<li><a href="#designing-language">Designing language</a></li>
 <li><a href="#specific-role">Specific roles and usage</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-20">Notes</h4>
-<p>Static viewport units (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) are famously problematic,
-particularly when used as <code class="sourceCode css">100vh</code> or
-<code class="sourceCode css">100vw</code>. <a href="https://caniuse.com/viewport-unit-variants" target="_blank">Dynamic viewport units</a> are better suited for this
-task.</p>
+<p>Spacing is rhythm, a fundamental design concept. Rhythm occurs
+<em>between</em> graphical elements and should be applied as such in
+CSS. The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" target="_blank">lobotomized owl</a> selector (<code class="sourceCode css"><span class="op">*+*</span></code>) is tailor
+made for this task. When using a flex container, the <code class="sourceCode css">gap</code> property does it all for you!</p>
+</section>
+<section>
+<h4 id="checks-20">Checks</h4>
+<p>No plugin is associated with this section.</p>
 </section>
 </div>
 <aside>
@@ -1022,22 +1128,25 @@ task.</p>
 <div>
 <div>
 <header>
-<h3 id="tag-selectors-should-be-leveraged-inside-components.">Tag
-selectors should be leveraged inside components.</h3>
+<h3 id="spacing-large">Very large spacing values usually point to a
+composition problem.</h3>
 </header>
 <section>
 <h4 id="principles-20">Principles</h4>
 <ul>
-<li><a href="#component-structure">Component structure</a></li>
-<li><a href="#expressive-html">Expressive HTML</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#specific-role">Specific role</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-21">Notes</h4>
-<p>Components need to prescribe a certain HTML structure. Using said
-structure through intentional tag selectors is the best way to insure
-structural persistence, to keep specificity and complexity low and
-prevent naming fatigue. Why rename that which is already named?</p>
+<p>Very large padding and margin values often compensate for a missing
+layout pattern. When spacing becomes extreme, the composition usually
+needs a different container, alignment rule, or structural split.</p>
+</section>
+<section>
+<h4 id="checks-21">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-spacing-large.js" class="css">ecss/spacing-large</a></p>
 </section>
 </div>
 <aside>
@@ -1054,23 +1163,28 @@ prevent naming fatigue. Why rename that which is already named?</p>
 <div>
 <div>
 <header>
-<h3 id="one-entity-per-file-with-a-soft-cap-of-about-a-hundred-lines.">One
-entity per file with a soft cap of about a hundred lines.</h3>
+<h3 id="the-use-of-problematic-units-is-discouraged.">The use of
+problematic units is discouraged.</h3>
 </header>
 <section>
 <h4 id="principles-21">Principles</h4>
 <ul>
-<li><a href="#autonomous-concept">Autonomous concepts</a></li>
-<li><a href="#concept-manipulation">Concept manipulation</a></li>
+<li><a href="#specific-role">Specific roles and usage</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-22">Notes</h4>
-<p>This is one of the most important rules for achieving sustainable
-CSS. One autonomous concept per file prevents the multiplication of
-overrides and redefinition across the codebase. It’s even easy to
-enforce with the <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">ECSS
-Stylelint config</a>.</p>
+<p>Static viewport units (<code class="sourceCode css">vh</code>, <code class="sourceCode css">vw</code>, <code class="sourceCode css">vmin</code>, <code class="sourceCode css">vmax</code>) are famously problematic,
+particularly when used as <code class="sourceCode css">100vh</code> or
+<code class="sourceCode css">100vw</code>. <a href="https://caniuse.com/viewport-unit-variants" target="_blank">Dynamic viewport units</a> are better suited for this
+task.</p>
+</section>
+<section>
+<h4 id="checks-22">Checks</h4>
+<ul>
+<li><a href="https://stylelint.io/user-guide/rules/unit-disallowed-list/" class="css">unit-disallowed-list</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/declaration-property-unit-disallowed-list/" class="css">declaration-property-unit-disallowed-list</a></li>
+</ul>
 </section>
 </div>
 <aside>
@@ -1087,23 +1201,26 @@ Stylelint config</a>.</p>
 <div>
 <div>
 <header>
-<h3 id="selector-parts">Selectors <em>must</em> strictly include only
-necessary selection parts.</h3>
+<h3 id="tag-selectors-should-be-leveraged-inside-components.">Tag
+selectors should be leveraged inside components.</h3>
 </header>
 <section>
 <h4 id="principles-22">Principles</h4>
 <ul>
 <li><a href="#component-structure">Component structure</a></li>
-<li><a href="#selector-intention">Selector intention</a></li>
-<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-23">Notes</h4>
-<p>This mistake, being passed as “best practices”, is the source of many
-self-induced CSS headaches. Fortunately, the solution is simple: <em>do
-not use selection parts that you could remove without changing the
-original intention</em>.</p>
+<p>Components need to prescribe a certain HTML structure. Using said
+structure through intentional tag selectors is the best way to insure
+structural persistence, to keep specificity and complexity low and
+prevent naming fatigue. Why rename that which is already named?</p>
+</section>
+<section>
+<h4 id="checks-23">Checks</h4>
+<p>No plugin is associated with this section.</p>
 </section>
 </div>
 <aside>
@@ -1120,23 +1237,25 @@ original intention</em>.</p>
 <div>
 <div>
 <header>
-<h3 id="duplication-of-a-set-of-more-than-3-rules-is-discouraged.">Duplication
-of a set of more than 3 rules is discouraged.</h3>
+<h3 id="content-float">Floating should be reserved for graphical
+content.</h3>
 </header>
 <section>
 <h4 id="principles-23">Principles</h4>
 <ul>
-<li><a href="#rule-repetition">Rule repetition</a></li>
-<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
 </ul>
 </section>
 <section>
 <h4 id="notes-24">Notes</h4>
-<p>Repeating a pattern instead of naming it and grouping its rules
-inside a unique declaration block is a classic CSS mistake. And it can
-be hard to find and target instances of this problem. Tools like PostCSS
-plugins can help by identifying repetition meeting a defined threshold
-throughout a codebase.</p>
+<p>Float is a narrow layout tool. Using it on non-graphical content
+tends to blur structure and force content elements to carry layout
+responsibilities that belong elsewhere.</p>
+</section>
+<section>
+<h4 id="checks-24">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-float.js" class="css">ecss/content-float</a></p>
 </section>
 </div>
 <aside>
@@ -1153,19 +1272,28 @@ throughout a codebase.</p>
 <div>
 <div>
 <header>
-<h3 id="the-use-of-the-global-scope-is-encouraged-for-all-fundamental-design-layers.">The
-use of the global scope is encouraged for all fundamental design
-layers.</h3>
+<h3 id="one-entity-per-file-with-a-soft-cap-of-about-a-hundred-lines.">One
+entity per file with a soft cap of about a hundred lines.</h3>
 </header>
 <section>
 <h4 id="principles-24">Principles</h4>
 <ul>
-<li><a href="#designing-language">Designing language</a></li>
-<li><a href="#design-empowerment">Designer empowerment</a></li>
-<li><a href="#global-scope">Global scope</a></li>
-<li><a href="#global-rules">Global rules</a></li>
-<li><a href="#harness-specificity">Harness specificity</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+<li><a href="#concept-manipulation">Concept manipulation</a></li>
 </ul>
+</section>
+<section>
+<h4 id="notes-25">Notes</h4>
+<p>This is one of the most important rules for achieving sustainable
+CSS. One autonomous concept per file prevents the multiplication of
+overrides and redefinition across the codebase. It’s even easy to
+enforce with the <a href="https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss">ECSS
+Stylelint config</a>.</p>
+</section>
+<section>
+<h4 id="checks-25">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-filename.js" class="css">ecss/selector-filename</a></p>
+<p><a href="https://www.npmjs.com/package/stylelint-file-max-lines" class="css">plugin/file-max-lines</a></p>
 </section>
 </div>
 <aside>
@@ -1182,22 +1310,33 @@ layers.</h3>
 <div>
 <div>
 <header>
-<h3 id="html-structure-should-be-as-flat-as-possible-and-bereft-of-single-tag-nesting.">HTML
-structure should be as flat as possible and bereft of single tag
-nesting.</h3>
+<h3 id="selector-parts">Selectors <em>must</em> strictly include only
+necessary selection parts.</h3>
 </header>
 <section>
 <h4 id="principles-25">Principles</h4>
 <ul>
 <li><a href="#component-structure">Component structure</a></li>
-<li><a href="#expressive-html">Expressive HTML</a></li>
+<li><a href="#selector-intention">Selector intention</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-25">Notes</h4>
-<p>Sometimes it could make sense to add a div even if it’s the only
-child. The case of a content grid comes to mind. See this page’s source
-for an example.</p>
+<h4 id="notes-26">Notes</h4>
+<p>This mistake, being passed as “best practices”, is the source of many
+self-induced CSS headaches. Fortunately, the solution is simple: <em>do
+not use selection parts that you could remove without changing the
+original intention</em>.</p>
+</section>
+<section>
+<h4 id="checks-26">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-unnecessary.js" class="css">ecss/selector-unnecessary</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-not-class.js" class="css">ecss/not-class</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/selector-max-compound-selectors/" class="css">selector-max-compound-selectors</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/selector-max-type/" class="css">selector-max-type</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/selector-max-universal/" class="css">selector-max-universal</a></li>
+</ul>
 </section>
 </div>
 <aside>
@@ -1205,6 +1344,112 @@ for an example.</p>
 <div>
 <div class="sourceCode" id="cb53" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb53" data-hx-trigger="intersect once"></div>
 <div class="sourceCode" id="cb54" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb54" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="duplication-of-a-set-of-more-than-3-rules-is-discouraged.">Duplication
+of a set of more than 3 rules is discouraged.</h3>
+</header>
+<section>
+<h4 id="principles-26">Principles</h4>
+<ul>
+<li><a href="#rule-repetition">Rule repetition</a></li>
+<li><a href="#autonomous-concept">Autonomous concepts</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-27">Notes</h4>
+<p>Repeating a pattern instead of naming it and grouping its rules
+inside a unique declaration block is a classic CSS mistake. And it can
+be hard to find and target instances of this problem. Tools like PostCSS
+plugins can help by identifying repetition meeting a defined threshold
+throughout a codebase.</p>
+</section>
+<section>
+<h4 id="checks-27">Checks</h4>
+<p><a href="https://www.npmjs.com/package/@efficientcss/duplicated-rules" class="css"><span class="citation" data-cites="efficientcss/duplicated-rules">@efficientcss/duplicated-rules</span></a></p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-24">Example</h4>
+<div>
+<div class="sourceCode" id="cb55" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb55" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb56" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb56" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="the-use-of-the-global-scope-is-encouraged-for-all-fundamental-design-layers.">The
+use of the global scope is encouraged for all fundamental design
+layers.</h3>
+</header>
+<section>
+<h4 id="principles-27">Principles</h4>
+<ul>
+<li><a href="#designing-language">Designing language</a></li>
+<li><a href="#design-empowerment">Designer empowerment</a></li>
+<li><a href="#global-scope">Global scope</a></li>
+<li><a href="#global-rules">Global rules</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="checks-28">Checks</h4>
+<p>No plugin is associated with this section.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-25">Example</h4>
+<div>
+<div class="sourceCode" id="cb57" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb57" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb58" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb58" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="html-structure-should-be-as-flat-as-possible-and-bereft-of-single-tag-nesting.">HTML
+structure should be as flat as possible and bereft of single tag
+nesting.</h3>
+</header>
+<section>
+<h4 id="principles-28">Principles</h4>
+<ul>
+<li><a href="#component-structure">Component structure</a></li>
+<li><a href="#expressive-html">Expressive HTML</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-28">Notes</h4>
+<p>Sometimes it could make sense to add a div even if it’s the only
+child. The case of a content grid comes to mind. See this page’s source
+for an example.</p>
+</section>
+<section>
+<h4 id="checks-29">Checks</h4>
+<p>No plugin is associated with this section.</p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-26">Example</h4>
+<div>
+<div class="sourceCode" id="cb59" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb59" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb60" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb60" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>
@@ -1219,23 +1464,143 @@ for an example.</p>
 as possible.</h3>
 </header>
 <section>
-<h4 id="principles-26">Principles</h4>
+<h4 id="principles-29">Principles</h4>
 <ul>
 <li><a href="#harness-specificity">Harness specificity</a></li>
 <li><a href="#child-specificity">Child specificity</a></li>
 </ul>
 </section>
 <section>
-<h4 id="notes-26">Notes</h4>
+<h4 id="notes-29">Notes</h4>
 <p>Sometimes it makes sense to add specificity. But don’t do it until
 proven necessary.</p>
 </section>
+<section>
+<h4 id="checks-30">Checks</h4>
+<ul>
+<li><a href="https://stylelint.io/user-guide/rules/selector-max-specificity/" class="css">selector-max-specificity</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/selector-max-class/" class="css">selector-max-class</a></li>
+<li><a href="https://stylelint.io/user-guide/rules/declaration-no-important/" class="css">declaration-no-important</a></li>
+</ul>
+</section>
 </div>
 <aside>
-<h4 class="as-visually-hidden" id="example-24">Example</h4>
+<h4 class="as-visually-hidden" id="example-27">Example</h4>
 <div>
-<div class="sourceCode" id="cb55" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb55" data-hx-trigger="intersect once"></div>
-<div class="sourceCode" id="cb56" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb56" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb61" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb61" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb62" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb62" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="ignored-properties">Ignored properties should be removed instead
+of layered onto incompatible declarations.</h3>
+</header>
+<section>
+<h4 id="principles-30">Principles</h4>
+<ul>
+<li><a href="#specific-role">Specific role</a></li>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-30">Notes</h4>
+<p>Some property combinations communicate an intent the browser cannot
+actually honor. This rule catches cases where one declaration makes
+another ineffective, such as <code>vertical-align</code> on a flex
+container, <code>top</code> on a statically positioned selector, or
+<code>resize</code> while <code>overflow</code> remains visible.</p>
+</section>
+<section>
+<h4 id="checks-31">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-ignored-properties.js" class="css">ecss/ignored-properties</a></p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-28">Example</h4>
+<div>
+<div class="sourceCode" id="cb63" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb63" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb64" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb64" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="z-index-band">
+<code>z-index</code> should stay contextual and
+low.</h3>
+</header>
+<section>
+<h4 id="principles-31">Principles</h4>
+<ul>
+<li><a href="#properties-not-equal">Properties are not equal</a></li>
+<li><a href="#harness-specificity">Harness specificity</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-31">Notes</h4>
+<p><code>z-index</code> is useful, but only when it stays inside a small
+and deliberate stacking scale. ECSS limits the band to <code>0</code>
+through <code>10</code>, while allowing <code>-1</code> as an explicit
+escape hatch.</p>
+</section>
+<section>
+<h4 id="checks-32">Checks</h4>
+<ul>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-z-index-static.js" class="css">ecss/z-index-static</a></li>
+<li><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/stylelint-z-index-value-constraint.js" class="css">plugin/z-index-value-constraint</a></li>
+</ul>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-29">Example</h4>
+<div>
+<div class="sourceCode" id="cb65" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb65" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb66" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb66" data-hx-trigger="intersect once"></div>
+</div>
+</aside>
+</div>
+</article>
+<hr>
+<article>
+<div>
+<div>
+<header>
+<h3 id="commented-code">Commented-out CSS should be deleted, not
+archived inline.</h3>
+</header>
+<section>
+<h4 id="principles-32">Principles</h4>
+<ul>
+<li><a href="#simplicity">Simplicity</a></li>
+<li><a href="#intentionality">Intentionality</a></li>
+</ul>
+</section>
+<section>
+<h4 id="notes-32">Notes</h4>
+<p>Old declarations left inside comments quickly become noise. They
+suggest uncertainty, blur intent, and stop the stylesheet from reading
+like a current description of the interface.</p>
+</section>
+<section>
+<h4 id="checks-33">Checks</h4>
+<p><a href="https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-commented-code.js" class="css">ecss/commented-code</a></p>
+</section>
+</div>
+<aside>
+<h4 class="as-visually-hidden" id="example-30">Example</h4>
+<div>
+<div class="sourceCode" id="cb67" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb67" data-hx-trigger="intersect once"></div>
+<div class="sourceCode" id="cb68" data-hx-get="code-examples.html" data-hx-swap="outerHTML" data-hx-select="#cb68" data-hx-trigger="intersect once"></div>
 </div>
 </aside>
 </div>

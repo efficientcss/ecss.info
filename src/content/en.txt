@@ -319,6 +319,12 @@ By writing native CSS, one uses CSS better; by writing native HTML, one writes H
 To exclude a file from this rule in the **Stylelint** config, prefix the filename with a digit or "x-" as in "x-quarantine.css"
 
 </section>
+<section>
+#### Checks
+
+[ecss/selector-filename](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-filename.js){.css}
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -366,6 +372,12 @@ To exclude a file from this rule in the **Stylelint** config, prefix the filenam
 Non-uniform paddings may be used in particular instances for `overflow`{.css} reasons or for added pseudo-content. Without these reasons, non-uniform spacing may be better created with margins.
 
 </section>
+<section>
+#### Checks
+
+[ecss/padding-constraints](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-padding-constraints.js){.css}
+
+</section>
 
 </div>
 <aside>
@@ -411,6 +423,12 @@ Non-uniform paddings may be used in particular instances for `overflow`{.css} re
 Text elements should only host text styles while container elements can host theming styles. In some instances, container elements could host text styles to be inherited by children.
 
 </section>
+<section>
+#### Checks
+
+[ecss/content-padding](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-padding.js){.css}
+
+</section>
 
 </div>
 
@@ -443,6 +461,57 @@ Text elements should only host text styles while container elements can host the
 <div>
 <div>
 <header>
+### Text tags should generally remain block-level.{#content-block}
+</header>
+<section>
+#### Principles
+
+- [Specific role](#specific-role)
+- [One role only](#one-role)
+</section>
+
+<section>
+#### Notes
+
+Text selectors should keep text-like display behavior unless there is a clear structural reason to do otherwise. Turning them into layout containers usually means the surrounding structure is carrying the wrong responsibility.
+
+</section>
+<section>
+#### Checks
+
+[ecss/content-block](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-block.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+article p {
+	display: block;
+}
+```
+
+```css
+/* Don't */
+article p {
+	display: flex;
+}
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### Horizontal margins should not be applied to text elements.{#content-margin}
 </header>
 <section>
@@ -456,6 +525,12 @@ Text elements should only host text styles while container elements can host the
 #### Notes
 
 Horizontal margins can be applied to text elements in the case of `inline`{.css} elements such as icons or tags &amp; on indented elements like `blockquote`{.html}.
+
+</section>
+<section>
+#### Checks
+
+[ecss/content-margin](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-margin.js){.css}
 
 </section>
 </div>
@@ -501,6 +576,12 @@ Horizontal margins can be applied to text elements in the case of `inline`{.css}
 #### Notes
 
 Inheritance allows for high-level styling. With little code, we cast a wide net while limiting specificity to a minimum.
+
+</section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
 
 </section>
 </div>
@@ -550,6 +631,12 @@ p {
 Numerical values should only be used for exceptional alignments. These should be commented to communicate the intent. Even then, why not create a bespoke property meaningfully named?
 
 </section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -595,6 +682,16 @@ Numerical values should only be used for exceptional alignments. These should be
 #### Notes
 
 Certain properties need to be joined to others, using a precise structure, to be functional. It is important to keep this relationship clear and explicit. Nesting simply fulfills this role.
+
+</section>
+<section>
+#### Checks
+
+- [ecss/align-display](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-align-display.js){.css}
+- [ecss/flex-prop](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-prop.js){.css}
+- [ecss/flex-children](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-children.js){.css}
+- [ecss/flex-shorthand](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-flex-shorthand.js){.css}
+- [ecss/position-prop](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-position-prop.js){.css}
 
 </section>
 </div>
@@ -663,6 +760,12 @@ Certain properties need to be joined to others, using a precise structure, to be
 Any instance of repeating default *must* be justified in a comment.
 
 </section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -723,6 +826,13 @@ We propose this nomenclature of prefixes:
 - `__`{.css}: internal entity.
 - `with-`{.css}: functional rule.
 - `from-*-to-`{.css}: adaptive patterns.
+
+</section>
+<section>
+#### Checks
+
+- [ecss/class-child-prefix](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-child-prefix.js){.css}
+- [ecss/class-combined-prefix](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-combined-prefix.js){.css}
 
 </section>
 </div>
@@ -786,6 +896,12 @@ button.to-toggle-nav {
 #### Notes
 
 The use of `&` in the selection makes the nesting explicit and prevents comprehension errors due to long nestings.
+
+</section>
+<section>
+#### Checks
+
+[selector-nested-pattern](https://stylelint.io/user-guide/rules/selector-nested-pattern/){.css}
 
 </section>
 </div>
@@ -854,6 +970,12 @@ The use of `&` in the selection makes the nesting explicit and prevents comprehe
 Nesting can encourage authoring on autopilot, without thinking about our selection intention. That's one reason why we will ultimately write `.card div h2`{.css} instead of `.card h2`{.css}, fragilizing our CSS. One level of nesting should be enough almost all cases.
 
 </section>
+<section>
+#### Checks
+
+[max-nesting-depth](https://stylelint.io/user-guide/rules/max-nesting-depth/){.css}
+
+</section>
 
 </div>
 <aside>
@@ -916,6 +1038,15 @@ Nesting can encourage authoring on autopilot, without thinking about our selecti
 The Web is fluid and authoring should embrace this fluidity. By choosing to limit dimensions of our components instead of dictating them, we delegate work to the browser, letting it do its job. Fixed dimensions should be only be applied to graphical elements like pictures, videos and icons.
 
 </section>
+<section>
+#### Checks
+
+- [ecss/selector-dimensions](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-dimensions.js){.css}
+- [ecss/component-dimensions](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-component-dimensions.js){.css}
+- [ecss/relative-width](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-relative-width.js){.css}
+- [ecss/width-100p](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-width-100p.js){.css}
+
+</section>
 
 </div>
 <aside>
@@ -962,6 +1093,12 @@ The Web is fluid and authoring should embrace this fluidity. By choosing to limi
 Ids convey meaning but their CSS selector is a specificity nightmare. Use attribute selector to keep the meaning (unicity!) while keeping specificiy at sane levels. Other use cases includes form controls &amp; inputs and js managed states (ie: `[data-state="active"]`{.css})
 
 </section>
+<section>
+#### Checks
+
+[selector-max-id](https://stylelint.io/user-guide/rules/selector-max-id/){.css}
+
+</section>
 
 </div>
 <aside>
@@ -993,7 +1130,7 @@ Ids convey meaning but their CSS selector is a specificity nightmare. Use attrib
 <div>
 <div>
 <header>
-### The use of positioning and display rules should be minimized.
+### The use of positioning and display rules should be minimized.{#position-display}
 </header>
 <section>
 #### Principles
@@ -1006,6 +1143,14 @@ Ids convey meaning but their CSS selector is a specificity nightmare. Use attrib
 #### Notes
 
 Use these properties only on elements needing them. Use the narrowest selectors that makes sense in the context.
+
+</section>
+<section>
+#### Checks
+
+- [ecss/position-sensitive](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-position-sensitive.js){.css}
+- [ecss/large-selector-rule](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-large-selector-rule.js){.css}
+- [ecss/technique-centered](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-technique-centered.js){.css}
 
 </section>
 </div>
@@ -1050,6 +1195,13 @@ header {
 #### Notes
 
 Class entities should not be combined with tag selectors. Generic selectors can be used as a selection piece but not as qualifiers. Exceptionally, certain specific tags such as `html`{.css} or `body`{.css} could be used to restrict the application of a class entity.
+
+</section>
+<section>
+#### Checks
+
+- [selector-no-qualifying-type](https://stylelint.io/user-guide/rules/selector-no-qualifying-type/){.css}
+- [ecss/tag-scoped-class](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-tag-scoped-class.js){.css}
 
 </section>
 
@@ -1102,6 +1254,12 @@ article.card {
 Components are made to fit into “holes”. These holes are managed by another component or a higher-level utility (e.g. a grid or carousel). No component in this sense should incorporate margins. These are applied as a rhythm by a parent. Thus, the components are versatile and reusable in various contexts.
 
 </section>
+<section>
+#### Checks
+
+[ecss/component-outside](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-component-outside.js){.css}
+
+</section>
 
 
 </div>
@@ -1150,6 +1308,12 @@ Components are made to fit into “holes”. These holes are managed by another 
 By hiding the way browsers treat overflowing items, we may hide content without knowing. By using `auto`{.css} instead of `hidden`{.css}, the oveflowing content will be accessible *and* the scrollbar will signal the design problem instead of hiding it. Hiding scrollbars may be necessary in some particular composition (see this very site's portrait adaptation for an example!).
 
 </section>
+<section>
+#### Checks
+
+[ecss/overflow-hidden](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-overflow-hidden.js){.css}
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1196,6 +1360,12 @@ By hiding the way browsers treat overflowing items, we may hide content without 
 #### Notes
 
 Adding a number to a class demonstrates a poor understanding of its role and communicates no clear intent. Ask yourself why you need to add a number and use the answer to explicitly name your class. If you need to use the structure to style certain elements, use the relevant pseudo-classes instead.
+
+</section>
+<section>
+#### Checks
+
+[ecss/class-numbered](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-class-numbered.js){.css}
 
 </section>
 </div>
@@ -1268,6 +1438,12 @@ Adding a number to a class demonstrates a poor understanding of its role and com
 Value and unit choices should be dictated by the graphic language and its design tokens. Absolute values in numerical form should be reserved to special cases like bespoke icon alignment or bullet list padding. The intention *must* be clear in itself or commented if not.
 
 </section>
+<section>
+#### Checks
+
+[magic-numbers/magic-numbers](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/stylelint-magic-numbers.js){.css}
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1313,6 +1489,12 @@ Value and unit choices should be dictated by the graphic language and its design
 Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphical elements and should be applied as such in CSS. The [lobotomized owl](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/){target="\_blank"} selector (`*+*`{.css}) is tailor made for this task. When using a flex container, the `gap`{.css} property does it all for you!
 
 </section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1345,6 +1527,57 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 <div>
 <div>
 <header>
+### Very large spacing values usually point to a composition problem.{#spacing-large}
+</header>
+<section>
+#### Principles
+
+- [Properties are not equal](#properties-not-equal)
+- [Specific role](#specific-role)
+</section>
+
+<section>
+#### Notes
+
+Very large padding and margin values often compensate for a missing layout pattern. When spacing becomes extreme, the composition usually needs a different container, alignment rule, or structural split.
+
+</section>
+<section>
+#### Checks
+
+[ecss/spacing-large](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-spacing-large.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+.hero {
+	padding: 2rem;
+}
+```
+
+```css
+/* Don't */
+.hero {
+	padding-top: 20rem;
+}
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### The use of problematic units is discouraged.
 </header>
 <section>
@@ -1357,6 +1590,13 @@ Spacing is rhythm, a fundamental design concept. Rhythm occurs *between* graphic
 #### Notes
 
 Static viewport units (`vh`{.css}, `vw`{.css}, `vmin`{.css}, `vmax`{.css}) are famously problematic, particularly when used as `100vh`{.css} or `100vw`{.css}. [Dynamic viewport units](https://caniuse.com/viewport-unit-variants){target="\_blank"} are better suited for this task.
+
+</section>
+<section>
+#### Checks
+
+- [unit-disallowed-list](https://stylelint.io/user-guide/rules/unit-disallowed-list/){.css}
+- [declaration-property-unit-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-unit-disallowed-list/){.css}
 
 </section>
 
@@ -1404,6 +1644,12 @@ nav {
 Components need to prescribe a certain HTML structure. Using said structure through intentional tag selectors is the best way to insure structural persistence, to keep specificity and complexity low and prevent naming fatigue. Why rename that which is already named?
 
 </section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
 
 </div>
 
@@ -1436,6 +1682,57 @@ Components need to prescribe a certain HTML structure. Using said structure thro
 <div>
 <div>
 <header>
+### Floating should be reserved for graphical content.{#content-float}
+</header>
+<section>
+#### Principles
+
+- [Specific role](#specific-role)
+- [Properties are not equal](#properties-not-equal)
+</section>
+
+<section>
+#### Notes
+
+Float is a narrow layout tool. Using it on non-graphical content tends to blur structure and force content elements to carry layout responsibilities that belong elsewhere.
+
+</section>
+<section>
+#### Checks
+
+[ecss/content-float](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-content-float.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+img {
+	float: right;
+}
+```
+
+```css
+/* Don't */
+p {
+	float: right;
+}
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
 ### One entity per file with a soft cap of about a hundred lines.
 </header>
 <section>
@@ -1449,6 +1746,14 @@ Components need to prescribe a certain HTML structure. Using said structure thro
 #### Notes
 
 This is one of the most important rules for achieving sustainable CSS. One autonomous concept per file prevents the multiplication of overrides and redefinition across the codebase. It's even easy to enforce with the [ECSS Stylelint config](https://www.npmjs.com/package/@efficientcss/stylelint-config-ecss).
+
+</section>
+<section>
+#### Checks
+
+[ecss/selector-filename](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-filename.js){.css}
+
+[plugin/file-max-lines](https://www.npmjs.com/package/stylelint-file-max-lines){.css}
 
 </section>
 
@@ -1509,6 +1814,16 @@ This is one of the most important rules for achieving sustainable CSS. One auton
 This mistake, being passed as "best practices", is the source of many self-induced CSS headaches. Fortunately, the solution is simple: *do not use selection parts that you could remove without changing the original intention*.
 
 </section>
+<section>
+#### Checks
+
+- [ecss/selector-unnecessary](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-selector-unnecessary.js){.css}
+- [ecss/not-class](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-not-class.js){.css}
+- [selector-max-compound-selectors](https://stylelint.io/user-guide/rules/selector-max-compound-selectors/){.css}
+- [selector-max-type](https://stylelint.io/user-guide/rules/selector-max-type/){.css}
+- [selector-max-universal](https://stylelint.io/user-guide/rules/selector-max-universal/){.css}
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1551,6 +1866,12 @@ This mistake, being passed as "best practices", is the source of many self-induc
 #### Notes
 
 Repeating a pattern instead of naming it and grouping its rules inside a unique declaration block is a classic CSS mistake. And it can be hard to find and target instances of this problem. Tools like PostCSS plugins can help by identifying repetition meeting a defined threshold throughout a codebase.
+
+</section>
+<section>
+#### Checks
+
+[@efficientcss/duplicated-rules](https://www.npmjs.com/package/@efficientcss/duplicated-rules){.css}
 
 </section>
 
@@ -1613,6 +1934,13 @@ Repeating a pattern instead of naming it and grouping its rules inside a unique 
 - [Harness specificity](#harness-specificity)
 </section>
 
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
+
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1667,6 +1995,12 @@ p+p {
 Sometimes it could make sense to add a div even if it's the only child. The case of a content grid comes to mind. See this page's source for an example.
 
 </section>
+<section>
+#### Checks
+
+No plugin is associated with this section.
+
+</section>
 
 </div>
 <aside>
@@ -1719,6 +2053,14 @@ Sometimes it could make sense to add a div even if it's the only child. The case
 Sometimes it makes sense to add specificity. But don't do it until proven necessary.
 
 </section>
+<section>
+#### Checks
+
+- [selector-max-specificity](https://stylelint.io/user-guide/rules/selector-max-specificity/){.css}
+- [selector-max-class](https://stylelint.io/user-guide/rules/selector-max-class/){.css}
+- [declaration-no-important](https://stylelint.io/user-guide/rules/declaration-no-important/){.css}
+
+</section>
 </div>
 <aside>
 #### Example {.as-visually-hidden}
@@ -1740,6 +2082,165 @@ Sometimes it makes sense to add specificity. But don't do it until proven necess
 </div>
 </aside>
 
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### Ignored properties should be removed instead of layered onto incompatible declarations.{#ignored-properties}
+</header>
+<section>
+#### Principles
+
+- [Specific role](#specific-role)
+- [Properties are not equal](#properties-not-equal)
+</section>
+
+<section>
+#### Notes
+
+Some property combinations communicate an intent the browser cannot actually honor. This rule catches cases where one declaration makes another ineffective, such as `vertical-align` on a flex container, `top` on a statically positioned selector, or `resize` while `overflow` remains visible.
+
+</section>
+<section>
+#### Checks
+
+[ecss/ignored-properties](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-ignored-properties.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+.dialog {
+	display: flex;
+	align-items: center;
+}
+```
+
+```css
+/* Don't */
+.dialog {
+	display: flex;
+	vertical-align: middle;
+}
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### `z-index` should stay contextual and low.{#z-index-band}
+</header>
+<section>
+#### Principles
+
+- [Properties are not equal](#properties-not-equal)
+- [Harness specificity](#harness-specificity)
+</section>
+
+<section>
+#### Notes
+
+`z-index` is useful, but only when it stays inside a small and deliberate stacking scale. ECSS limits the band to `0` through `10`, while allowing `-1` as an explicit escape hatch.
+
+</section>
+<section>
+#### Checks
+
+- [ecss/z-index-static](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-z-index-static.js){.css}
+- [plugin/z-index-value-constraint](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/stylelint-z-index-value-constraint.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+.modal {
+	position: fixed;
+	z-index: 8;
+}
+```
+
+```css
+/* Don't */
+.modal {
+	position: fixed;
+	z-index: 9999;
+}
+```
+</div>
+</aside>
+</div>
+</article>
+
+---
+
+<article>
+
+<div>
+<div>
+<header>
+### Commented-out CSS should be deleted, not archived inline.{#commented-code}
+</header>
+<section>
+#### Principles
+
+- [Simplicity](#simplicity)
+- [Intentionality](#intentionality)
+</section>
+
+<section>
+#### Notes
+
+Old declarations left inside comments quickly become noise. They suggest uncertainty, blur intent, and stop the stylesheet from reading like a current description of the interface.
+
+</section>
+<section>
+#### Checks
+
+[ecss/commented-code](https://github.com/efficientcss/stylelint-config-ecss/blob/main/plugins/ecss-commented-code.js){.css}
+
+</section>
+</div>
+<aside>
+#### Example {.as-visually-hidden}
+
+<div>
+```css
+/* Do */
+.card {
+	color: var(--text-color);
+}
+```
+
+```css
+/* Don't */
+.card {
+	/* color: red; */
+	color: var(--text-color);
+}
+```
+</div>
+</aside>
 </div>
 </article>
 
